@@ -19,6 +19,20 @@
         subcategory: "undefined",
         chunks: []
       },
+      "accordion-demo": {
+        name: "accordion-demo",
+        type: "registry:component",
+        slug: "/components/accordion",
+        thumbnail: "undefined",
+        number: "10",
+        registryDependencies: undefined,
+        files: ["registry/default/examples/accordion/accordion-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/examples/accordion/accordion-demo.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
     },
   }
   

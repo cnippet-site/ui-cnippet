@@ -83,4 +83,51 @@
         --sidebar-border: 240 3.7% 15.9%;
         --sidebar-ring: 240 4.9% 83.9%;
     }
+
+    .steps > h3 {
+        @apply mb-4 mt-6;
+    }
+    .step code {
+        @apply rounded-xl bg-gray-200 px-2 py-0.5 text-black dark:bg-neutral-800 dark:text-white;
+    }
+    .steps > p > a {
+        @apply dark:bg-dawn-700 rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:text-white;
+    }
+    .container-wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 1400px;
+        border-style: dashed;
+        border-color: hsl(var(--border) / 0.7);
+    }
+
+    .container-wrapper:is(.dark *) {
+        border-color: hsl(var(--border));
+    }
+
+    @media (min-width: 1400px) {
+        .container-wrapper {
+            border-left-width: 1px;
+            border-right-width: 1px;
+        }
+    }
+
+    @media (min-width: 1800px) {
+        .container-wrapper {
+            max-width: 1536px;
+        }
+    }
+}
+
+@layer utilities {
+    .step {
+        counter-increment: step;
+    }
+
+    .step::before {
+        @apply bg-dusk-400 dark:border-background dark:bg-dawn-700 absolute -mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-white text-center -indent-px text-sm text-black dark:text-white;
+        @apply ml-[-50px];
+        content: counter(step);
+    }
 }

@@ -32,33 +32,36 @@ export default async function Blogpage({ params }: { params: Params }) {
     const toc = await getTableOfContents(doc.body.raw);
 
     return (
-        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px]">
-            <div className="mx-auto w-full min-w-0 max-w-5xl">
-                <div className="space-y-2">
-                    <h1 className="truncate text-4xl font-medium capitalize text-black">
-                        {doc.title}
-                    </h1>
-                    {doc?.description && (
-                        <p className="text-dawn-500 text-muted-foreground text-balance text-base">
-                            {doc.description}
-                        </p>
-                    )}
-                </div>
+        <>
 
-                <div className="pb-12 pt-8">
-                    {doc?.body.code && <Mdx code={doc?.body.code} />}
-                </div>
-            </div>
-            {doc?.toc && (
-                <div className="hidden text-sm xl:block">
-                    <div className="sticky top-16 -mt-10 pt-4">
-                        <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] space-y-4 py-12">
-                            <TableOfContents toc={toc} />
-                        </div>
+            <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px]">
+                <div className="mx-auto w-full min-w-0 max-w-5xl">
+                    <div className="space-y-2">
+                        <h1 className="truncate text-4xl font-medium capitalize text-black">
+                            {doc.title}
+                        </h1>
+                        {doc?.description && (
+                            <p className="text-dawn-500 text-muted-foreground text-balance text-base">
+                                {doc.description}
+                            </p>
+                        )}
+                    </div>
+
+                    <div className="pb-12 pt-8">
+                        {doc?.body.code && <Mdx code={doc?.body.code} />}
                     </div>
                 </div>
-            )}
-        </main>
+                {doc?.toc && (
+                    <div className="hidden text-sm xl:block">
+                        <div className="sticky top-5">
+                            <div className="h-[calc(100vh-3.5rem)] space-y-4">
+                                <TableOfContents toc={toc} />
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </main>
+        </>
     );
 }
 

@@ -37,7 +37,6 @@ const nextConfig = {
     },
 };
 
-// Add the bundle analyzer
 const withBundleAnalyzerConfig = withBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
 });

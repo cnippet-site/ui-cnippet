@@ -22,9 +22,9 @@ function NavigationDesktop() {
     }, [pathname]);
 
     return (
-        <aside className="sticky top-14 hidden h-[calc(100vh)] w-72 shrink-0 md:block">
+        <aside className="border-dashed dark:border-neutral-800 pl-5 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r md:sticky md:block">
             <ScrollArea className="h-full w-full">
-                <nav>
+                <nav className="pt-8">
                     <ul
                         role="list"
                         className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6"
@@ -37,7 +37,7 @@ function NavigationDesktop() {
                                     </div>
                                     <ul
                                         role="list"
-                                        className="space-y-3.5 border-l border-zinc-200 dark:border-zinc-800"
+                                        className="space-y-3.5 border-zinc-200 dark:border-zinc-800"
                                     >
                                         {item.children.map((child) => {
                                             const isActive =
@@ -54,7 +54,7 @@ function NavigationDesktop() {
                                                 >
                                                     <Link
                                                         className={cn(
-                                                            "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
+                                                            "relative inline-flex items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
                                                             isActive &&
                                                                 "text-zinc-950",
                                                         )}
@@ -142,21 +142,18 @@ export default function ComponentLayout({
 }) {
     return (
         <>
-        <Nav1/>
-            <div className="px-6 lg:px-10 pt-8 lg:pt-12 font-sans">
-                <div className="mx-auto md:max-w-full">
-                    <div className="flex">
-                        <NavigationDesktop />
-                        <NavigationMobile />
-                        <main className="w-full pl-10">
-                            {children}
-                        </main>
-                        {/* <aside className="sticky top-14 hidden h-[calc(100dvh-(--spacing(16)))] w-[220px] shrink-0 pt-8 lg:pt-12 xl:block">
-                            <ScrollArea className="h-full w-full">
-                                <TableOfContents />
-                            </ScrollArea>
-                        </aside> */}
-                    </div>
+            <div className="bg-background relative flex min-h-svh flex-col">
+                <div className="border-grid flex flex-1 flex-col">
+                    <Nav1 />
+                    <main className="flex flex-1 flex-col">
+                        <div className="container-wrapper">
+                            <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-10 ">
+                                <NavigationDesktop />
+                                <NavigationMobile />
+                                <main className="w-full pl-10 pt-8">{children}</main>
+                            </div>
+                        </div>
+                    </main>
                 </div>
             </div>
         </>
