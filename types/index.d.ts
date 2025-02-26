@@ -20,3 +20,20 @@ export type DashboardConfig = {
     mainNav: MainNavItem[];
     sidebarNav: SidebarNavItem[];
 };
+
+
+
+
+
+
+type ComponentItem = {
+    name: string;
+    href: string;
+    isNew?: boolean;
+    isUpdated?: boolean;
+};
+
+type ComponentGroup = {
+    name: string;
+    items: ComponentItem[];
+};

@@ -1,15 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { RiMoonFill, RiSunLine } from "@remixicon/react";
-import { ChevronDown } from "lucide-react";
-import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 const Nav1 = () => {
-    const [isPagesOpen, setIsPagesOpen] = useState(false);
 
     const { theme, setTheme } = useTheme();
 
@@ -104,7 +101,7 @@ const Nav1 = () => {
             <div className="container-wrapper">
                 <div className="container flex h-14 items-center px-4">
                     <div className="mr-4 hidden md:flex">
-                        <a
+                        <Link
                             className="mr-4 flex items-center gap-2 lg:mr-6"
                             href="/"
                         >
@@ -129,7 +126,7 @@ const Nav1 = () => {
                             <span className="hidden font-bold lg:inline-block">
                                 cnippet/ui
                             </span>
-                        </a>
+                        </Link>
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
                             <Link
                                 href="/components/accordion"
@@ -208,7 +205,7 @@ const Nav1 = () => {
                             </button>
                         </div>
                         <nav className="flex items-center gap-0.5">
-                            <a
+                            <Link
                                 target="_blank"
                                 rel="noreferrer"
                                 className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
@@ -224,7 +221,7 @@ const Nav1 = () => {
                                     ></path>
                                 </svg>
                                 <span className="sr-only">GitHub</span>
-                            </a>
+                            </Link>
                             <div className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 group/toggle inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                                 {/* <svg
                                     xmlns="http://www.w3.org/2000/svg"

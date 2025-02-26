@@ -16,7 +16,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
         if (activeRef.current) {
             activeRef.current.scrollIntoView({
                 behavior: "auto",
-                block: "nearest",
+                block: "center",
             });
         }
     }, [pathname]);
@@ -29,23 +29,23 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                         role="list"
                         className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6"
                     >
-                        {navigation.map((item, index) => {
+                        {navigation.map((nav, index) => {
                             return (
-                                <li key={`${item.name}-${index}`}>
-                                    <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-[450] text-zinc-950 dark:bg-zinc-950 dark:text-white">
-                                        {item.name}
+                                <li key={`${nav.name}-${index}`}>
+                                    <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-zinc-950 dark:text-white">
+                                        {nav.name}
                                     </div>
                                     <ul
                                         role="list"
                                         className="space-y-3.5 border-zinc-200 dark:border-zinc-800"
                                     >
-                                        {item.children.map((child, j) => {
+                                        {nav.items.map((item, j) => {
                                             const isActive =
-                                                pathname === child.href;
+                                                pathname === item.href;
 
                                             return (
                                                 <li
-                                                    key={`${child.name}-${j}`}
+                                                    key={`${item.name}-${j}`}
                                                     ref={
                                                         isActive
                                                             ? activeRef
@@ -56,32 +56,20 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                         className={cn(
                                                             "relative inline-flex items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
                                                             isActive &&
-                                                                "text-zinc-950",
+                                                                "text-zinc-950 bg-gray-100 w-full py-1.5 rounded-l-lg pl-3 dark:bg-neutral-900 dark:text-neutral-200",
                                                         )}
-                                                        href={child.href}
+                                                        href={item.href}
                                                     >
-                                                        {isActive && (
-                                                            <motion.div
-                                                                layout
-                                                                className="-z-1 absolute -left-[1px] top-0 h-full w-0.5 rounded-[4px] bg-zinc-950 dark:bg-white"
-                                                                transition={{
-                                                                    type: "spring",
-                                                                    stiffness: 26.7,
-                                                                    damping: 4.1,
-                                                                    mass: 0.2,
-                                                                }}
-                                                                layoutId="underline-sidebar"
-                                                            />
-                                                        )}
+                                                        
                                                         <span>
-                                                            {child.name}
+                                                            {item.name}
                                                         </span>
-                                                        {child?.isNew && (
+                                                        {item?.isNew && (
                                                             <span className="ml-2 whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
                                                                 New
                                                             </span>
                                                         )}
-                                                        {child?.isUpdated && (
+                                                        {item?.isUpdated && (
                                                             <span className="ml-2 whitespace-nowrap rounded-lg bg-amber-100 px-2 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-50">
                                                                 Updated
                                                             </span>
@@ -119,12 +107,12 @@ function NavigationMobile({ navigation }: { navigation: typeof components }) {
                 value={selectedHref}
                 onChange={handleChange}
             >
-                {navigation.map((item) => {
+                {navigation.map((nav) => {
                     return (
-                        <optgroup label={item.name} key={item.name}>
-                            {item.children.map((child) => (
-                                <option key={child.href} value={child.href}>
-                                    {child.name}
+                        <optgroup label={nav.name} key={nav.name}>
+                            {nav.items.map((item) => (
+                                <option key={item.href} value={item.href}>
+                                    {item.name}
                                 </option>
                             ))}
                         </optgroup>

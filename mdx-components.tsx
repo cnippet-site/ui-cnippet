@@ -162,7 +162,7 @@ const components = {
         return (
             <>
                 <pre
-                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap ${className}`}
+                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 dark:!bg-zinc-900 dark:border-neutral-800 text-wrap ${className}`}
                     {...props}
                 />
                 {__rawString__ && __src__ && (

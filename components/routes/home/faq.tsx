@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function Faq() {
     const faq = [
@@ -39,12 +40,12 @@ export default function Faq() {
                         <div className="mt-auto">
                             <p className="text-sm text-gray-500">
                                 Still have questions? Contact us at{" "}
-                                <a
+                                <Link
                                     href="mailto:support@kloomix.com"
                                     className="text-[#2F2B6B] underline transition hover:text-[#FFE27D]"
                                 >
                                     support@kloomix.com
-                                </a>
+                                </Link>
                             </p>
                         </div>
                     </div>

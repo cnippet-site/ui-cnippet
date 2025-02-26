@@ -1,778 +1,483 @@
-import { MainNavItem, SidebarNavItem } from "@/types";
-interface DocsConfig {
-    mainNav: MainNavItem[];
-    sidebarNav: SidebarNavItem[];
-    sectionNav: SidebarNavItem[];
-}
+import { ComponentGroup } from "@/types";
 
 export const BASE_URL = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
-export const docsConfig: DocsConfig = {
-    mainNav: [
-        {
-            title: "Components",
-            href: "/components",
-        },
-        {
-            title: "Templates",
-            href: "#",
-            label: "New",
-        },
-        {
-            title: "Showcase",
-            href: "#",
-        },
-    ],
-    sidebarNav: [
-        {
-            title: "Components",
-            items: [
-                {
-                    title: "Accordion",
-                    href: `/components/accordion`,
-                    items: [],
-                },
-                {
-                    title: "Alert",
-                    href: `/components/alert`,
-                    items: [],
-                },
-                {
-                    title: "Avatar",
-                    href: `/components/avatar`,
-                    items: [],
-                },
-                {
-                    title: "Badge",
-                    href: `/components/badge`,
-                    items: [],
-                },
-                // {
-                //     title: "Banner",
-                //     href: `/components/banner`,
-                //     items: [],
-                // },
-                {
-                    title: "Breadcrumb",
-                    href: `/components/breadcrumb`,
-                    items: [],
-                },
-                {
-                    title: "Button",
-                    href: `/components/button`,
-                    items: [],
-                },
-                {
-                    title: "Calendar",
-                    href: `/components/calendar`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Card",
-                    href: `/components/card`,
-                    items: [],
-                },
-                {
-                    title: "Carousel",
-                    href: `/components/carousel`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Checkbox",
-                    href: `/components/checkbox`,
-                    items: [],
-                },
-                {
-                    title: "Collapsible",
-                    href: `/components/collapsible`,
-                    items: [],
-                },
-                // {
-                //     title: "Data Table",
-                //     href: `/components/data-table`,
-                //     items: [],
-                // },
-                {
-                    title: "Date-picker",
-                    href: `/components/date-picker`,
-                    items: [],
-                },
-                {
-                    title: "Dialog",
-                    href: `/components/dialog`,
-                    items: [],
-                },
-                {
-                    title: "Drawer",
-                    href: `/components/drawer`,
-                    items: [],
-                },
-                {
-                    title: "Dropdown Menu",
-                    href: `/components/dropdown-menu`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Input",
-                    href: `/components/input`,
-                    items: [],
-                },
-                {
-                    title: "Label",
-                    href: `/components/label`,
-                    items: [],
-                },
-                {
-                    title: "Pagination",
-                    href: `/components/pagination`,
-                    items: [],
-                },
-                {
-                    title: "Popover",
-                    href: `/components/popover`,
-                    items: [],
-                },
-                {
-                    title: "Radio Group",
-                    href: `/components/radio-group`,
-                    items: [],
-                },
-                {
-                    title: "Scroll-area",
-                    href: `/components/scroll-area`,
-                    items: [],
-                },
-                {
-                    title: "Select",
-                    href: `/components/select`,
-                    items: [],
-                },
-                {
-                    title: "Separator",
-                    href: `/components/separator`,
-                    items: [],
-                },
-                {
-                    title: "Sheet",
-                    href: `/components/sheet`,
-                    items: [],
-                },
-                {
-                    title: "Skeleton",
-                    href: `/components/skeleton`,
-                    items: [],
-                },
-                {
-                    title: "Slider",
-                    href: `/components/slider`,
-                    items: [],
-                },
-                {
-                    title: "Sonner",
-                    href: `/components/sonner`,
-                    items: [],
-                },
-                {
-                    title: "Switch",
-                    href: `/components/switch`,
-                    items: [],
-                },
-                {
-                    title: "Table",
-                    href: `/components/table`,
-                    items: [],
-                },
-                {
-                    title: "Tabs",
-                    href: `/components/tabs`,
-                    items: [],
-                    paid: "New",
-                },
-                {
-                    title: "Textarea",
-                    href: `/components/textarea`,
-                    items: [],
-                },
-                {
-                    title: "Toast",
-                    href: `/components/toast`,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Tooltip",
-                    href: `/components/tooltip`,
-                    items: [],
-                },
-            ],
-        },
-    ],
-    sectionNav: [
-        {
-            title: "Components",
-            items: [
-                {
-                    title: "Banner",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Blog",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Career",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Contact",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "CTA",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "FAQ",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Feature",
-                    href: `/sections/feature`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Footer",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Header",
-                    href: `/sections/header`,
-                    items: [],
-                },
-                {
-                    title: "Hero",
-                    href: `/sections/hero`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Metrics",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Newsletter",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Pricing",
-                    href: `/sections/pricing`,
-                    items: [],
-                    label: "New",
-                },
-                {
-                    title: "Team",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-                {
-                    title: "Testimonial",
-                    href: ``,
-                    items: [],
-                    label: "Coming Soon",
-                },
-            ],
-        },
-    ],
-};
-
-type NavigationItem = {
-    name: string;
-    href: string;
-    isNew?: boolean;
-    isUpdated?: boolean;
-};
-
-type NavigationGroup = {
-    name: string;
-    children: NavigationItem[];
-};
-
-export const motions: NavigationGroup[] = [
+export const motions: ComponentGroup[] = [
     {
         name: "Getting Started",
-        children: [
+        items: [
             {
                 name: "Introduction",
-                href: "/docs",
+                href: "#",
             },
             {
                 name: "Installation",
-                href: "/docs/installation",
+                href: "#",
             },
         ],
     },
     {
         name: "Core Components",
-        children: [
+        items: [
             {
                 name: "Accordion",
-                href: "",
+                href: "#",
             },
             {
-                name: "Button",
-                href: "",
+                name: "Animated Background",
+                href: "#",
             },
             {
-                name: "Card",
-                href: "",
+                name: "Animated Group",
+                href: "#",
+            },
+            {
+                name: "Border Trail",
+                href: "#",
             },
             {
                 name: "Carousel",
-                href: "",
+                href: "#",
             },
             {
                 name: "Cursor",
-                href: "",
+                href: "#",
             },
             {
                 name: "Dialog",
-                href: "",
+                href: "#",
             },
             {
-                name: "Popover",
-                href: "",
+                name: "Disclosure",
+                href: "#",
             },
             {
-                name: "tables",
-                href: "",
+                name: "In View",
+                href: "#",
+            },
+            {
+                name: "Infinite Slider",
+                href: "#",
             },
             {
                 name: "Transition Panel",
-                href: "",
-            },
-            {
-                name: "Toast",
-                href: "",
-            },
-            {
-                name: "Tooltip",
-                href: "",
-            },
-            {
-                name: "Sonner",
-                href: "",
-            },
-            {
-                name: "Skeleton",
-                href: "",
-            },
-            {
-                name: "Scroll Area",
-                href: "",
-            },
-            {
-                name: "Sheet",
-                href: "",
-            },
-            {
-                name: "Pagination",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Text Effects",
-        children: [
+        items: [
             {
                 name: "Text Effect",
-                href: "/docs/text-effect",
+                href: "#",
                 isUpdated: true,
             },
             {
                 name: "Text Loop",
-                href: "/docs/text-loop",
+                href: "#",
                 isUpdated: true,
             },
             {
                 name: "Text Morph",
-                href: "/docs/text-morph",
+                href: "#",
                 isUpdated: true,
             },
             {
                 name: "Text Roll",
-                href: "/docs/text-roll",
+                href: "#",
                 isNew: true,
             },
             {
                 name: "Text Scramble",
-                href: "/docs/text-scramble",
+                href: "#",
             },
             {
                 name: "Text Shimmer",
-                href: "/docs/text-shimmer",
+                href: "#",
             },
             {
                 name: "Text Shimmer Wave",
-                href: "/docs/text-shimmer-wave",
+                href: "#",
             },
         ],
     },
     {
         name: "Number Effects",
-        children: [
+        items: [
             {
                 name: "Animated Number",
-                href: "/docs/animated-number",
+                href: "#",
             },
             {
                 name: "Sliding Number",
-                href: "/docs/sliding-number",
+                href: "#",
                 isNew: true,
             },
         ],
     },
     {
         name: "Interactive Elements",
-        children: [
+        items: [
             {
                 name: "Dock",
-                href: "/docs/dock",
+                href: "#",
             },
             {
                 name: "Glow Effect",
-                href: "/docs/glow-effect",
+                href: "#",
                 isNew: true,
             },
             {
                 name: "Image Comparison",
-                href: "/docs/image-comparison",
+                href: "#",
             },
             {
                 name: "Scroll Progress",
-                href: "/docs/scroll-progress",
+                href: "#",
             },
             {
                 name: "Spotlight",
-                href: "/docs/spotlight",
+                href: "#",
             },
             {
                 name: "Spinning Text",
-                href: "/docs/spinning-text",
+                href: "#",
             },
             {
                 name: "Tilt",
-                href: "/docs/tilt",
+                href: "#",
             },
         ],
     },
     {
         name: "Toolbars",
-        children: [
+        items: [
             {
                 name: "Toolbar Dynamic",
-                href: "/docs/toolbar-dynamic",
+                href: "#",
             },
             {
                 name: "Toolbar Expandable",
-                href: "/docs/toolbar-expandable",
+                href: "#",
             },
         ],
     },
     {
         name: "Advanced Effects",
-        children: [
+        items: [
             {
                 name: "Magnetic",
-                href: "/docs/magnetic",
+                href: "#",
             },
             {
                 name: "Morphing Dialog",
-                href: "/docs/morphing-dialog",
+                href: "#",
             },
             {
                 name: "Morphing Popover",
-                href: "/docs/morphing-popover",
+                href: "#",
+
                 isNew: true,
             },
             {
                 name: "Progressive Blur",
-                href: "/docs/progressive-blur",
+                href: "#",
+
                 isNew: true,
             },
         ],
     },
 ];
 
-type ComponentItem = {
-    name: string;
-    href: string;
-    isNew?: boolean;
-    isUpdated?: boolean;
-};
-
-type ComponentGroup = {
-    name: string;
-    children: ComponentItem[];
-};
-
 export const components: ComponentGroup[] = [
     {
         name: "Getting Started",
-        children: [
+        items: [
             {
                 name: "Introduction",
-                href: "/docs",
+                href: "#",
             },
             {
                 name: "Installation",
-                href: "/docs/installation",
+                href: "#",
             },
         ],
     },
     {
         name: "Buttons",
-        children: [
+        items: [
             {
                 name: "Button",
-                href: "",
+                href: "#",
             },
             {
                 name: "File Trigger",
-                href: "",
+                href: "#",
             },
             {
                 name: "Toggle",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Controls",
-        children: [
+        items: [
             {
                 name: "Command Menu",
-                href: "",
+                href: "#",
             },
             {
                 name: "Context Menu",
-                href: "",
+                href: "#",
             },
             {
                 name: "Slider",
-                href: "",
+                href: "#",
             },
             {
                 name: "Switch",
-                href: "",
+                href: "#",
             },
             {
                 name: "Toolbar",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Date and Time",
-        children: [
+        items: [
             {
                 name: "Calendar",
-                href: "",
+                href: "#",
             },
             {
                 name: "Range Calendar",
-                href: "",
+                href: "#",
             },
             {
                 name: "Time Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Date Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Date Picker",
-                href: "",
+                href: "#",
             },
             {
                 name: "Date Range Picker",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Drag and drop",
-        children: [
+        items: [
             {
                 name: "Drop Zone",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Forms",
-        children: [
+        items: [
             {
                 name: "Checkbox",
-                href: "",
+                href: "#",
             },
             {
                 name: "Checkbox Group",
-                href: "",
+                href: "#",
             },
             {
                 name: "Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Input OTP",
-                href: "",
+                href: "#",
             },
             {
                 name: "Radio Group",
-                href: "",
+                href: "#",
             },
             {
                 name: "Search Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Tag Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Text Field",
-                href: "",
+                href: "#",
             },
             {
                 name: "Textarea",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Layouts",
-        children: [
+        items: [
             {
                 name: "Container",
-                href: "",
+                href: "#",
             },
             {
                 name: "Navbar",
-                href: "",
+                href: "#",
             },
             {
                 name: "Sidebar",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Media",
-        children: [
+        items: [
             {
                 name: "Avatar",
-                href: "",
+                href: "#",
             },
             {
                 name: "Carousel",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Navigation",
-        children: [
+        items: [
             {
                 name: "Breadcrumb",
-                href: "",
+                href: "#",
             },
             {
-                name: "Disclosure | Collapsible",
-                href: "",
+                name: "Collapsible",
+                href: "#",
             },
             {
-                name: "Disclosure group | Accordion",
-                href: "",
+                name: "Accordion",
+                href: "/components/accordion",
             },
             {
                 name: "Pagination",
-                href: "",
+                href: "#",
             },
             {
                 name: "Tabs",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Overlays",
-        children: [
+        items: [
             {
                 name: "Dialog",
-                href: "",
+                href: "#",
             },
             {
                 name: "Drawer",
-                href: "",
+                href: "#",
             },
             {
                 name: "Modal",
-                href: "",
+                href: "#",
             },
             {
                 name: "Popover",
-                href: "",
+                href: "#",
             },
             {
                 name: "Sheet",
-                href: "",
+                href: "#",
             },
             {
                 name: "Tooltip",
-                href: "",
+                href: "#",
             },
         ],
     },
     {
         name: "Pickers",
-        children: [
+        items: [
             {
                 name: "Combobox",
-                href: "",
+                href: "#",
             },
             {
                 name: "Multi select",
-                href: "",
+                href: "#",
             },
             {
                 name: "Select",
-                href: "",
+                href: "#",
             },
         ],
     },
-
+    {
+        name: "Statuses",
+        items: [
+            {
+                name: "Badge",
+                href: "#",
+            },
+            {
+                name: "Loader",
+                href: "#",
+            },
+            {
+                name: "Progress bar",
+                href: "#",
+            },
+            {
+                name: "Progress circle",
+                href: "#",
+            },
+            {
+                name: "Skeleton",
+                href: "#",
+            },
+            {
+                name: "Toast",
+                href: "#",
+            },
+        ],
+    },
+    {
+        name: "Surfaces",
+        items: [
+            {
+                name: "Card",
+                href: "#",
+            },
+            {
+                name: "Description list",
+                href: "#",
+            },
+            {
+                name: "Grid",
+                href: "#",
+            },
+            {
+                name: "Heading",
+                href: "#",
+            },
+            {
+                name: "Separator",
+                href: "#",
+            },
+        ],
+    },
 ];

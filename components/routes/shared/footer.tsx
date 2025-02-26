@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Footer = () => {
     return (
@@ -28,12 +29,12 @@ const Footer = () => {
                                 "FAQ",
                             ].map((platform) => (
                                 <li key={platform}>
-                                    <a
+                                    <Link
                                         href="#"
                                         className="transition hover:text-[#FFE27D]"
                                     >
                                         {platform}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -51,12 +52,12 @@ const Footer = () => {
                                 "Maintenance Style",
                             ].map((platform) => (
                                 <li key={platform}>
-                                    <a
+                                    <Link
                                         href="#"
                                         className="transition hover:text-[#FFE27D]"
                                     >
                                         {platform}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -73,12 +74,12 @@ const Footer = () => {
                                 "LinkedIn",
                             ].map((platform) => (
                                 <li key={platform}>
-                                    <a
+                                    <Link
                                         href="#"
                                         className="transition hover:text-[#FFE27D]"
                                     >
                                         {platform}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -118,13 +119,13 @@ const Footer = () => {
                                 "Terms of Service",
                                 "Cancellation Terms",
                             ].map((link) => (
-                                <a
+                                <Link
                                     key={link}
                                     href="#"
                                     className="transition hover:text-[#FFE27D] hover:underline"
                                 >
                                     {link}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
