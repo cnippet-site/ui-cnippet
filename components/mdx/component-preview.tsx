@@ -62,8 +62,6 @@ export function ComponentPreview({
             )}
             {...props}
         >
-            <Tabs defaultValue="preview"></Tabs>
-
             <Tabs defaultValue="preview" className="relative w-full">
                 {!preview && (
                     <TabsList className="inline-flex h-auto w-full items-center justify-start rounded-none border-b border-border bg-transparent p-0">

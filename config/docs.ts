@@ -320,188 +320,459 @@ type NavigationGroup = {
     children: NavigationItem[];
 };
 
-export const NAVIGATION: NavigationGroup[] = [
+export const motions: NavigationGroup[] = [
     {
-        name: 'Getting Started',
+        name: "Getting Started",
         children: [
             {
-                name: 'Introduction',
-                href: '/docs',
+                name: "Introduction",
+                href: "/docs",
             },
             {
-                name: 'Installation',
-                href: '/docs/installation',
+                name: "Installation",
+                href: "/docs/installation",
             },
         ],
     },
     {
-        name: 'Core Components',
+        name: "Core Components",
         children: [
             {
-                name: 'Accordion',
-                href: '/docs/accordion',
+                name: "Accordion",
+                href: "",
             },
             {
-                name: 'Animated Background',
-                href: '/docs/animated-background',
+                name: "Button",
+                href: "",
             },
             {
-                name: 'Animated Group',
-                href: '/docs/animated-group',
+                name: "Card",
+                href: "",
             },
             {
-                name: 'Border Trail',
-                href: '/docs/border-trail',
+                name: "Carousel",
+                href: "",
             },
             {
-                name: 'Carousel',
-                href: '/docs/carousel',
+                name: "Cursor",
+                href: "",
             },
             {
-                name: 'Cursor',
-                href: '/docs/cursor',
+                name: "Dialog",
+                href: "",
             },
             {
-                name: 'Dialog',
-                href: '/docs/dialog',
+                name: "Popover",
+                href: "",
             },
             {
-                name: 'Disclosure',
-                href: '/docs/disclosure',
+                name: "tables",
+                href: "",
             },
             {
-                name: 'In View',
-                href: '/docs/in-view',
+                name: "Transition Panel",
+                href: "",
             },
             {
-                name: 'Infinite Slider',
-                href: '/docs/infinite-slider',
+                name: "Toast",
+                href: "",
             },
             {
-                name: 'Transition Panel',
-                href: '/docs/transition-panel',
+                name: "Tooltip",
+                href: "",
+            },
+            {
+                name: "Sonner",
+                href: "",
+            },
+            {
+                name: "Skeleton",
+                href: "",
+            },
+            {
+                name: "Scroll Area",
+                href: "",
+            },
+            {
+                name: "Sheet",
+                href: "",
+            },
+            {
+                name: "Pagination",
+                href: "",
             },
         ],
     },
     {
-        name: 'Text Effects',
+        name: "Text Effects",
         children: [
             {
-                name: 'Text Effect',
-                href: '/docs/text-effect',
+                name: "Text Effect",
+                href: "/docs/text-effect",
                 isUpdated: true,
             },
             {
-                name: 'Text Loop',
-                href: '/docs/text-loop',
+                name: "Text Loop",
+                href: "/docs/text-loop",
                 isUpdated: true,
             },
             {
-                name: 'Text Morph',
-                href: '/docs/text-morph',
+                name: "Text Morph",
+                href: "/docs/text-morph",
                 isUpdated: true,
             },
             {
-                name: 'Text Roll',
-                href: '/docs/text-roll',
+                name: "Text Roll",
+                href: "/docs/text-roll",
                 isNew: true,
             },
             {
-                name: 'Text Scramble',
-                href: '/docs/text-scramble',
+                name: "Text Scramble",
+                href: "/docs/text-scramble",
             },
             {
-                name: 'Text Shimmer',
-                href: '/docs/text-shimmer',
+                name: "Text Shimmer",
+                href: "/docs/text-shimmer",
             },
             {
-                name: 'Text Shimmer Wave',
-                href: '/docs/text-shimmer-wave',
+                name: "Text Shimmer Wave",
+                href: "/docs/text-shimmer-wave",
             },
         ],
     },
     {
-        name: 'Number Effects',
+        name: "Number Effects",
         children: [
             {
-                name: 'Animated Number',
-                href: '/docs/animated-number',
+                name: "Animated Number",
+                href: "/docs/animated-number",
             },
             {
-                name: 'Sliding Number',
-                href: '/docs/sliding-number',
+                name: "Sliding Number",
+                href: "/docs/sliding-number",
                 isNew: true,
             },
         ],
     },
     {
-        name: 'Interactive Elements',
+        name: "Interactive Elements",
         children: [
             {
-                name: 'Dock',
-                href: '/docs/dock',
+                name: "Dock",
+                href: "/docs/dock",
             },
             {
-                name: 'Glow Effect',
-                href: '/docs/glow-effect',
+                name: "Glow Effect",
+                href: "/docs/glow-effect",
                 isNew: true,
             },
             {
-                name: 'Image Comparison',
-                href: '/docs/image-comparison',
+                name: "Image Comparison",
+                href: "/docs/image-comparison",
             },
             {
-                name: 'Scroll Progress',
-                href: '/docs/scroll-progress',
+                name: "Scroll Progress",
+                href: "/docs/scroll-progress",
             },
             {
-                name: 'Spotlight',
-                href: '/docs/spotlight',
+                name: "Spotlight",
+                href: "/docs/spotlight",
             },
             {
-                name: 'Spinning Text',
-                href: '/docs/spinning-text',
+                name: "Spinning Text",
+                href: "/docs/spinning-text",
             },
             {
-                name: 'Tilt',
-                href: '/docs/tilt',
+                name: "Tilt",
+                href: "/docs/tilt",
             },
         ],
     },
     {
-        name: 'Toolbars',
+        name: "Toolbars",
         children: [
             {
-                name: 'Toolbar Dynamic',
-                href: '/docs/toolbar-dynamic',
+                name: "Toolbar Dynamic",
+                href: "/docs/toolbar-dynamic",
             },
             {
-                name: 'Toolbar Expandable',
-                href: '/docs/toolbar-expandable',
+                name: "Toolbar Expandable",
+                href: "/docs/toolbar-expandable",
             },
         ],
     },
     {
-        name: 'Advanced Effects',
+        name: "Advanced Effects",
         children: [
             {
-                name: 'Magnetic',
-                href: '/docs/magnetic',
+                name: "Magnetic",
+                href: "/docs/magnetic",
             },
             {
-                name: 'Morphing Dialog',
-                href: '/docs/morphing-dialog',
+                name: "Morphing Dialog",
+                href: "/docs/morphing-dialog",
             },
             {
-                name: 'Morphing Popover',
-                href: '/docs/morphing-popover',
+                name: "Morphing Popover",
+                href: "/docs/morphing-popover",
                 isNew: true,
             },
             {
-                name: 'Progressive Blur',
-                href: '/docs/progressive-blur',
+                name: "Progressive Blur",
+                href: "/docs/progressive-blur",
                 isNew: true,
             },
         ],
     },
+];
+
+type ComponentItem = {
+    name: string;
+    href: string;
+    isNew?: boolean;
+    isUpdated?: boolean;
+};
+
+type ComponentGroup = {
+    name: string;
+    children: ComponentItem[];
+};
+
+export const components: ComponentGroup[] = [
+    {
+        name: "Getting Started",
+        children: [
+            {
+                name: "Introduction",
+                href: "/docs",
+            },
+            {
+                name: "Installation",
+                href: "/docs/installation",
+            },
+        ],
+    },
+    {
+        name: "Buttons",
+        children: [
+            {
+                name: "Button",
+                href: "",
+            },
+            {
+                name: "File Trigger",
+                href: "",
+            },
+            {
+                name: "Toggle",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Controls",
+        children: [
+            {
+                name: "Command Menu",
+                href: "",
+            },
+            {
+                name: "Context Menu",
+                href: "",
+            },
+            {
+                name: "Slider",
+                href: "",
+            },
+            {
+                name: "Switch",
+                href: "",
+            },
+            {
+                name: "Toolbar",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Date and Time",
+        children: [
+            {
+                name: "Calendar",
+                href: "",
+            },
+            {
+                name: "Range Calendar",
+                href: "",
+            },
+            {
+                name: "Time Field",
+                href: "",
+            },
+            {
+                name: "Date Field",
+                href: "",
+            },
+            {
+                name: "Date Picker",
+                href: "",
+            },
+            {
+                name: "Date Range Picker",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Drag and drop",
+        children: [
+            {
+                name: "Drop Zone",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Forms",
+        children: [
+            {
+                name: "Checkbox",
+                href: "",
+            },
+            {
+                name: "Checkbox Group",
+                href: "",
+            },
+            {
+                name: "Field",
+                href: "",
+            },
+            {
+                name: "Input OTP",
+                href: "",
+            },
+            {
+                name: "Radio Group",
+                href: "",
+            },
+            {
+                name: "Search Field",
+                href: "",
+            },
+            {
+                name: "Tag Field",
+                href: "",
+            },
+            {
+                name: "Text Field",
+                href: "",
+            },
+            {
+                name: "Textarea",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Layouts",
+        children: [
+            {
+                name: "Container",
+                href: "",
+            },
+            {
+                name: "Navbar",
+                href: "",
+            },
+            {
+                name: "Sidebar",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Media",
+        children: [
+            {
+                name: "Avatar",
+                href: "",
+            },
+            {
+                name: "Carousel",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Navigation",
+        children: [
+            {
+                name: "Breadcrumb",
+                href: "",
+            },
+            {
+                name: "Disclosure | Collapsible",
+                href: "",
+            },
+            {
+                name: "Disclosure group | Accordion",
+                href: "",
+            },
+            {
+                name: "Pagination",
+                href: "",
+            },
+            {
+                name: "Tabs",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Overlays",
+        children: [
+            {
+                name: "Dialog",
+                href: "",
+            },
+            {
+                name: "Drawer",
+                href: "",
+            },
+            {
+                name: "Modal",
+                href: "",
+            },
+            {
+                name: "Popover",
+                href: "",
+            },
+            {
+                name: "Sheet",
+                href: "",
+            },
+            {
+                name: "Tooltip",
+                href: "",
+            },
+        ],
+    },
+    {
+        name: "Pickers",
+        children: [
+            {
+                name: "Combobox",
+                href: "",
+            },
+            {
+                name: "Multi select",
+                href: "",
+            },
+            {
+                name: "Select",
+                href: "",
+            },
+        ],
+    },
+
 ];

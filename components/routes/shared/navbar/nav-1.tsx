@@ -100,7 +100,7 @@ const Nav1 = () => {
         //         </div>
         //     </div>
         // </div>
-        <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b border-dashed backdrop-blur dark:border-neutral-800">
+        <header className="sticky top-0 z-50 w-full border-b border-dashed bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-neutral-800">
             <div className="container-wrapper">
                 <div className="container flex h-14 items-center px-4">
                     <div className="mr-4 hidden md:flex">
@@ -126,52 +126,51 @@ const Nav1 = () => {
                                 />
                             )}
 
-                            
                             <span className="hidden font-bold lg:inline-block">
                                 cnippet/ui
                             </span>
                         </a>
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/docs/installation"
-                            >
-                                Docs
-                            </a>
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/docs/components"
+                            <Link
+                                href="/components/accordion"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
                                 Components
-                            </a>
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/blocks"
+                            </Link>
+                            <Link
+                                href="/motion/accordion"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
-                                Blocks
-                            </a>
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/charts"
+                                Motion
+                            </Link>
+                            <Link
+                                href="#"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
                                 Charts
-                            </a>
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/themes"
+                            </Link>
+                            <Link
+                                href="#"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
-                                Themes
-                            </a>
-                            <a
-                                className="hover:text-foreground/80 text-foreground/80 transition-colors"
-                                href="/colors"
+                                Sections
+                            </Link>
+                            <Link
+                                href="#"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                            >
+                                Templates
+                            </Link>
+                            <Link
+                                href="#"
+                                className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
                                 Colors
-                            </a>
+                            </Link>
                         </nav>
                     </div>
                     <button
-                        className="focus-visible:ring-ring [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground -ml-2 mr-2 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-base font-medium transition-colors hover:bg-transparent focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50 md:hidden"
+                        className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 -ml-2 mr-2 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-base font-medium transition-colors hover:bg-transparent hover:text-accent-foreground focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50 md:hidden"
                         type="button"
                         aria-haspopup="dialog"
                         aria-expanded="false"
@@ -182,13 +181,13 @@ const Nav1 = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
                             className="!size-6"
                         >
                             <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 d="M3.75 9h16.5m-16.5 6.75h16.5"
                             ></path>
                         </svg>
@@ -196,14 +195,14 @@ const Nav1 = () => {
                     </button>
                     <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
                         <div className="w-full flex-1 md:w-auto md:flex-none">
-                            <button className="focus-visible:ring-ring [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input hover:bg-accent hover:text-accent-foreground bg-muted/50 text-muted-foreground relative inline-flex h-8 w-full items-center justify-start gap-2 whitespace-nowrap rounded-[0.5rem] border px-4 py-2 text-sm font-normal shadow-none transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 sm:pr-12 md:w-40 lg:w-56 xl:w-64">
+                            <button className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 relative inline-flex h-8 w-full items-center justify-start gap-2 whitespace-nowrap rounded-[0.5rem] border border-input bg-muted/50 px-4 py-2 text-sm font-normal text-muted-foreground shadow-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 sm:pr-12 md:w-40 lg:w-56 xl:w-64">
                                 <span className="hidden lg:inline-flex">
                                     Search documentation...
                                 </span>
                                 <span className="inline-flex lg:hidden">
                                     Search...
                                 </span>
-                                <kbd className="bg-muted font-mono pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border px-1.5 text-[10px] font-medium opacity-100 sm:flex">
+                                <kbd className="font-mono pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 text-[10px] font-medium opacity-100 sm:flex">
                                     <span className="text-xs">⌘</span>K
                                 </kbd>
                             </button>
@@ -212,7 +211,7 @@ const Nav1 = () => {
                             <a
                                 target="_blank"
                                 rel="noreferrer"
-                                className="focus-visible:ring-ring [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
+                                className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                                 href="https://github.com/cnippet-site/ui-cnippet"
                             >
                                 <svg
@@ -226,7 +225,7 @@ const Nav1 = () => {
                                 </svg>
                                 <span className="sr-only">GitHub</span>
                             </a>
-                            <button className="focus-visible:ring-ring [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground group/toggle inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+                            <div className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 group/toggle inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                                 {/* <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -234,9 +233,9 @@ const Nav1 = () => {
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     className="lucide lucide-sun [html.dark_&amp;]:block hidden"
                                 >
                                     <circle cx="12" cy="12" r="4"></circle>
@@ -256,9 +255,9 @@ const Nav1 = () => {
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     className="lucide lucide-moon [html.light_&amp;]:block hidden"
                                 >
                                     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
@@ -266,7 +265,7 @@ const Nav1 = () => {
                                 <Button
                                     variant="ghost"
                                     onClick={() => toggleTheme()}
-                                    className="hover:bg-dusk-500 hover:dark:bg-dawn-700 flex items-center justify-center gap-2 rounded-lg p-2 text-black dark:text-white"
+                                    className="flex items-center justify-center gap-2 rounded-lg p-2 text-black hover:bg-dusk-500 dark:text-white hover:dark:bg-dawn-700"
                                 >
                                     {theme === "dark" ? (
                                         <RiSunLine className="size-5" />
@@ -276,7 +275,7 @@ const Nav1 = () => {
                                     {/* <span>Toogle theme</span> */}
                                 </Button>
                                 <span className="sr-only">Toggle theme</span>
-                            </button>
+                            </div>
                         </nav>
                     </div>
                 </div>

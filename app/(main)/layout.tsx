@@ -5,10 +5,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { NAVIGATION } from "@/config/docs";
+import { components, motions } from "@/config/docs";
 import Nav1 from "@/components/routes/shared/navbar/nav-1";
 
-function NavigationDesktop() {
+function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();
     const activeRef = useRef<HTMLLIElement | null>(null);
 
@@ -22,14 +22,14 @@ function NavigationDesktop() {
     }, [pathname]);
 
     return (
-        <aside className="border-dashed dark:border-neutral-800 pl-5 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r md:sticky md:block">
+        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed pl-5 dark:border-neutral-800 md:sticky md:block">
             <ScrollArea className="h-full w-full">
                 <nav className="pt-8">
                     <ul
                         role="list"
                         className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6"
                     >
-                        {NAVIGATION.map((item, index) => {
+                        {navigation.map((item, index) => {
                             return (
                                 <li key={`${item.name}-${index}`}>
                                     <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-[450] text-zinc-950 dark:bg-zinc-950 dark:text-white">
@@ -39,13 +39,13 @@ function NavigationDesktop() {
                                         role="list"
                                         className="space-y-3.5 border-zinc-200 dark:border-zinc-800"
                                     >
-                                        {item.children.map((child) => {
+                                        {item.children.map((child, j) => {
                                             const isActive =
                                                 pathname === child.href;
 
                                             return (
                                                 <li
-                                                    key={child.href}
+                                                    key={`${child.name}-${j}`}
                                                     ref={
                                                         isActive
                                                             ? activeRef
@@ -101,7 +101,7 @@ function NavigationDesktop() {
     );
 }
 
-function NavigationMobile() {
+function NavigationMobile({ navigation }: { navigation: typeof components }) {
     const router = useRouter();
     const pathname = usePathname();
     const [selectedHref, setSelectedHref] = React.useState(pathname);
@@ -119,7 +119,7 @@ function NavigationMobile() {
                 value={selectedHref}
                 onChange={handleChange}
             >
-                {NAVIGATION.map((item) => {
+                {navigation.map((item) => {
                     return (
                         <optgroup label={item.name} key={item.name}>
                             {item.children.map((child) => (
@@ -140,17 +140,31 @@ export default function ComponentLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const pathname = usePathname();
+
+    const getNavigation = () => {
+        if (pathname?.startsWith("/components")) {
+            return components;
+        }
+        if (pathname?.startsWith("/motion")) {
+            return motions;
+        }
+        return [];
+    };
+
+    const currentNavigation = getNavigation();
+
     return (
         <>
-            <div className="bg-background relative flex min-h-svh flex-col">
+            <div className="relative flex min-h-svh flex-col bg-background">
                 <div className="border-grid flex flex-1 flex-col">
                     <Nav1 />
                     <main className="flex flex-1 flex-col">
                         <div className="container-wrapper">
-                            <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-10 ">
-                                <NavigationDesktop />
-                                <NavigationMobile />
-                                <main className="w-full pl-10 pt-8">{children}</main>
+                            <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-10">
+                            <NavigationDesktop navigation={currentNavigation} />
+                            <NavigationMobile navigation={currentNavigation} />
+                                <div className="w-full pt-8">{children}</div>
                             </div>
                         </div>
                     </main>

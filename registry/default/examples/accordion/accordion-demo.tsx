@@ -1,50 +1,89 @@
 import {
     Accordion,
-    AccordionContent,
     AccordionItem,
     AccordionTrigger,
+    AccordionContent,
 } from "@/components/ui/accordion";
+import { ChevronUp } from "lucide-react";
 
-const items = [
-    {
-        id: "1",
-        title: "Is cnippet/ui accessible?",
-        content:
-            "Yes. It adheres to the WAI-ARIA design pattern, making it accessible for users with disabilities. It also supports screen readers and other assistive technologies.",
-    },
-    {
-        id: "2",
-        title: "Does cnippet/ui have a dark mode?",
-        content:
-            "Yes. It has a dark mode that can be toggled in the settings. Dark mode is designed to reduce eye strain, especially in low-light environments.",
-    },
-    {
-        id: "3",
-        title: "Is cnippet/ui responsive?",
-        content:
-            "Yes. It's fully responsive and works seamlessly across devices with different screen sizes, from mobile phones to large desktop monitors.",
-    },
-];
-
-export default function AccordionDemo() {
+export default function AccordionIcons() {
     return (
-        <div className="max-w-lg space-y-4">
-            <Accordion className="w-full">
-                {items.map((item) => (
-                    <AccordionItem
-                        value={item.id}
-                        key={item.id}
-                        className="py-2"
-                    >
-                        <AccordionTrigger className="py-2 text-sm leading-6 hover:no-underline">
-                            {item.title}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground pb-2">
-                            {item.content}
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
-        </div>
+        <Accordion
+            className="flex w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700"
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+            <AccordionItem value="getting-started" className="py-2">
+                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                    <div className="flex items-center justify-between">
+                        <div>Getting Started</div>
+                        <ChevronUp className="group-data-expanded:-rotate-180 h-4 w-4 text-zinc-950 transition-transform duration-200 dark:text-zinc-50" />
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                        Discover the fundamental concepts of Motion-Primitives.
+                        This section guides you through the installation process
+                        and provides an overview of how to integrate these
+                        components into your projects. Learn about the core
+                        functionalities and how to set up your first animation
+                        effectively.
+                    </p>
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="animation-properties" className="py-2">
+                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                    <div className="flex items-center justify-between">
+                        <div>Animation Properties</div>
+                        <ChevronUp className="group-data-expanded:-rotate-180 h-4 w-4 text-zinc-950 transition-transform duration-200 dark:text-zinc-50" />
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                        Explore the comprehensive range of animation properties
+                        available in Motion-Primitives. Understand how to
+                        manipulate timing, easing, and delays to create smooth,
+                        dynamic animations. This segment also covers the
+                        customization of animations to fit the flow and style of
+                        your web applications.
+                    </p>
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="advanced-usage" className="py-2">
+                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                    <div className="flex items-center justify-between">
+                        <div>Advanced Usage</div>
+                        <ChevronUp className="group-data-expanded:-rotate-180 h-4 w-4 text-zinc-950 transition-transform duration-200 dark:text-zinc-50" />
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                        Dive deeper into advanced techniques and features of
+                        Motion-Primitives. Learn about chaining animations,
+                        creating complex sequences, and utilizing motion sensors
+                        for interactive animations. Gain insights on how to
+                        leverage these advanced features to enhance user
+                        experience and engagement.
+                    </p>
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="community-and-support" className="py-2">
+                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                    <div className="flex items-center justify-between">
+                        <div>Community and Support</div>
+                        <ChevronUp className="group-data-expanded:-rotate-180 h-4 w-4 text-zinc-950 transition-transform duration-200 dark:text-zinc-50" />
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                        Engage with the Motion-Primitives community to gain
+                        additional support and insight. Find out how to
+                        participate in discussions, contribute to the project,
+                        and access a wealth of shared knowledge and resources.
+                        Learn about upcoming features, best practices, and how
+                        to get help with your specific use cases.
+                    </p>
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
     );
 }
