@@ -26,9 +26,9 @@ export default function Faq() {
     ];
 
     return (
-        <section className="py-16 md:py-24 lg:py-28">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row gap-5">
+        <section className="">
+            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 py-16 sm:px-6 md:py-24 lg:px-8 lg:py-40">
+                <div className="flex flex-col gap-5 md:flex-row">
                     <div className="mx-auto flex w-full max-w-sm flex-col">
                         <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
                             Frequently Asked Question
@@ -48,7 +48,7 @@ export default function Faq() {
                                 </Link>
                             </p>
                         </div>
-                    </div>  
+                    </div>
 
                     <div className="flex w-full flex-col gap-5">
                         {faq.slice(0, 3).map((item, index) => (

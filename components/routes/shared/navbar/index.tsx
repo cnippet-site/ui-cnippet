@@ -7,9 +7,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Banner = () => (
-    <div className="text-center text-sm text-black">
-        <div className="mx-auto max-w-6xl rounded-t-2xl bg-[#a7ded0] py-2">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="border-t border-dashed text-center text-sm text-black">
+        <div className="relative mx-auto max-w-7xl bg-[#a7ded0]">
+            <div className="absolute left-0 z-50 h-full w-20 bg-gradient-to-r from-[#a7ded0]" />
+            <div className="absolute right-0 z-50 h-full w-20 bg-gradient-to-l from-[#a7ded0]" />
+
+            <div className="mx-auto max-w-7xl px-4 py-2 sm:px-5 lg:px-0">
                 <InfiniteSlider gap={20}>
                     <p className="mt-1">
                         We are doing massive update for Kloomix, so enjoy
@@ -21,7 +24,7 @@ const Banner = () => (
                         We are doing massive update for Kloomix, so enjoy
                     </p>
                 </InfiniteSlider>
-                </div>
+            </div>
         </div>
     </div>
 );
@@ -33,21 +36,20 @@ export default function Navbar() {
         <>
             <header className="absolute top-5 z-50 w-full">
                 <Banner />
-                <nav className="w-full font-sans">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="rounded-2xl bg-white px-6 py-5 shadow-lg">
-                            <div className="md:flex hidden items-center justify-between">
+                <nav className="w-full border-b border-t border-dashed font-sans">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
+                        <div className="py-3">
+                            <div className="hidden items-center justify-between md:flex">
                                 <Link
                                     href="/"
-                                    className="text-2xl font-bold text-[#2F2B6B]"
+                                    className="text-2xl font-medium text-black"
                                 >
-                                    Kloomix
+                                    Cnippet
                                 </Link>
 
                                 <div className="flex items-center gap-8">
-                                    
-
-                                    <div
+                                    {/* changes pending */}
+                                    {/* <div
                                         className="relative"
                                         onMouseEnter={() =>
                                             setIsPagesOpen(true)
@@ -65,7 +67,7 @@ export default function Navbar() {
                                             <motion.div
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
-                                                className="absolute left-0 top-full mt-5 w-48 rounded-xl border bg-white py-2 shadow-xl"
+                                                className="absolute left-0 top-full w-48 rounded-xl border bg-white py-2 shadow-xl"
                                             >
                                                 <Link
                                                     href="#"
@@ -87,8 +89,14 @@ export default function Navbar() {
                                                 </Link>
                                             </motion.div>
                                         )}
-                                    </div>
+                                    </div> */}
 
+                                    <Link
+                                        href="#"
+                                        className="text-gray-700 transition hover:text-gray-900"
+                                    >
+                                        Components
+                                    </Link>
                                     <Link
                                         href="#"
                                         className="text-gray-700 transition hover:text-gray-900"
@@ -111,7 +119,7 @@ export default function Navbar() {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="rounded-full bg-[#2F2B6B] px-6 py-2 text-white"
+                                        className="rounded-lg bg-[#2F2B6B] px-3 py-2 text-white"
                                     >
                                         Remix Template
                                     </motion.button>

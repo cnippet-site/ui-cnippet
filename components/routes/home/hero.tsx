@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 export default function Hero() {
     return (
         <>
-            <section className="relative h-screen">
+            <section className="relative h-screen border-b border-dashed">
                 <div className="z-0 h-full flex-auto items-center justify-center">
-                    <div className="mx-auto flex flex-col md:flex-row h-full max-w-[80%] gap-12 px-6 py-20 pt-40 text-white">
+                    <div className="mx-auto flex flex-col md:flex-row h-full max-w-7xl gap-12 px-6 py-20 pt-40 text-black border-l border-dashed border-r">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export default function Hero() {
                             <h1 className="mb-8 text-4xl sm:text-5xl md:text-7xl font-medium tracking-wide">
                                 Start your Framer project with Kloomix template
                             </h1>
-                            <p className="mb-12 max-w-xl md:text-lg">
+                            <p className="mb-6 max-w-xl md:text-lg">
                                 Kloomix is a Framer template that includes the
                                 various website components needed to create a
                                 landing page. The idea is for you to be able to
@@ -28,7 +28,7 @@ export default function Hero() {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-fit rounded-full bg-[#ffde73] px-8 py-3 font-medium text-black"
+                                className="w-fit rounded-lg bg-[#ffde73] px-6 py-2 font-medium text-black"
                             >
                                 Explore the Features
                             </motion.button>
@@ -79,7 +79,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="absolute top-0 -z-10 h-[calc(100vh)] w-full flex-auto overflow-hidden rounded-b-2xl bg-[#10101080]"></div>
+                {/* <div className="absolute top-0 -z-10 h-[calc(100vh)] w-full flex-auto overflow-hidden rounded-b-2xl bg-[#10101080]"></div>
                 <div className="absolute top-0 -z-20 h-[calc(100vh)] w-full flex-auto overflow-hidden rounded-b-2xl">
                     <video
                         src="https://res.cloudinary.com/dphulm0s9/video/upload/v1740294178/TrWocMCSsxh60zz32yvbu6yYdGs.mp4"
@@ -88,7 +88,7 @@ export default function Hero() {
                         loop
                         className="block h-full w-full cursor-auto object-cover"
                     />
-                </div>
+                </div> */}
             </section>
         </>
     );

@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import { components, motions } from "@/config/docs";
 import Nav1 from "@/components/routes/shared/navbar/nav-1";
 
@@ -54,18 +53,22 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                 >
                                                     <Link
                                                         className={cn(
-                                                            "relative inline-flex items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
+                                                            "relative inline-flex w-full items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
                                                             isActive &&
-                                                                "text-zinc-950 bg-gray-100 w-full py-1.5 rounded-l-lg pl-3 dark:bg-neutral-900 dark:text-neutral-200",
+                                                                "w-full rounded-l-lg bg-gray-100 py-1.5 pl-3 text-zinc-950 dark:bg-neutral-900 dark:text-neutral-200",
+                                                            item.href === "#" &&
+                                                                "cursor-default text-gray-400 hover:text-gray-400",
                                                         )}
                                                         href={item.href}
                                                     >
-                                                        
-                                                        <span>
-                                                            {item.name}
-                                                        </span>
+                                                        <span>{item.name}</span>
+                                                        {item.href === "#" && (
+                                                            <span className="mr-4 ml-auto whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                                Coming soon
+                                                            </span>
+                                                        )}
                                                         {item?.isNew && (
-                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-blue-100 px-2 text-[10px] font-semibold text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
                                                                 New
                                                             </span>
                                                         )}
@@ -111,7 +114,10 @@ function NavigationMobile({ navigation }: { navigation: typeof components }) {
                     return (
                         <optgroup label={nav.name} key={nav.name}>
                             {nav.items.map((item) => (
-                                <option key={`${item.href}-${item.name}`} value={item.href}>
+                                <option
+                                    key={`${item.href}-${item.name}`}
+                                    value={item.href}
+                                >
                                     {item.name}
                                 </option>
                             ))}
@@ -150,8 +156,12 @@ export default function ComponentLayout({
                     <main className="flex flex-1 flex-col">
                         <div className="container-wrapper">
                             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-10">
-                            <NavigationDesktop navigation={currentNavigation} />
-                            <NavigationMobile navigation={currentNavigation} />
+                                <NavigationDesktop
+                                    navigation={currentNavigation}
+                                />
+                                <NavigationMobile
+                                    navigation={currentNavigation}
+                                />
                                 <div className="w-full pt-8">{children}</div>
                             </div>
                         </div>

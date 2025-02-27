@@ -6,12 +6,15 @@ const generateComponents = (componentsConfig: { name: string }[]): Registry => {
     return componentsConfig.map((component) => ({
         name: component.name,
         slug: `/components/${component.name}`,
-        type: "registry:component",
+        type: "registry:motion",
         files: [`${BASE_PATH}${component.name}.tsx`],
     }));
 };
 
 export const motions: Registry = generateComponents([
+    {
+        name: "accordion",
+    },
     {
         name: "animated-group",
     },
@@ -79,6 +82,6 @@ export const motions: Registry = generateComponents([
         name: "text-shimmer",
     },
     {
-        name: "trasition-panel",
+        name: "transition-panel",
     },
 ]);

@@ -21,7 +21,7 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Accordion",
-                href: "#",
+                href: "/motion/accordion",
             },
             {
                 name: "Animated Background",
@@ -37,19 +37,21 @@ export const motions: ComponentGroup[] = [
             },
             {
                 name: "Carousel",
-                href: "#",
+                href: "/motion/carousel",
+                isUpdated: true,
             },
             {
                 name: "Cursor",
-                href: "#",
+                href: "/motion/cursor",
             },
             {
                 name: "Dialog",
-                href: "#",
+                href: "/motion/dialog",
             },
             {
-                name: "Disclosure",
-                href: "#",
+                name: "Collapsible",
+                href: "/motion/collapsible",
+                isNew: true,
             },
             {
                 name: "In View",
@@ -70,35 +72,31 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Text Effect",
-                href: "#",
-                isUpdated: true,
+                href: "/motion/text-effect",
             },
             {
                 name: "Text Loop",
-                href: "#",
-                isUpdated: true,
+                href: "/motion/text-loop",
             },
             {
                 name: "Text Morph",
-                href: "#",
-                isUpdated: true,
+                href: "/motion/text-morph",
             },
             {
                 name: "Text Roll",
-                href: "#",
-                isNew: true,
+                href: "/motion/text-roll",
             },
             {
                 name: "Text Scramble",
-                href: "#",
+                href: "/motion/text-scramble",
             },
             {
                 name: "Text Shimmer",
-                href: "#",
+                href: "/motion/text-shimmer",
             },
             {
-                name: "Text Shimmer Wave",
-                href: "#",
+                name: "Text Wave",
+                href: "/motion/text-wave",
             },
         ],
     },
@@ -112,7 +110,6 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Sliding Number",
                 href: "#",
-                isNew: true,
             },
         ],
     },
@@ -126,7 +123,6 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Glow Effect",
                 href: "#",
-                isNew: true,
             },
             {
                 name: "Image Comparison",
@@ -177,14 +173,10 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Morphing Popover",
                 href: "#",
-
-                isNew: true,
             },
             {
                 name: "Progressive Blur",
                 href: "#",
-
-                isNew: true,
             },
         ],
     },
