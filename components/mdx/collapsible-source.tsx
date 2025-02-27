@@ -28,7 +28,7 @@ export function CollapsibleSource({
     const index = styles.findIndex((style) => style.name === config.style);
 
     console.log(name);
-    
+
     const [isOpened, setIsOpened] = React.useState(false);
 
     const Codes = React.Children.toArray(children) as React.ReactElement[];

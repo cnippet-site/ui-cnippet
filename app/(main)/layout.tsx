@@ -111,7 +111,7 @@ function NavigationMobile({ navigation }: { navigation: typeof components }) {
                     return (
                         <optgroup label={nav.name} key={nav.name}>
                             {nav.items.map((item) => (
-                                <option key={item.href} value={item.href}>
+                                <option key={`${item.href}-${item.name}`} value={item.href}>
                                     {item.name}
                                 </option>
                             ))}

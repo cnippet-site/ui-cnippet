@@ -1,5 +1,5 @@
 import { Registry } from "./schema";
 import { components } from "./registry-component";
-import { examples } from "./registry-example";
+import { motions } from "./registry-motion";
 
-export const registry = [...components, ...examples];
+export const registry = [...components, ...motions];

@@ -48,7 +48,7 @@ export default function Faq() {
                                 </Link>
                             </p>
                         </div>
-                    </div>
+                    </div>  
 
                     <div className="flex w-full flex-col gap-5">
                         {faq.slice(0, 3).map((item, index) => (
