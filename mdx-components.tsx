@@ -52,7 +52,7 @@ const components = {
     }: React.HTMLAttributes<HTMLParagraphElement>) => (
         <p
             className={cn(
-                "font-normal leading-7 [&:not(:first-child)]:mt-6",
+                "font-normal leading-7 mt-3",
                 className,
             )}
             {...props}
@@ -165,7 +165,7 @@ const components = {
                     className={`overflow-x-auto rounded-lg border !bg-neutral-950 dark:!bg-zinc-900 dark:border-neutral-800 text-wrap ${className}`}
                     {...props}
                 />
-                {__rawString__ && __src__ && (
+                {__rawString__ && (
                     <CopyButton value={__rawString__} />
                 )}
             </>
@@ -175,7 +175,7 @@ const components = {
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
             className={cn(
-                "font-mono px-4 py-5 text-sm",
+                "font-mono font-normal px-4 py-5 text-sm",
                 className,
             )}
             {...props}
@@ -185,7 +185,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "font-ins font-semibold text-black dark:text-white",
+                "font-ins font-semibold text-lg text-black dark:text-white",
                 className,
             )}
             {...props}

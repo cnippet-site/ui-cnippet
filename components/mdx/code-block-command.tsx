@@ -6,6 +6,10 @@ import { NpmCommands } from "@/types/unist";
 import { useConfig } from "@/lib/use-config";
 import { Tabs } from "@/components/ui/tabs";
 import { TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
+import { copyToClipboardWithMeta } from "./copy-button";
+import { Button } from "../ui/button";
+import { CheckIcon, ClipboardIcon } from "lucide-react";
 
 export function CodeBlockCommand({
     __npmCommand__,
@@ -14,7 +18,7 @@ export function CodeBlockCommand({
     __bunCommand__,
 }: React.ComponentProps<"pre"> & NpmCommands) {
     const [config, setConfig] = useConfig();
-
+    const [hasCopied, setHasCopied] = useState(false);
     const packageManager = config.packageManager || "pnpm";
     const tabs = React.useMemo(() => {
         return {
@@ -24,6 +28,17 @@ export function CodeBlockCommand({
             bun: __bunCommand__,
         };
     }, [__npmCommand__, __pnpmCommand__, __yarnCommand__, __bunCommand__]);
+
+    const copyCommand = React.useCallback(() => {
+        const command = tabs[packageManager];
+
+        if (!command) {
+            return;
+        }
+
+        copyToClipboardWithMeta(command);
+        setHasCopied(true);
+    }, [packageManager, tabs]);
 
     return (
         <div className="relative mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900">
@@ -70,6 +85,15 @@ export function CodeBlockCommand({
                     );
                 })}
             </Tabs>
+            <Button
+                size="icon"
+                variant="ghost"
+                className="absolute right-2.5 top-2 z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 [&_svg]:h-3 [&_svg]:w-3"
+                onClick={copyCommand}
+            >
+                <span className="sr-only">Copy</span>
+                {hasCopied ? <CheckIcon /> : <ClipboardIcon />}
+            </Button>
         </div>
     );
 }

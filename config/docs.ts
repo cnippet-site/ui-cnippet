@@ -12,7 +12,7 @@ export const motions: ComponentGroup[] = [
             },
             {
                 name: "Installation",
-                href: "#",
+                href: "/motion/installation",
             },
         ],
     },

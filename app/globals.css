@@ -87,11 +87,14 @@
     .steps > h3 {
         @apply mb-4 mt-6;
     }
-    .step code {
+    .steps > p {
+        @apply text-base text-neutral-600
+    }
+    .step > p > code {
         @apply rounded-xl bg-gray-200 px-2 py-0.5 text-black dark:bg-neutral-800 dark:text-white;
     }
     .steps > p > a {
-        @apply dark:bg-dawn-700 rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:text-white;
+        @apply rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:bg-dawn-700 dark:text-white;
     }
     .container-wrapper {
         margin-left: auto;
@@ -126,7 +129,7 @@
     }
 
     .step::before {
-        @apply bg-dusk-400 dark:border-background dark:bg-dawn-700 absolute -mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-white text-center -indent-px text-sm text-black dark:text-white;
+        @apply absolute -mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-white bg-dusk-400 text-center -indent-px text-sm text-black dark:border-background dark:bg-dawn-700 dark:text-white;
         @apply ml-[-50px];
         content: counter(step);
     }

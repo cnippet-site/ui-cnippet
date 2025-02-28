@@ -27,3 +27,7 @@ export function CopyButton({ value }: { value: string }) {
         </Button>
     );
 }
+
+export async function copyToClipboardWithMeta(value: string, event?: Event) {
+    navigator.clipboard.writeText(value);
+}
