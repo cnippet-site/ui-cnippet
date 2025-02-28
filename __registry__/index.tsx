@@ -551,6 +551,34 @@
         subcategory: "undefined",
         chunks: []
       },
+      "animated-group-demo": {
+        name: "animated-group-demo",
+        type: "registry:motions",
+        slug: "/motion/animated,group",
+        thumbnail: "undefined",
+        number: "4",
+        registryDependencies: undefined,
+        files: ["registry/default/motion/animated-group/animated-group-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/motion/animated-group/animated-group-demo.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
+      "animated-number-demo": {
+        name: "animated-number-demo",
+        type: "registry:motions",
+        slug: "/motion/animated,number",
+        thumbnail: "undefined",
+        number: "4",
+        registryDependencies: undefined,
+        files: ["registry/default/motion/animated-number/animated-number-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/motion/animated-number/animated-number-demo.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
     },
   }
   

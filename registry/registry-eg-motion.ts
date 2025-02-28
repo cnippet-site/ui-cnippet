@@ -76,4 +76,7 @@ export const motionExamples: Registry = generateExamples([
     },
 
     { name: "transition-panel-demo", number: "4" },
+
+    { name: "animated-group-demo", number: "4" },
+    { name: "animated-number-demo", number: "4" },
 ]);

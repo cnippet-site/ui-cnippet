@@ -24,12 +24,8 @@ export const motions: ComponentGroup[] = [
                 href: "/motion/accordion",
             },
             {
-                name: "Animated Background",
-                href: "#",
-            },
-            {
                 name: "Animated Group",
-                href: "#",
+                href: "/motion/animated-group",
             },
             {
                 name: "Border Trail",
@@ -105,7 +101,7 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Animated Number",
-                href: "#",
+                href: "/motion/animated-number",
             },
             {
                 name: "Sliding Number",
