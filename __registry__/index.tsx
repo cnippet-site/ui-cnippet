@@ -537,6 +537,20 @@
         subcategory: "undefined",
         chunks: []
       },
+      "transition-panel-demo": {
+        name: "transition-panel-demo",
+        type: "registry:motions",
+        slug: "/motion/transition,panel",
+        thumbnail: "undefined",
+        number: "4",
+        registryDependencies: undefined,
+        files: ["registry/default/motion/transition-panel/transition-panel-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/motion/transition-panel/transition-panel-demo.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
     },
   }
   

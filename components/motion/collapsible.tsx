@@ -134,9 +134,11 @@ export function CollapsibleTrigger({
                           },
                           className: cn(
                               className,
+                              // eslint-disable-next-line @typescript-eslint/no-explicit-any
                               (child as React.ReactElement<any>).props
                                   .className,
                           ),
+                          // eslint-disable-next-line @typescript-eslint/no-explicit-any
                           ...(child as React.ReactElement<any>).props,
                       })
                     : child;

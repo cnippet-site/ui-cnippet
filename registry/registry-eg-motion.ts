@@ -74,4 +74,6 @@ export const motionExamples: Registry = generateExamples([
         name: "text-wave-demo",
         number: "4",
     },
+
+    { name: "transition-panel-demo", number: "4" },
 ]);

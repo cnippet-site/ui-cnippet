@@ -122,6 +122,7 @@ function AccordionItem({ value, children, className }: AccordionItemProps) {
             {React.Children.map(children, (child) => {
                 if (React.isValidElement(child)) {
                     return React.cloneElement(child, {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         ...(child.props as any),
                         value,
                         expanded: isExpanded,

@@ -63,7 +63,7 @@ export const motions: ComponentGroup[] = [
             },
             {
                 name: "Transition Panel",
-                href: "#",
+                href: "/motion/transition-panel",
             },
         ],
     },

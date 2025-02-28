@@ -1,10 +1,9 @@
 "use client";
 
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
-import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Banner = () => (
     <div className="border-t border-dashed text-center text-sm text-black">
@@ -30,7 +29,7 @@ const Banner = () => (
 );
 
 export default function Navbar() {
-    const [isPagesOpen, setIsPagesOpen] = useState(false);
+    // const [isPagesOpen, setIsPagesOpen] = useState(false);
 
     return (
         <>
@@ -98,6 +97,12 @@ export default function Navbar() {
                                         Components
                                     </Link>
                                     <Link
+                                        href="/motion/accordion"
+                                        className="text-gray-700 transition hover:text-gray-900"
+                                    >
+                                        Motions
+                                    </Link>
+                                    <Link
                                         href="#"
                                         className="text-gray-700 transition hover:text-gray-900"
                                     >
@@ -109,12 +114,7 @@ export default function Navbar() {
                                     >
                                         Templates
                                     </Link>
-                                    <Link
-                                        href="#"
-                                        className="text-gray-700 transition hover:text-gray-900"
-                                    >
-                                        Showcase
-                                    </Link>
+                                   
 
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
