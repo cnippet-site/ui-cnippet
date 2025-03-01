@@ -13,7 +13,7 @@ const generateExamples = (
 
         return {
             name: example.name,
-            slug: `/motion/${extractedParts}`,
+            slug: `/motion/${extractedParts.join("-")}`,
             type: "registry:motions",
             files: [
                 `${BASE_PATH}motion/${extractedParts.join("-")}/${example.name}.tsx`,
@@ -28,7 +28,8 @@ export const motionExamples: Registry = generateExamples([
         name: "accordion-demo",
         number: "4",
     },
-    // { name: "accordion-icon" },
+    { name: "accordion-icon" },
+
     {
         name: "carousel-demo",
         number: "4",

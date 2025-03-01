@@ -88,7 +88,7 @@
         @apply mb-4 mt-6;
     }
     .steps > p {
-        @apply text-base text-neutral-600
+        @apply text-base text-neutral-600;
     }
     .step > p > code {
         @apply rounded-xl bg-gray-200 px-2 py-0.5 text-black dark:bg-neutral-800 dark:text-white;
@@ -132,5 +132,23 @@
         @apply absolute -mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-white bg-dusk-400 text-center -indent-px text-sm text-black dark:border-background dark:bg-dawn-700 dark:text-white;
         @apply ml-[-50px];
         content: counter(step);
+    }
+}
+
+@layer base {
+    :root {
+        --chart-1: 221.2 83.2% 53.3%;
+        --chart-2: 212 95% 68%;
+        --chart-3: 216 92% 60%;
+        --chart-4: 210 98% 78%;
+        --chart-5: 212 97% 87%;
+    }
+
+    .dark {
+        --chart-1: 221.2 83.2% 53.3%;
+        --chart-2: 212 95% 68%;
+        --chart-3: 216 92% 60%;
+        --chart-4: 210 98% 78%;
+        --chart-5: 212 97% 87%;
     }
 }

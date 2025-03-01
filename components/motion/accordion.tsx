@@ -9,11 +9,13 @@ import {
 } from "motion/react";
 import { cn } from "@/lib/utils";
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { ChevronDown } from "lucide-react";
 
 export type AccordionContextType = {
     expandedValue: React.Key | null;
     toggleItem: (value: React.Key) => void;
     variants?: { expanded: Variant; collapsed: Variant };
+    button?: boolean;
 };
 
 const AccordionContext = createContext<AccordionContextType | undefined>(
@@ -35,6 +37,7 @@ export type AccordionProviderProps = {
     variants?: { expanded: Variant; collapsed: Variant };
     expandedValue?: React.Key | null;
     onValueChange?: (value: React.Key | null) => void;
+    button?: boolean;
 };
 
 function AccordionProvider({
@@ -42,6 +45,7 @@ function AccordionProvider({
     variants,
     expandedValue: externalExpandedValue,
     onValueChange,
+    button,
 }: AccordionProviderProps) {
     const [internalExpandedValue, setInternalExpandedValue] =
         useState<React.Key | null>(null);
@@ -62,7 +66,7 @@ function AccordionProvider({
 
     return (
         <AccordionContext.Provider
-            value={{ expandedValue, toggleItem, variants }}
+            value={{ expandedValue, toggleItem, variants, button }}
         >
             {children}
         </AccordionContext.Provider>
@@ -75,6 +79,7 @@ export type AccordionProps = {
     transition?: Transition;
     variants?: { expanded: Variant; collapsed: Variant };
     expandedValue?: React.Key | null;
+    button?: boolean;
     onValueChange?: (value: React.Key | null) => void;
 };
 
@@ -85,6 +90,7 @@ function Accordion({
     variants,
     expandedValue,
     onValueChange,
+    button,
 }: AccordionProps) {
     return (
         <MotionConfig transition={transition}>
@@ -96,6 +102,7 @@ function Accordion({
                     variants={variants}
                     expandedValue={expandedValue}
                     onValueChange={onValueChange}
+                    button={button}
                 >
                     {children}
                 </AccordionProvider>
@@ -144,7 +151,7 @@ function AccordionTrigger({
     className,
     ...props
 }: AccordionTriggerProps) {
-    const { toggleItem, expandedValue } = useAccordion();
+    const { toggleItem, expandedValue, button } = useAccordion();
     const value = (props as { value?: React.Key }).value;
     const isExpanded = value === expandedValue;
 
@@ -153,10 +160,22 @@ function AccordionTrigger({
             onClick={() => value !== undefined && toggleItem(value)}
             aria-expanded={isExpanded}
             type="button"
-            className={cn("group", className)}
+            className={cn(
+                "group flex w-full items-center justify-between", // Add flex layout
+                className,
+            )}
             {...(isExpanded ? { "data-expanded": "" } : { "data-closed": "" })}
         >
             {children}
+            {button && (
+                <motion.span
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="ml-2 h-4 w-4 shrink-0"
+                >
+                    <ChevronDown className="h-4 w-4" />
+                </motion.span>
+            )}
         </button>
     );
 }

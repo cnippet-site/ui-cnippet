@@ -7,6 +7,7 @@ import Features from "@/components/routes/home/features";
 import Hero from "@/components/routes/home/hero";
 import Footer from "@/components/routes/shared/footer";
 import Navbar from "@/components/routes/shared/navbar";
+import AreaChartDemo from "@/registry/default/chart/area-chart/area-chart-demo";
 
 export default function Home() {
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function Home() {
 
     return (
         <>
+            {/* <AreaChartDemo /> */}
             <Navbar />
             <main className="font-sans">
                 <Hero />

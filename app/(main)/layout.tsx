@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
-import { components, motions } from "@/config/docs";
+import { charts, components, motions } from "@/config/docs";
 import Nav1 from "@/components/routes/shared/navbar/nav-1";
 
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
@@ -142,6 +142,9 @@ export default function ComponentLayout({
         }
         if (pathname?.startsWith("/motion")) {
             return motions;
+        }
+        if (pathname?.startsWith("/chart")) {
+            return charts;
         }
         return [];
     };

@@ -178,6 +178,55 @@ export const motions: ComponentGroup[] = [
     },
 ];
 
+export const charts: ComponentGroup[] = [
+    {
+        name: "Getting Started",
+        items: [
+            {
+                name: "Introduction",
+                href: "#",
+            },
+            {
+                name: "Installation",
+                href: "/motion/installation",
+            },
+        ],
+    },
+    {
+        name: "Core Components",
+        items: [
+            {
+                name: "Area Chart",
+                href: "/chart/area-chart",
+            },
+            {
+                name: "Line Chart",
+                href: "/chart/line-chart",
+            },
+            {
+                name: "Bar Chart",
+                href: "/chart/bar-chart",
+            },
+            {
+                name: "Pie Chart",
+                href: "/chart/pie-chart",
+            },
+            {
+                name: "Radar Chart",
+                href: "/chart/radar-chart",
+            },
+            {
+                name: "Radial Chart",
+                href: "/chart/radial-chart",
+            },
+            {
+                name: "Scatter Chart",
+                href: "/chart/scatter-chart",
+            },
+        ],
+    },
+];
+
 export const components: ComponentGroup[] = [
     {
         name: "Getting Started",

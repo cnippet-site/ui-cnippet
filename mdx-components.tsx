@@ -185,7 +185,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "font-ins font-semibold text-lg text-black dark:text-white",
+                "font-sans font-bold [&>p]:font-medium text-base text-black dark:text-white",
                 className,
             )}
             {...props}
