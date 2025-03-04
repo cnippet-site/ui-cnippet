@@ -35,7 +35,7 @@ const chartConfig = {
 
 export default function Component() {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Area Chart</CardTitle>
         <CardDescription>

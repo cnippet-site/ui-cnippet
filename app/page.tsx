@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { SVGProps, useEffect } from "react";
 import Lenis from "lenis";
 
 import Faq from "@/components/routes/home/faq";
@@ -7,7 +7,8 @@ import Features from "@/components/routes/home/features";
 import Hero from "@/components/routes/home/hero";
 import Footer from "@/components/routes/shared/footer";
 import Navbar from "@/components/routes/shared/navbar";
-import AreaChartDemo from "@/registry/default/chart/area-chart/area-chart-demo";
+import { Cursor } from "@/components/motion/cursor";
+import { motion } from "motion/react";
 
 export default function Home() {
     useEffect(() => {
@@ -32,6 +33,40 @@ export default function Home() {
 
     return (
         <>
+            <Cursor
+                attachToParent
+                variants={{
+                    initial: { scale: 0.3, opacity: 0 },
+                    animate: { scale: 1, opacity: 1 },
+                    exit: { scale: 0.3, opacity: 0 },
+                }}
+                transition={{
+                    ease: "easeInOut",
+                    duration: 0.15,
+                }}
+                className="top-4 z-[100]"
+            >
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.6 }}
+                    className="inline-flex w-full items-center justify-center"
+                >
+                    <div className="">
+                        {/* <motion.div
+                            initial={{ opacity: 0, scale: 0.6 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.6 }}
+                            className="inline-flex w-full items-center justify-center"
+                        >
+                            <div className="inline-flex items-center text-sm text-white dark:text-black">
+                                More <PlusIcon className="ml-1 h-4 w-4" />
+                            </div>
+                        </motion.div> */}
+                        <MouseIcon className="size-8 fill-blue-600 -rotate-90" />
+                    </div>
+                </motion.div>
+            </Cursor>
             {/* <AreaChartDemo /> */}
             <Navbar />
             <main className="font-sans">
@@ -43,3 +78,33 @@ export default function Home() {
         </>
     );
 }
+
+const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
+    return (
+        <svg
+            fill="currentColor"
+            viewBox="0 0 24.00 24.00"
+            id="cursor"
+            data-name="Flat Line"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+                <path
+                    id="secondary"
+                    d="M19.54,3.1,3.62,10.31A1.17,1.17,0,0,0,4,12.5l6.23,1.26L11.5,20a1.17,1.17,0,0,0,2.19.39L20.9,4.46A1,1,0,0,0,19.54,3.1Z"
+                ></path>
+                <path
+                    id="primary"
+                    d="M19.54,3.1,3.62,10.31A1.17,1.17,0,0,0,4,12.5l6.23,1.26L11.5,20a1.17,1.17,0,0,0,2.19.39L20.9,4.46A1,1,0,0,0,19.54,3.1Z"
+                ></path>
+            </g>
+        </svg>
+    );
+};

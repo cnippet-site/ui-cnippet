@@ -17,7 +17,7 @@ export default function Faq() {
         },
         {
             question: "Can I use it for commercial projects?",
-            answer: "Feel free to do so. Kloomix does exist to evolve every commercial project. You can also use it to build stunning websites for your own clients (we won't breathe a word).",
+            answer: "Feel free to do so. Cnippet does exist to evolve every commercial project. You can also use it to build stunning websites for your own clients (we won't breathe a word).",
         },
         {
             question: "What is your refund policy?",
@@ -26,25 +26,25 @@ export default function Faq() {
     ];
 
     return (
-        <section className="">
-            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 py-16 sm:px-6 md:py-24 lg:px-8 lg:py-40">
+        <section className="bg-background">
+            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 py-16 dark:border-neutral-800 sm:px-6 md:py-24 lg:px-8 lg:py-40">
                 <div className="flex flex-col gap-5 md:flex-row">
                     <div className="mx-auto flex w-full max-w-sm flex-col">
                         <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
                             Frequently Asked Question
                         </h2>
                         <p className="mt-4 text-base md:mt-6">
-                            Basic questions for potential buyers of Kloomix
+                            Basic questions for potential buyers of Cnippet
                             templates
                         </p>
                         <div className="mt-auto">
                             <p className="text-sm text-gray-500">
                                 Still have questions? Contact us at{" "}
                                 <Link
-                                    href="mailto:support@kloomix.com"
+                                    href="mailto:support@ui.cnippet.site"
                                     className="text-[#2F2B6B] underline transition hover:text-[#FFE27D]"
                                 >
-                                    support@kloomix.com
+                                    support@ui.cnippet.site
                                 </Link>
                             </p>
                         </div>
@@ -60,12 +60,12 @@ export default function Faq() {
                                     duration: 0.3,
                                     delay: index * 0.1,
                                 }}
-                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg"
+                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
                             >
-                                <h3 className="text-lg font-semibold text-violet-950">
+                                <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
                                 </h3>
-                                <p className="mt-0 text-gray-700 md:mt-2">
+                                <p className="mt-0 text-gray-700 dark:text-neutral-400 md:mt-2">
                                     {item.answer}
                                 </p>
                             </motion.div>
@@ -81,12 +81,12 @@ export default function Faq() {
                                     duration: 0.3,
                                     delay: index * 0.1,
                                 }}
-                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg"
+                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
                             >
-                                <h3 className="text-lg font-semibold text-violet-950">
+                                <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
                                 </h3>
-                                <p className="mt-0 text-gray-700 md:mt-2">
+                                <p className="mt-0 text-gray-700 dark:text-neutral-400 md:mt-2">
                                     {item.answer}
                                 </p>
                             </motion.div>

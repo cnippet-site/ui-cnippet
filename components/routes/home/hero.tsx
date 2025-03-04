@@ -6,20 +6,20 @@ import { motion } from "motion/react";
 export default function Hero() {
     return (
         <>
-            <section className="relative h-screen border-b border-dashed">
+            <section className="relative h-screen border-b border-dashed bg-background dark:border-neutral-800">
                 <div className="z-0 h-full flex-auto items-center justify-center">
-                    <div className="mx-auto flex flex-col md:flex-row h-full max-w-7xl gap-12 px-6 py-20 pt-40 text-black border-l border-dashed border-r">
+                    <div className="mx-auto flex h-full max-w-7xl flex-col gap-12 border-l border-r border-dashed px-6 py-20 pt-40 text-black dark:border-neutral-800 dark:text-white md:flex-row">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             className="flex flex-col justify-center"
                         >
-                            <h1 className="mb-8 text-4xl sm:text-5xl md:text-7xl font-medium tracking-wide">
-                                Start your Framer project with Kloomix template
+                            <h1 className="mb-8 text-4xl font-medium tracking-wide sm:text-5xl md:text-7xl">
+                                Start your Framer project with Cnippet template
                             </h1>
                             <p className="mb-6 max-w-xl md:text-lg">
-                                Kloomix is a Framer template that includes the
+                                Cnippet is a Framer template that includes the
                                 various website components needed to create a
                                 landing page. The idea is for you to be able to
                                 speed up the process of creating a website using
@@ -48,10 +48,10 @@ export default function Hero() {
                                     damping: 80,
                                     mass: 10,
                                 }}
-                                className="text-center font-mono text-sm"
+                                className="font-mono text-center text-sm"
                             >
                                 <div className="">
-                                    <div className="md:text-[200px] font-bold leading-none">
+                                    <div className="font-bold leading-none md:text-[200px]">
                                         15
                                     </div>
                                     <div className="text-2xl">Page Sample</div>

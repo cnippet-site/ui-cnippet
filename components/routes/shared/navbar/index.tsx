@@ -6,7 +6,7 @@ import Link from "next/link";
 // import { useState } from "react";
 
 const Banner = () => (
-    <div className="border-t border-dashed text-center text-sm text-black">
+    <div className="border-t border-dashed text-center text-sm text-black dark:border-neutral-800">
         <div className="relative mx-auto max-w-7xl bg-[#a7ded0]">
             <div className="absolute left-0 z-50 h-full w-20 bg-gradient-to-r from-[#a7ded0]" />
             <div className="absolute right-0 z-50 h-full w-20 bg-gradient-to-l from-[#a7ded0]" />
@@ -14,13 +14,13 @@ const Banner = () => (
             <div className="mx-auto max-w-7xl px-4 py-2 sm:px-5 lg:px-0">
                 <InfiniteSlider gap={20}>
                     <p className="mt-1">
-                        We are doing massive update for Kloomix, so enjoy
+                        We are doing massive update for Cnippet, so enjoy
                     </p>
                     <p className="mt-1">
-                        We are doing massive update for Kloomix, so enjoy
+                        We are doing massive update for Cnippet, so enjoy
                     </p>
                     <p className="mt-1">
-                        We are doing massive update for Kloomix, so enjoy
+                        We are doing massive update for Cnippet, so enjoy
                     </p>
                 </InfiniteSlider>
             </div>
@@ -35,13 +35,13 @@ export default function Navbar() {
         <>
             <header className="absolute top-5 z-50 w-full">
                 <Banner />
-                <nav className="w-full border-b border-t border-dashed font-sans">
+                <nav className="w-full border-b border-t border-dashed font-sans dark:border-neutral-800">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
                         <div className="py-3">
                             <div className="hidden items-center justify-between md:flex">
                                 <Link
                                     href="/"
-                                    className="text-2xl font-medium text-black"
+                                    className="text-2xl font-medium text-black dark:text-white"
                                 >
                                     Cnippet
                                 </Link>
@@ -92,29 +92,28 @@ export default function Navbar() {
 
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900"
+                                        className="cursor-none text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Components
                                     </Link>
                                     <Link
                                         href="/motion/accordion"
-                                        className="text-gray-700 transition hover:text-gray-900"
+                                        className="cursor-none text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Motions
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900"
+                                        className="cursor-none text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Sections
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900"
+                                        className="cursor-none text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Templates
                                     </Link>
-                                   
 
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}

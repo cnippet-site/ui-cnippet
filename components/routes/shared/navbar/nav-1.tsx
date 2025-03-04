@@ -141,7 +141,7 @@ const Nav1 = () => {
                                 Motion
                             </Link>
                             <Link
-                                href="#"
+                                href="/chart/area-chart"
                                 className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
                                 Charts
