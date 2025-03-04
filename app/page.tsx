@@ -32,7 +32,7 @@ export default function Home() {
     }, []);
 
     return (
-        <>
+        <div className="home-page">
             <Cursor
                 attachToParent
                 variants={{
@@ -63,7 +63,7 @@ export default function Home() {
                                 More <PlusIcon className="ml-1 h-4 w-4" />
                             </div>
                         </motion.div> */}
-                        <MouseIcon className="size-8 fill-blue-600 -rotate-90" />
+                        <MouseIcon className="size-7 fill-blue-600 -rotate-[80deg]" />
                     </div>
                 </motion.div>
             </Cursor>
@@ -75,7 +75,7 @@ export default function Home() {
                 <Faq />
             </main>
             <Footer />
-        </>
+        </div>
     );
 }
 

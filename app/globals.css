@@ -133,6 +133,12 @@
         @apply ml-[-50px];
         content: counter(step);
     }
+    .home-page a {
+        @apply cursor-none;
+    }
+    .home-page button {
+        @apply cursor-none;
+    }
 }
 
 @layer base {
