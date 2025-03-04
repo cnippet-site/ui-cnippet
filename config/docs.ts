@@ -246,11 +246,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Button",
-                href: "#",
+                href: "/component/button",
             },
             {
                 name: "File Trigger",
-                href: "#",
+                href: "/component/file-trigger",
             },
             {
                 name: "Toggle",
@@ -288,7 +288,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Calendar",
-                href: "#",
+                href: "/component/calendar",
             },
             {
                 name: "Range Calendar",
@@ -317,7 +317,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Drop Zone",
-                href: "#",
+                href: "/component/drop-zone",
             },
         ],
     },
@@ -326,19 +326,15 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Checkbox",
-                href: "#",
+                href: "/component/checkbox",
             },
             {
-                name: "Checkbox Group",
-                href: "#",
+                name: "Input",
+                href: "/component/input",
             },
             {
-                name: "Field",
-                href: "#",
-            },
-            {
-                name: "Input OTP",
-                href: "#",
+                name: "Label",
+                href: "/component/label",
             },
             {
                 name: "Radio Group",
@@ -358,7 +354,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Textarea",
-                href: "#",
+                href: "/component/textarea",
             },
         ],
     },

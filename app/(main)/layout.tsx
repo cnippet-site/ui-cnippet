@@ -137,7 +137,7 @@ export default function ComponentLayout({
     const pathname = usePathname();
 
     const getNavigation = () => {
-        if (pathname?.startsWith("/components")) {
+        if (pathname?.startsWith("/component")) {
             return components;
         }
         if (pathname?.startsWith("/motion")) {
