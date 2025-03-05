@@ -252,10 +252,6 @@ export const components: ComponentGroup[] = [
                 name: "File Trigger",
                 href: "/component/file-trigger",
             },
-            {
-                name: "Toggle",
-                href: "#",
-            },
         ],
     },
     {
@@ -263,23 +259,19 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Command Menu",
-                href: "#",
+                href: "/component/command-menu",
             },
             {
                 name: "Context Menu",
-                href: "#",
+                href: "/component/context-menu",
             },
             {
                 name: "Slider",
-                href: "#",
+                href: "/component/slider",
             },
             {
                 name: "Switch",
-                href: "#",
-            },
-            {
-                name: "Toolbar",
-                href: "#",
+                href: "/component/switch",
             },
         ],
     },
@@ -291,24 +283,8 @@ export const components: ComponentGroup[] = [
                 href: "/component/calendar",
             },
             {
-                name: "Range Calendar",
-                href: "#",
-            },
-            {
-                name: "Time Field",
-                href: "#",
-            },
-            {
                 name: "Date Field",
-                href: "#",
-            },
-            {
-                name: "Date Picker",
-                href: "#",
-            },
-            {
-                name: "Date Range Picker",
-                href: "#",
+                href: "/component/date-picker",
             },
         ],
     },
@@ -338,19 +314,11 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Radio Group",
-                href: "#",
-            },
-            {
-                name: "Search Field",
-                href: "#",
+                href: "/component/radio-group",
             },
             {
                 name: "Tag Field",
-                href: "#",
-            },
-            {
-                name: "Text Field",
-                href: "#",
+                href: "/component/tag-filed",
             },
             {
                 name: "Textarea",
@@ -362,14 +330,6 @@ export const components: ComponentGroup[] = [
         name: "Layouts",
         items: [
             {
-                name: "Container",
-                href: "#",
-            },
-            {
-                name: "Navbar",
-                href: "#",
-            },
-            {
                 name: "Sidebar",
                 href: "#",
             },
@@ -380,11 +340,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Avatar",
-                href: "#",
+                href: "/component/avatar",
             },
             {
                 name: "Carousel",
-                href: "#",
+                href: "/component/carousel",
             },
         ],
     },
@@ -393,11 +353,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Breadcrumb",
-                href: "#",
+                href: "/component/breadcrumb",
             },
             {
                 name: "Collapsible",
-                href: "#",
+                href: "/component/collapsible",
             },
             {
                 name: "Accordion",
@@ -405,11 +365,11 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Pagination",
-                href: "#",
+                href: "/component/pagination",
             },
             {
                 name: "Tabs",
-                href: "#",
+                href: "/component/tabs",
             },
         ],
     },
@@ -418,27 +378,27 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Dialog",
-                href: "#",
+                href: "/component/dialog",
             },
             {
                 name: "Drawer",
-                href: "#",
+                href: "/component/drawer",
             },
             {
                 name: "Modal",
-                href: "#",
+                href: "/component/modal",
             },
             {
                 name: "Popover",
-                href: "#",
+                href: "/component/popover",
             },
             {
                 name: "Sheet",
-                href: "#",
+                href: "/component/sheet",
             },
             {
                 name: "Tooltip",
-                href: "#",
+                href: "/component/tooltip",
             },
         ],
     },
@@ -447,11 +407,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Combobox",
-                href: "#",
-            },
-            {
-                name: "Multi select",
-                href: "#",
+                href: "/component/combobox",
             },
             {
                 name: "Select",

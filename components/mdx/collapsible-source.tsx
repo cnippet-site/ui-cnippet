@@ -11,7 +11,7 @@ import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from "@/components/ui/collapsible-cn";
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
     expandButtonTitle?: string;

@@ -12,13 +12,29 @@ const generateComponents = (componentsConfig: { name: string }[]): Registry => {
 };
 
 export const components: Registry = generateComponents([
-    {
-        name: "button",
-    },
-    // {
-    //     name: "collapsible",
-    // },
-    {
-        name: "tabs",
-    },
+    { name: "avatar" },
+    { name: "breadcrumb" },
+    { name: "button" },
+    { name: "calendar" },
+    { name: "card" },
+    { name: "chart" },
+    { name: "checkbox" },
+    { name: "collapsible-cn" },
+    { name: "command" },
+    { name: "context-menu" },
+    { name: "dialog-cn" },
+    { name: "drawer" },
+    { name: "input" },
+    { name: "label" },
+    { name: "pagination" },
+    { name: "popover" },
+    { name: "radio-group" },
+    { name: "scroll-area" },
+    { name: "select" },
+    { name: "sheet" },
+    { name: "slider" },
+    { name: "switch" },
+    { name: "tabs" },
+    { name: "textarea" },
+    { name: "tooltip" },
 ]);
