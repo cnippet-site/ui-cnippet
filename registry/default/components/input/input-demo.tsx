@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
     const id = useId();
     return (
-        <div className="*:not-first:mt-2">
+        <div className="w-1/2">
             <Label htmlFor={id}>Simple input</Label>
             <Input id={id} placeholder="Email" type="email" />
         </div>

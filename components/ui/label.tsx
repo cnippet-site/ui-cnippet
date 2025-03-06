@@ -5,7 +5,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { HTMLMotionProps, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-// Define variants for the Label component
 const labelVariants = cva(
     "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
     {

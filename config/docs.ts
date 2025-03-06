@@ -318,7 +318,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Tag Field",
-                href: "/component/tag-filed",
+                href: "/component/tag-field",
             },
             {
                 name: "Textarea",
@@ -361,7 +361,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Accordion",
-                href: "/components/accordion",
+                href: "/component/accordion",
             },
             {
                 name: "Pagination",
@@ -411,7 +411,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Select",
-                href: "#",
+                href: "/component/select",
             },
         ],
     },

@@ -18,13 +18,13 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
+// import {
+//     Select,
+//     SelectContent,
+//     SelectItem,
+//     SelectTrigger,
+//     SelectValue,
+// } from "@/components/ui/select";
 const chartData = [
     { date: "2024-04-01", desktop: 222, mobile: 150 },
     { date: "2024-04-02", desktop: 97, mobile: 180 },
@@ -159,7 +159,7 @@ export default function Component() {
                         Showing total visitors for the last 3 months
                     </CardDescription>
                 </div>
-                <Select value={timeRange} onValueChange={setTimeRange}>
+                {/* <Select value={timeRange} onValueChange={setTimeRange}>
                     <SelectTrigger
                         className="w-[160px] rounded-lg sm:ml-auto"
                         aria-label="Select a value"
@@ -177,7 +177,7 @@ export default function Component() {
                             Last 7 days
                         </SelectItem>
                     </SelectContent>
-                </Select>
+                </Select> */}
             </CardHeader>
             <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
                 <ChartContainer

@@ -91,7 +91,7 @@ export default function Navbar() {
                                     </div> */}
 
                                     <Link
-                                        href="/component/input"
+                                        href="/component/accordion"
                                         className="cursor-none text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Components

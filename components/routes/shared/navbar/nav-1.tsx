@@ -129,7 +129,7 @@ const Nav1 = () => {
                         </Link>
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
                             <Link
-                                href="/components/accordion"
+                                href="/component/accordion"
                                 className="text-foreground/80 transition-colors hover:text-foreground/80"
                             >
                                 Components
