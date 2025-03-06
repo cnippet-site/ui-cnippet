@@ -9,6 +9,7 @@ import Footer from "@/components/routes/shared/footer";
 import Navbar from "@/components/routes/shared/navbar";
 import { Cursor } from "@/components/motion/cursor";
 import { motion } from "motion/react";
+import Components from "@/components/routes/home/components";
 
 export default function Home() {
     useEffect(() => {
@@ -72,6 +73,7 @@ export default function Home() {
             <main className="font-sans">
                 <Hero />
                 <Features />
+                <Components/>
                 <Faq />
             </main>
             <Footer />

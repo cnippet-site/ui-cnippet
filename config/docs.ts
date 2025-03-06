@@ -231,13 +231,13 @@ export const components: ComponentGroup[] = [
     {
         name: "Getting Started",
         items: [
-            {
-                name: "Introduction",
-                href: "#",
-            },
+            // {
+            //     name: "Introduction",
+            //     href: "#",
+            // },
             {
                 name: "Installation",
-                href: "#",
+                href: "/component/installation",
             },
         ],
     },

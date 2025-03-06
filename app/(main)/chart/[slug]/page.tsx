@@ -6,9 +6,6 @@ import { BASE_URL } from "@/config/docs";
 import { getTableOfContents } from "@/lib/toc";
 import { TableOfContents } from "@/components/mdx/toc";
 
-// interface Params {
-//     slug: string;
-// }
 type Params = Promise<{ slug: string }>;
 
 function getComponentDoc({ slug }: { slug: string }) {
@@ -77,9 +74,6 @@ export async function generateMetadata({
         return {
             title: "Component Not Found",
             description: "The requested component does not exist.",
-            alternates: {
-                canonical: `${BASE_URL}/404`,
-            },
         };
     }
 
@@ -87,34 +81,43 @@ export async function generateMetadata({
         metadataBase: new URL(BASE_URL),
         title: doc.title,
         description: doc.description,
-        alternates: {
-            canonical: `${BASE_URL}/components/${slug}`,
-        },
+
         openGraph: {
             type: "article",
             title: doc.title,
             description: doc.description,
-            url: `${BASE_URL}/components/${slug}`,
+            url: `${BASE_URL}/chart/${doc.slugAsParams}`,
+            images: [
+                {
+                    url: `${BASE_URL}/images/site.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: "Cnippet UI Component Library",
+                },
+            ],
             siteName: "Cnippet UI",
         },
         twitter: {
             card: "summary_large_image",
             title: doc.title,
             description: doc.description,
+            images: [`${BASE_URL}/images/site.png`],
+            site: "@cnippet_ui",
+            creator: "@cnippet_ui",
         },
     };
 
-    if (doc.thumbnail) {
-        const image = {
-            url: `${BASE_URL}${doc.thumbnail.src}`,
-            width: 1200,
-            height: 630,
-            alt: doc.thumbnail.alt || `${doc.title} component preview`,
-        };
+    // if (doc.thumbnail) {
+    //     const image = {
+    //         url: `${BASE_URL}${doc.thumbnail.src}`,
+    //         width: 1200,
+    //         height: 630,
+    //         alt: doc.thumbnail.alt || `${doc.title} component preview`,
+    //     };
 
-        metadata.openGraph!.images = [image];
-        metadata.twitter!.images = [image];
-    }
+    //     metadata.openGraph!.images = [image];
+    //     metadata.twitter!.images = [image];
+    // }
 
     return metadata;
 }

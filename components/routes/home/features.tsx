@@ -1,37 +1,33 @@
 import { Cursor } from "@/components/motion/cursor";
-import {
-    RiLayout4Fill,
-    RiPaletteFill,
-    RiQuillPenAiFill,
-} from "@remixicon/react";
-import { PlusIcon } from "lucide-react";
+import { RiCodepenLine } from "@remixicon/react";
+import { Captions, ChartSpline, PlusIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function Features() {
     const features = [
         {
-            icon: RiLayout4Fill,
-            title: "Multi Layout Web Design",
+            icon: ChartSpline,
+            title: "Smooth Motion Animations",
             description:
-                "Improve user experience with Multi-Layout Web Design! Create flexible, responsive websites that work smoothly across multiple devices.",
+                "Enhance user experience with fluid, performant animations powered by Motion. Easily integrate with just a copy & paste into your React/Next.js projects.",
         },
         {
-            icon: RiQuillPenAiFill,
-            title: "Framer Component",
+            icon: RiCodepenLine,
+            title: "Modular Components",
             description:
-                "Save time and design faster! Browse Framer Component Collections, which are packed with responsive and dynamic components.",
+                "Beautiful, accessible components built on shadcn. Copy & paste ready React blocks with built-in Tailwind styling for rapid development.",
         },
         {
-            icon: RiPaletteFill,
-            title: "Framer CMS",
+            icon: Captions,
+            title: "Accessibility First",
             description:
-                "Framer CMS allows you to manage content effortlessly! A solid, no-code solution for dynamic, scalable websites.",
+                "WCAG-compliant components out of the box. Create inclusive web experiences with proper ARIA labels and keyboard navigation baked in.",
         },
     ];
 
     return (
         <section className="border-b border-dashed bg-background dark:border-neutral-800">
-            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 pt-0 dark:border-neutral-800 sm:px-6 lg:px-0">
+            <div className="mx-auto max-w-full md:max-w-7xl border-l border-r border-dashed px-4 pt-0 dark:border-neutral-800 sm:px-6 lg:px-0">
                 <div className="px-6 md:p-12 lg:px-0">
                     <div className="mb-6 text-center md:mb-8 lg:mb-10">
                         <h2 className="text-3xl font-medium text-black dark:text-white sm:text-4xl md:text-6xl">
@@ -46,7 +42,7 @@ export default function Features() {
                     </div>
 
                     <div className="border-b border-t border-dashed py-10 dark:border-neutral-800">
-                        <div className="grid gap-6 px-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                        <div className="grid gap-6 md:px-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                             <Cursor
                                 attachToParent
                                 variants={{
@@ -92,7 +88,7 @@ export default function Features() {
                                     <h3 className="text-xl font-medium text-white md:text-2xl">
                                         {feature.title}
                                     </h3>
-                                    <p className="mt-auto text-base text-gray-300">
+                                    <p className="mt-auto text-base text-gray-400">
                                         {feature.description}
                                     </p>
                                 </div>

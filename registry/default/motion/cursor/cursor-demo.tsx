@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Cursor } from "@/components/motion/cursor";
 import { AnimatePresence, motion } from "motion/react";
 import { PlusIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function Cursor1() {
     const [isHovering, setIsHovering] = useState(false);
@@ -62,9 +63,11 @@ export default function Cursor1() {
                 </motion.div>
             </Cursor>
             <div ref={targetRef}>
-                <img
-                    src="https://i.pinimg.com/564x/75/3c/3f/753c3f1a9f85871ffa7a7a78bcf49f66.jpg"
+                <Image
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg"
                     alt="Olympic logo Paris 2024"
+                    width={1080}
+                    height={680}
                     className="h-52 w-full max-w-48 rounded-[8px] border border-zinc-100 object-cover"
                 />
             </div>

@@ -4,24 +4,28 @@ import Link from "next/link";
 export default function Faq() {
     const faq = [
         {
-            question: "Do I need to know about how to code?",
-            answer: "No coding experience is needed.",
+            question: "Do I need React experience to use CNIPPET?",
+            answer: "Basic React/Next.js knowledge is recommended for customization, but our copy-paste components make implementation effortless! 🚀 Start simple and scale as you learn.",
         },
         {
-            question: "Can I use it for multiple projects?",
-            answer: "Definitely! Please use it however you like; we don't limit it.",
+            question: "How customizable are the components?",
+            answer: "Fully tweakable! Every component is built with Tailwind CSS - override styles, modify animations with Framer Motion, or restructure as needed. Your design system, your rules. 🎨",
         },
         {
-            question: "Can I redistribute this product?",
-            answer: "Do not ever consider doing it.",
+            question: "Can I use this in commercial projects?",
+            answer: "Absolutely! CNIPPET is MIT-licensed - build client sites, SaaS products, or internal tools. No attribution required, though we appreciate shoutouts! 💼",
         },
         {
-            question: "Can I use it for commercial projects?",
-            answer: "Feel free to do so. Cnippet does exist to evolve every commercial project. You can also use it to build stunning websites for your own clients (we won't breathe a word).",
+            question: "How accessible are the components?",
+            answer: "We bake in accessibility: ARIA labels, keyboard nav, and WCAG contrast ratios out of the box. Tested with screen readers like JAWS/NVDA. ♿️",
         },
         {
-            question: "What is your refund policy?",
-            answer: "We understand the importance of customer satisfaction and we strive to provide the best products and services. However, please note that due to the nature of our products and services, we do not offer refunds after a purchase has been made.",
+            question: "What if I need help?",
+            answer: "We've got your back! Join our Discord community for real-time support. For critical bugs, expect patches within 24 hours. 💬",
+        },
+        {
+            question: "Can I contribute to CNIPPET?",
+            answer: "We ❤️ OSS contributions! Report issues, suggest features on GitHub, or submit PRs. Top contributors get free lifetime upgrades!",
         },
     ];
 
@@ -65,7 +69,7 @@ export default function Faq() {
                                 <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
                                 </h3>
-                                <p className="mt-0 text-gray-700 dark:text-neutral-400 md:mt-2">
+                                <p className="mt-2 text-sm text-gray-700 dark:text-neutral-400 md:text-base">
                                     {item.answer}
                                 </p>
                             </motion.div>
@@ -86,7 +90,7 @@ export default function Faq() {
                                 <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
                                 </h3>
-                                <p className="mt-0 text-gray-700 dark:text-neutral-400 md:mt-2">
+                                <p className="mt-2 text-sm text-gray-700 dark:text-neutral-400 md:text-base">
                                     {item.answer}
                                 </p>
                             </motion.div>

@@ -1,0 +1,62 @@
+---
+title: "Installation"
+description: "An interactive collection of stacked headings that reveal individual content sections with a click."
+thumbnail: { src: "/images/components/buttons.png", alt: "" }
+link: "/motion/installation"
+summary: "This is my first post!"
+---
+
+## Installation Guide
+
+<Steps>
+<Step>
+Install Tailwind CSS
+</Step>
+
+Components are styled using Tailwind CSS. Follow the official installation guide to add it to your project.
+
+<Step>
+Install Motion
+</Step>
+
+Components are animated using Motion.
+```npm
+npm install motion
+```
+
+<Step>
+Add the utility helper
+</Step>
+
+Create a lib/utils.ts file to manage Tailwind CSS classes:
+
+```tsx
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+<Step>
+Install icons
+</Step>
+
+Add Lucide React icons:
+
+```npm
+npm install lucide-react
+```
+
+
+
+<Step>
+That's it
+</Step>
+
+You can now start adding components to your project.
+
+You can also choose manual installation and copy the code from the components page.
+
+</Steps>

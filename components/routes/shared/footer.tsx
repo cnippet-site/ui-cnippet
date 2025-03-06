@@ -17,9 +17,9 @@ export default function Footer() {
     return (
         <footer className="bg-black px-4 py-12 text-white md:px-8 lg:px-16">
             <div className="mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
+                <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
                     {/* Logo and Social Links */}
-                    <div className="flex flex-col lg:col-span-1">
+                    <div className="flex flex-col col-span-2     lg:col-span-1">
                         <div className="mb-8">
                             <Link href="/" className="flex items-center gap-2">
                                 <Image
@@ -29,7 +29,7 @@ export default function Footer() {
                                     width={1080}
                                     height={1080}
                                 />
-                                <span className="hidden lg:inline-block">
+                                <span className="inline-block">
                                     Cnippet UI
                                 </span>
                             </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
                     </div>
 
                     {/* Legal and Newsletter Column */}
-                    <div className="lg:col-span-2">
+                    <div className="col-span-2">
                         <div>
                             <h3 className="mb-4 font-medium">
                                 Subscribe to our newsletter
@@ -115,7 +115,7 @@ export default function Footer() {
                                 Stay updated on new releases and features,
                                 guides, and case studies.
                             </p>
-                            <div className="flex max-w-[90%] flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row">
+                            <div className="flex md:max-w-[90%] flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row">
                                 <Input
                                     type="email"
                                     placeholder="you@domain.com"
