@@ -22,6 +22,7 @@ export const components: Registry = generateComponents([
     { name: "collapsible-cn" },
     { name: "command" },
     { name: "context-menu" },
+    { name: "datefield" },
     { name: "dialog-cn" },
     { name: "drawer" },
     { name: "input" },
@@ -37,4 +38,5 @@ export const components: Registry = generateComponents([
     { name: "tabs" },
     { name: "textarea" },
     { name: "tooltip" },
+
 ]);

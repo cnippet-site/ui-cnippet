@@ -1,11 +1,11 @@
-import React from "react";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 
-const SliderDemo = () => {
+export default function Component() {
     return (
-        <div>
-            slider
+        <div className="*:not-first:mt-4 w-1/2">
+            <Label>Simple slider</Label>
+            <Slider defaultValue={[25]} aria-label="Simple slider" />
         </div>
     );
-};
-
-export default SliderDemo;
+}

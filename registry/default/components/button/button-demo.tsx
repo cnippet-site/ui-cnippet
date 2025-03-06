@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ChevronRight, Link, Loader2, MailOpen } from "lucide-react";
+import { ChevronRight, Loader2, MailOpen } from "lucide-react";
 
 const ButtonDemo = () => {
     return (

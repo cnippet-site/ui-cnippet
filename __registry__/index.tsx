@@ -145,6 +145,20 @@
         subcategory: "undefined",
         chunks: []
       },
+      "datefield": {
+        name: "datefield",
+        type: "registry:component",
+        slug: "/components/datefield",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["components/ui/datefield.tsx"],
+        component: React.lazy(() => import("@/components/ui/datefield.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
       "dialog-cn": {
         name: "dialog-cn",
         type: "registry:component",

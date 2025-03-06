@@ -1,11 +1,13 @@
-import React from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useId } from "react";
 
-const InputDemo = () => {
+export default function Component() {
+    const id = useId();
     return (
-        <div>
-            input
+        <div className="*:not-first:mt-2">
+            <Label htmlFor={id}>Simple input</Label>
+            <Input id={id} placeholder="Email" type="email" />
         </div>
     );
-};
-
-export default InputDemo;
+}
