@@ -160,6 +160,7 @@ export default function Footer() {
                     <div className="mt-auto">
                         <div className="flex gap-2 rounded-full border border-neutral-700 p-1.5">
                             <button
+                            suppressHydrationWarning
                                 onClick={() => toggleTheme()}
                                 className={`rounded-full p-1 ${theme === "light" ? "bg-[#1a1a1a]" : ""}`}
                                 aria-label="Light mode"
@@ -167,6 +168,8 @@ export default function Footer() {
                                 <Sun className="size-4" />
                             </button>
                             <button
+                            suppressHydrationWarning
+
                                 onClick={() => toggleTheme()}
                                 className={`rounded-full p-1 ${theme === "dark" ? "bg-[#1a1a1a]" : ""}`}
                                 aria-label="Light mode"

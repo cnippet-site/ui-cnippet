@@ -192,9 +192,9 @@ export function CollapsibleContent({
     );
 }
 
-export default {
-    Collapsible,
-    CollapsibleProvider,
-    CollapsibleTrigger,
-    CollapsibleContent,
-};
+// export default {
+//     Collapsible,
+//     CollapsibleProvider,
+//     CollapsibleTrigger,
+//     CollapsibleContent,
+// };
