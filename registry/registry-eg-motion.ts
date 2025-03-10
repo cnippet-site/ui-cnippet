@@ -31,6 +31,18 @@ export const motionExamples: Registry = generateExamples([
     { name: "accordion-icon" },
 
     {
+        name: "board-demo",
+        number: "4",
+    },
+    {
+        name: "grid-demo",
+        number: "4",
+    },
+    {
+        name: "horizontal-scroll-demo",
+        number: "4",
+    },
+    {
         name: "carousel-demo",
         number: "4",
     },

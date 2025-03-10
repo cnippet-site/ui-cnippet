@@ -61,6 +61,15 @@ export const motions: ComponentGroup[] = [
                 name: "Transition Panel",
                 href: "/motion/transition-panel",
             },
+            {
+                name: "Board",
+                href: "/motion/board",
+            },
+            {
+                name: "Grid",
+                href: "/motion/grid",
+            },
+
         ],
     },
     {
@@ -93,6 +102,15 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Text Wave",
                 href: "/motion/text-wave",
+            },
+        ],
+    },
+    {
+        name: "Scroll Effects",
+        items: [
+            {
+                name: "Horizontal Scroll",
+                href: "/motion/horizontal-scroll",
             },
         ],
     },

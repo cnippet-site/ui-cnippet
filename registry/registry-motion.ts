@@ -37,6 +37,12 @@ export const motions: Registry = generateComponents([
         name: "dock",
     },
     {
+        name: "grid",
+    },
+    {
+        name: "horizontal-scroll",
+    },
+    {
         name: "image-comparison",
     },
     {
