@@ -1,0 +1,29 @@
+import { InfiniteSlider } from "@/components/motion/infinite-slider";
+import Image from "next/image";
+
+const images = [
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h3.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h7.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h8.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h9.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h10.jpg",
+];
+
+export default function InfiniteSliderBasic() {
+    return (
+        <InfiniteSlider gap={24} reverse>
+            {images.map((image, i) => (
+                <Image
+                    key={i}
+                    src={image}
+                    alt="Apple Music logo"
+                    width={1920}
+                    height={1080}
+                    className=" h-40 w-60 object-cover rounded-xl"
+                    
+                />
+            ))}
+        </InfiniteSlider>
+    );
+}

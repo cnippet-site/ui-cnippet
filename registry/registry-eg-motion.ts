@@ -43,6 +43,16 @@ export const motionExamples: Registry = generateExamples([
         number: "4",
     },
     {
+        name: "infinite-slider-demo",
+        number: "4",
+    },
+    {
+        name: "infinite-slider-hover",
+    },
+    {
+        name: "infinite-slider-vertical",
+    },
+    {
         name: "carousel-demo",
         number: "4",
     },

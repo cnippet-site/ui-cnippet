@@ -37,6 +37,9 @@ export const motions: Registry = generateComponents([
         name: "dock",
     },
     {
+        name: "drawer-rc",
+    },
+    {
         name: "grid",
     },
     {
@@ -86,6 +89,9 @@ export const motions: Registry = generateComponents([
     },
     {
         name: "text-shimmer",
+    },
+    {
+        name: "tilt",
     },
     {
         name: "transition-panel",

@@ -55,7 +55,7 @@ export const motions: ComponentGroup[] = [
             },
             {
                 name: "Infinite Slider",
-                href: "#",
+                href: "/motion/infinite-slider",
             },
             {
                 name: "Transition Panel",
