@@ -88,10 +88,10 @@
         @apply mb-4 mt-6;
     }
     .steps > p {
-        @apply text-base text-neutral-600;
+        @apply text-sm md:text-base text-neutral-600;
     }
     .step > p > code {
-        @apply rounded-md bg-gray-100 px-2 py-0.5 text-black dark:bg-neutral-800 dark:text-white;
+        @apply rounded-md bg-gray-100 px-2 text-sm py-0.5 text-black dark:bg-neutral-800 dark:text-white;
     }
     .steps > p > a {
         @apply rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:bg-dawn-700 dark:text-white;
@@ -130,7 +130,7 @@
 
     .step::before {
         @apply absolute -mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-white bg-dusk-400 text-center -indent-px text-sm text-black dark:border-background dark:bg-dawn-700 dark:text-white;
-        @apply ml-[-50px];
+        @apply ml-[-40px] md:ml-[-50px];
         content: counter(step);
     }
     .home-page a {

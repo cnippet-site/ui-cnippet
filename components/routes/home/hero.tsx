@@ -9,7 +9,7 @@ export default function Hero() {
         <>
             <section className="relative h-screen border-b border-dashed bg-background dark:border-neutral-800">
                 <div className="z-0 h-full flex-auto items-center justify-center">
-                    <div className="mx-auto flex h-full max-w-7xl flex-col gap-12 border-l border-r border-dashed px-6 py-20 pt-32 md:pt-40 text-black dark:border-neutral-800 dark:text-white md:flex-row">
+                    <div className="mx-4 flex h-full max-w-7xl flex-col gap-12 border-l border-r border-dashed px-4 py-20 pt-32 text-black dark:border-neutral-800 dark:text-white md:mx-auto md:flex-row md:px-6 md:pt-40">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}

@@ -62,7 +62,7 @@ export function CodeBlockCommand({
                                 <TabsTrigger
                                     key={key}
                                     value={key}
-                                    className="font-mono rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 text-zinc-400 data-[state=active]:border-b-zinc-50 data-[state=active]:bg-transparent data-[state=active]:text-zinc-50"
+                                    className="font-mono rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 text-sm text-zinc-400 data-[state=active]:border-b-zinc-50 data-[state=active]:bg-transparent data-[state=active]:text-zinc-50 md:text-base"
                                 >
                                     {key}
                                 </TabsTrigger>
@@ -75,7 +75,7 @@ export function CodeBlockCommand({
                         <TabsContent key={key} value={key} className="mt-0">
                             <pre className="px-4 py-5">
                                 <code
-                                    className="font-mono relative text-sm leading-none text-white"
+                                    className="font-mono relative text-xs leading-none text-white md:text-sm"
                                     data-language="bash"
                                 >
                                     {value}

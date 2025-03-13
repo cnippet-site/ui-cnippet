@@ -1,4 +1,6 @@
 "use client";
+import { CommandMenu } from "@/components/command-menu";
+import { MobileNav } from "@/components/mobile-nav";
 import { Button } from "@/components/ui/button";
 import { RiMoonFill, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
@@ -7,7 +9,6 @@ import Link from "next/link";
 import React from "react";
 
 const Nav1 = () => {
-
     const { theme, setTheme } = useTheme();
 
     const toggleTheme = () => {
@@ -15,88 +16,6 @@ const Nav1 = () => {
     };
 
     return (
-        // <div className="bg-white px-10 py-4 shadow-sm">
-        //     <div className="hidden items-center justify-between md:flex">
-        //         <Link href="/" className="text-2xl font-bold text-[#2F2B6B]">
-        //             Cnippet
-        //         </Link>
-
-        //         <div className="flex items-center gap-8">
-        //             <div
-        //                 className="relative"
-        //                 onMouseEnter={() => setIsPagesOpen(true)}
-        //                 onMouseLeave={() => setIsPagesOpen(false)}
-        //             >
-        //                 <button className="flex items-center gap-1 text-gray-700 transition hover:text-gray-900">
-        //                     Components <ChevronDown className="size-4" />
-        //                 </button>
-
-        //                 {isPagesOpen && (
-        //                     <motion.div
-        //                         initial={{ opacity: 0, y: -10 }}
-        //                         animate={{ opacity: 1, y: 0 }}
-        //                         className="absolute left-0 top-full mt-5 w-48 rounded-xl border bg-white py-2 shadow-xl"
-        //                     >
-        //                         <Link
-        //                             href="#"
-        //                             className="block px-4 py-2 text-gray-700 transition hover:bg-gray-100"
-        //                         >
-        //                             Blog
-        //                         </Link>
-        //                         <Link
-        //                             href="#"
-        //                             className="block px-4 py-2 text-gray-700 transition hover:bg-gray-100"
-        //                         >
-        //                             Portfolio
-        //                         </Link>
-        //                         <Link
-        //                             href="#"
-        //                             className="block px-4 py-2 text-gray-700 transition hover:bg-gray-100"
-        //                         >
-        //                             Dashboard
-        //                         </Link>
-        //                     </motion.div>
-        //                 )}
-        //             </div>
-
-        //             <Link
-        //                 href="#"
-        //                 className="text-gray-700 transition hover:text-gray-900"
-        //             >
-        //                 Sections
-        //             </Link>
-        //             <Link
-        //                 href="#"
-        //                 className="text-gray-700 transition hover:text-gray-900"
-        //             >
-        //                 Templates
-        //             </Link>
-        //             <Link
-        //                 href="#"
-        //                 className="text-gray-700 transition hover:text-gray-900"
-        //             >
-        //                 Showcase
-        //             </Link>
-
-        //             <div className="w-full">
-        //                 <div className="flex w-full items-center justify-center">
-        //                     <Button
-        //                         variant="ghost"
-        //                         onClick={() => toggleTheme()}
-        //                         className="hover:bg-dusk-500 hover:dark:bg-dawn-700 flex items-center justify-center gap-2 rounded-lg p-2 text-black dark:text-white"
-        //                     >
-        //                         {theme === "dark" ? (
-        //                             <RiSunLine className="size-5" />
-        //                         ) : (
-        //                             <RiMoonFill className="size-5" />
-        //                         )}
-        //                         <span>Toogle theme</span>
-        //                     </Button>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
         <header className="sticky top-0 z-50 w-full border-b border-dashed bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-neutral-800">
             <div className="container-wrapper">
                 <div className="container flex h-14 items-center px-4">
@@ -166,44 +85,10 @@ const Nav1 = () => {
                             </Link>
                         </nav>
                     </div>
-                    <button
-                        className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 -ml-2 mr-2 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-base font-medium transition-colors hover:bg-transparent hover:text-accent-foreground focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50 md:hidden"
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-expanded="false"
-                        aria-controls="radix-:R15u6ja:"
-                        data-state="closed"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="!size-6"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M3.75 9h16.5m-16.5 6.75h16.5"
-                            ></path>
-                        </svg>
-                        <span className="sr-only">Toggle Menu</span>
-                    </button>
+                    <MobileNav/>
+                    
                     <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
-                        <div className="w-full flex-1 md:w-auto md:flex-none">
-                            <button className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 relative inline-flex h-8 w-full items-center justify-start gap-2 whitespace-nowrap rounded-[0.5rem] border border-input bg-muted/50 px-4 py-2 text-sm font-normal text-muted-foreground shadow-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 sm:pr-12 md:w-40 lg:w-56 xl:w-64">
-                                <span className="hidden lg:inline-flex">
-                                    Search documentation...
-                                </span>
-                                <span className="inline-flex lg:hidden">
-                                    Search...
-                                </span>
-                                <kbd className="font-mono pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 text-[10px] font-medium opacity-100 sm:flex">
-                                    <span className="text-xs">⌘</span>K
-                                </kbd>
-                            </button>
-                        </div>
+                        <CommandMenu />
                         <nav className="flex items-center gap-0.5">
                             <Link
                                 target="_blank"

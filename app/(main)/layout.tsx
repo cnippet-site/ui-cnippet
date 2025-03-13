@@ -162,9 +162,6 @@ export default function ComponentLayout({
                                 <NavigationDesktop
                                     navigation={currentNavigation}
                                 />
-                                <NavigationMobile
-                                    navigation={currentNavigation}
-                                />
                                 <div className="w-full pt-8">{children}</div>
                             </div>
                         </div>

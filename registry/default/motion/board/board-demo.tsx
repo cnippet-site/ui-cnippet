@@ -16,14 +16,14 @@ const CustomKanban = () => {
         </div>
     );
 };
-export default CustomKanban
+export default CustomKanban;
 
 const Board = () => {
     const [cards, setCards] = useState<Card[]>(DEFAULT_CARDS);
 
     return (
-        <div className="flex h-full w-full gap-3 overflow-x-scroll p-12">
-            <ScrollArea className="grid grid-cols-2 gap-10">
+        <div className="flex h-full w-full gap-3 overflow-x-scroll p-4 md:p-12">
+            <ScrollArea className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 <Column
                     title="TODO"
                     column="todo"
@@ -54,7 +54,6 @@ const Board = () => {
                 cards={cards}
                 setCards={setCards}
             /> */}
-
         </div>
     );
 };
@@ -64,7 +63,7 @@ const Column = ({
     headingColor,
     cards,
     column,
-    setCards
+    setCards,
 }: {
     title: string;
     headingColor: string;
@@ -156,14 +155,16 @@ const Column = ({
             {
                 offset: Number.NEGATIVE_INFINITY,
                 element: indicators[indicators.length - 1],
-            }
+            },
         );
 
         return el;
     };
 
     const getIndicators = () => {
-        return Array.from(document.querySelectorAll(`[data-column="${column}"]`));
+        return Array.from(
+            document.querySelectorAll(`[data-column="${column}"]`),
+        );
     };
     const handleDragLeave = () => {
         clearHighlights(getIndicators());
@@ -181,13 +182,21 @@ const Column = ({
                 </span>
             </div>
             <div
-                onDrop={(e: React.DragEvent<HTMLDivElement>) => handleDragEnd(e as any)}
+                onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+                    handleDragEnd(e as any)
+                }
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 className={`h-full w-full transition-colors ${active ? "bg-neutral-800/50" : "bg-neutral-800/0"}`}
             >
                 {filteredCards.map((c) => {
-                    return <Card key={c.id} {...c} handleDragStart={handleDragStart} />;
+                    return (
+                        <Card
+                            key={c.id}
+                            {...c}
+                            handleDragStart={handleDragStart}
+                        />
+                    );
                 })}
                 <DropIndicator beforeId={null} column={column} />
                 <AddCard column={column} setCards={setCards} />
@@ -196,7 +205,17 @@ const Column = ({
     );
 };
 
-const Card = ({ title, id, column, handleDragStart }: { title?: string, id: string, column: string, handleDragStart: (e: DragEvent, card: { id: string }) => void }) => {
+const Card = ({
+    title,
+    id,
+    column,
+    handleDragStart,
+}: {
+    title?: string;
+    id: string;
+    column: string;
+    handleDragStart: (e: DragEvent, card: { id: string }) => void;
+}) => {
     return (
         <>
             <DropIndicator beforeId={id} column={column} />
@@ -213,7 +232,13 @@ const Card = ({ title, id, column, handleDragStart }: { title?: string, id: stri
     );
 };
 
-const DropIndicator = ({ beforeId, column }: { beforeId: string | null, column: string }) => {
+const DropIndicator = ({
+    beforeId,
+    column,
+}: {
+    beforeId: string | null;
+    column: string;
+}) => {
     return (
         <div
             data-before={beforeId || "-1"}
@@ -223,7 +248,11 @@ const DropIndicator = ({ beforeId, column }: { beforeId: string | null, column: 
     );
 };
 
-const BurnBarrel = ({ setCards }: { setCards: React.Dispatch<React.SetStateAction<Card[]>> }) => {
+const BurnBarrel = ({
+    setCards,
+}: {
+    setCards: React.Dispatch<React.SetStateAction<Card[]>>;
+}) => {
     const [active, setActive] = useState(false);
 
     const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
@@ -247,17 +276,28 @@ const BurnBarrel = ({ setCards }: { setCards: React.Dispatch<React.SetStateActio
             onDrop={handleDragEnd}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
-            className={`mt-10 grid h-56 w-56 shrink-0 place-content-center rounded border text-3xl ${active
-                ? "border-red-800 bg-red-800/20 text-red-500"
-                : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
-                }`}
+            className={`mt-10 grid h-56 w-56 shrink-0 place-content-center rounded border text-3xl ${
+                active
+                    ? "border-red-800 bg-red-800/20 text-red-500"
+                    : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
+            }`}
         >
-            {active ? <FireExtinguisherIcon className="animate-bounce" /> : <Trash />}
+            {active ? (
+                <FireExtinguisherIcon className="animate-bounce" />
+            ) : (
+                <Trash />
+            )}
         </div>
     );
 };
 
-const AddCard = ({ column, setCards }: { column: string, setCards: React.Dispatch<React.SetStateAction<Card[]>> }) => {
+const AddCard = ({
+    column,
+    setCards,
+}: {
+    column: string;
+    setCards: React.Dispatch<React.SetStateAction<Card[]>>;
+}) => {
     const [text, setText] = useState("");
     const [adding, setAdding] = useState(false);
 

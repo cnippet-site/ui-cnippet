@@ -29,20 +29,20 @@ export default async function ComponentPage({ params }: { params: Params }) {
     const toc = await getTableOfContents(doc.body.raw);
 
     return (
-        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px]">
+        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_240px]">
             <div className="mx-auto w-full min-w-0 max-w-4xl px-4 sm:px-6 lg:px-8">
                 <div className="space-y-2 pb-6">
-                    <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-3xl">
+                    <h1 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
                         {doc.title}
                     </h1>
                     {doc.description && (
-                        <p className="text-base text-muted-foreground">
+                        <p className="text-sm text-muted-foreground md:text-base">
                             {doc.description}
                         </p>
                     )}
                 </div>
 
-                <div className="pb-12 pt-6">
+                <div className="pb-12 md:pt-6">
                     <article className="prose prose-gray dark:prose-invert max-w-none">
                         {doc.body.code && <Mdx code={doc.body.code} />}
                     </article>

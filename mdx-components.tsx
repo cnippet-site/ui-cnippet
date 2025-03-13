@@ -22,7 +22,7 @@ const components = {
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2
             className={cn(
-                "font-heading mt-12 scroll-m-20 border-b pb-2 font-ins text-2xl tracking-tight first:mt-0 dark:border-dawn-800",
+                "font-heading font-ins mt-6 scroll-m-20 border-b pb-2 text-xl tracking-tight first:mt-0 dark:border-dawn-800 md:mt-12 md:text-2xl",
                 className,
             )}
             {...props}
@@ -31,7 +31,7 @@ const components = {
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h3
             className={cn(
-                "font-heading mt-8 scroll-m-20 font-ins text-xl tracking-tight",
+                "font-heading font-ins mt-4 scroll-m-20 text-lg tracking-tight md:mt-8 md:text-2xl",
                 className,
             )}
             {...props}
@@ -40,7 +40,7 @@ const components = {
     h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h4
             className={cn(
-                "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+                "font-heading mt-4 scroll-m-20 text-lg font-semibold tracking-tight md:mt-8",
                 className,
             )}
             {...props}
@@ -50,13 +50,7 @@ const components = {
         className,
         ...props
     }: React.HTMLAttributes<HTMLParagraphElement>) => (
-        <p
-            className={cn(
-                "font-normal leading-7 mt-3",
-                className,
-            )}
-            {...props}
-        />
+        <p className={cn("mt-3 font-normal leading-7", className)} {...props} />
     ),
     ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
         <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -72,7 +66,7 @@ const components = {
         className,
         ...props
     }: React.HTMLAttributes<HTMLTableElement>) => (
-        <div className="my-6 w-full overflow-y-auto font-ins text-sm font-medium">
+        <div className="font-ins my-6 w-full overflow-y-auto text-sm font-medium">
             <table className={cn("w-full", className)} {...props} />
         </div>
     ),
@@ -88,7 +82,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <th
             className={cn(
-                "border px-4 py-2 text-left font-ins font-medium dark:border-dawn-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "font-ins border px-4 py-2 text-left font-medium dark:border-dawn-600 [&[align=center]]:text-center [&[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -162,12 +156,10 @@ const components = {
         return (
             <>
                 <pre
-                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 dark:!bg-zinc-900 dark:border-neutral-800 text-wrap ${className}`}
+                    className={`overflow-x-auto text-wrap rounded-lg border !bg-neutral-950 dark:border-neutral-800 dark:!bg-zinc-900 ${className}`}
                     {...props}
                 />
-                {__rawString__ && (
-                    <CopyButton value={__rawString__} />
-                )}
+                {__rawString__ && <CopyButton value={__rawString__} />}
             </>
         );
     },
@@ -175,7 +167,7 @@ const components = {
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
             className={cn(
-                "font-mono font-normal px-4 py-5 text-sm",
+                "font-mono px-4 py-5 text-xs font-normal md:text-sm",
                 className,
             )}
             {...props}
@@ -185,7 +177,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "font-sans font-bold [&>p]:font-medium text-base text-black dark:text-white",
+                "font-sans text-sm font-bold text-black dark:text-white md:text-base [&>p]:font-medium",
                 className,
             )}
             {...props}
@@ -194,7 +186,7 @@ const components = {
 
     Steps: ({ ...props }) => (
         <div
-            className="[&>h3]:step steps mb-16 ml-4 border-l border-dawn-100 pl-[2.1rem] [counter-reset:step] dark:border-dawn-500"
+            className="[&>h3]:step steps mb-16 border-l border-dawn-100 pl-6 [counter-reset:step] dark:border-dawn-500 md:ml-4 md:pl-[2.1rem]"
             {...props}
         />
     ),
@@ -220,7 +212,7 @@ const components = {
     }: React.ComponentProps<typeof TabsTrigger>) => (
         <TabsTrigger
             className={cn(
-                "data-[state=active]:bg- relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-2 pb-3 pt-2 font-ins font-medium text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none dark:font-normal",
+                "data-[state=active]:bg- font-ins relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-2 pb-3 pt-2 font-medium text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none dark:font-normal",
                 className,
             )}
             {...props}

@@ -27,8 +27,8 @@ const Components = () => {
 
     return (
         <section className="border-b border-dashed bg-background dark:border-neutral-800">
-            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 py-20 dark:border-neutral-800 sm:px-6 lg:px-0">
-                <div className="mb-16 space-y-4 px-4 text-center md:px-8">
+            <div className="mx-4 max-w-7xl border-l border-r border-dashed px-4 py-20 dark:border-neutral-800 sm:px-6 md:mx-auto lg:px-0">
+                <div className="mb-16 space-y-4 px-0 text-center md:px-8">
                     <h2 className="text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl">
                         Interactive Components Gallery
                     </h2>
@@ -38,7 +38,7 @@ const Components = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 px-10 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:px-10 lg:grid-cols-3">
                     {componentList.map((item, index) => (
                         <div
                             key={index}
@@ -47,7 +47,7 @@ const Components = () => {
                             <div className="flex h-60 items-center justify-center">
                                 {item.component}
                             </div>
-                            <div className="mt-4 border-t pt-4 border-dashed dark:border-neutral-800">
+                            <div className="mt-4 border-t border-dashed pt-4 dark:border-neutral-800">
                                 <h3 className="font-medium">{item.name}</h3>
                                 <Link
                                     href={item.link}
@@ -82,7 +82,7 @@ const Components = () => {
                                 </h3>
                                 <Link
                                     href="/motion/dialog"
-                                    className="text-sm text-primary/80 hover:text-primary flex items-center group"
+                                    className="group flex items-center text-sm text-primary/80 hover:text-primary"
                                 >
                                     View Advanced Demo
                                     <svg

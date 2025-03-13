@@ -31,7 +31,7 @@ export default function Faq() {
 
     return (
         <section className="bg-background">
-            <div className="mx-auto max-w-7xl border-l border-r border-dashed px-4 py-16 dark:border-neutral-800 sm:px-6 md:py-24 lg:px-8 lg:py-40">
+            <div className="mx-4 max-w-7xl border-l border-r border-dashed px-4 py-16 dark:border-neutral-800 sm:px-6 md:mx-auto md:py-24 lg:px-8 lg:py-40">
                 <div className="flex flex-col gap-5 md:flex-row">
                     <div className="mx-auto flex w-full max-w-sm flex-col">
                         <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
@@ -64,7 +64,7 @@ export default function Faq() {
                                     duration: 0.3,
                                     delay: index * 0.1,
                                 }}
-                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
+                                className="rounded-xl border border-dashed bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
                             >
                                 <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
@@ -85,7 +85,7 @@ export default function Faq() {
                                     duration: 0.3,
                                     delay: index * 0.1,
                                 }}
-                                className="rounded-xl border bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
+                                className="rounded-xl border border-dashed bg-white p-7 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-black/80"
                             >
                                 <h3 className="text-lg font-semibold text-black dark:text-white">
                                     {item.question}
