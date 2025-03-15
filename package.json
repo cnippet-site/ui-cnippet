@@ -12,6 +12,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "docs": "pnpm run build:registry && pnpm run collection",
         "init:test": "pnpm run build:registry && pnpm run collection && pnpm run analyze"
     },
     "dependencies": {

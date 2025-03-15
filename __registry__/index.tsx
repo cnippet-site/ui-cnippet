@@ -1601,6 +1601,48 @@
         subcategory: "undefined",
         chunks: []
       },
+      "use-click-outside": {
+        name: "use-click-outside",
+        type: "registry:hook",
+        slug: "/components/use-click-outside",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["hooks/use-click-outside.tsx"],
+        component: React.lazy(() => import("@/hooks/use-click-outside.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
+      "use-image-upload": {
+        name: "use-image-upload",
+        type: "registry:hook",
+        slug: "/components/use-image-upload",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["hooks/use-image-upload.tsx"],
+        component: React.lazy(() => import("@/hooks/use-image-upload.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
+      "use-prevent-scroll": {
+        name: "use-prevent-scroll",
+        type: "registry:hook",
+        slug: "/components/use-prevent-scroll",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["hooks/use-prevent-scroll.tsx"],
+        component: React.lazy(() => import("@/hooks/use-prevent-scroll.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
     },
   }
   

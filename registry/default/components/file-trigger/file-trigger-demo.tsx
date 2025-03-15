@@ -1,6 +1,6 @@
 "use client";
 
-import { useImageUpload } from "@/hooks/useImageUpload";
+import { useImageUpload } from "@/hooks/use-image-upload";
 import { Button } from "@/components/ui/button";
 import { CircleUserRoundIcon } from "lucide-react";
 import Image from "next/image";

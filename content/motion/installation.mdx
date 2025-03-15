@@ -10,25 +10,58 @@ summary: "This is my first post!"
 
 <Steps>
 <Step>
-Install Tailwind CSS
+Create a New Next.js Project
 </Step>
 
-Components are styled using Tailwind CSS. Follow the official installation guide to add it to your project.
+Start by creating a new Next.js **project**. You can use either npm or pnpm:
+
+```bash
+npx create-next-app@latest
+```
+During the setup, you'll be prompted with several options. Here's what we recommend:
+
+```plaintext
+✔ What is your project named? ... my-app
+✔ Would you like to use TypeScript? ... Yes
+✔ Would you like to use ESLint? ... Yes
+✔ Would you like to use Tailwind CSS? ... Yes
+✔ Would you like to use `src/` directory? ... No
+✔ Would you like to use App Router? ... Yes
+✔ Would you like to customize the default import alias? ... Yes
+✔ What import alias would you like configured? ... @/*
+```
+
+This will create a new Next.js project with Tailwind CSS already configured and ready to use.
+
+<Step>
+Download Components
+</Step>
+
+You can get all the components from our GitHub repository:
+
+```bash
+git clone https://github.com/cnippet/ui-cnippet.git
+```
+
+Or download them directly from our [GitHub repository](https://github.com/cnippet/ui-cnippet). The repository includes all components, examples, and additional utilities.
 
 <Step>
 Install Motion
 </Step>
 
-Components are animated using Motion.
-```npm
+Components are animated using Motion, which provides smooth animations and transitions:
+
+```bash
 npm install motion
 ```
+
+Motion is used for all our interactive animations and transitions. It provides a simple API for creating complex animations.
 
 <Step>
 Add the utility helper
 </Step>
 
-Create a lib/utils.ts file to manage Tailwind CSS classes:
+Create a `lib/utils.ts` file to manage Tailwind CSS classes. This utility helps combine Tailwind classes efficiently and handles class name conflicts:
 
 ```tsx
 import { clsx, type ClassValue } from 'clsx';
@@ -39,24 +72,36 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
+First install the required dependencies:
+
+```bash
+npm install clsx tailwind-merge
+```
+
 <Step>
 Install icons
 </Step>
 
-Add Lucide React icons:
+Add Lucide React icons for consistent and beautiful iconography:
 
-```npm
+```bash
 npm install lucide-react
 ```
 
-
+Lucide provides a comprehensive set of icons that are used throughout our components.
 
 <Step>
 That's it
 </Step>
 
-You can now start adding components to your project.
+You can now start adding components to your project. Each component can be imported from the components directory:
 
-You can also choose manual installation and copy the code from the components page.
+```tsx
+import { Button } from '@/components/ui/button'
+```
+
+You can also choose manual installation and copy the code directly from each component's page in our documentation.
+
+For any issues or questions, please visit our [GitHub repository](https://github.com/cnippet/ui-cnippet/issues) or join our community discussions.
 
 </Steps>

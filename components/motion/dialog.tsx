@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { useId } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
-import { usePreventScroll } from "@/hooks/usePreventScroll";
+import { usePreventScroll } from "@/hooks/use-prevent-scroll";
 
 const DialogContext = createContext<{
     isOpen: boolean;

@@ -64,7 +64,7 @@ export default function Home() {
                                 More <PlusIcon className="ml-1 h-4 w-4" />
                             </div>
                         </motion.div> */}
-                        <MouseIcon className="size-7 fill-blue-600 -rotate-[80deg]" />
+                        <MouseIcon className="size-7 -rotate-[80deg] fill-blue-600" />
                     </div>
                 </motion.div>
             </Cursor>
@@ -73,7 +73,7 @@ export default function Home() {
             <main className="font-sans">
                 <Hero />
                 <Features />
-                <Components/>
+                <Components />
                 <Faq />
             </main>
             <Footer />
