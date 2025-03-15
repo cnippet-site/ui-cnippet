@@ -15,7 +15,6 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { charts, components, motions } from "@/config/docs";
-import router from "next/router";
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false);

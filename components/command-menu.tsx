@@ -3,10 +3,10 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { Circle, File, Laptop, Moon, Sun } from "lucide-react";
+import { Circle, Laptop, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { motions, charts, components, searchDocs } from "@/config/docs";
+import { searchDocs } from "@/config/docs";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +18,6 @@ import {
     CommandList,
     CommandSeparator,
 } from "@/components/ui/command";
-import { motion } from "motion/react";
 
 export function CommandMenu({ ...props }: DialogProps) {
     const router = useRouter();

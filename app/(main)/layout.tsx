@@ -2,7 +2,7 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 import { charts, components, motions } from "@/config/docs";
 import Nav1 from "@/components/routes/shared/navbar/nav-1";
@@ -63,7 +63,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                     >
                                                         <span>{item.name}</span>
                                                         {item.href === "#" && (
-                                                            <span className="mr-4 ml-auto whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                            <span className="ml-auto mr-4 whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
                                                                 Coming soon
                                                             </span>
                                                         )}
@@ -92,42 +92,42 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     );
 }
 
-function NavigationMobile({ navigation }: { navigation: typeof components }) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const [selectedHref, setSelectedHref] = React.useState(pathname);
+// function NavigationMobile({ navigation }: { navigation: typeof components }) {
+//     const router = useRouter();
+//     const pathname = usePathname();
+//     const [selectedHref, setSelectedHref] = React.useState(pathname);
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const href = e.target.value;
-        setSelectedHref(href);
-        router.push(href);
-    };
+//     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+//         const href = e.target.value;
+//         setSelectedHref(href);
+//         router.push(href);
+//     };
 
-    return (
-        <div className="block w-full pt-8 md:hidden">
-            <select
-                className="block w-full appearance-none rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white"
-                value={selectedHref}
-                onChange={handleChange}
-            >
-                {navigation.map((nav) => {
-                    return (
-                        <optgroup label={nav.name} key={nav.name}>
-                            {nav.items.map((item) => (
-                                <option
-                                    key={`${item.href}-${item.name}`}
-                                    value={item.href}
-                                >
-                                    {item.name}
-                                </option>
-                            ))}
-                        </optgroup>
-                    );
-                })}
-            </select>
-        </div>
-    );
-}
+//     return (
+//         <div className="block w-full pt-8 md:hidden">
+//             <select
+//                 className="block w-full appearance-none rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white"
+//                 value={selectedHref}
+//                 onChange={handleChange}
+//             >
+//                 {navigation.map((nav) => {
+//                     return (
+//                         <optgroup label={nav.name} key={nav.name}>
+//                             {nav.items.map((item) => (
+//                                 <option
+//                                     key={`${item.href}-${item.name}`}
+//                                     value={item.href}
+//                                 >
+//                                     {item.name}
+//                                 </option>
+//                             ))}
+//                         </optgroup>
+//                     );
+//                 })}
+//             </select>
+//         </div>
+//     );
+// }
 
 export default function ComponentLayout({
     children,

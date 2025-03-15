@@ -54,6 +54,7 @@ export const GridShuffleBoxes = ({
 
             // Force new row if next box won't fit
             if (currentColumn >= gridColumns - 3) {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 currentRow += rowSpan;
                 currentColumn = 1;
             }
@@ -76,12 +77,12 @@ export const GridShuffleBoxes = ({
 
     return (
         <div
-            className={`grid w-full gap-0 h-full`}
+            className={`grid h-full w-full gap-0`}
             style={{
                 gridTemplateColumns: `repeat(${gridColumns}, minmax(0, 1fr))`,
                 // gridTemplateRows: `repeat(${gridColumns}, minmax(0, 1fr))`,
 
-                gridAutoRows: `${rowHeight}px`, 
+                gridAutoRows: `${rowHeight}px`,
             }}
         >
             {boxes.map((box) => (

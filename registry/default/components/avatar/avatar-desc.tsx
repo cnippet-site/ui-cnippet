@@ -1,31 +1,33 @@
+import Image from "next/image";
+
 export default function Component() {
     return (
         <div className="flex items-center rounded-full border bg-background p-1 shadow-sm">
             <div className="flex -space-x-1.5">
-                <img
+                <Image
                     className="rounded-full ring-1 ring-background"
-                    src="/avatar-80-03.jpg"
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
                     width={20}
                     height={20}
                     alt="Avatar 01"
                 />
-                <img
+                <Image
                     className="rounded-full ring-1 ring-background"
-                    src="/avatar-80-04.jpg"
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
                     width={20}
                     height={20}
                     alt="Avatar 02"
                 />
-                <img
+                <Image
                     className="rounded-full ring-1 ring-background"
-                    src="/avatar-80-05.jpg"
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
                     width={20}
                     height={20}
                     alt="Avatar 03"
                 />
-                <img
+                <Image
                     className="rounded-full ring-1 ring-background"
-                    src="/avatar-80-06.jpg"
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
                     width={20}
                     height={20}
                     alt="Avatar 04"

@@ -15,6 +15,7 @@ interface ShuffleGridProps {
     gridClasses?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const shuffle = (array: any[]) => {
     let currentIndex = array.length,
         randomIndex;
