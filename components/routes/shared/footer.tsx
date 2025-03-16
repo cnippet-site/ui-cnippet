@@ -102,6 +102,7 @@ export default function Footer() {
                             <FooterLink href="#">Sections</FooterLink>
                             <FooterLink href="#">Pages</FooterLink>
                             <FooterLink href="#">Templates</FooterLink>
+                            <FooterLink href="/contact">Contact Us</FooterLink>
                         </ul>
                     </div>
 

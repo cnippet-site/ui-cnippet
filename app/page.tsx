@@ -10,6 +10,8 @@ import Navbar from "@/components/routes/shared/navbar";
 import { Cursor } from "@/components/motion/cursor";
 import { motion } from "motion/react";
 import Components from "@/components/routes/home/components";
+import Cta from "@/components/routes/shared/cta";
+import { Newsletter } from "@/components/newsletter";
 
 export default function Home() {
     useEffect(() => {
@@ -75,6 +77,7 @@ export default function Home() {
                 <Features />
                 <Components />
                 <Faq />
+                <Newsletter/>
             </main>
             <Footer />
         </div>
