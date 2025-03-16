@@ -27,11 +27,15 @@ const baseUrl = process.env.VERCEL_URL
 export const NewsletterWelcomeEmail = ({
     userEmail = "there",
 }: NewsletterWelcomeEmailProps) => {
+    console.log(userEmail);
+
     return (
         <Html>
             <Head />
             <Tailwind>
-                <Preview>Welcome to Cnippet - Your UI Component Journey Begins</Preview>
+                <Preview>
+                    Welcome to Cnippet - Your UI Component Journey Begins
+                </Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] p-10">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
                         {/* Header Section */}
@@ -52,8 +56,12 @@ export const NewsletterWelcomeEmail = ({
                                     <Heading className="mb-4 text-center text-[24px] font-normal text-[#202124]">
                                         Your UI journey starts here
                                     </Heading>
-                                    <Text className="mb-8 text-[15px] text-left mx-4 leading-6 text-[#202124]">
-                                        Welcome to Cnippet! We're excited to have you join our community of innovative developers and designers. Get ready to transform your projects with our carefully crafted UI components.
+                                    <Text className="mx-4 mb-8 text-left text-[15px] leading-6 text-[#202124]">
+                                        Welcome to Cnippet! We&apos;re excited to
+                                        have you join our community of
+                                        innovative developers and designers. Get
+                                        ready to transform your projects with
+                                        our carefully crafted UI components.
                                     </Text>
 
                                     <Button
@@ -63,8 +71,9 @@ export const NewsletterWelcomeEmail = ({
                                         Explore Components Library
                                     </Button>
 
-                                    <Text className="mb-6 text-[15px] text-left mx-4 leading-6 text-[#5f6368]">
-                                        Here's what you'll get with your subscription:
+                                    <Text className="mx-4 mb-6 text-left text-[15px] leading-6 text-[#5f6368]">
+                                        Here&apos;s what you&apos;ll get with your
+                                        subscription:
                                     </Text>
 
                                     <ul className="mx-auto max-w-[400px] text-left">
@@ -73,27 +82,31 @@ export const NewsletterWelcomeEmail = ({
                                                 key={index}
                                                 className="m-0 mb-3 flex items-center gap-2 py-1.5 text-[14px] leading-6 text-[#202124]"
                                             >
-                                                <span className="mr-2 text-[18px]">{benefit.icon}</span>{" "}
+                                                <span className="mr-2 text-[18px]">
+                                                    {benefit.icon}
+                                                </span>{" "}
                                                 {benefit.text}
                                             </li>
                                         ))}
                                     </ul>
 
                                     <Text className="mt-8 text-[13px] leading-6 text-[#5f6368]">
-                                        Stay tuned for our first newsletter, arriving in your inbox soon!
+                                        Stay tuned for our first newsletter,
+                                        arriving in your inbox soon!
                                     </Text>
                                 </Column>
                             </Row>
                         </Section>
 
-                        <hr className="border-t border-[#e8eaed] my-6" />
+                        <hr className="my-6 border-t border-[#e8eaed]" />
                         {/* Footer */}
                         <Section className="mt-2 text-center">
                             <Text className="my-1 text-[12px] text-[#5f6368]">
-                                © {new Date().getFullYear()} Cnippet LLC · All rights reserved
+                                © {new Date().getFullYear()} Cnippet LLC · All
+                                rights reserved
                             </Text>
                             <Text className="my-1 text-[12px] text-[#5f6368]">
-                                If you don't want to receive such emails in the
+                                If you don&apos;t want to receive such emails in the
                                 future, please{" "}
                                 <Link
                                     href="https://ui.cnippet.site/unsubscribe"
@@ -111,11 +124,20 @@ export const NewsletterWelcomeEmail = ({
 };
 
 const benefits = [
-    { icon: "🎨", text: "Premium UI components with regular updates and new additions" },
-    { icon: "💡", text: "Expert design tips and implementation best practices" },
-    { icon: "🚀", text: "Early access to beta features and new component libraries" },
+    {
+        icon: "🎨",
+        text: "Premium UI components with regular updates and new additions",
+    },
+    {
+        icon: "💡",
+        text: "Expert design tips and implementation best practices",
+    },
+    {
+        icon: "🚀",
+        text: "Early access to beta features and new component libraries",
+    },
     { icon: "📚", text: "Exclusive tutorials and developer resources" },
-    { icon: "🛠️", text: "Technical support and community discussions" }
+    { icon: "🛠️", text: "Technical support and community discussions" },
 ];
 
 export default NewsletterWelcomeEmail;

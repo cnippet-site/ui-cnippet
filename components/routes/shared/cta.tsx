@@ -47,26 +47,10 @@ export default function CreditCardLanding() {
         [0, 0.2, 0.3],
         ["-40%", "300%", "300%"],
     );
-    const cardRotateX = useTransform(
-        scrollYProgress,
-        [0, 0.2, 0.3],
-        [0, 0, 0],
-    );
-    const cardRotateY = useTransform(
-        scrollYProgress,
-        [0, 0.2, 0.3],
-        [0, 0, 0],
-    );
-    const cardRotateZ = useTransform(
-        scrollYProgress,
-        [0, 0.2, 0.3],
-        [0, 0, 0],
-    );
-    const cardScale = useTransform(
-        scrollYProgress,
-        [0, 0.2, 0.3],
-        [1, 0.9, 1],
-    );
+    const cardRotateX = useTransform(scrollYProgress, [0, 0.2, 0.3], [0, 0, 0]);
+    const cardRotateY = useTransform(scrollYProgress, [0, 0.2, 0.3], [0, 0, 0]);
+    const cardRotateZ = useTransform(scrollYProgress, [0, 0.2, 0.3], [0, 0, 0]);
+    const cardScale = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 0.9, 1]);
     const cardOpacity = useTransform(scrollYProgress, [0.2, 0.3], [1, 1]);
 
     // Transform values for the features card
@@ -1253,7 +1237,15 @@ function CreditCardBack({
 }
 
 // Flippable Card Component
-function FlippableCard({ isFlipped, frontContent, backContent }: { isFlipped: boolean, frontContent: React.ReactNode, backContent: React.ReactNode }) {
+function FlippableCard({
+    isFlipped,
+    frontContent,
+    backContent,
+}: {
+    isFlipped: boolean;
+    frontContent: React.ReactNode;
+    backContent: React.ReactNode;
+}) {
     return (
         <div className="relative h-[230px] w-[370px] [perspective:1000px]">
             <motion.div

@@ -23,7 +23,7 @@ export default function InfiniteSliderVertical() {
                         alt="Apple Music logo"
                         width={1920}
                         height={1080}
-                        className="aspect-square object-cover w-[120px] rounded-[4px]"
+                        className="aspect-square w-[120px] rounded-[4px] object-cover"
                     />
                 ))}
             </InfiniteSlider>
@@ -35,7 +35,7 @@ export default function InfiniteSliderVertical() {
                         alt="Apple Music logo"
                         width={1920}
                         height={1080}
-                        className="aspect-square object-cover w-[120px] rounded-[4px]"
+                        className="aspect-square w-[120px] rounded-[4px] object-cover"
                     />
                 ))}
             </InfiniteSlider>

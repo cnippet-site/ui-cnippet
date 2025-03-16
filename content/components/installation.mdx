@@ -18,6 +18,7 @@ Start by creating a new Next.js **project**. You can use either npm or pnpm:
 ```bash
 npx create-next-app@latest
 ```
+
 During the setup, you'll be prompted with several options. Here's what we recommend:
 
 ```plaintext
@@ -33,9 +34,7 @@ During the setup, you'll be prompted with several options. Here's what we recomm
 
 This will create a new Next.js project with Tailwind CSS already configured and ready to use.
 
-<Step>
-Download Components
-</Step>
+<Step>Download Components</Step>
 
 You can get all the components from our GitHub repository:
 
@@ -45,18 +44,16 @@ git clone https://github.com/cnippet/ui-cnippet.git
 
 Or download them directly from our [GitHub repository](https://github.com/cnippet/ui-cnippet). The repository includes all components, examples, and additional utilities.
 
-<Step>
-Add the utility helper
-</Step>
+<Step>Add the utility helper</Step>
 
 Create a `lib/utils.ts` file to manage Tailwind CSS classes. This utility helps combine Tailwind classes efficiently and handles class name conflicts:
 
 ```tsx
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+    return twMerge(clsx(inputs));
 }
 ```
 
@@ -66,9 +63,7 @@ First install the required dependencies:
 npm install clsx tailwind-merge
 ```
 
-<Step>
-Install icons
-</Step>
+<Step>Install icons</Step>
 
 Add Lucide React icons for consistent and beautiful iconography:
 
@@ -78,14 +73,12 @@ npm install lucide-react
 
 Lucide provides a comprehensive set of icons that are used throughout our components.
 
-<Step>
-That's it
-</Step>
+<Step>That's it</Step>
 
 You can now start adding components to your project. Each component can be imported from the components directory:
 
 ```tsx
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 ```
 
 You can also choose manual installation and copy the code directly from each component's page in our documentation.

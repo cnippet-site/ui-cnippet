@@ -78,7 +78,6 @@ export const componentExamples: Registry = generateExamples([
     { name: "radio-group-desc" },
     { name: "radio-group-review" },
 
-
     { name: "select-demo", number: "4" },
     { name: "sheet-demo", number: "4" },
     { name: "sidebar-demo", number: "4" },

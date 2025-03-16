@@ -83,7 +83,6 @@ export type AccordionProps = {
     onValueChange?: (value: React.Key | null) => void;
 };
 
-
 function Accordion({
     children,
     className,
@@ -111,7 +110,6 @@ function Accordion({
         </MotionConfig>
     );
 }
-
 
 export type AccordionItemProps = {
     value: React.Key;
@@ -169,7 +167,7 @@ function AccordionTrigger({
             {...(isExpanded ? { "data-expanded": "" } : { "data-closed": "" })}
         >
             {children}
-            {iconVariant === 'normal' && (
+            {iconVariant === "normal" && (
                 <motion.span
                     animate={{ rotate: isExpanded ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
@@ -178,10 +176,10 @@ function AccordionTrigger({
                     <ChevronDown className="h-4 w-4" />
                 </motion.span>
             )}
-            {iconVariant === 'plus-minus' && (
+            {iconVariant === "plus-minus" && (
                 <AnimatePresence mode="wait">
                     <motion.span
-                        key={isExpanded ? 'minus' : 'plus'}
+                        key={isExpanded ? "minus" : "plus"}
                         initial={{ scale: 0.5 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.5 }}

@@ -85,8 +85,8 @@ const Nav1 = () => {
                             </Link>
                         </nav>
                     </div>
-                    <MobileNav/>
-                    
+                    <MobileNav />
+
                     <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
                         <CommandMenu />
                         <nav className="flex items-center gap-0.5">

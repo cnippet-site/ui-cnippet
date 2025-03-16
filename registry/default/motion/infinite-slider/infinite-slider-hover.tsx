@@ -22,8 +22,7 @@ export default function InfiniteSliderHoverSpeed() {
                     alt="Apple Music logo"
                     width={1920}
                     height={1080}
-                   className="aspect-square w-40 object-cover"
-                    
+                    className="aspect-square w-40 object-cover"
                 />
             ))}
         </InfiniteSlider>

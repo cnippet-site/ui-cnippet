@@ -1,12 +1,10 @@
 import {
     Body,
-    Button,
     Container,
     Head,
     Heading,
     Html,
     Img,
-    Link,
     Preview,
     Section,
     Text,
@@ -71,7 +69,7 @@ export const ContactEmail = ({
 
                                     <div className="rounded-lg bg-[#f8f9fa] p-6">
                                         <Text className="m-0 mb-2 text-[14px] font-medium text-[#202124]">
-                                            Here's a copy of your message:
+                                            Here&apos;s a copy of the message by {email}:
                                         </Text>
                                         <div className="mb-4">
                                             <Text className="m-0 text-[14px] font-medium text-[#202124]">

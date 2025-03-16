@@ -20,8 +20,7 @@ export default function InfiniteSliderBasic() {
                     alt="Apple Music logo"
                     width={1920}
                     height={1080}
-                    className=" h-40 w-60 object-cover rounded-xl"
-                    
+                    className="h-40 w-60 rounded-xl object-cover"
                 />
             ))}
         </InfiniteSlider>

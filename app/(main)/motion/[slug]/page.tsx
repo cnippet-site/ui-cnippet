@@ -36,7 +36,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
                         {doc.title}
                     </h1>
                     {doc.description && (
-                        <p className="text-sm md:text-base text-muted-foreground">
+                        <p className="text-sm text-muted-foreground md:text-base">
                             {doc.description}
                         </p>
                     )}

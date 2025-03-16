@@ -55,7 +55,6 @@
 
 // export default AccordionIcon;
 
-
 import {
     Accordion,
     AccordionContent,
@@ -100,15 +99,15 @@ const AccordionIcon = () => {
             {items.map((item, i) => (
                 <AccordionItem key={i} value={item.id} className="py-2">
                     <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
-                        <div className="flex items-center gap-2 justify-between">
+                        <div className="flex items-center justify-between gap-2">
                             <span>
-                                <item.icon className="size-4 text-neutral-400"/>
+                                <item.icon className="size-4 text-neutral-400" />
                             </span>
                             <div>{item.title}</div>
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                        <p className="text-zinc-500 pl-5 dark:text-zinc-400">
+                        <p className="pl-5 text-zinc-500 dark:text-zinc-400">
                             {item.content}
                         </p>
                     </AccordionContent>

@@ -41,7 +41,7 @@ export default function Features() {
                         </p>
                     </div>
 
-                    <div className="md:border-b border-t border-dashed py-10 dark:border-neutral-800">
+                    <div className="border-t border-dashed py-10 dark:border-neutral-800 md:border-b">
                         <div className="grid gap-6 sm:grid-cols-2 md:px-10 lg:grid-cols-3 lg:gap-8">
                             <Cursor
                                 attachToParent

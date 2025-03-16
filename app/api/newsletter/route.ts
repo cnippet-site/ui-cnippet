@@ -23,17 +23,14 @@ export async function POST(request: Request) {
             const body = await request.json();
             email = body.email;
         } catch (error) {
-            return NextResponse.json(
-                { error: "Invalid request body" },
-                { status: 400 }
-            );
+            return NextResponse.json({ error: error }, { status: 400 });
         }
 
         // Validate email
         if (!email || typeof email !== "string") {
             return NextResponse.json(
                 { error: "Email is required and must be a string" },
-                { status: 400 }
+                { status: 400 },
             );
         }
 
@@ -46,19 +43,20 @@ export async function POST(request: Request) {
             if (existingSubscriber) {
                 return NextResponse.json(
                     { error: "Email already subscribed" },
-                    { status: 301 }
+                    { status: 301 },
                 );
             }
         } catch (error) {
             console.error("Database query error:", error);
             return NextResponse.json(
                 { error: "Failed to check subscription status" },
-                { status: 500 }
+                { status: 500 },
             );
         }
 
         // Create new subscriber
         try {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const subscriber = await prisma.newsletter.create({
                 data: { email },
             });
@@ -66,14 +64,16 @@ export async function POST(request: Request) {
             console.error("Database creation error:", error);
             return NextResponse.json(
                 { error: "Failed to create subscription" },
-                { status: 500 }
+                { status: 500 },
             );
         }
 
         // Send welcome email
         try {
-            const emailHtml = await render(NewsletterWelcomeEmail({ userEmail: email }));
-            
+            const emailHtml = await render(
+                NewsletterWelcomeEmail({ userEmail: email }),
+            );
+
             await resend.emails.send({
                 from: "Cnippet <newsletter@ui.cnippet.site>",
                 to: email,
@@ -88,13 +88,13 @@ export async function POST(request: Request) {
 
         return NextResponse.json(
             { message: "Successfully subscribed to newsletter" },
-            { status: 201 }
+            { status: 201 },
         );
     } catch (error) {
         console.error("Newsletter subscription error:", error);
         return NextResponse.json(
             { error: "An unexpected error occurred" },
-            { status: 500 }
+            { status: 500 },
         );
     }
 }

@@ -7,8 +7,12 @@ export default function TextMorphButton() {
 
     return (
         <button
-            onClick={() => setText(text === "Click here" ? "You are Awesome" : "Click here")}
-            className=" text-xl font-medium"
+            onClick={() =>
+                setText(
+                    text === "Click here" ? "You are Awesome" : "Click here",
+                )
+            }
+            className="text-xl font-medium"
         >
             <TextMorph>{text}</TextMorph>
         </button>

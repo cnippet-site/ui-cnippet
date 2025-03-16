@@ -38,5 +38,4 @@ export const components: Registry = generateComponents([
     { name: "tabs" },
     { name: "textarea" },
     { name: "tooltip" },
-
 ]);

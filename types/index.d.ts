@@ -21,11 +21,6 @@ export type DashboardConfig = {
     sidebarNav: SidebarNavItem[];
 };
 
-
-
-
-
-
 type ComponentItem = {
     name: string;
     href: string;

@@ -87,7 +87,7 @@ export function ComponentPreview({
                 >
                     <div
                         className={cn(
-                            "font-sans flex min-h-[350px] w-full justify-center p-10",
+                            "flex min-h-[350px] w-full justify-center p-10 font-sans",
                             {
                                 "items-center": align === "center",
                                 "items-start": align === "start",

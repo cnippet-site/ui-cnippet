@@ -86,7 +86,7 @@ export default {
                     950: "#0c0c0c",
                 },
             },
-        }
+        },
     },
     plugins: [],
 } satisfies Config;

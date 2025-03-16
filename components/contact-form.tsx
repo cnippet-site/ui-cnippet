@@ -19,11 +19,13 @@ const initialFormData: FormData = {
 
 export function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
-    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [status, setStatus] = useState<
+        "idle" | "loading" | "success" | "error"
+    >("idle");
     const [message, setMessage] = useState("");
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -57,12 +59,16 @@ export function ContactForm() {
             }
 
             setStatus("success");
-            setMessage("Message sent successfully! We'll get back to you soon.");
+            setMessage(
+                "Message sent successfully! We'll get back to you soon.",
+            );
             setFormData(initialFormData);
         } catch (error) {
             setStatus("error");
             setMessage(
-                error instanceof Error ? error.message : "Failed to send message"
+                error instanceof Error
+                    ? error.message
+                    : "Failed to send message",
             );
             console.error("Contact form error:", error);
         }
@@ -73,14 +79,17 @@ export function ContactForm() {
             <div className="mb-8 text-center">
                 <h2 className="mb-2 text-3xl font-semibold">Contact Us</h2>
                 <p className="text-muted-foreground">
-                    Have a question or feedback? We'd love to hear from you.
+                    Have a question or feedback? We&apos;d love to hear from you.
                 </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                        <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                        <label
+                            htmlFor="name"
+                            className="mb-2 block text-sm font-medium"
+                        >
                             Name
                         </label>
                         <input
@@ -94,7 +103,10 @@ export function ContactForm() {
                         />
                     </div>
                     <div>
-                        <label htmlFor="email" className="mb-2 block text-sm font-medium">
+                        <label
+                            htmlFor="email"
+                            className="mb-2 block text-sm font-medium"
+                        >
                             Email
                         </label>
                         <input
@@ -110,7 +122,10 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                    <label htmlFor="subject" className="mb-2 block text-sm font-medium">
+                    <label
+                        htmlFor="subject"
+                        className="mb-2 block text-sm font-medium"
+                    >
                         Subject
                     </label>
                     <input
@@ -125,7 +140,10 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                    <label htmlFor="message" className="mb-2 block text-sm font-medium">
+                    <label
+                        htmlFor="message"
+                        className="mb-2 block text-sm font-medium"
+                    >
                         Message
                     </label>
                     <textarea
@@ -143,12 +161,12 @@ export function ContactForm() {
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="w-full rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 flex items-center gap-2 justify-center"
+                        className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
                     >
                         {status === "loading" ? (
                             <>
-                            <Loader2 className="h-5 w-5 animate-spin" />
-                            Sending...
+                                <Loader2 className="h-5 w-5 animate-spin" />
+                                Sending...
                             </>
                         ) : (
                             "Send Message"
@@ -159,7 +177,9 @@ export function ContactForm() {
                 {message && (
                     <p
                         className={`text-center text-sm ${
-                            status === "success" ? "text-green-500" : "text-red-500"
+                            status === "success"
+                                ? "text-green-500"
+                                : "text-red-500"
                         }`}
                     >
                         {message}
@@ -168,4 +188,4 @@ export function ContactForm() {
             </form>
         </div>
     );
-} 
+}
