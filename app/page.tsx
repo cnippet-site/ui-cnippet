@@ -10,8 +10,6 @@ import Navbar from "@/components/routes/shared/navbar";
 import { Cursor } from "@/components/motion/cursor";
 import { motion } from "motion/react";
 import Components from "@/components/routes/home/components";
-import Cta from "@/components/routes/shared/cta";
-import { Newsletter } from "@/components/newsletter";
 
 export default function Home() {
     useEffect(() => {
@@ -35,52 +33,43 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="home-page">
-            <Cursor
-                attachToParent
-                variants={{
-                    initial: { scale: 0.3, opacity: 0 },
-                    animate: { scale: 1, opacity: 1 },
-                    exit: { scale: 0.3, opacity: 0 },
-                }}
-                transition={{
-                    ease: "easeInOut",
-                    duration: 0.15,
-                }}
-                className="top-4 z-[100]"
-            >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.6 }}
-                    className="inline-flex w-full items-center justify-center"
+        <>
+            <div className="home-page">
+                <Cursor
+                    attachToParent
+                    variants={{
+                        initial: { scale: 0.3, opacity: 0 },
+                        animate: { scale: 1, opacity: 1 },
+                        exit: { scale: 0.3, opacity: 0 },
+                    }}
+                    transition={{
+                        ease: "easeInOut",
+                        duration: 0.15,
+                    }}
+                    className="top-4 z-[100]"
                 >
-                    <div className="">
-                        {/* <motion.div
-                            initial={{ opacity: 0, scale: 0.6 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.6 }}
-                            className="inline-flex w-full items-center justify-center"
-                        >
-                            <div className="inline-flex items-center text-sm text-white dark:text-black">
-                                More <PlusIcon className="ml-1 h-4 w-4" />
-                            </div>
-                        </motion.div> */}
-                        <MouseIcon className="size-7 -rotate-[80deg] fill-blue-600" />
-                    </div>
-                </motion.div>
-            </Cursor>
-            {/* <AreaChartDemo /> */}
-            <Navbar />
-            <main className="font-sans">
-                <Hero />
-                <Features />
-                <Components />
-                <Faq />
-                <Newsletter/>
-            </main>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.6 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.6 }}
+                        className="inline-flex w-full items-center justify-center"
+                    >
+                        <div className="">
+                            <MouseIcon className="size-7 -rotate-[80deg] fill-blue-600" />
+                        </div>
+                    </motion.div>
+                </Cursor>
+                <Navbar />
+                <main className="font-sans">
+                    <Hero />
+                    <Features />
+                    <Components />
+                    <Faq />
+                </main>
+            </div>
+
             <Footer />
-        </div>
+        </>
     );
 }
 

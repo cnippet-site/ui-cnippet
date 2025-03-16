@@ -4,22 +4,73 @@ import type React from "react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Github } from "lucide-react";
+import { Sun, Moon, Github, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
     const { theme, setTheme } = useTheme();
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
+    const [mounted, setMounted] = useState(false);
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<
+        "idle" | "loading" | "success" | "error"
+    >("idle");
+    const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        try {
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            let data;
+            try {
+                const textResponse = await response.text();
+                data = textResponse ? JSON.parse(textResponse) : {};
+            } catch (parseError) {
+                console.error("Failed to parse response:", parseError);
+                throw new Error("Invalid server response");
+            }
+
+            if (!response.ok) {
+                if (data.error === "Email already subscribed") {
+                    setStatus("success");
+                    setMessage("You're already subscribed to our newsletter!");
+                    setEmail("");
+                    return;
+                }
+                throw new Error(data.error || "Failed to subscribe");
+            }
+
+            setStatus("success");
+            setMessage("Successfully subscribed to newsletter!");
+            setEmail("");
+        } catch (error) {
+            setStatus("error");
+            setMessage(
+                error instanceof Error ? error.message : "Failed to subscribe",
+            );
+            console.error("Newsletter subscription error:", error);
+        }
     };
+
     return (
         <footer className="bg-black px-4 py-12 text-white md:px-8 lg:px-16">
             <div className="mx-auto max-w-7xl">
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
                     {/* Logo and Social Links */}
-                    <div className="flex flex-col col-span-2     lg:col-span-1">
+                    <div className="col-span-2 flex flex-col lg:col-span-1">
                         <div className="mb-8">
                             <Link href="/" className="flex items-center gap-2">
                                 <Image
@@ -29,14 +80,11 @@ export default function Footer() {
                                     width={1080}
                                     height={1080}
                                 />
-                                <span className="inline-block">
-                                    Cnippet UI
-                                </span>
+                                <span className="inline-block">Cnippet UI</span>
                             </Link>
                         </div>
                     </div>
 
-                    {/* Resources Column */}
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">Motion</h3>
                         <ul className="space-y-2">
@@ -67,7 +115,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* More Column */}
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">Chart</h3>
                         <ul className="space-y-3">
@@ -89,7 +136,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* About Vercel Column */}
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">More...</h3>
                         <ul className="space-y-3">
@@ -106,7 +152,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal and Newsletter Column */}
                     <div className="col-span-2">
                         <div>
                             <h3 className="mb-4 font-medium">
@@ -116,16 +161,31 @@ export default function Footer() {
                                 Stay updated on new releases and features,
                                 guides, and case studies.
                             </p>
-                            <div className="flex md:max-w-[90%] flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row md:max-w-[90%]"
+                            >
                                 <Input
                                     type="email"
+                                    id="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     placeholder="you@domain.com"
-                                    className="h-7 border-none bg-black"
+                                    className="h-8 border-none bg-black text-white"
                                 />
-                                <Button size="sm" className="h-7 text-sm">
-                                    Subscribe
+                                <Button size="sm" className="h-8 text-sm">
+                                    {status === "loading" ? (
+                                        <Loader2 className="h-5 w-5 animate-spin" />
+                                    ) : (
+                                        "Subscribe"
+                                    )}
                                 </Button>
-                            </div>
+                            </form>
+                            <p
+                                className={`mt-1 text-xs ${status === "success" ? "text-green-500" : "text-red-500"}`}
+                            >
+                                {message}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -159,25 +219,24 @@ export default function Footer() {
                     </div>
 
                     <div className="mt-auto">
-                        <div className="flex gap-2 rounded-full border border-neutral-700 p-1.5">
-                            <button
-                            suppressHydrationWarning
-                                onClick={() => toggleTheme()}
-                                className={`rounded-full p-1 ${theme === "light" ? "bg-[#1a1a1a]" : ""}`}
-                                aria-label="Light mode"
-                            >
-                                <Sun className="size-4" />
-                            </button>
-                            <button
-                            suppressHydrationWarning
-
-                                onClick={() => toggleTheme()}
-                                className={`rounded-full p-1 ${theme === "dark" ? "bg-[#1a1a1a]" : ""}`}
-                                aria-label="Light mode"
-                            >
-                                <Moon className="size-4" />
-                            </button>
-                        </div>
+                        {mounted && (
+                            <div className="flex gap-2 rounded-full border border-neutral-800 p-1">
+                                <button
+                                    onClick={() => setTheme("light")}
+                                    className={`rounded-full p-1.5 ${theme === "light" ? "bg-[#1a1a1a]" : ""}`}
+                                    aria-label="Light mode"
+                                >
+                                    <Sun className="size-4" />
+                                </button>
+                                <button
+                                    onClick={() => setTheme("dark")}
+                                    className={`rounded-full p-1.5 ${theme === "dark" ? "bg-[#1a1a1a]" : ""}`}
+                                    aria-label="Dark mode"
+                                >
+                                    <Moon className="size-4" />
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

@@ -69,9 +69,9 @@ export function ContactForm() {
     };
 
     return (
-        <div className="mx-auto w-full max-w-2xl rounded-lg bg-card px-6 py-8 shadow-sm">
+        <div className="mx-auto w-full max-w-xl rounded-lg bg-card px-6 py-20 shadow-sm">
             <div className="mb-8 text-center">
-                <h2 className="mb-2 text-3xl font-bold">Contact Us</h2>
+                <h2 className="mb-2 text-3xl font-semibold">Contact Us</h2>
                 <p className="text-muted-foreground">
                     Have a question or feedback? We'd love to hear from you.
                 </p>
@@ -143,10 +143,13 @@ export function ContactForm() {
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="w-full rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
+                        className="w-full rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 flex items-center gap-2 justify-center"
                     >
                         {status === "loading" ? (
-                            <Loader2 className="mx-auto h-5 w-5 animate-spin" />
+                            <>
+                            <Loader2 className="h-5 w-5 animate-spin" />
+                            Sending...
+                            </>
                         ) : (
                             "Send Message"
                         )}

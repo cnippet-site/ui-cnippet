@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { PrismaClient } from "@prisma/client";
+import { NewsletterWelcomeEmail } from "../../../components/routes/resend/newsletter-welcome";
+import { render } from "@react-email/render";
 
 // Create a single PrismaClient instance and reuse it
 const globalForPrisma = globalThis as unknown as {
@@ -44,7 +46,7 @@ export async function POST(request: Request) {
             if (existingSubscriber) {
                 return NextResponse.json(
                     { error: "Email already subscribed" },
-                    { status: 400 }
+                    { status: 301 }
                 );
             }
         } catch (error) {
@@ -70,16 +72,13 @@ export async function POST(request: Request) {
 
         // Send welcome email
         try {
+            const emailHtml = await render(NewsletterWelcomeEmail({ userEmail: email }));
+            
             await resend.emails.send({
                 from: "Cnippet <newsletter@ui.cnippet.site>",
                 to: email,
-                subject: "Welcome to Cnippet Newsletter!",
-                html: `
-                    <h1>Welcome to Cnippet Newsletter!</h1>
-                    <p>Thank you for subscribing to our newsletter. We're excited to share our latest updates with you!</p>
-                    <p>Best regards,</p>
-                    <p>The Cnippet Team</p>
-                `,
+                subject: "Welcome to Cnippet Newsletter! 🎉",
+                html: emailHtml,
             });
         } catch (error) {
             console.error("Email sending error:", error);
