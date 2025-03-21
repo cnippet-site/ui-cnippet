@@ -60,6 +60,7 @@
         "remark": "^15.0.1",
         "resend": "^4.1.2",
         "rimraf": "^6.0.1",
+        "sonner": "^2.0.1",
         "tailwind-merge": "^3.0.2",
         "ts-morph": "^25.0.1",
         "unist-util-visit": "^5.0.0",

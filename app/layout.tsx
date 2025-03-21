@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "@/providers/theme-provider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { BASE_URL } from "@/config/docs";
+import { Toaster as Sonner } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),
@@ -79,11 +80,13 @@ export default function RootLayout({
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="dark"
+                    defaultTheme="light"
                     enableSystem
                     disableTransitionOnChange
                 >
                     {children}
+                    <Sonner richColors expand={true} closeButton position="bottom-right" />
+
                 </ThemeProvider>
             </body>
             <GoogleAnalytics gaId="G-78T110L7RD" />

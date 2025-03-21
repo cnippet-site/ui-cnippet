@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { ContactEmail } from "../../../components/routes/resend/contact-email";
 import { render } from "@react-email/render";
+import { PrismaClient } from "@prisma/client";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
     try {
@@ -16,6 +18,24 @@ export async function POST(request: Request) {
             return NextResponse.json(
                 { error: "Name, email, and message are required" },
                 { status: 400 },
+            );
+        }
+
+        // Save to database
+        try {
+            await prisma.contact.create({
+                data: {
+                    name,
+                    email,
+                    subject: subject || "No Subject",
+                    message,
+                },
+            });
+        } catch (error) {
+            console.error("Database error:", error);
+            return NextResponse.json(
+                { error: "Failed to save contact information" },
+                { status: 500 },
             );
         }
 

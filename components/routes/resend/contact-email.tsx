@@ -36,8 +36,8 @@ export const ContactEmail = ({
             <Head />
             <Tailwind>
                 <Preview>Thank you for contacting Cnippet</Preview>
-                <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] p-10">
-                    <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
+                <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
+                    <Container className="mx-auto max-w-full w-[500px] rounded-2xl bg-white p-6">
                         {/* Header Section */}
                         <Section className="mb-4 text-center">
                             <Img
@@ -45,7 +45,7 @@ export const ContactEmail = ({
                                 width="80"
                                 height="auto"
                                 alt="Cnippet Logo"
-                                className="mx-auto"
+                                className="mx-auto rounded-full"
                             />
                         </Section>
 

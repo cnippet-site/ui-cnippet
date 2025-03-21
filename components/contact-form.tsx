@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { submitContactForm } from "@/lib/actions/contact.actions";
+import { toast } from "sonner";
 
 interface FormData {
     name: string;
@@ -19,10 +21,7 @@ const initialFormData: FormData = {
 
 export function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
-    const [status, setStatus] = useState<
-        "idle" | "loading" | "success" | "error"
-    >("idle");
-    const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -36,41 +35,30 @@ export function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("loading");
+        setIsLoading(true);
 
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
-
-            let data;
-            try {
-                const textResponse = await response.text();
-                data = textResponse ? JSON.parse(textResponse) : {};
-            } catch (parseError) {
-                console.error("Failed to parse response:", parseError);
-                throw new Error("Invalid server response");
+            // Validate form data before submission
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                toast.error("All fields are required");
+                return;
             }
 
-            if (!response.ok) {
-                throw new Error(data.error || "Failed to send message");
+            const response = await submitContactForm(formData);
+            
+            if (!response.success) {
+                console.error("Form submission error:", response.error);
+                toast.error(response.error || "Failed to send message");
+                return;
             }
-
-            setStatus("success");
-            setMessage(
-                "Message sent successfully! We'll get back to you soon.",
-            );
+            
+            toast.success("Message sent successfully! We'll get back to you soon.");
             setFormData(initialFormData);
         } catch (error) {
-            setStatus("error");
-            setMessage(
-                error instanceof Error
-                    ? error.message
-                    : "Failed to send message",
-            );
-            console.error("Contact form error:", error);
+            console.error("Contact form error details:", error);
+            toast.error(error instanceof Error ? error.message : "Failed to send message");
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -160,10 +148,10 @@ export function ContactForm() {
                 <div>
                     <button
                         type="submit"
-                        disabled={status === "loading"}
+                        disabled={isLoading}
                         className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
                     >
-                        {status === "loading" ? (
+                        {isLoading ? (
                             <>
                                 <Loader2 className="h-5 w-5 animate-spin" />
                                 Sending...
@@ -173,18 +161,6 @@ export function ContactForm() {
                         )}
                     </button>
                 </div>
-
-                {message && (
-                    <p
-                        className={`text-center text-sm ${
-                            status === "success"
-                                ? "text-green-500"
-                                : "text-red-500"
-                        }`}
-                    >
-                        {message}
-                    </p>
-                )}
             </form>
         </div>
     );
