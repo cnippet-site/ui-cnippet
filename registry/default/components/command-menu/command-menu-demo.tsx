@@ -27,7 +27,7 @@ export default function CommandDemo() {
     return (
         <>
             <Button variant="outline" onClick={() => setIsOpen(!isOpen)}>
-                Open
+                Open ⌘ / or  /
             </Button>
             {isOpen && (
                 <CommandDialog open={isOpen} onOpenChange={setIsOpen}>

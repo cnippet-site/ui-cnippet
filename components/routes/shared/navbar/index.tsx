@@ -99,7 +99,7 @@ export default function Navbar() {
                                     </div> */}
 
                                     <Link
-                                        href="/component/accordion"
+                                        href="/component/button"
                                         className="text-gray-700 transition hover:text-gray-900 dark:text-white"
                                     >
                                         Components

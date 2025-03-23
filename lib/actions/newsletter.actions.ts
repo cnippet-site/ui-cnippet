@@ -1,6 +1,5 @@
 "use server";
 
-import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { render } from "@react-email/render";
 import prisma from "@/lib/prisma";
@@ -48,6 +47,7 @@ export const Newsletter = async ({ email }: { email: string }) => {
             return {
                 success: true,
                 message: "Welcome email sent successfully",
+                subscriber,
             };
         } catch (error) {
             console.error("Email sending error:", error);

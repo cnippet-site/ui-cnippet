@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ChevronRight, Loader2, MailOpen } from "lucide-react";
+import Link from "next/link";
 
 const ButtonDemo = () => {
     return (
@@ -11,7 +12,9 @@ const ButtonDemo = () => {
             <Button variant="outline">Outline</Button>
             <Button variant="ghost">Ghost</Button>
 
-            <Button variant="link">link</Button>
+            <Button variant="link">
+                <Link href="/">Link</Link>
+            </Button>
             <Button variant="outline" size="icon">
                 <ChevronRight />
             </Button>

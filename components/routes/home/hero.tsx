@@ -16,7 +16,7 @@ export default function Hero() {
                             transition={{ duration: 0.8 }}
                             className="flex flex-col justify-center"
                         >
-                            <p className="mb-6 max-w-xl text-sm font-medium text-neutral-600 uppercase md:text-xl dark:text-neutral-400">
+                            <div className="mb-6 max-w-xl text-sm font-medium text-neutral-600 uppercase md:text-xl dark:text-neutral-400">
                                 Tired of{" "}
                                 <TextLoop className="">
                                     <span>Fixing AI-Generated UI</span>
@@ -24,7 +24,7 @@ export default function Hero() {
                                     <span>Same Components</span>
                                     <span>Same Design</span>
                                 </TextLoop>
-                            </p>
+                            </div>
                             <h1 className="mb-4 text-3xl font-medium tracking-wide sm:text-5xl md:mb-8 md:text-6xl">
                                 We skip the boilerplate to deliver
                                 developer-first components.

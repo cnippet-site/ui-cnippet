@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { submitContactForm } from "@/lib/actions/contact.actions";
 import { toast } from "sonner";
@@ -26,7 +26,6 @@ const initialFormData: FormData = {
 export function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [isLoading, setIsLoading] = useState(false);
-    const id = useId();
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
