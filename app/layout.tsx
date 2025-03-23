@@ -85,8 +85,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
-                    <Sonner richColors expand={true} closeButton position="bottom-right" />
-
+                    <Sonner richColors expand={true} position="top-right" />
                 </ThemeProvider>
             </body>
             <GoogleAnalytics gaId="G-78T110L7RD" />

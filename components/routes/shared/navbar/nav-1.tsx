@@ -147,7 +147,7 @@ const Nav1 = () => {
                                 <Button
                                     variant="ghost"
                                     onClick={() => toggleTheme()}
-                                    className="flex items-center justify-center gap-2 rounded-lg p-2 text-black hover:bg-dusk-500 dark:text-white hover:dark:bg-dawn-700"
+                                    className="flex items-center justify-center gap-2 rounded-lg p-2 text-black hover:bg-dusk-500 dark:text-white hover:dark:bg-neutral-700"
                                 >
                                     {theme === "dark" ? (
                                         <RiSunLine className="size-5" />

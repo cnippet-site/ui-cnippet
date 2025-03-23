@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { submitContactForm } from "@/lib/actions/contact.actions";
 import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "./ui/label";
 
 interface FormData {
     name: string;
@@ -22,7 +26,7 @@ const initialFormData: FormData = {
 export function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [isLoading, setIsLoading] = useState(false);
-
+    const id = useId();
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
@@ -39,117 +43,126 @@ export function ContactForm() {
 
         try {
             // Validate form data before submission
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+            if (
+                !formData.name ||
+                !formData.email ||
+                !formData.subject ||
+                !formData.message
+            ) {
                 toast.error("All fields are required");
                 return;
             }
 
             const response = await submitContactForm(formData);
-            
+
             if (!response.success) {
                 console.error("Form submission error:", response.error);
                 toast.error(response.error || "Failed to send message");
                 return;
             }
-            
-            toast.success("Message sent successfully! We'll get back to you soon.");
+
+            toast.success(
+                "Message sent successfully! We'll get back to you soon.",
+            );
             setFormData(initialFormData);
         } catch (error) {
             console.error("Contact form error details:", error);
-            toast.error(error instanceof Error ? error.message : "Failed to send message");
+            toast.error(
+                error instanceof Error
+                    ? error.message
+                    : "Failed to send message",
+            );
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="mx-auto w-full max-w-xl rounded-lg bg-card px-6 py-20 shadow-sm">
+        <div className="bg-card mx-auto w-full max-w-md border border-dashed border-neutral-200 px-6 py-10 dark:border-neutral-800">
             <div className="mb-8 text-center">
                 <h2 className="mb-2 text-3xl font-semibold">Contact Us</h2>
                 <p className="text-muted-foreground">
-                    Have a question or feedback? We&apos;d love to hear from you.
+                    Have a question or feedback? We&apos;d love to hear from
+                    you.
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                        <label
-                            htmlFor="name"
-                            className="mb-2 block text-sm font-medium"
-                        >
-                            Name
-                        </label>
-                        <input
-                            type="text"
+            <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid gap-3 md:grid-cols-2">
+                    <div className="group relative col-span-2">
+                        <Label htmlFor="name" variant="float">
+                            <span className="bg-background inline-flex px-2">
+                                Enter your name
+                            </span>
+                        </Label>
+                        <Input
                             id="name"
+                            type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full rounded-md border bg-background px-4 py-2"
-                            required
+                            placeholder=""
+                            className="rounded-none border-dashed shadow-none"
                         />
                     </div>
-                    <div>
-                        <label
-                            htmlFor="email"
-                            className="mb-2 block text-sm font-medium"
-                        >
-                            Email
-                        </label>
-                        <input
-                            type="email"
+
+                    <div className="group relative col-span-2">
+                        <Label htmlFor="email" variant="float">
+                            <span className="bg-background inline-flex px-2">
+                                Enter your email
+                            </span>
+                        </Label>
+                        <Input
                             id="email"
+                            type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full rounded-md border bg-background px-4 py-2"
-                            required
+                            placeholder=""
+                            className="rounded-none border-dashed shadow-none"
+                        />
+                    </div>
+
+                    <div className="group relative col-span-2">
+                        <Label htmlFor="subject" variant="float">
+                            <span className="bg-background inline-flex px-2">
+                                Enter your subject
+                            </span>
+                        </Label>
+                        <Input
+                            id="subject"
+                            type="text"
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                            placeholder=""
+                            className="rounded-none border-dashed shadow-none"
+                        />
+                    </div>
+
+                    <div className="group relative col-span-2">
+                        <Label htmlFor="message" variant="float">
+                            <span className="bg-background inline-flex px-2">
+                                Enter your message
+                            </span>
+                        </Label>
+                        <Textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            rows={6}
+                            placeholder=" "
+                            className="rounded-none border-dashed shadow-none"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label
-                        htmlFor="subject"
-                        className="mb-2 block text-sm font-medium"
-                    >
-                        Subject
-                    </label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="w-full rounded-md border bg-background px-4 py-2"
-                        required
-                    />
-                </div>
-
-                <div>
-                    <label
-                        htmlFor="message"
-                        className="mb-2 block text-sm font-medium"
-                    >
-                        Message
-                    </label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={6}
-                        className="w-full rounded-md border bg-background px-4 py-2"
-                        required
-                    />
-                </div>
-
-                <div>
-                    <button
+                    <Button
                         type="submit"
                         disabled={isLoading}
-                        className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
+                        className="w-full"
                     >
                         {isLoading ? (
                             <>
@@ -159,7 +172,7 @@ export function ContactForm() {
                         ) : (
                             "Send Message"
                         )}
-                    </button>
+                    </Button>
                 </div>
             </form>
         </div>

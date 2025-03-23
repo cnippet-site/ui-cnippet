@@ -31,13 +31,12 @@ export default function Features() {
                 <div className="px-0 md:p-12 lg:px-0">
                     <div className="mb-6 text-center md:mb-8 lg:mb-10">
                         <h2 className="text-3xl font-medium text-black dark:text-white sm:text-4xl md:text-6xl">
-                            Main Features in the Cnippet Template
+                            Main Features of Cnippet UI
                         </h2>
                         <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 dark:text-neutral-400 md:mt-6">
                             Explore the key characteristics of the Cnippet
-                            template, designed to provide a clean,
-                            user-friendly, and fully configurable experience for
-                            modern websites.
+                            UI, designed to provide a clean, user-friendly, and
+                            fully configurable experience for modern websites.
                         </p>
                     </div>
 

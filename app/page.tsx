@@ -34,6 +34,8 @@ export default function Home() {
 
     return (
         <>
+            <Navbar />
+
             <div className="home-page">
                 <Cursor
                     attachToParent
@@ -59,7 +61,6 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </Cursor>
-                <Navbar />
                 <main className="font-sans">
                     <Hero />
                     <Features />

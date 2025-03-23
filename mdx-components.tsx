@@ -22,7 +22,7 @@ const components = {
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2
             className={cn(
-                "font-heading font-ins mt-6 scroll-m-20 border-b pb-2 text-xl tracking-tight first:mt-0 dark:border-dawn-800 md:mt-12 md:text-2xl",
+                "font-heading mt-12 scroll-m-20 border-b pb-2 font-ins text-2xl tracking-tight first:mt-0 dark:border-neutral-800",
                 className,
             )}
             {...props}
@@ -82,7 +82,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <th
             className={cn(
-                "font-ins border px-4 py-2 text-left font-medium dark:border-dawn-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "border px-4 py-2 text-left font-ins font-medium dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -94,7 +94,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <td
             className={cn(
-                "border px-4 py-2 text-left dark:border-dawn-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "border px-4 py-2 text-left dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -177,7 +177,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "font-sans text-sm font-bold text-black dark:text-white md:text-base [&>p]:font-medium",
+                "font-sans step font-medium [&>p]:font-medium text-base text-black dark:text-white",
                 className,
             )}
             {...props}
@@ -186,7 +186,7 @@ const components = {
 
     Steps: ({ ...props }) => (
         <div
-            className="[&>h3]:step steps mb-16 border-l border-dawn-100 pl-6 [counter-reset:step] dark:border-dawn-500 md:ml-4 md:pl-[2.1rem]"
+            className="steps mb-16 ml-4 border-l border-neutral-200 pl-[2.1rem] [counter-reset:step] dark:border-neutral-600"
             {...props}
         />
     ),

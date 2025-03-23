@@ -9,6 +9,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import { Newsletter } from "@/lib/actions/newsletter.actions";
+import { toast } from "sonner";
 
 export default function Footer() {
     const { theme, setTheme } = useTheme();
@@ -28,40 +30,32 @@ export default function Footer() {
         setStatus("loading");
 
         try {
-            const response = await fetch("/api/newsletter", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
-            });
-
-            let data;
-            try {
-                const textResponse = await response.text();
-                data = textResponse ? JSON.parse(textResponse) : {};
-            } catch (parseError) {
-                console.error("Failed to parse response:", parseError);
-                throw new Error("Invalid server response");
+            if (!email || typeof email !== "string") {
+                setStatus("error");
+                setMessage("Invalid email address");
+                return;
             }
 
-            if (!response.ok) {
-                if (data.error === "Email already subscribed") {
-                    setStatus("success");
-                    setMessage("You're already subscribed to our newsletter!");
-                    setEmail("");
-                    return;
-                }
-                throw new Error(data.error || "Failed to subscribe");
-            }
+            const response = await Newsletter({ email });
 
+            if (!response.success) {
+                setStatus("error");
+                setMessage(response.error || "Failed to subscribe");
+                return;
+            }
+            toast.success(
+                "Message sent successfully! We'll get back to you soon.",
+            );
             setStatus("success");
-            setMessage("Successfully subscribed to newsletter!");
+            setMessage("You've been subscribed to our newsletter!");
             setEmail("");
         } catch (error) {
             setStatus("error");
             setMessage(
                 error instanceof Error ? error.message : "Failed to subscribe",
             );
-            console.error("Newsletter subscription error:", error);
+            toast.error(error instanceof Error ? error.message : "Failed to send message");
+
         }
     };
 
@@ -182,7 +176,7 @@ export default function Footer() {
                                 </Button>
                             </form>
                             <p
-                                className={`mt-1 text-xs ${status === "success" ? "text-green-500" : "text-red-500"}`}
+                                className={`mt-1 text-xs ${status === "success" ? "text-green-500" : "text-blue-500"}`}
                             >
                                 {message}
                             </p>
