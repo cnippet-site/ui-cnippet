@@ -48,7 +48,7 @@ export default function Hero() {
                                     damping: 80,
                                     mass: 10,
                                 }}
-                                className="font-mono text-center text-sm"
+                                className="text-center text-sm"
                             >
                                 <div className="">
                                     <div className="font-bold leading-none md:text-[200px]">

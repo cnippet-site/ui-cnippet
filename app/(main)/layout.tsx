@@ -21,7 +21,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     }, [pathname]);
 
     return (
-        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed pl-5 dark:border-neutral-800 md:sticky md:block">
+        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed pl-5 md:sticky md:block dark:border-neutral-800">
             <ScrollArea className="h-full w-full">
                 <nav className="pt-8">
                     <ul
@@ -63,17 +63,17 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                     >
                                                         <span>{item.name}</span>
                                                         {item.href === "#" && (
-                                                            <span className="mr-4 ml-auto whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
                                                                 Coming soon
                                                             </span>
                                                         )}
                                                         {item?.isNew && (
-                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-blue-100 px-2 text-[10px] font-semibold text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
+                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
                                                                 New
                                                             </span>
                                                         )}
                                                         {item?.isUpdated && (
-                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-amber-100 px-2 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-50">
+                                                            <span className="ml-2 rounded-lg bg-amber-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
                                                                 Updated
                                                             </span>
                                                         )}
@@ -153,7 +153,7 @@ export default function ComponentLayout({
 
     return (
         <>
-            <div className="relative flex min-h-svh flex-col bg-background">
+            <div className="bg-background relative flex min-h-svh flex-col">
                 <div className="border-grid flex flex-1 flex-col">
                     <Nav1 />
                     <main className="flex flex-1 flex-col">

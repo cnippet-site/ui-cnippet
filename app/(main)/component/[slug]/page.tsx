@@ -41,7 +41,7 @@
 //                             {doc.title}
 //                         </h1>
 //                         {doc?.description && (
-//                             <p className="text-dawn-500 text-muted-foreground text-balance text-base">
+//                             <p className="text-neutral-500 text-muted-foreground text-balance text-base">
 //                                 {doc.description}
 //                             </p>
 //                         )}
