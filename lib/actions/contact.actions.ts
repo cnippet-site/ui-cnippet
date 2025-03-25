@@ -36,17 +36,6 @@ export const submitContactForm = async ({
             };
         }
 
-        // Test database connection first
-        try {
-            await prisma.$connect();
-        } catch (connectionError) {
-            console.error("[DATABASE_CONNECTION_ERROR]", connectionError);
-            return {
-                success: false,
-                error: "Unable to connect to database. Please check your connection.",
-            };
-        }
-
         const contact = await prisma.contact.create({
             data: {
                 name,
@@ -83,7 +72,7 @@ export const submitContactForm = async ({
             console.error("Email sending error:", error);
             return {
                 success: false,
-                error: "Failed to send message"
+                error: "Failed to send message",
             };
         }
     } catch (error) {
@@ -113,34 +102,6 @@ export const submitContactForm = async ({
         return {
             success: false,
             error: "Failed to submit contact form. Please try again.",
-        };
-    } finally {
-        // Always disconnect after the operation
-        await prisma.$disconnect();
-    }
-};
-
-export const getContactSubmissions = async () => {
-    try {
-        const contacts = await prisma.contact.findMany({
-            orderBy: {
-                createdAt: "desc",
-            },
-        });
-
-        return {
-            success: true,
-            contacts,
-        };
-    } catch (error) {
-        console.error("[GET_CONTACTS_ERROR]", {
-            error,
-            message: error instanceof Error ? error.message : "Unknown error",
-        });
-        return {
-            success: false,
-            contacts: [],
-            error: "Failed to fetch contact submissions",
         };
     }
 };

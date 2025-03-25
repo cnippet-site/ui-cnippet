@@ -4,13 +4,14 @@ import type React from "react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Github, Loader2 } from "lucide-react";
+import { Sun, Moon, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { Newsletter } from "@/lib/actions/newsletter.actions";
 import { toast } from "sonner";
+import { RiGithubLine } from "@remixicon/react";
 
 export default function Footer() {
     const { theme, setTheme } = useTheme();
@@ -195,7 +196,7 @@ export default function Footer() {
                                 href="https://github.com/cnippet-site/ui-cnippet"
                                 className="text-gray-400 hover:text-white"
                             >
-                                <Github size={20} />
+                                <RiGithubLine size={20} />
                             </Link>
                             <Link
                                 href="#"

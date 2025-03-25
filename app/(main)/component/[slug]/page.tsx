@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+
 import { Mdx } from "@/mdx-components";
 import { allComponents } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
@@ -9,7 +10,7 @@ import { TableOfContents } from "@/components/mdx/toc";
 type Params = Promise<{ slug: string }>;
 
 function getComponentDoc({ slug }: { slug: string }) {
-    return allComponents.find((doc) => doc.slugAsParams === slug) || null;
+    return allComponents?.find((doc) => doc.slugAsParams === slug) || null;
 }
 
 export default async function ComponentPage({ params }: { params: Params }) {

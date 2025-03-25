@@ -23,7 +23,7 @@ const initialFormData: FormData = {
     message: "",
 };
 
-export function ContactForm() {
+export default function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [isLoading, setIsLoading] = useState(false);
     const handleChange = (

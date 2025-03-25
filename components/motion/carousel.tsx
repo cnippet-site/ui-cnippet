@@ -18,6 +18,8 @@ export type CarouselContextType = {
     itemsCount: number;
     setItemsCount: (newItemsCount: number) => void;
     disableDrag: boolean;
+    isPaused: boolean;
+    setIsPaused: (isPaused: boolean) => void;
 };
 
 const CarouselContext = createContext<CarouselContextType | undefined>(
@@ -37,6 +39,8 @@ export type CarouselProviderProps = {
     initialIndex?: number;
     onIndexChange?: (newIndex: number) => void;
     disableDrag?: boolean;
+    autoplay?: boolean;
+    autoplayInterval?: number;
 };
 
 function CarouselProvider({
@@ -44,9 +48,13 @@ function CarouselProvider({
     initialIndex = 0,
     onIndexChange,
     disableDrag = false,
+    autoplay = false,
+    autoplayInterval = 3000,
 }: CarouselProviderProps) {
     const [index, setIndex] = useState<number>(initialIndex);
     const [itemsCount, setItemsCount] = useState<number>(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const autoplayRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
     const handleSetIndex = (newIndex: number) => {
         setIndex(newIndex);
@@ -57,6 +65,28 @@ function CarouselProvider({
         setIndex(initialIndex);
     }, [initialIndex]);
 
+    useEffect(() => {
+        if (!autoplay || isPaused) {
+            if (autoplayRef.current) {
+                clearInterval(autoplayRef.current);
+            }
+            return;
+        }
+
+        autoplayRef.current = setInterval(() => {
+            setIndex((currentIndex) => {
+                const nextIndex = currentIndex + 1;
+                return nextIndex >= itemsCount ? 0 : nextIndex;
+            });
+        }, autoplayInterval);
+
+        return () => {
+            if (autoplayRef.current) {
+                clearInterval(autoplayRef.current);
+            }
+        };
+    }, [autoplay, autoplayInterval, itemsCount, isPaused]);
+
     return (
         <CarouselContext.Provider
             value={{
@@ -65,6 +95,8 @@ function CarouselProvider({
                 itemsCount,
                 setItemsCount,
                 disableDrag,
+                isPaused,
+                setIsPaused,
             }}
         >
             {children}
@@ -79,7 +111,23 @@ export type CarouselProps = {
     index?: number;
     onIndexChange?: (newIndex: number) => void;
     disableDrag?: boolean;
+    autoplay?: boolean;
+    autoplayInterval?: number;
 };
+
+function CarouselWrapper({ children, className }: { children: ReactNode; className?: string }) {
+    const { setIsPaused } = useCarousel();
+    
+    return (
+        <div 
+            className={cn("group/hover relative", className)}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+        >
+            <div className="overflow-hidden">{children}</div>
+        </div>
+    );
+}
 
 function Carousel({
     children,
@@ -88,6 +136,8 @@ function Carousel({
     index: externalIndex,
     onIndexChange,
     disableDrag = false,
+    autoplay = false,
+    autoplayInterval = 3000,
 }: CarouselProps) {
     const [internalIndex, setInternalIndex] = useState<number>(initialIndex);
     const isControlled = externalIndex !== undefined;
@@ -105,10 +155,12 @@ function Carousel({
             initialIndex={currentIndex}
             onIndexChange={handleIndexChange}
             disableDrag={disableDrag}
+            autoplay={autoplay}
+            autoplayInterval={autoplayInterval}
         >
-            <div className={cn("group/hover relative", className)}>
-                <div className="overflow-hidden">{children}</div>
-            </div>
+            <CarouselWrapper className={className}>
+                {children}
+            </CarouselWrapper>
         </CarouselProvider>
     );
 }

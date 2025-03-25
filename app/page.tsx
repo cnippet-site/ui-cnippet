@@ -1,15 +1,23 @@
 "use client";
 import { SVGProps, useEffect } from "react";
 import Lenis from "lenis";
-
-import Faq from "@/components/routes/home/faq";
-import Features from "@/components/routes/home/features";
-import Hero from "@/components/routes/home/hero";
-import Footer from "@/components/routes/shared/footer";
-import Navbar from "@/components/routes/shared/navbar";
-import { Cursor } from "@/components/motion/cursor";
+import dynamic from "next/dynamic";
 import { motion } from "motion/react";
-import Components from "@/components/routes/home/components";
+
+import { Cursor } from "@/components/motion/cursor";
+
+// import Faq from "@/components/routes/home/faq";
+// import Features from "@/components/routes/home/features";
+// import Footer from "@/components/routes/shared/footer";
+// import Navbar from "@/components/routes/shared/navbar";
+// import Components from "@/components/routes/home/components";
+
+const Hero = dynamic(() => import("@/components/routes/home/hero"));
+const Features = dynamic(() => import("@/components/routes/home/features"));
+const Faq = dynamic(() => import("@/components/routes/home/faq"));
+const Footer = dynamic(() => import("@/components/routes/shared/footer"));
+const Navbar = dynamic(() => import("@/components/routes/shared/navbar"));
+const Components = dynamic(() => import("@/components/routes/home/components"));
 
 export default function Home() {
     useEffect(() => {

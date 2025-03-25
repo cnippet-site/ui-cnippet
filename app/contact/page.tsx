@@ -1,6 +1,9 @@
-import { ContactForm } from "@/components/contact-form";
-import Nav1 from "@/components/routes/shared/navbar/nav-1";
-import Footer from "@/components/routes/shared/footer";
+import dynamic from "next/dynamic";
+
+
+const Nav1 = dynamic(() => import("@/components/routes/shared/navbar/nav-1"));
+const Footer = dynamic(() => import("@/components/routes/shared/footer"));
+const ContactForm = dynamic(() => import("@/components/contact-form"));
 
 export const metadata = {
     title: "Contact Us",
