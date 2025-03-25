@@ -157,8 +157,11 @@
     .steps > p {
         @apply text-sm text-neutral-800 dark:text-neutral-200 md:text-base;
     }
+    .step > p > code {
+        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:bg-neutral-800;
+    }
     .steps > p > code {
-        @apply h-fit rounded-md bg-gray-200 !px-2 !py-0.5 dark:bg-neutral-800;
+        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:bg-neutral-800;
     }
     .steps > p > a {
         @apply rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:bg-gray-700 dark:text-white;

@@ -38,7 +38,7 @@ export function CollapsibleSource({
         <>
             <Collapsible open={isOpened} onOpenChange={setIsOpened}>
                 <div
-                    className={cn("relative overflow-hidden", className)}
+                    className={cn("relative mt-3 overflow-hidden", className)}
                     {...props}
                 >
                     <CollapsibleContent

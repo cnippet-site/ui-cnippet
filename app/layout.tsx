@@ -4,6 +4,7 @@ import ThemeProvider from "@/providers/theme-provider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { BASE_URL } from "@/config/docs";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),
@@ -85,6 +86,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
+                    <Toaster />
                     <Sonner richColors expand={true} position="top-right" />
                 </ThemeProvider>
             </body>

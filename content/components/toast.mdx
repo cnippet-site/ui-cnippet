@@ -14,14 +14,48 @@ Follow these simple steps to add the Select component to your project:
 
 <Steps>
 
-<Step>
-    Create a new file `components/ui/select.tsx` and copy the code below:
-</Step>
+<Step>Install Dependencies</Step>
+
+```bash
+pnpm add @radix-ui/react-toast
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`toast.tsx`
 
 <CollapsibleSource name="toast" />
+
+`toaster.tsx`
+
+<CollapsibleSource name="toaster" />
+
+{/* add hooks to registry */}
+{/* `use-toast.tsx`
+<CollapsibleSource name="use-toast" /> */}
 
 <Step>
     Adjust the import paths in both files according to your project's structure.
 </Step>
+
+<Step>Add the Toaster component to your project.</Step>
+
+`app/layout.tsx`
+
+```tsx
+import { Toaster } from "@/components/ui/toaster";
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="en">
+            <head />
+            <body>
+                <main>{children}</main>
+                <Toaster />
+            </body>
+        </html>
+    );
+}
+```
 
 </Steps>

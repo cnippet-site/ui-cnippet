@@ -248,10 +248,6 @@ export const components: ComponentGroup[] = [
     {
         name: "Getting Started",
         items: [
-            // {
-            //     name: "Introduction",
-            //     href: "#",
-            // },
             {
                 name: "Installation",
                 href: "/component/installation",
@@ -427,8 +423,34 @@ export const components: ComponentGroup[] = [
                 href: "/component/combobox",
             },
             {
+                name: "Multiselect",
+                href: "/component/multiselect",
+                isNew: true,
+            },
+            {
                 name: "Select",
                 href: "/component/select",
+                isNew: true,
+            },
+            {
+                name: "Stepper",
+                href: "/component/stepper",
+                isNew: true,
+            },
+        ],
+    },
+    {
+        name: "Notifications",
+        items: [
+            {
+                name: "Sonner",
+                href: "/component/sonner",
+                isUpdated: true,
+            },
+            {
+                name: "Toast",
+                href: "/component/toast",
+                isUpdated: true,
             },
         ],
     },
@@ -444,20 +466,8 @@ export const components: ComponentGroup[] = [
                 href: "#",
             },
             {
-                name: "Progress bar",
-                href: "#",
-            },
-            {
-                name: "Progress circle",
-                href: "#",
-            },
-            {
                 name: "Skeleton",
-                href: "#",
-            },
-            {
-                name: "Toast",
-                href: "#",
+                href: "/component/skeleton",
             },
         ],
     },

@@ -67,6 +67,9 @@ export const componentExamples: Registry = generateExamples([
     { name: "label-demo", number: "4" },
     { name: "modal-demo", number: "4" },
 
+    { name: "multiselect-demo", number: "4" },
+    { name: "multiselect-clear" },
+
     { name: "pagination-demo", number: "4" },
     { name: "pagination-numbers" },
     { name: "pagination-page" },
@@ -79,6 +82,9 @@ export const componentExamples: Registry = generateExamples([
     { name: "radio-group-review" },
 
     { name: "select-demo", number: "4" },
+    { name: "select-placeholder" },
+    { name: "select-icon" },
+
     { name: "sheet-demo", number: "4" },
     { name: "sidebar-demo", number: "4" },
     { name: "skeleton-demo", number: "1" },
@@ -93,6 +99,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "sonner-demo", number: "4" },
     { name: "sonner-direction" },
     { name: "sonner-custom" },
+
+    { name: "stepper-demo", number: "4" },
+    { name: "stepper-step" },
+    { name: "stepper-vertical" },
 
     { name: "switch-demo", number: "4" },
     { name: "switch-icon" },
