@@ -2,6 +2,7 @@
 
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import { motion } from "motion/react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 // import { useState } from "react";
@@ -31,6 +32,7 @@ const Banner = () => (
 
 export default function Navbar() {
     // const [isPagesOpen, setIsPagesOpen] = useState(false);
+    const { theme, setTheme } = useTheme();
 
     return (
         <>
@@ -45,11 +47,15 @@ export default function Navbar() {
                                     className="flex items-center gap-0.5 font-mono text-2xl font-medium text-black dark:text-white"
                                 >
                                     <Image
-                                        src="/images/logo-light.png"
+                                        src={
+                                            theme === "dark"
+                                                ? "/images/logo-dark.png"
+                                                : "/images/logo-light.png"
+                                        }
                                         alt="Cnippet"
                                         width={100}
                                         height={100}
-                                        className="w-10"
+                                        className="w-10 rounded-full"
                                     />
                                     Cnippet
                                 </Link>
@@ -100,25 +106,25 @@ export default function Navbar() {
 
                                     <Link
                                         href="/component/button"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
                                     >
                                         Components
                                     </Link>
                                     <Link
                                         href="/motion/accordion"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
                                     >
                                         Motions
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
                                     >
                                         Sections
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
                                     >
                                         Templates
                                     </Link>

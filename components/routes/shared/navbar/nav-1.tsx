@@ -28,7 +28,7 @@ const Nav1 = () => {
                                 <Image
                                     src="/images/logo-dark.png"
                                     alt=""
-                                    className="size-9"
+                                    className="size-9 rounded-full"
                                     width={1080}
                                     height={1080}
                                 />

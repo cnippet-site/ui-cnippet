@@ -155,9 +155,9 @@
         @apply mt-6 mb-4;
     }
     .steps > p {
-        @apply text-sm text-neutral-800 md:text-base;
+        @apply text-sm text-neutral-800 dark:text-neutral-200 md:text-base;
     }
-    .step > p > code {
+    .steps > p > code {
         @apply h-fit rounded-md bg-gray-200 !px-2 !py-0.5 dark:bg-neutral-800;
     }
     .steps > p > a {

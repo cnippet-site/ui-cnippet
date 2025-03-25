@@ -81,6 +81,7 @@ export const componentExamples: Registry = generateExamples([
     { name: "select-demo", number: "4" },
     { name: "sheet-demo", number: "4" },
     { name: "sidebar-demo", number: "4" },
+    { name: "skeleton-demo", number: "1" },
 
     { name: "slider-demo", number: "4" },
     { name: "slider-feedback" },
@@ -88,6 +89,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "slider-output" },
     { name: "slider-square" },
     { name: "slider-thumb" },
+
+    { name: "sonner-demo", number: "4" },
+    { name: "sonner-direction" },
+    { name: "sonner-custom" },
 
     { name: "switch-demo", number: "4" },
     { name: "switch-icon" },
@@ -106,6 +111,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "textarea-label" },
     { name: "textarea-limit" },
     { name: "textarea-text" },
+
+    { name: "toast-demo", number: "4" },
+    { name: "toast-direction" },
+    { name: "toast-custom" },
 
     { name: "tooltip-demo", number: "4" },
 ]);

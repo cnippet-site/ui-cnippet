@@ -7,7 +7,7 @@ import { useId } from "react";
 export default function Component() {
     const id = useId();
     return (
-        <div className="*:not-first:mt-2">
+        <div className="w-full max-w-xs">
             <Label htmlFor={id}>Autogrowing textarea</Label>
             <Textarea
                 id={id}
