@@ -11,25 +11,25 @@ import { Cursor } from "@/components/motion/cursor";
 import { motion } from "motion/react";
 
 export default function Home() {
-    useEffect(() => {
-        const lenis = new Lenis({
-            smoothWheel: true,
-            lerp: 0.05,
-            duration: 2.2,
-            infinite: false,
-        });
+    // useEffect(() => {
+    //     const lenis = new Lenis({
+    //         smoothWheel: true,
+    //         lerp: 0.05,
+    //         duration: 2.2,
+    //         infinite: false,
+    //     });
 
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+    //     function raf(time: number) {
+    //         lenis.raf(time);
+    //         requestAnimationFrame(raf);
+    //     }
 
-        requestAnimationFrame(raf);
+    //     requestAnimationFrame(raf);
 
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
+    //     return () => {
+    //         lenis.destroy();
+    //     };
+    // }, []);
 
     return (
         <div className="">
@@ -41,7 +41,7 @@ export default function Home() {
                 {/* <Features /> */}
                 {/* <Faq /> */}
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }

@@ -11,12 +11,10 @@ import { useTheme } from "next-themes";
 
 export default function Footer() {
     const { theme, setTheme } = useTheme();
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
+    
     return (
-        <footer className="bg-black px-4 py-12 text-white md:px-8 lg:px-16">
-            <div className="mx-auto max-w-7xl">
+        <footer className="bg-white dark:bg-black px-4 pt-28 pb-10 dark:text-white md:px-8 lg:px-16">
+            <div className="mx-auto max-w-6xl px-10">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
                     {/* Logo and Social Links */}
                     <div className="flex flex-col lg:col-span-1">
@@ -25,7 +23,7 @@ export default function Footer() {
                                 <Image
                                     src="/images/logo-dark.png"
                                     alt=""
-                                    className="size-9"
+                                    className="size-9 rounded-full"
                                     width={1080}
                                     height={1080}
                                 />
@@ -115,11 +113,11 @@ export default function Footer() {
                                 Stay updated on new releases and features,
                                 guides, and case studies.
                             </p>
-                            <div className="flex max-w-[90%] flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row">
+                            <div className="flex max-w-[90%] flex-col gap-2 rounded-lg border-none bg-slate-100 dark:bg-[#1a1a1a] p-1 text-white sm:flex-row">
                                 <Input
                                     type="email"
                                     placeholder="you@domain.com"
-                                    className="h-7 border-none bg-black"
+                                    className="h-7 border-none dark:bg-black"
                                 />
                                 <Button size="sm" className="h-7 text-sm">
                                     Subscribe
@@ -158,17 +156,17 @@ export default function Footer() {
                     </div>
 
                     <div className="mt-auto">
-                        <div className="flex gap-2 rounded-full border border-neutral-700 p-1.5">
+                        <div className="flex gap-1 items-center rounded-full border border-neutral-200 dark:border-neutral-700 p-1">
                             <button
-                                onClick={() => toggleTheme()}
-                                className={`rounded-full p-1 ${theme === "light" ? "bg-[#1a1a1a]" : ""}`}
+                                 onClick={() => setTheme("light")}
+                                className={`rounded-full p-1.5 ${theme === "light" ? "dark:bg-[#1a1a1a] bg-gray-100" : ""}`}
                                 aria-label="Light mode"
                             >
                                 <Sun className="size-4" />
                             </button>
                             <button
-                                onClick={() => toggleTheme()}
-                                className={`rounded-full p-1 ${theme === "dark" ? "bg-[#1a1a1a]" : ""}`}
+                                  onClick={() => setTheme("dark")}
+                                className={`rounded-full p-1.5 ${theme === "dark" ? "bg-[#1a1a1a]" : ""}`}
                                 aria-label="Light mode"
                             >
                                 <Moon className="size-4" />
@@ -233,3 +231,39 @@ function MIcon() {
         </svg>
     );
 }
+
+
+
+
+{/* <div className="absolute inset-0 grid h-44 grid-cols-12 px-10">
+                            {Array.from({ length: 7 }).map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`${i === 0 || i === 6 ? "col-span-1" : "col-span-2"}`}
+                                >
+                                    {i === 0 && (
+                                        <div
+                                            className={`h-1/2 border-b-0 w-full rounded-tr-full border border-gray-200`}
+                                        />
+                                    )}
+                                    {i > 0 && i < 6 && (
+                                        <>
+                                            {i % 2 === 0 ? (
+                                                <div
+                                                    className={`h-full w-full rounded-t-full border border-gray-200`}
+                                                />
+                                            ) : (
+                                                <div
+                                                    className={`h-full w-full rounded-b-full border border-gray-200`}
+                                                />
+                                            )}
+                                        </>
+                                    )}
+                                    {i === 6 && (
+                                        <div
+                                            className={`h-1/2 w-full border-b-0 rounded-tl-full border border-gray-200`}
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div> */}
