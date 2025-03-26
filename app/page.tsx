@@ -32,49 +32,16 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="home-page">
-            <Cursor
-                attachToParent
-                variants={{
-                    initial: { scale: 0.3, opacity: 0 },
-                    animate: { scale: 1, opacity: 1 },
-                    exit: { scale: 0.3, opacity: 0 },
-                }}
-                transition={{
-                    ease: "easeInOut",
-                    duration: 0.15,
-                }}
-                className="top-4 z-[100]"
-            >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.6 }}
-                    className="inline-flex w-full items-center justify-center"
-                >
-                    <div className="">
-                        {/* <motion.div
-                            initial={{ opacity: 0, scale: 0.6 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.6 }}
-                            className="inline-flex w-full items-center justify-center"
-                        >
-                            <div className="inline-flex items-center text-sm text-white dark:text-black">
-                                More <PlusIcon className="ml-1 h-4 w-4" />
-                            </div>
-                        </motion.div> */}
-                        <MouseIcon className="size-7 fill-blue-600 -rotate-[80deg]" />
-                    </div>
-                </motion.div>
-            </Cursor>
+        <div className="">
+           
             {/* <AreaChartDemo /> */}
-            <Navbar />
+            {/* <Navbar /> */}
             <main className="font-sans">
                 <Hero />
-                <Features />
-                <Faq />
+                {/* <Features /> */}
+                {/* <Faq /> */}
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

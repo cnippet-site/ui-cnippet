@@ -1,95 +1,212 @@
-"use client";
+import React from "react";
+import { InfiniteSlider } from "@/components/motion/infinite-slider";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-import { TextLoop } from "@/components/motion/text-loop";
-import { motion } from "motion/react";
+const images = [
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h3.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h7.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h8.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h9.jpg",
+    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h10.jpg",
+];
 
-export default function Hero() {
+const Hero = () => {
     return (
         <>
-            <section className="relative h-screen border-b border-dashed bg-background dark:border-neutral-800">
-                <div className="z-0 h-full flex-auto items-center justify-center">
-                    <div className="mx-auto flex h-full max-w-7xl flex-col gap-12 border-l border-r border-dashed px-6 py-20 pt-40 text-black dark:border-neutral-800 dark:text-white md:flex-row">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="flex flex-col justify-center"
-                        >
-                            <h1 className="mb-8 text-4xl font-medium tracking-wide sm:text-5xl md:text-7xl">
-                                Start your Framer project with Cnippet template
-                            </h1>
-                            <p className="mb-6 max-w-xl md:text-lg">
-                                Cnippet is a Framer template that includes the
-                                various website components needed to create a
-                                landing page. The idea is for you to be able to
-                                speed up the process of creating a website using
-                                the Framer platform.
-                            </p>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="w-fit rounded-lg bg-[#ffde73] px-6 py-2 font-medium text-black"
-                            >
-                                Explore the Features
-                            </motion.button>
-                        </motion.div>
+            <section className="relative w-full">
+                <div className="mx-auto w-full max-w-6xl px-10 pt-32">
+                    <div className="relative">
+                        <div className="absolute -top-2.5 -left-2.5 z-50 mx-auto grid size-5.5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
+                            <div className=" " />
+                            <div className="border-r-0" />
+                            <div className="border-b-0" />
+                            <div className=" " />
+                        </div>
+                        <div className="relative grid h-44 w-full grid-cols-12 grid-rows-2 divide-x divide-y border-t first:border-l">
+                            {Array.from({ length: 25 }).map((_, i) => (
+                                <div key={i} className="col-span-1"></div>
+                            ))}
+                        </div>
+                        {/* <div className="absolute inset-0 grid h-44 grid-cols-12 px-10">
+                            {Array.from({ length: 7 }).map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`${i === 0 || i === 6 ? "col-span-1" : "col-span-2"}`}
+                                >
+                                    {i === 0 && (
+                                        <div
+                                            className={`h-1/2 border-b-0 w-full rounded-tr-full border border-gray-200`}
+                                        />
+                                    )}
+                                    {i > 0 && i < 6 && (
+                                        <>
+                                            {i % 2 === 0 ? (
+                                                <div
+                                                    className={`h-full w-full rounded-t-full border border-gray-200`}
+                                                />
+                                            ) : (
+                                                <div
+                                                    className={`h-full w-full rounded-b-full border border-gray-200`}
+                                                />
+                                            )}
+                                        </>
+                                    )}
+                                    {i === 6 && (
+                                        <div
+                                            className={`h-1/2 w-full border-b-0 rounded-tl-full border border-gray-200`}
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div> */}
+                        <div className="absolute inset-0 grid h-44 w-full grid-cols-12">
+                            {Array.from({ length: 7 }).map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`${i === 0 || i === 6 ? "col-span-1" : "col-span-2"}`}
+                                >
+                                    {i === 0 && (
+                                        <div
+                                            className={`h-full w-full rounded-r-full border border-gray-200`}
+                                        />
+                                    )}
+                                    {i > 0 && i < 6 && (
+                                        <div
+                                            className={`h-full w-full rounded-full border border-gray-200 ${i === 3 && "bg-white"}`}
+                                        />
+                                    )}
+                                    {i === 6 && (
+                                        <div
+                                            className={`h-full w-full rounded-l-full border border-gray-200`}
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="flex w-full items-center justify-center"
-                        >
-                            <TextLoop
-                                interval={3}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 900,
-                                    damping: 80,
-                                    mass: 10,
-                                }}
-                                className="text-center text-sm"
-                            >
-                                <div className="">
-                                    <div className="font-bold leading-none md:text-[200px]">
-                                        15
-                                    </div>
-                                    <div className="text-2xl">Page Sample</div>
+                        <div className="relative">
+                            <div className="grid size-[16.5rem] w-full grid-cols-12 grid-rows-3 first:border-l">
+                                {/* {Array.from({ length: 37 }).map((_, i) => (
+                                    <div key={i} className="col-span-1"></div>
+                                ))} */}
+                                {/* <div className="col-span-8 bg-white"></div> */}
+                                {/* <div className=" absolute col-span-4 bg-white row-span-3 w-full inset-0">
+
+                                </div> */}
+                                <div className="col-span-2 row-span-3 grid grid-cols-2 grid-rows-3 divide-x divide-y">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
-                                <div>
-                                    <div className="text-[200px] font-bold leading-none">
-                                        199+
-                                    </div>
-                                    <div className="text-2xl">Remixed</div>
+                                <div className="col-span-8 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white text-center">
+                                    <h1 className="text-5xl leading-tight font-semibold tracking-tight">
+                                        The native Next.js platform.
+                                    </h1>
+                                    <p className="text-xl leading-relaxed">
+                                        <span className="font-medium">
+                                            Made by the creators of Next.js,
+                                        </span>{" "}
+                                        <span className="text-gray-500">
+                                            Vercel is designed
+                                        </span>
+                                        <br />
+                                        <span className="text-gray-500">
+                                            to build, scale, and secure your
+                                            Next.js apps.
+                                        </span>
+                                    </p>
                                 </div>
-                                <div>
-                                    <div className="text-[200px] font-bold leading-none">
-                                        99+
-                                    </div>
-                                    <div className="text-2xl">Blocks</div>
+                                <div className="col-span-2 row-span-3 grid grid-cols-2 grid-rows-3 divide-x divide-y">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
-                                <div>
-                                    <div className="text-[200px] font-bold leading-none">
-                                        10+
-                                    </div>
-                                    <div className="text-2xl">Category</div>
-                                </div>
-                            </TextLoop>
-                        </motion.div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/* <div className="absolute top-0 -z-10 h-[calc(100vh)] w-full flex-auto overflow-hidden rounded-b-2xl bg-[#10101080]"></div>
-                <div className="absolute top-0 -z-20 h-[calc(100vh)] w-full flex-auto overflow-hidden rounded-b-2xl">
-                    <video
-                        src="https://res.cloudinary.com/dphulm0s9/video/upload/v1740294178/TrWocMCSsxh60zz32yvbu6yYdGs.mp4"
-                        muted
-                        autoPlay
-                        loop
-                        className="block h-full w-full cursor-auto object-cover"
-                    />
-                </div> */}
+            <section className="mx-auto w-full max-w-6xl px-10">
+                <div className="grid h-full w-full grid-cols-12 border border-t-0 py-16">
+                    <div className="col-span-12 bg-white text-center">
+                        <h2 className="mb-5 text-5xl leading-tight font-semibold tracking-tight">
+                            The native Next.js platform.
+                        </h2>
+                        <div>
+                            <InfiniteSlider gap={24}>
+                                {images.map((image, i) => (
+                                    <Image
+                                        key={i}
+                                        src={image}
+                                        alt="Apple Music logo"
+                                        width={1920}
+                                        height={1080}
+                                        className="aspect-square w-36 object-cover"
+                                    />
+                                ))}
+                            </InfiniteSlider>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="mx-auto mb-20 max-w-6xl px-10">
+                <div className="relative w-full">
+                    <div className="absolute -bottom-2.5 -right-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
+                        <div className=" " />
+                        <div className="border-r-0" />
+                        <div className="border-b-0" />
+                        <div className=" " />
+                    </div>
+                    <div className="grid h-full w-full grid-cols-12 border border-t-0 py-16">
+                        <div className="col-span-7 bg-white px-10 text-left">
+                            <h2 className="text-xl leading-tight font-semibold tracking-tight">
+                                Ready to deploy? Start building with a free
+                                account. Speak to an expert for your Pro or
+                                Enterprise needs.
+                            </h2>
+                            <div className="mt-5 flex gap-4">
+                                <Button className="rounded-full">
+                                    Start Building
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    className="rounded-full"
+                                >
+                                    Hire an Expert
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="col-span-5 bg-white px-10">
+                            <div className="flex flex-col items-start justify-start gap-5">
+                                <p className="text-gray-500">
+                                    Explore Vercel Enterprise with an
+                                    interactive product tour, trial, or a
+                                    personalized demo.
+                                </p>
+                                <Button
+                                    variant="outline"
+                                    className="rounded-full"
+                                >
+                                    Explore Enterprise
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     );
-}
+};
+
+export default Hero;
