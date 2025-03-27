@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"content-collections watch\" \"next dev -p 3000\"",
+        "dev": "next dev -p 3000",
         "collection": "content-collections build",
         "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
         "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",

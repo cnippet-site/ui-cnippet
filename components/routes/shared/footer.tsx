@@ -55,15 +55,18 @@ export default function Footer() {
             setMessage(
                 error instanceof Error ? error.message : "Failed to subscribe",
             );
-            toast.error(error instanceof Error ? error.message : "Failed to send message");
-
+            toast.error(
+                error instanceof Error
+                    ? error.message
+                    : "Failed to send message",
+            );
         }
     };
 
     return (
-        <footer className="bg-black px-4 py-12 text-white md:px-8 lg:px-16">
-            <div className="mx-auto max-w-7xl">
-                <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
+        <footer className="bg-white px-4 pt-28 pb-10 md:px-8 lg:px-16 dark:bg-black dark:text-white">
+            <div className="mx-auto max-w-6xl px-10">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
                     {/* Logo and Social Links */}
                     <div className="col-span-2 flex flex-col lg:col-span-1">
                         <div className="mb-8">
@@ -71,7 +74,7 @@ export default function Footer() {
                                 <Image
                                     src="/images/logo-dark.png"
                                     alt=""
-                                    className="size-9"
+                                    className="size-9 rounded-full"
                                     width={1080}
                                     height={1080}
                                 />
@@ -158,7 +161,7 @@ export default function Footer() {
                             </p>
                             <form
                                 onSubmit={handleSubmit}
-                                className="flex flex-col gap-2 rounded-lg border-none bg-[#1a1a1a] p-1 text-white sm:flex-row md:max-w-[90%]"
+                                className="flex flex-col gap-2 rounded-lg border-none bg-slate-100 p-1 text-white sm:flex-row md:max-w-[90%] dark:bg-[#1a1a1a]"
                             >
                                 <Input
                                     type="email"
@@ -166,9 +169,9 @@ export default function Footer() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="you@domain.com"
-                                    className="h-8 border-none bg-black text-white"
+                                    className="h-7 rounded-md border-none dark:bg-black"
                                 />
-                                <Button size="sm" className="h-8 text-sm">
+                                <Button size="sm" className="h-7 text-sm">
                                     {status === "loading" ? (
                                         <Loader2 className="h-5 w-5 animate-spin" />
                                     ) : (
@@ -215,10 +218,10 @@ export default function Footer() {
 
                     <div className="mt-auto">
                         {mounted && (
-                            <div className="flex gap-2 rounded-full border border-neutral-800 p-1">
+                            <div className="flex gap-1 rounded-full border p-1 dark:border-neutral-800">
                                 <button
                                     onClick={() => setTheme("light")}
-                                    className={`rounded-full p-1.5 ${theme === "light" ? "bg-[#1a1a1a]" : ""}`}
+                                    className={`rounded-full p-1.5 ${theme === "light" ? "bg-slate-100 dark:bg-[#1a1a1a]" : ""}`}
                                     aria-label="Light mode"
                                 >
                                     <Sun className="size-4" />
@@ -250,7 +253,7 @@ function FooterLink({
         <li>
             <Link
                 href={href}
-                className="text-sm text-gray-400 hover:text-white"
+                className="text-sm text-gray-600 hover:text-black dark:text-gray-500 dark:hover:text-white"
             >
                 {children}
             </Link>
@@ -290,4 +293,39 @@ function MIcon() {
             />
         </svg>
     );
+}
+
+{
+    /* <div className="absolute inset-0 grid h-44 grid-cols-12 px-10">
+                            {Array.from({ length: 7 }).map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`${i === 0 || i === 6 ? "col-span-1" : "col-span-2"}`}
+                                >
+                                    {i === 0 && (
+                                        <div
+                                            className={`h-1/2 border-b-0 w-full rounded-tr-full border border-gray-200`}
+                                        />
+                                    )}
+                                    {i > 0 && i < 6 && (
+                                        <>
+                                            {i % 2 === 0 ? (
+                                                <div
+                                                    className={`h-full w-full rounded-t-full border border-gray-200`}
+                                                />
+                                            ) : (
+                                                <div
+                                                    className={`h-full w-full rounded-b-full border border-gray-200`}
+                                                />
+                                            )}
+                                        </>
+                                    )}
+                                    {i === 6 && (
+                                        <div
+                                            className={`h-1/2 w-full border-b-0 rounded-tl-full border border-gray-200`}
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div> */
 }
