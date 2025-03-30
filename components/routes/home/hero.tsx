@@ -3,6 +3,37 @@ import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { RiArrowRightCircleLine, RiArrowRightLine } from "@remixicon/react";
+import { AtSignIcon, CommandIcon, EclipseIcon, ZapIcon } from "lucide-react";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/motion/accordion";
+
+const items = [
+    {
+        id: "1",
+        title: "Is cnippet/ui accessible?",
+        icon: AtSignIcon,
+        content:
+            "Yes. It adheres to the WAI-ARIA design pattern, making it accessible for users with disabilities. It also supports screen readers and other assistive technologies.",
+    },
+    {
+        id: "2",
+        title: "Does cnippet/ui have a dark mode?",
+        icon: CommandIcon,
+        content:
+            "Yes. It has a dark mode that can be toggled in the settings. Dark mode is designed to reduce eye strain, especially in low-light environments.",
+    },
+    {
+        id: "3",
+        icon: EclipseIcon,
+        title: "Is cnippet/ui responsive?",
+        content:
+            "Yes. It's fully responsive and works seamlessly across devices with different screen sizes, from mobile phones to large desktop monitors.",
+    },
+];
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -17,21 +48,66 @@ const Hero = () => {
     return (
         <>
             <section className="relative w-full dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-10 pt-32">
+                <div className="mx-auto w-full max-w-6xl px-4 pt-16 md:px-10 md:pt-24">
                     <div className="relative">
-                        <div className="absolute -top-2.5 -left-2.5 z-50 mx-auto grid size-5.5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
+                        <div className="absolute -top-2.5 -left-2.5 z-40 mx-auto grid size-5.5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
                             <div className=" " />
                             <div className="border-r-0" />
                             <div className="border-b-0" />
                             <div className=" " />
                         </div>
-                        <div className="relative grid h-44 w-full grid-cols-12 grid-rows-2 divide-x divide-y border-t first:border-l dark:divide-neutral-800 dark:border-neutral-800">
-                            {Array.from({ length: 25 }).map((_, i) => (
+                        <div className="relative grid h-[5.5rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-44 md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
+                            {/* {Array.from({ length: 25 }).map((_, i) => (
                                 <div key={i} className="col-span-1"></div>
-                            ))}
+                            ))} */}
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+                            <div className="col-span-1" />
+
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
+                            <div className="col-span-1 hidden md:block" />
                         </div>
-                        <div className="absolute inset-0 grid h-44 w-full grid-cols-12">
-                            {Array.from({ length: 7 }).map((_, i) => (
+
+                        <div className="absolute inset-0 grid h-[5.5rem] w-full grid-cols-8 md:h-44 md:grid-cols-12">
+                            <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-800" />
+
+                            <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
+                            <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-800" />
+                            <div className="col-span-2 flex h-full w-full items-center justify-center rounded-full border border-gray-200 bg-white dark:border-neutral-800 dark:bg-black">
+                                <Image
+                                    src="/images/logo-dark.png"
+                                    alt=""
+                                    className="size-12 rounded-full md:size-24"
+                                    width={1920}
+                                    height={1080}
+                                />
+                            </div>
+                            <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
+                            <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-800" />
+
+                            <div className="col-span-1 h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-800" />
+
+                            {/* {Array.from({ length: 7 }).map((_, i) => (
                                 <div
                                     key={i}
                                     className={`${i === 0 || i === 6 ? "col-span-1" : "col-span-2"}`}
@@ -52,25 +128,25 @@ const Hero = () => {
                                         />
                                     )}
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
 
-                        <div className="relative">
-                            <div className="grid size-[16.5rem] w-full grid-cols-12 grid-rows-3 first:border-l dark:border-neutral-800">
-                                <div className="col-span-2 row-span-3 grid grid-cols-2 grid-rows-3 divide-x divide-y dark:divide-neutral-800">
+                        <div className="relative h-full w-full">
+                            <div className="grid size-[16.5rem] w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-800">
+                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-3 dark:divide-neutral-800 dark:border-neutral-800">
+                                    <div className=""></div>
                                     <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
                                 </div>
-                                <div className="col-span-8 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white text-center dark:border-neutral-800 dark:bg-black">
-                                    <h1 className="text-5xl leading-tight font-semibold tracking-tight">
+                                <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 text-center md:col-span-8 dark:border-neutral-800 dark:bg-black">
+                                    <h1 className="text-3xl leading-tight font-semibold tracking-tight md:text-5xl">
                                         The native Next.js platform.
                                     </h1>
-                                    <p className="text-xl leading-relaxed">
+                                    <p className="text-sm leading-relaxed md:text-xl">
                                         <span className="font-medium">
                                             Made by the creators of Next.js,
                                         </span>{" "}
@@ -84,14 +160,14 @@ const Hero = () => {
                                         </span>
                                     </p>
                                 </div>
-                                <div className="col-span-2 row-span-3 grid grid-cols-2 grid-rows-3 divide-x divide-y dark:divide-neutral-800">
+                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y md:col-span-2 md:grid-cols-2 md:grid-rows-3 dark:divide-neutral-800">
                                     <div></div>
                                     <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
                                 </div>
                             </div>
                         </div>
@@ -100,10 +176,10 @@ const Hero = () => {
             </section>
 
             <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-10">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
                     <div className="grid h-full w-full grid-cols-12 border border-t-0 py-16 dark:border-neutral-800">
                         <div className="col-span-12 bg-white text-center dark:bg-black">
-                            <h2 className="mb-5 text-5xl leading-tight font-semibold tracking-tight">
+                            <h2 className="mb-5 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
                                 The native Next.js platform.
                             </h2>
                             <div>
@@ -115,7 +191,7 @@ const Hero = () => {
                                             alt="Apple Music logo"
                                             width={1920}
                                             height={1080}
-                                            className="aspect-square w-36 object-cover"
+                                            className="aspect-square w-24 object-cover md:w-36"
                                         />
                                     ))}
                                 </InfiniteSlider>
@@ -126,7 +202,7 @@ const Hero = () => {
             </section>
 
             <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-10">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
                     <div className="relative w-full">
                         <div className="absolute -right-2.5 -bottom-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
                             <div className=" " />
@@ -134,8 +210,8 @@ const Hero = () => {
                             <div className="border-b-0" />
                             <div className=" " />
                         </div>
-                        <div className="grid h-full w-full grid-cols-12 border border-t-0 py-16 dark:border-neutral-800">
-                            <div className="col-span-7 bg-white px-10 text-left dark:bg-black">
+                        <div className="grid h-full w-full border border-t-0 py-16 md:grid-cols-12 dark:border-neutral-800">
+                            <div className="col-span-7 bg-white px-4 text-left md:px-10 dark:bg-black">
                                 <h2 className="text-xl leading-tight font-semibold tracking-tight">
                                     Ready to deploy? Start building with a free
                                     account. Speak to an expert for your Pro or
@@ -153,7 +229,7 @@ const Hero = () => {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="col-span-5 bg-white px-10 dark:bg-black">
+                            <div className="col-span-5 mt-4 bg-white px-4 md:mt-0 md:px-10 dark:bg-black">
                                 <div className="flex flex-col items-start justify-start gap-5">
                                     <p className="text-gray-500">
                                         Explore Vercel Enterprise with an
@@ -174,7 +250,7 @@ const Hero = () => {
             </section>
 
             <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-10">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
                     <div className="relative w-full">
                         <div className="absolute -bottom-2.5 -left-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
                             <div className=" " />
@@ -182,9 +258,9 @@ const Hero = () => {
                             <div className="border-b-0" />
                             <div className=" " />
                         </div>
-                        <div className="grid h-full w-full grid-cols-12 divide-x border border-t-0 dark:divide-neutral-800 dark:border-neutral-800">
-                            <div className="col-span-4 bg-white px-10 py-16 text-left dark:bg-black">
-                                <div className="sticky top-10">
+                        <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-800 dark:border-neutral-800">
+                            <div className="col-span-4 w-full bg-white px-4 py-8 text-left md:px-10 md:py-16 dark:bg-black">
+                                <div className="sticky top-20">
                                     <h2 className="text-2xl leading-tight font-semibold tracking-tight">
                                         Vercel's Frontend Cloud.
                                     </h2>
@@ -195,7 +271,7 @@ const Hero = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-span-8 bg-white px-10 py-16 dark:bg-black">
+                            <div className="col-span-8 bg-white px-4 py-8 md:px-10 md:py-16 dark:bg-black">
                                 <div className="flex flex-col items-start justify-start gap-2">
                                     <h3 className="text-2xl font-semibold tracking-tight">
                                         Cache, controlled.
@@ -242,7 +318,7 @@ const Hero = () => {
             </section>
 
             <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-10">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
                     <div className="relative w-full">
                         <div className="grid h-full w-full grid-cols-12 divide-x divide-y border border-t-0 dark:divide-neutral-800 dark:border-neutral-800">
                             <div className="col-span-12 border-r-0 bg-white px-10 py-16 text-center dark:bg-black">
@@ -282,6 +358,68 @@ const Hero = () => {
                                     <div className="w-fit rounded-full border p-1.5 text-neutral-400 dark:border-neutral-800">
                                         <RiArrowRightLine />
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ section */}
+            <section className="dark:bg-black">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
+                    <div className="relative w-full">
+                        <div className="absolute -bottom-2.5 -left-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
+                            <div className=" " />
+                            <div className="border-r-0" />
+                            <div className="border-b-0" />
+                            <div className=" " />
+                        </div>
+                        <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-800 dark:border-neutral-800">
+                            <div className="col-span-4 w-full bg-white px-4 py-8 text-left md:px-10 md:py-16 dark:bg-black">
+                                <div className="sticky top-20">
+                                    <h2 className="text-4xl leading-tight font-semibold tracking-tight">
+                                        Frequently asked questions.
+                                    </h2>
+                                </div>
+                            </div>
+                            <div className="col-span-8">
+                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-b">
+                                    <div />
+                                    <div />
+                                </div>
+                                <div>
+                                    <Accordion
+                                        iconVariant="plus-minus"
+                                        className="flex w-full max-w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700"
+                                        transition={{
+                                            duration: 0.2,
+                                            ease: "easeInOut",
+                                        }}
+                                    >
+                                        {items.map((item, i) => (
+                                            <AccordionItem
+                                                key={i}
+                                                value={item.id}
+                                                className="px-8 py-4"
+                                            >
+                                                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                                                    <div className="flex items-center justify-between gap-2">
+                                                        <div>{item.title}</div>
+                                                    </div>
+                                                </AccordionTrigger>
+                                                <AccordionContent>
+                                                    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+                                                        {item.content}
+                                                    </p>
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        ))}
+                                    </Accordion>
+                                </div>
+                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-t">
+                                    <div />
+                                    <div />
                                 </div>
                             </div>
                         </div>

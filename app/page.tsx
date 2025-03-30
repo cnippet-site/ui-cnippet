@@ -1,6 +1,7 @@
 "use client";
 import { SVGProps, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Nav1 from "@/components/routes/shared/navbar/nav-1";
 
 const Hero = dynamic(() => import("@/components/routes/home/hero"));
 const Features = dynamic(() => import("@/components/routes/home/features"));
@@ -34,6 +35,7 @@ export default function Home() {
         <>
             {/* <AreaChartDemo /> */}
             {/* <Navbar /> */}
+            <Nav1 />
             <main className="font-sans">
                 <Hero />
                 {/* <Features /> */}

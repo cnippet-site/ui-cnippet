@@ -6,7 +6,7 @@ import { chartExamples } from "./registry-eg-chart";
 import { componentExamples } from "./registry-eg-component";
 import { hooks } from "./registry-hook";
 
-export const registry = [
+const registry = [
     ...components,
     ...componentExamples,
     ...motions,
@@ -14,3 +14,5 @@ export const registry = [
     ...chartExamples,
     ...hooks,
 ];
+
+export { registry };

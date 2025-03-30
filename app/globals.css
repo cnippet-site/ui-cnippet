@@ -140,7 +140,7 @@
         margin-right: auto;
         width: 100%;
         max-width: 1400px;
-        border-style: dashed;
+        /* border-style: dashed; */
         border-color: var(--color-gray-200, currentColor);
 
         @apply dark:border-neutral-800;

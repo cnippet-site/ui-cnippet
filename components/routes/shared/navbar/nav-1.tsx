@@ -16,12 +16,12 @@ const Nav1 = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-dashed bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-neutral-800">
-            <div className="container-wrapper">
-                <div className="container flex h-14 items-center px-4">
+        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-neutral-800 dark:bg-black/70">
+            <div className=" mx-auto max-w-full px-0 md:px-10">
+                <div className="container flex h-16 items-center px-4">
                     <div className="mr-4 hidden md:flex">
                         <Link
-                            className="mr-4 flex items-center gap-2 lg:mr-6"
+                            className="mr-4 flex items-center gap-0 lg:mr-6"
                             href="/"
                         >
                             {theme === "dark" ? (
@@ -36,13 +36,13 @@ const Nav1 = () => {
                                 <Image
                                     src="/images/logo-light.png"
                                     alt=""
-                                    className="size-9"
+                                    className="size-8"
                                     width={1320}
                                     height={1320}
                                 />
                             )}
 
-                            <span className="hidden font-bold lg:inline-block">
+                            <span className="hidden font-medium font-mono lg:inline-block">
                                 cnippet/ui
                             </span>
                         </Link>

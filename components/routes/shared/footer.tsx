@@ -65,7 +65,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-white px-4 pt-28 pb-10 md:px-8 lg:px-16 dark:bg-black dark:text-white">
-            <div className="mx-auto max-w-6xl px-10">
+            <div className="mx-auto max-w-6xl px-4 md:px-10">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
                     {/* Logo and Social Links */}
                     <div className="col-span-2 flex flex-col lg:col-span-1">
