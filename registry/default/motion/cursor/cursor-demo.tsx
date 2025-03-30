@@ -22,7 +22,7 @@ export default function Cursor1() {
     };
 
     return (
-        <div className="flex h-[400px] w-full items-center justify-center">
+        <div className="flex h-[300px] w-full items-center justify-center">
             <Cursor
                 attachToParent
                 variants={{

@@ -25,7 +25,7 @@ export function MorphingDialogBasicTwo() {
                 }}
                 className="border border-gray-200/60 bg-white"
             >
-                <div className="flex items-center space-x-3 p-3">
+                <div className="flex items-center space-x-3 p-2">
                     <MorphingDialogImage
                         src="https://m.media-amazon.com/images/I/71skAxiMC2L._AC_UF1000,1000_QL80_.jpg"
                         alt="What I Talk About When I Talk About Running - book cover"

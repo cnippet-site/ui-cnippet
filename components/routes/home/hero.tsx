@@ -10,28 +10,63 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/motion/accordion";
+import { TextLoop } from "@/components/motion/text-loop";
+import { TextScramble } from "@/components/motion/text-scramble";
+import { MorphingDialogBasicTwo } from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
+import Link from "next/link";
+import Cursor1 from "@/registry/default/motion/cursor/cursor-demo";
+import CarouselDemo from "@/registry/default/motion/carousel/carousel-demo";
+import { Grid, Block } from "@/components/motion/grid";
+import {
+    RiFacebookBoxFill,
+    RiGithubFill,
+    RiMapPin2Fill,
+    RiTiktokFill,
+    RiTwitterFill,
+} from "@remixicon/react";
 
 const items = [
     {
         id: "1",
-        title: "Is cnippet/ui accessible?",
+        title: "Do I need React experience to use CNIPPET?",
         icon: AtSignIcon,
         content:
-            "Yes. It adheres to the WAI-ARIA design pattern, making it accessible for users with disabilities. It also supports screen readers and other assistive technologies.",
+            "Basic React/Next.js knowledge is recommended for customization, but our copy-paste components make implementation effortless! 🚀 Start simple and scale as you learn.",
     },
     {
         id: "2",
-        title: "Does cnippet/ui have a dark mode?",
+        title: "How customizable are the components?",
         icon: CommandIcon,
         content:
-            "Yes. It has a dark mode that can be toggled in the settings. Dark mode is designed to reduce eye strain, especially in low-light environments.",
+            "Fully tweakable! Every component is built with Tailwind CSS - override styles, modify animations with Framer Motion, or restructure as needed. Your design system, your rules. 🎨",
     },
     {
         id: "3",
         icon: EclipseIcon,
-        title: "Is cnippet/ui responsive?",
+        title: "Can I use this in commercial projects?",
         content:
-            "Yes. It's fully responsive and works seamlessly across devices with different screen sizes, from mobile phones to large desktop monitors.",
+            "Absolutely! CNIPPET is MIT-licensed - build client sites, SaaS products, or internal tools. No attribution required, though we appreciate shoutouts! 💼",
+    },
+    {
+        id: "4",
+        icon: EclipseIcon,
+        title: "How accessible are the components?",
+        content:
+            "We bake in accessibility: ARIA labels, keyboard nav, and WCAG contrast ratios out of the box. Tested with screen readers like JAWS/NVDA. ♿️",
+    },
+    {
+        id: "5",
+        icon: EclipseIcon,
+        title: "What if I need help?",
+        content:
+            "We've got your back! Join our Discord community for real-time support. For critical bugs, expect patches within 24 hours. 💬",
+    },
+    {
+        id: "6",
+        icon: EclipseIcon,
+        title: "Can I use this in commercial projects?",
+        content:
+            "Absolutely! CNIPPET is MIT-licensed - build client sites, SaaS products, or internal tools. No attribution required, though we appreciate shoutouts! 💼",
     },
 ];
 
@@ -131,9 +166,9 @@ const Hero = () => {
                             ))} */}
                         </div>
 
-                        <div className="relative h-full w-full">
-                            <div className="grid size-[16.5rem] w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-800">
-                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-3 dark:divide-neutral-800 dark:border-neutral-800">
+                        <div className="relative w-full">
+                            <div className="grid w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-800">
+                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800 dark:border-neutral-800">
                                     <div className=""></div>
                                     <div></div>
                                     <div className="hidden md:block"></div>
@@ -141,28 +176,68 @@ const Hero = () => {
                                     <div className="hidden md:block"></div>
                                     <div className="hidden md:block"></div>
                                     <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
                                 </div>
-                                <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 text-center md:col-span-8 dark:border-neutral-800 dark:bg-black">
+                                <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 py-5 text-center md:col-span-8 dark:border-neutral-800 dark:bg-black">
+                                    <div className="flex items-start justify-start">
+                                        {/* Tired of{" "} */}
+                                        {/* <TextScramble
+                                            className="font-mono text-sm"
+                                            duration={1.2}
+                                            characterSet=". "
+                                        >
+                                            Tired of the same boilerplate
+                                        </TextScramble> */}
+                                        <TextScramble
+                                            characterSet=". "
+                                            className="w-full font-mono text-sm uppercase"
+                                        >
+                                            Tired of the same boilerplate |
+                                            design
+                                        </TextScramble>
+                                        {/* <TextLoop className="">
+                                            <span>Fixing AI-Generated UI</span>
+                                            <span>Same Boilerplate</span>
+                                            <span>Same Components</span>
+                                            <span>Same Design</span>
+                                        </TextLoop> */}
+                                    </div>
                                     <h1 className="text-3xl leading-tight font-semibold tracking-tight md:text-5xl">
-                                        The native Next.js platform.
+                                        We skip the boilerplate to deliver
+                                        developer-first components.
                                     </h1>
-                                    <p className="text-sm leading-relaxed md:text-xl">
+                                    <p className="mt-2 text-sm leading-normal md:text-lg">
+                                        <span className="text-gray-500">
+                                            While AI tools churn out generic UI
+                                            blocks,
+                                        </span>{" "}
                                         <span className="font-medium">
-                                            Made by the creators of Next.js,
+                                            cnippet delivers curated React
+                                            components precision-tuned
                                         </span>{" "}
                                         <span className="text-gray-500">
-                                            Vercel is designed
-                                        </span>
-                                        <br />
-                                        <span className="text-gray-500">
-                                            to build, scale, and secure your
-                                            Next.js apps.
+                                            for SaaS, e-commerce, and data-heavy
+                                            dashboards.
                                         </span>
                                     </p>
+                                    <div className="mt-4 space-x-3">
+                                        <Button className="rounded-full">
+                                            Explore Components
+                                        </Button>
+                                        <Button
+                                            variant="outline"
+                                            className="rounded-full"
+                                        >
+                                            View Docs
+                                        </Button>
+                                    </div>
                                 </div>
-                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y md:col-span-2 md:grid-cols-2 md:grid-rows-3 dark:divide-neutral-800">
+                                <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800">
                                     <div></div>
                                     <div></div>
+                                    <div className="hidden md:block"></div>
+                                    <div className="hidden md:block"></div>
                                     <div className="hidden md:block"></div>
                                     <div className="hidden md:block"></div>
                                     <div className="hidden md:block"></div>
@@ -180,21 +255,73 @@ const Hero = () => {
                     <div className="grid h-full w-full grid-cols-12 border border-t-0 py-16 dark:border-neutral-800">
                         <div className="col-span-12 bg-white text-center dark:bg-black">
                             <h2 className="mb-5 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
-                                The native Next.js platform.
+                                Interactive Components Gallery.
                             </h2>
-                            <div>
-                                <InfiniteSlider gap={24}>
-                                    {images.map((image, i) => (
-                                        <Image
-                                            key={i}
-                                            src={image}
-                                            alt="Apple Music logo"
-                                            width={1920}
-                                            height={1080}
-                                            className="aspect-square w-24 object-cover md:w-36"
-                                        />
-                                    ))}
-                                </InfiniteSlider>
+                            <div className="grid grid-cols-12 divide-x divide-y border-t">
+                                <div className="col-span-8 p-5">
+                                    <InfiniteSlider gap={24}>
+                                        {images.map((image, i) => (
+                                            <Image
+                                                key={i}
+                                                src={image}
+                                                alt="Apple Music logo"
+                                                width={1920}
+                                                height={1080}
+                                                className="aspect-square w-24 object-cover md:w-36"
+                                            />
+                                        ))}
+                                    </InfiniteSlider>
+                                </div>
+                                <div className="col-span-4 flex items-center justify-center px-5">
+                                    <MorphingDialogBasicTwo />
+                                </div>
+                                <div className="col-span-4 p-5">
+                                    <Cursor1 />
+                                </div>
+                                <div className="col-span-8 flex flex-col items-center justify-center">
+                                    <Grid>
+                                        <Block className="col-span-12 row-span-2 md:col-span-6">
+                                            <img
+                                                src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John"
+                                                alt="avatar"
+                                                className="mb-4 size-14 rounded-full"
+                                            />
+                                            <h1 className="mb-12 text-3xl leading-tight font-medium">
+                                                Hi, I'm Deepak.{" "}
+                                                <span className="text-zinc-400">
+                                                    Founder and CEO of Cnippet
+                                                    UI
+                                                </span>
+                                            </h1>
+                                        </Block>
+
+                                        {[
+                                            RiFacebookBoxFill,
+                                            RiTiktokFill,
+                                            RiTwitterFill,
+                                            RiGithubFill,
+                                        ].map((Icon, idx) => (
+                                            <Block
+                                                key={idx}
+                                                className="col-span-6 bg-emerald-600 md:col-span-3"
+                                                whileHover={{
+                                                    rotate:
+                                                        idx % 2
+                                                            ? "-2.5deg"
+                                                            : "2.5deg",
+                                                    scale: 1.1,
+                                                }}
+                                            >
+                                                <a
+                                                    href="#"
+                                                    className="grid h-full place-content-center text-3xl text-white"
+                                                >
+                                                    <Icon />
+                                                </a>
+                                            </Block>
+                                        ))}
+                                    </Grid>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -384,7 +511,7 @@ const Hero = () => {
                                 </div>
                             </div>
                             <div className="col-span-8">
-                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-b">
+                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-b dark:divide-neutral-800 dark:border-neutral-800">
                                     <div />
                                     <div />
                                 </div>
@@ -403,13 +530,13 @@ const Hero = () => {
                                                 value={item.id}
                                                 className="px-8 py-4"
                                             >
-                                                <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                                                <AccordionTrigger className="w-full cursor-pointer text-left text-zinc-950 dark:text-zinc-50">
                                                     <div className="flex items-center justify-between gap-2">
                                                         <div>{item.title}</div>
                                                     </div>
                                                 </AccordionTrigger>
                                                 <AccordionContent>
-                                                    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+                                                    <p className="mt-1 font-normal text-neutral-600 dark:text-neutral-400">
                                                         {item.content}
                                                     </p>
                                                 </AccordionContent>
@@ -417,7 +544,7 @@ const Hero = () => {
                                         ))}
                                     </Accordion>
                                 </div>
-                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-t">
+                                <div className="grid size-[8rem] w-full grid-cols-2 divide-x border-t dark:divide-neutral-800 dark:border-neutral-800">
                                     <div />
                                     <div />
                                 </div>
