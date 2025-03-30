@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/routes/shared/footer";
 import Image from "next/image";
-import { ComponentPreview } from "@/components/mdx/component-preview";
 
 const Page = () => {
     return (
@@ -83,7 +82,7 @@ const Page = () => {
                                                 alt="image"
                                                 width={1920}
                                                 height={1080}
-                                                className="w-full aspect-video object-cover mt-5 rounded-3xl"
+                                                className="mt-5 aspect-video w-full rounded-3xl object-cover"
                                             />
                                             <p className="mt-5 text-gray-500">
                                                 A security vulnerability in

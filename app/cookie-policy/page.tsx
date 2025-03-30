@@ -80,11 +80,11 @@ const page = () => {
                                         pixels) are small blocks of code on a
                                         web page or in an email notification.
                                         Pixels allow companies to collect
-                                        information such as an individual's IP
+                                        information such as an individual&apos;s IP
                                         address, when the individual viewed the
                                         pixel and the type of browser used. We
                                         use pixel tags to understand whether
-                                        you've interacted with content on our
+                                        you&apos;ve interacted with content on our
                                         Platform, which helps us measure and
                                         improve our Platform and personalize
                                         your experience.
@@ -115,9 +115,9 @@ const page = () => {
                                         using different types of browsers.
                                     </p>
                                     <p className="pt-3 text-neutral-500">
-                                        If you'd like to remove or disable
+                                        If you&apos;d like to remove or disable
                                         cookies via your browser, please refer
-                                        to your browser's configuration
+                                        to your browser&apos;s configuration
                                         documentation.
                                     </p>
                                     <p className="pt-3 text-neutral-500">

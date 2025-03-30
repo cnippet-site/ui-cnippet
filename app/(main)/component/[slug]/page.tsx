@@ -70,15 +70,15 @@ export default async function ComponentPage({
                 </div>
             </div>
 
-            {/* {doc?.toc && (
+            {doc?.toc && (
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
-                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pb-6 pl-4 pr-2">
+                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
                             <TableOfContents toc={toc} />
                         </div>
                     </div>
                 </div>
-            )} */}
+            )}
         </main>
     );
 }

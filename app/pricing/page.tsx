@@ -1,5 +1,6 @@
 import Footer from "@/components/routes/shared/footer";
 import React from "react";
+import { Button } from "@/components/ui/button";
 import {
     Download,
     GitBranch,
@@ -8,19 +9,8 @@ import {
     Shield,
     Globe,
     Users,
-    BarChart,
-    Eye,
-    Zap,
-    AlertTriangle,
-    Mail,
-    UserPlus,
-    Database,
-    ShieldCheck,
-    Globe2,
-    Clock,
-    Headphones,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 const page = () => {
     return (
         <>
@@ -35,7 +25,7 @@ const page = () => {
                         </div>
 
                         <div className="relative border-t dark:border-neutral-800">
-                            <div className="grid size-[5rem] w-full grid-cols-12 grid-rows-1 divide-x divide-y first:border-l last:border-r dark:border-neutral-800 dark:divide-neutral-800">
+                            <div className="grid size-[5rem] w-full grid-cols-12 grid-rows-1 divide-x divide-y first:border-l last:border-r dark:divide-neutral-800 dark:border-neutral-800">
                                 <div className="col-span-1"></div>
                                 <div className="col-span-1"></div>
                                 <div className="col-span-1"></div>
@@ -52,7 +42,7 @@ const page = () => {
 
                             <div className="grid size-[5rem] h-full w-full grid-cols-12 first:border-l">
                                 <div className="col-span-1 border-b border-l dark:border-neutral-800"></div>
-                                <div className="col-span-10 border border-t-0 dark:border-neutral-800 py-8 text-center">
+                                <div className="col-span-10 border border-t-0 py-8 text-center dark:border-neutral-800">
                                     <h1 className="text-5xl leading-tight font-semibold tracking-tight">
                                         Find a plan to power your projects.
                                     </h1>
@@ -61,10 +51,10 @@ const page = () => {
                                         enterprises, Vercel has you covered.
                                     </p>
                                 </div>
-                                <div className="col-span-1 border-r border-b-0 dark:border-neutral-800 bg-amber-600"></div>
+                                <div className="col-span-1 border-r border-b-0 bg-amber-600 dark:border-neutral-800"></div>
                             </div>
 
-                            <div className="grid size-[5rem] w-full grid-cols-12 dark:divide-neutral-800 grid-rows-1 divide-x divide-y">
+                            <div className="grid size-[5rem] w-full grid-cols-12 grid-rows-1 divide-x divide-y dark:divide-neutral-800">
                                 <div className="col-span-1 border-l"></div>
                                 <div className="col-span-1"></div>
                                 <div className="col-span-1"></div>
@@ -75,11 +65,11 @@ const page = () => {
                                 <div className="col-span-1"></div>
                                 <div className="col-span-1"></div>
                                 <div className="col-span-1"></div>
-                                <div className="col-span-1 bg-teal-700 border-r-0"></div>
-                                <div className="col-span-1 border-r bg-amber-400 border-b dark:border-neutral-800"></div>
+                                <div className="col-span-1 border-r-0 bg-teal-700"></div>
+                                <div className="col-span-1 border-r border-b bg-amber-400 dark:border-neutral-800"></div>
                             </div>
 
-                            <div className="grid w-full grid-cols-12 divide-x border dark:border-neutral-800 dark:divide-neutral-800 border-t-0">
+                            <div className="grid w-full grid-cols-12 divide-x border border-t-0 dark:divide-neutral-800 dark:border-neutral-800">
                                 <div className="col-span-4 px-10 py-16">
                                     <h2 className="mb-3 text-2xl font-bold">
                                         Hobby

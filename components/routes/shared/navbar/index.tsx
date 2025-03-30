@@ -32,7 +32,7 @@ const Banner = () => (
 
 export default function Navbar() {
     // const [isPagesOpen, setIsPagesOpen] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <>
@@ -106,25 +106,25 @@ export default function Navbar() {
 
                                     <Link
                                         href="/component/button"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Components
                                     </Link>
                                     <Link
                                         href="/motion/accordion"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Motions
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Sections
                                     </Link>
                                     <Link
                                         href="#"
-                                        className="text-gray-700 transition hover:text-gray-900 dark:hover:text-neutral-400 dark:text-white"
+                                        className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Templates
                                     </Link>

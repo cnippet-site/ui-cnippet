@@ -8,17 +8,6 @@ import {
     Shield,
     Globe,
     Users,
-    BarChart,
-    Eye,
-    Zap,
-    AlertTriangle,
-    Mail,
-    UserPlus,
-    Database,
-    ShieldCheck,
-    Globe2,
-    Clock,
-    Headphones,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
