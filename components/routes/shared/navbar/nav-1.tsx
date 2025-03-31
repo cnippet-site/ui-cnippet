@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import NavUser from "./nav-user";
 
 const Nav1 = () => {
     const { theme, setTheme } = useTheme();
@@ -16,8 +17,8 @@ const Nav1 = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-neutral-900 dark:bg-black/70">
-            <div className=" mx-auto max-w-full px-0 md:px-10">
+        <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur dark:border-neutral-900 dark:bg-black/70">
+            <div className="mx-auto max-w-full px-0 md:px-10">
                 <div className="container flex h-16 items-center px-4">
                     <div className="mr-4 hidden md:flex">
                         <Link
@@ -42,44 +43,44 @@ const Nav1 = () => {
                                 />
                             )}
 
-                            <span className="hidden font-medium font-mono lg:inline-block">
+                            <span className="hidden font-mono font-medium lg:inline-block">
                                 cnippet/ui
                             </span>
                         </Link>
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
                             <Link
                                 href="/component/button"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Components
                             </Link>
                             <Link
                                 href="/motion/accordion"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Motion
                             </Link>
                             <Link
                                 href="/chart/area-chart"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Charts
                             </Link>
                             <Link
                                 href="#"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Sections
                             </Link>
                             <Link
                                 href="#"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Templates
                             </Link>
                             <Link
                                 href="#"
-                                className="text-foreground/80 transition-colors hover:text-foreground/80"
+                                className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Colors
                             </Link>
@@ -87,13 +88,13 @@ const Nav1 = () => {
                     </div>
                     <MobileNav />
 
-                    <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
+                    <div className="flex flex-1 ml-auto items-center justify-between gap-2 md:justify-end">
                         <CommandMenu />
                         <nav className="flex items-center gap-0.5">
                             <Link
                                 target="_blank"
                                 rel="noreferrer"
-                                className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                className="hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0"
                                 href="https://github.com/cnippet-site/ui-cnippet"
                             >
                                 <svg
@@ -107,7 +108,7 @@ const Nav1 = () => {
                                 </svg>
                                 <span className="sr-only">GitHub</span>
                             </Link>
-                            <div className="[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 group/toggle inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-md px-0 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                            <div className="group/toggle hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0">
                                 {/* <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -147,7 +148,7 @@ const Nav1 = () => {
                                 <Button
                                     variant="ghost"
                                     onClick={() => toggleTheme()}
-                                    className="flex items-center justify-center gap-2 rounded-lg p-2 text-black hover:bg-dusk-500 dark:text-white hover:dark:bg-neutral-700"
+                                    className="hover:bg-dusk-500 flex items-center justify-center gap-2 rounded-lg p-2 text-black dark:text-white hover:dark:bg-neutral-700"
                                 >
                                     {theme === "dark" ? (
                                         <RiSunLine className="size-5" />
@@ -159,6 +160,7 @@ const Nav1 = () => {
                                 <span className="sr-only">Toggle theme</span>
                             </div>
                         </nav>
+                        <NavUser />
                     </div>
                 </div>
             </div>

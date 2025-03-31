@@ -18,6 +18,10 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    experimental: {
+        optimizePackageImports: ['@content-collections/next', '@content-collections/cli', '@content-collections/core', '@content-collections/mdx'],
+    },
+    // webpackMemoryOptimizations: true,
     reactStrictMode: true,
     images: {
         remotePatterns: [
@@ -32,6 +36,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'res.cloudinary.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.dicebear.com',
             }
         ],
     },

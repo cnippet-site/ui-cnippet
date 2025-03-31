@@ -5,6 +5,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { BASE_URL } from "@/config/docs";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
+import AuthProvider from "@/providers/auth-provider";
 
 export const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),
@@ -79,16 +80,18 @@ export default function RootLayout({
                 className={`antialiased dark:bg-neutral-950`}
                 suppressHydrationWarning
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="light"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    {children}
-                    <Toaster />
-                    <Sonner richColors expand={true} position="top-right" />
-                </ThemeProvider>
+                <AuthProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="light"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        {children}
+                        <Toaster />
+                        <Sonner richColors expand={true} position="top-right" />
+                    </ThemeProvider>
+                </AuthProvider>
             </body>
             <GoogleAnalytics gaId="G-78T110L7RD" />
         </html>

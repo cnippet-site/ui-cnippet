@@ -9,6 +9,7 @@ import { CollapsibleSource } from "./components/mdx/collapsible-source";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeBlockCommand } from "./components/mdx/code-block-command";
 import { Button } from "@/components/ui/button";
+import { AuthPreview } from "./components/mdx/auth-preview";
 
 interface MDXProps {
     code: string;
@@ -18,11 +19,12 @@ interface MDXProps {
 const components = {
     ComponentPreview,
     CollapsibleSource,
+    AuthPreview,
     Button,
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2
             className={cn(
-                "font-heading mt-12 scroll-m-20 border-b pb-2 font-ins text-2xl tracking-tight first:mt-0 dark:border-neutral-800",
+                "font-heading font-ins mt-12 scroll-m-20 border-b pb-2 text-2xl tracking-tight first:mt-0 dark:border-neutral-800",
                 className,
             )}
             {...props}
@@ -50,7 +52,7 @@ const components = {
         className,
         ...props
     }: React.HTMLAttributes<HTMLParagraphElement>) => (
-        <p className={cn("mt-3 font-normal leading-7", className)} {...props} />
+        <p className={cn("mt-3 leading-7 font-normal", className)} {...props} />
     ),
     ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
         <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -82,7 +84,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <th
             className={cn(
-                "border px-4 py-2 text-left font-ins font-medium dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "font-ins border px-4 py-2 text-left font-medium dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -156,7 +158,7 @@ const components = {
         return (
             <>
                 <pre
-                    className={`overflow-x-auto text-wrap rounded-lg border !bg-neutral-950 dark:border-neutral-800 dark:!bg-zinc-900 ${className}`}
+                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap dark:border-neutral-800 dark:!bg-zinc-900 ${className}`}
                     {...props}
                 />
                 {__rawString__ && <CopyButton value={__rawString__} />}
@@ -167,7 +169,7 @@ const components = {
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
             className={cn(
-                "font-mono px-4 py-5 text-xs font-normal md:text-sm",
+                "px-4 py-5 font-mono text-xs font-normal md:text-sm",
                 className,
             )}
             {...props}
@@ -177,7 +179,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "font-sans step font-medium [&>p]:font-medium text-base text-black dark:text-white",
+                "step font-sans text-base font-medium text-black dark:text-white [&>p]:font-medium",
                 className,
             )}
             {...props}
@@ -212,7 +214,7 @@ const components = {
     }: React.ComponentProps<typeof TabsTrigger>) => (
         <TabsTrigger
             className={cn(
-                "data-[state=active]:bg- font-ins relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-2 pb-3 pt-2 font-medium text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none dark:font-normal",
+                "data-[state=active]:bg- font-ins text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-2 pt-2 pb-3 font-medium shadow-none transition-none data-[state=active]:shadow-none dark:font-normal",
                 className,
             )}
             {...props}

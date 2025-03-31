@@ -14,7 +14,7 @@ const Hero = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="relative grid h-[5.5rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-44 md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
+                    <div className="relative grid h-[5.6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-44 md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
                         {/* {Array.from({ length: 25 }).map((_, i) => (
                                 <div key={i} className="col-span-1"></div>
                             ))} */}
@@ -46,7 +46,7 @@ const Hero = () => {
                         <div className="col-span-1 hidden md:block" />
                     </div>
 
-                    <div className="absolute inset-0 grid h-[5.5rem] w-full grid-cols-8 md:h-44 md:grid-cols-12">
+                    <div className="absolute inset-0 grid h-[5.6rem] w-full grid-cols-8 md:h-44 md:grid-cols-12">
                         <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-800" />
 
                         <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
