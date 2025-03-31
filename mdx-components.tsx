@@ -9,7 +9,6 @@ import { CollapsibleSource } from "./components/mdx/collapsible-source";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeBlockCommand } from "./components/mdx/code-block-command";
 import { Button } from "@/components/ui/button";
-import { AuthPreview } from "./components/mdx/auth-preview";
 
 interface MDXProps {
     code: string;
@@ -19,7 +18,6 @@ interface MDXProps {
 const components = {
     ComponentPreview,
     CollapsibleSource,
-    AuthPreview,
     Button,
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2

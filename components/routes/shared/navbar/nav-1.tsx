@@ -7,7 +7,6 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import NavUser from "./nav-user";
 
 const Nav1 = () => {
     const { theme, setTheme } = useTheme();
@@ -88,14 +87,14 @@ const Nav1 = () => {
                     </div>
                     <MobileNav />
 
-                    <div className="flex flex-1 ml-auto items-center justify-between gap-2 md:justify-end">
+                    <div className="ml-auto flex flex-1 items-center justify-between gap-2 md:justify-end">
                         <CommandMenu />
                         <nav className="flex items-center gap-0.5">
                             <Link
                                 target="_blank"
                                 rel="noreferrer"
                                 className="hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0"
-                                href="https://github.com/cnippet-site/ui-cnippet"
+                                href="https://github.com/cnippet-site/all-elements/"
                             >
                                 <svg
                                     viewBox="0 0 438.549 438.549"
@@ -160,7 +159,6 @@ const Nav1 = () => {
                                 <span className="sr-only">Toggle theme</span>
                             </div>
                         </nav>
-                        <NavUser />
                     </div>
                 </div>
             </div>

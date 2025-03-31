@@ -14,7 +14,7 @@ const Hero = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="relative grid h-[5.6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-44 md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
+                    <div className="relative grid h-[6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-[11.58rem] md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
                         {/* {Array.from({ length: 25 }).map((_, i) => (
                                 <div key={i} className="col-span-1"></div>
                             ))} */}
@@ -46,7 +46,7 @@ const Hero = () => {
                         <div className="col-span-1 hidden md:block" />
                     </div>
 
-                    <div className="absolute inset-0 grid h-[5.6rem] w-full grid-cols-8 md:h-44 md:grid-cols-12">
+                    <div className="absolute inset-0 grid h-[6rem] w-full grid-cols-8 md:h-[11.58rem] md:grid-cols-12">
                         <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-800" />
 
                         <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
@@ -102,7 +102,7 @@ const Hero = () => {
                                 <div className="hidden md:block"></div>
                                 <div className="hidden md:block"></div>
                             </div>
-                            <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 py-5 text-center md:col-span-8 dark:border-neutral-800 dark:bg-black">
+                            <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 py-5 text-center md:col-span-8 md:py-10 dark:border-neutral-800 dark:bg-black">
                                 <div className="flex items-start justify-start">
                                     {/* Tired of{" "} */}
                                     {/* <TextScramble
@@ -114,7 +114,7 @@ const Hero = () => {
                                         </TextScramble> */}
                                     <TextScramble
                                         characterSet=". "
-                                        className="w-full font-mono text-sm uppercase md:text-xs"
+                                        className="w-full font-mono text-sm uppercase md:text-base"
                                     >
                                         Tired of the same boilerplate | design
                                     </TextScramble>
@@ -125,7 +125,7 @@ const Hero = () => {
                                             <span>Same Design</span>
                                         </TextLoop> */}
                                 </div>
-                                <h1 className="mt-4 text-2xl leading-tight font-semibold tracking-tight md:mt-0 md:text-5xl">
+                                <h1 className="mt-4 text-2xl leading-tight dark:text-neutral-50 font-semibold tracking-tight md:mt-0 md:text-5xl">
                                     We skip the boilerplate to deliver
                                     developer-first components.
                                 </h1>
