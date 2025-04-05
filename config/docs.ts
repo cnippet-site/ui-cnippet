@@ -318,6 +318,10 @@ export const components: ComponentGroup[] = [
                 href: "/component/checkbox",
             },
             {
+                name: "Form",
+                href: "/component/form",
+            },
+            {
                 name: "Input",
                 href: "/component/input",
             },
@@ -396,10 +400,6 @@ export const components: ComponentGroup[] = [
             {
                 name: "Drawer",
                 href: "/component/drawer",
-            },
-            {
-                name: "Modal",
-                href: "/component/modal",
             },
             {
                 name: "Popover",

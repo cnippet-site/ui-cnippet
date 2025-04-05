@@ -63,9 +63,12 @@ export const componentExamples: Registry = generateExamples([
     { name: "input-helper" },
     { name: "input-icon" },
     { name: "input-labelfloat" },
+    { name: "input-otp" },
+    { name: "input-double" },
+    { name: "input-spaced" },
+    { name: "input-phone" },
 
     { name: "label-demo", number: "4" },
-    { name: "modal-demo", number: "4" },
 
     { name: "multiselect-demo", number: "4" },
     { name: "multiselect-clear" },
@@ -127,4 +130,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "toast-custom" },
 
     { name: "tooltip-demo", number: "4" },
+    { name: "tooltip-arrow" },
+    { name: "tooltip-dark" },
+    { name: "tooltip-direction" },
+    { name: "tooltip-image" },
+    
+
 ]);

@@ -13,6 +13,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
+import { HTMLMotionProps } from "motion/react";
 
 const Form = FormProvider;
 
@@ -85,25 +86,24 @@ const FormItem = React.forwardRef<
 });
 FormItem.displayName = "FormItem";
 
-const FormLabel = React.forwardRef<
-    HTMLLabelElement,
-    React.ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => {
-    const { error, formItemId } = useFormField();
+const FormLabel = React.forwardRef<HTMLLabelElement, HTMLMotionProps<"label">>(
+    ({ className, ...props }, ref) => {
+        const { error, formItemId } = useFormField();
 
-    return (
-        <Label
-            ref={ref}
-            className={cn(error && "text-destructive", className)}
-            htmlFor={formItemId}
-            {...props}
-        />
-    );
-});
+        return (
+            <Label
+                ref={ref}
+                className={cn(error && "text-destructive", className)}
+                htmlFor={formItemId}
+                {...props}
+            />
+        );
+    },
+);
 FormLabel.displayName = "FormLabel";
 
 const FormControl = React.forwardRef<
-    React.ComponentRef<typeof Slot>,
+    React.ElementRef<typeof Slot>,
     React.ComponentPropsWithoutRef<typeof Slot>
 >(({ ...props }, ref) => {
     const { error, formItemId, formDescriptionId, formMessageId } =
