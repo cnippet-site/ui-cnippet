@@ -58,6 +58,8 @@ export const componentExamples: Registry = generateExamples([
     { name: "drop-zone-demo", number: "4" },
     { name: "file-trigger-demo", number: "4" },
 
+    { name: "form-demo", number: "4" },
+
     { name: "input-demo", number: "4" },
     { name: "input-addon" },
     { name: "input-helper" },

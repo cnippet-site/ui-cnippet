@@ -25,6 +25,7 @@ export const components: Registry = generateComponents([
     { name: "datefield" },
     { name: "dialog-cn" },
     { name: "drawer" },
+    { name: "form" },
     { name: "input" },
     { name: "label" },
     { name: "multiselect" },

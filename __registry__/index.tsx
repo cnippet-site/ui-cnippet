@@ -187,6 +187,20 @@
         subcategory: "undefined",
         chunks: []
       },
+      "form": {
+        name: "form",
+        type: "registry:component",
+        slug: "/components/form",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["components/ui/form.tsx"],
+        component: React.lazy(() => import("@/components/ui/form.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
       "input": {
         name: "input",
         type: "registry:component",
@@ -798,6 +812,20 @@
         registryDependencies: undefined,
         files: ["registry/default/components/file-trigger/file-trigger-demo.tsx"],
         component: React.lazy(() => import("@/registry/default/components/file-trigger/file-trigger-demo.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
+      "form-demo": {
+        name: "form-demo",
+        type: "registry:components",
+        slug: "/component/form",
+        thumbnail: "undefined",
+        number: "4",
+        registryDependencies: undefined,
+        files: ["registry/default/components/form/form-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/components/form/form-demo.tsx")),
         source: "",
         category: "undefined",
         subcategory: "undefined",
