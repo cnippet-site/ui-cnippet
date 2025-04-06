@@ -44,7 +44,7 @@ function CommandDialog({
                 <DialogTitle>{title}</DialogTitle>
                 <DialogDescription>{description}</DialogDescription>
             </DialogHeader>
-            <DialogContent className="overflow-hidden px-0 py-3">
+            <DialogContent className="overflow-hidden px-0 py-3 dark:border-neutral-900">
                 <DialogTitle className="sr-only">{title}</DialogTitle>
 
                 <Command className="**:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0  [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12  [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
@@ -62,7 +62,7 @@ function CommandInput({
     return (
         <div
             data-slot="command-input-wrapper"
-            className="flex h-9 items-center gap-2 border-b px-2"
+            className="flex h-9 items-center gap-2 border-b dark:border-neutral-900 px-2"
         >
             <SearchIcon className="size-4 shrink-0 opacity-50" />
             <CommandPrimitive.Input

@@ -26,8 +26,8 @@
 //     ];
 
 //     return (
-//         <section className="border-b border-dashed bg-background dark:border-neutral-800 md:pt-0">
-//             <div className="mx-4 max-w-full border-l border-r border-dashed px-4 pt-10 dark:border-neutral-800 sm:px-6 md:mx-auto md:max-w-7xl lg:px-0">
+//         <section className="border-b border-dashed bg-background dark:border-neutral-900 md:pt-0">
+//             <div className="mx-4 max-w-full border-l border-r border-dashed px-4 pt-10 dark:border-neutral-900 sm:px-6 md:mx-auto md:max-w-7xl lg:px-0">
 //                 <div className="px-0 md:p-12 lg:px-0">
 //                     <div className="mb-6 text-center md:mb-8 lg:mb-10">
 //                         <h2 className="text-3xl font-medium text-black dark:text-white sm:text-4xl md:text-6xl">
@@ -40,7 +40,7 @@
 //                         </p>
 //                     </div>
 
-//                     <div className="border-t border-dashed py-10 dark:border-neutral-800 md:border-b">
+//                     <div className="border-t border-dashed py-10 dark:border-neutral-900 md:border-b">
 //                         <div className="grid gap-6 sm:grid-cols-2 md:px-10 lg:grid-cols-3 lg:gap-8">
 //                             <Cursor
 //                                 attachToParent
@@ -114,11 +114,11 @@ const Features = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-800 dark:border-neutral-800">
+                    <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-900 dark:border-neutral-900">
                         <div className="col-span-4 w-full bg-white px-4 py-8 text-left md:px-10 md:py-16 dark:bg-black">
                             <div className="sticky top-20">
                                 <h2 className="text-2xl leading-tight font-semibold tracking-tight">
-                                    Vercel&apos;s Frontend Cloud.
+                                    Why Cnippet?
                                 </h2>
                                 <p className="mt-2 text-gray-500">
                                     Providing the developer experience and
@@ -130,12 +130,11 @@ const Features = () => {
                         <div className="col-span-8 bg-white px-4 py-8 md:px-10 md:py-16 dark:bg-black">
                             <div className="flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Cache, controlled.
+                                    Build Smarter, Not Harder
                                 </h3>
                                 <p className="text-gray-500">
-                                    Define per-component response revalidation
-                                    that persists across deploys with Vercel&apos;s
-                                    Data Cache.
+                                    Access fully designed components and
+                                    templates to build your next project faster.
                                 </p>
                                 <Button className="rounded-full">
                                     Start Building
@@ -143,12 +142,12 @@ const Features = () => {
                             </div>
                             <div className="mt-20 flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Cache, controlled.
+                                    Designed for TypeScript & JavaScript
                                 </h3>
                                 <p className="text-gray-500">
-                                    Define per-component response revalidation
-                                    that persists across deploys with Vercel&apos;s
-                                    Data Cache.
+                                    Enjoy the same high-quality components
+                                    whether you prefer TypeScript or JavaScript.
+                                    Tailored for every developer's choice.
                                 </p>
                                 <Button className="rounded-full">
                                     Start Building
@@ -156,12 +155,11 @@ const Features = () => {
                             </div>
                             <div className="mt-24 flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Cache, controlled.
+                                    Build Once, Use Everywhere
                                 </h3>
                                 <p className="text-gray-500">
-                                    Define per-component response revalidation
-                                    that persists across deploys with Vercel&apos;s
-                                    Data Cache.
+                                    Build once and use everywhere with our
+                                    powerful build system.
                                 </p>
                                 <Button className="rounded-full">
                                     Start Building

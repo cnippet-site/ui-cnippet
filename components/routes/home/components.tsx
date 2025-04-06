@@ -14,6 +14,10 @@ import { TextRoll } from "@/components/motion/text-roll";
 import { MorphingDialogBasicTwo } from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+import Chart1 from "@/registry/default/chart/bar-chart/bar-chart-demo";
+import Chart2 from "@/registry/default/chart/line-chart/line-chart-demo";
+import Chart3 from "@/registry/default/chart/pie-chart/pie-chart-demo";
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -28,7 +32,7 @@ const Components = () => {
     return (
         <section className="dark:bg-black">
             <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
-                <div className="grid h-full w-full grid-cols-12 border border-t-0 py-0 dark:border-neutral-800">
+                <div className="grid h-full w-full grid-cols-12 border border-t-0 py-0 dark:border-neutral-900">
                     <div className="col-span-12 bg-white text-center dark:bg-black">
                         <h2 className="mt-16 mb-2 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
                             Interactive Components Gallery.
@@ -37,32 +41,42 @@ const Components = () => {
                             Explore our collection of motion-enhanced UI
                             elements that are ready to use in your projects.
                         </p>
-                        <div className="grid grid-cols-1 divide-y border-t md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
-                            <div className="overflow-hidden border-r p-5 md:col-span-8">
+                        <div className="grid grid-cols-1 divide-y border-t md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900">
+                            <Link
+                                href="/motion/infinite-slider"
+                                className="overflow-hidden border-r px-5 py-10 md:col-span-8"
+                            >
                                 <InfiniteSlider gap={24}>
                                     {images.map((image, i) => (
-                                        <Image
+                                        <CldImage
                                             key={i}
                                             src={image}
                                             alt="Apple Music logo"
                                             width={1920}
                                             height={1080}
+                                            sizes="100vw"
                                             className="aspect-square w-24 object-cover md:w-36"
                                         />
                                     ))}
                                 </InfiniteSlider>
-                            </div>
+                            </Link>
                             <div className="flex items-center justify-center px-5 py-5 md:col-span-4 md:py-0">
                                 <MorphingDialogBasicTwo />
                             </div>
-                            <div className="p-0 md:col-span-4 md:p-5">
+                            <Link
+                                href="/motion/cursor"
+                                className="p-0 md:col-span-4 md:p-5"
+                            >
                                 <Cursor1 />
-                            </div>
-                            <div className="flex flex-col items-center justify-center md:col-span-8">
+                            </Link>
+                            <Link
+                                href="/motion/grid"
+                                className="flex flex-col items-center justify-center md:col-span-8"
+                            >
                                 <Grid>
-                                    <Block className="col-span-12 row-span-2 md:col-span-6">
+                                    <Block className="col-span-12 row-span-2 md:col-span-6 dark:bg-neutral-950 dark:border-neutral-900">
                                         <Image
-                                            src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John"
+                                            src="/images/avatar.svg"
                                             alt="avatar"
                                             width={1920}
                                             height={1080}
@@ -84,7 +98,7 @@ const Components = () => {
                                     ].map((Icon, idx) => (
                                         <Block
                                             key={idx}
-                                            className="col-span-6 bg-black md:col-span-3"
+                                            className="col-span-6 bg-black dark:border-neutral-800 md:col-span-3"
                                             whileHover={{
                                                 rotate:
                                                     idx % 2
@@ -93,37 +107,48 @@ const Components = () => {
                                                 scale: 1.1,
                                             }}
                                         >
-                                            <a
-                                                href="#"
+                                            <div
                                                 className="grid h-full place-content-center text-3xl text-white"
                                             >
                                                 <Icon className="size-10" />
-                                            </a>
+                                            </div>
                                         </Block>
                                     ))}
                                 </Grid>
-                            </div>
-                            <div className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10">
-                                <TextShimmer
+                            </Link>
+                            <Link
+                                href="/chart/bar-chart"
+                                className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10"
+                            >
+                                {/* <TextShimmer
                                     className="font-mono text-3xl"
                                     duration={1}
                                 >
                                     Generating code...
-                                </TextShimmer>
-                            </div>
-                            <div className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10">
-                                <TextShimmerWave
+                                </TextShimmer> */}
+                                <Chart1 />
+                            </Link>
+                            <Link
+                                href="/chart/line-chart"
+                                className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10"
+                            >
+                                {/* <TextShimmerWave
                                     className="font-mono text-2xl"
                                     duration={1}
                                 >
                                     Create a component...
-                                </TextShimmerWave>
-                            </div>
-                            <div className="border-b px-5 py-5 md:col-span-4 md:py-10 dark:border-neutral-800">
-                                <TextRoll className="text-4xl text-black md:text-6xl dark:text-white">
+                                </TextShimmerWave> */}
+                                <Chart2 />
+                            </Link>
+                            <Link
+                                href="/chart/pie-chart"
+                                className="border-b px-5 py-5 md:col-span-4 md:py-10 dark:border-neutral-900"
+                            >
+                                {/* <TextRoll className="text-4xl text-black md:text-6xl dark:text-white">
                                     CNIPPET UI
-                                </TextRoll>
-                            </div>
+                                </TextRoll> */}
+                                <Chart3 />
+                            </Link>
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Link

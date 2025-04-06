@@ -53,7 +53,7 @@ const chartConfig = {
 
 export default function Component() {
     return (
-        <Card className="flex flex-col">
+        <Card className="border-none shadow-none dark:bg-black">
             <CardHeader className="items-center pb-0">
                 <CardTitle>Pie Chart</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>
@@ -77,11 +77,11 @@ export default function Component() {
                 </ChartContainer>
             </CardContent>
             <CardFooter className="flex-col gap-2 text-sm">
-                <div className="flex items-center gap-2 font-medium leading-none">
+                <div className="flex items-center gap-2 leading-none font-medium">
                     Trending up by 5.2% this month{" "}
                     <TrendingUp className="h-4 w-4" />
                 </div>
-                <div className="leading-none text-muted-foreground">
+                <div className="text-muted-foreground leading-none">
                     Showing total visitors for the last 6 months
                 </div>
             </CardFooter>

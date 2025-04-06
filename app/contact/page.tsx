@@ -14,7 +14,7 @@ export default function ContactPage() {
     return (
         <>
             <Nav1 />
-            <main className="container-wrapper">
+            <main className="container-wrapper dark:bg-black">
                 <div className="mx-auto px-4 py-32">
                     <ContactForm />
                 </div>

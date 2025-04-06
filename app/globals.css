@@ -144,7 +144,7 @@
         /* border-style: dashed; */
         border-color: var(--color-gray-200, currentColor);
 
-        @apply dark:border-neutral-800;
+        @apply dark:border-neutral-800 dark:bg-black;
     }
 
     @media (min-width: 1400px) {

@@ -14,7 +14,7 @@ const Hero = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="relative grid h-[6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-[11.58rem] md:grid-cols-12 dark:divide-neutral-800 dark:border-neutral-800">
+                    <div className="relative grid h-[6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-[11.58rem] md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900">
                         {/* {Array.from({ length: 25 }).map((_, i) => (
                                 <div key={i} className="col-span-1"></div>
                             ))} */}
@@ -47,11 +47,11 @@ const Hero = () => {
                     </div>
 
                     <div className="absolute inset-0 grid h-[6rem] w-full grid-cols-8 md:h-[11.58rem] md:grid-cols-12">
-                        <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-800" />
+                        <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-900" />
 
-                        <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
-                        <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-800" />
-                        <div className="col-span-2 flex h-full w-full items-center justify-center rounded-full border border-gray-200 bg-white dark:border-neutral-800 dark:bg-black">
+                        <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-900" />
+                        <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-900" />
+                        <div className="col-span-2 flex h-full w-full items-center justify-center rounded-full border border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
                             <Image
                                 src="/images/logo-dark.png"
                                 alt=""
@@ -60,10 +60,10 @@ const Hero = () => {
                                 height={1080}
                             />
                         </div>
-                        <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-800" />
-                        <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-800" />
+                        <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-900" />
+                        <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-900" />
 
-                        <div className="col-span-1 h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-800" />
+                        <div className="col-span-1 h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-900" />
 
                         {/* {Array.from({ length: 7 }).map((_, i) => (
                                 <div
@@ -72,17 +72,17 @@ const Hero = () => {
                                 >
                                     {i === 0 && (
                                         <div
-                                            className={`h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-800`}
+                                            className={`h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-900`}
                                         />
                                     )}
                                     {i > 0 && i < 6 && (
                                         <div
-                                            className={`h-full w-full rounded-full border border-gray-200 dark:border-neutral-800 ${i === 3 && "bg-white dark:bg-black"}`}
+                                            className={`h-full w-full rounded-full border border-gray-200 dark:border-neutral-900 ${i === 3 && "bg-white dark:bg-black"}`}
                                         />
                                     )}
                                     {i === 6 && (
                                         <div
-                                            className={`h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-800`}
+                                            className={`h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-900`}
                                         />
                                     )}
                                 </div>
@@ -90,8 +90,8 @@ const Hero = () => {
                     </div>
 
                     <div className="relative w-full">
-                        <div className="grid w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-800">
-                            <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800 dark:border-neutral-800">
+                        <div className="grid w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-900">
+                            <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-900 dark:border-neutral-900">
                                 <div className=""></div>
                                 <div></div>
                                 <div className="hidden md:block"></div>
@@ -102,7 +102,7 @@ const Hero = () => {
                                 <div className="hidden md:block"></div>
                                 <div className="hidden md:block"></div>
                             </div>
-                            <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 py-5 text-center md:col-span-8 md:py-10 dark:border-neutral-800 dark:bg-black">
+                            <div className="col-span-6 row-span-3 flex flex-col items-center justify-center border-r border-b bg-white px-4 py-5 text-center md:col-span-8 md:py-10 dark:border-neutral-900 dark:bg-black">
                                 <div className="flex items-start justify-start">
                                     {/* Tired of{" "} */}
                                     {/* <TextScramble
@@ -155,7 +155,7 @@ const Hero = () => {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800">
+                            <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-900">
                                 <div></div>
                                 <div></div>
                                 <div className="hidden md:block"></div>

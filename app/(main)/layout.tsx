@@ -31,7 +31,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                         {navigation.map((nav, index) => {
                             return (
                                 <li key={`${nav.name}-${index}`}>
-                                    <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-zinc-950 dark:text-white">
+                                    <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-black dark:text-white">
                                         {nav.name}
                                     </div>
                                     <ul
@@ -156,7 +156,7 @@ export default function ComponentLayout({
             <div className="bg-background relative flex min-h-svh flex-col">
                 <div className="border-grid flex flex-1 flex-col">
                     <Nav1 />
-                    <main className="flex flex-1 flex-col">
+                    <main className="flex flex-1 flex-col dark:bg-black">
                         <div className="container-wrapper">
                             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-10">
                                 <NavigationDesktop

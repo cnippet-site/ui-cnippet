@@ -12,7 +12,7 @@ const Cta = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="grid h-full w-full border border-t-0 py-16 md:grid-cols-12 dark:border-neutral-800">
+                    <div className="grid h-full w-full border border-t-0 py-16 md:grid-cols-12 dark:border-neutral-900">
                         <div className="col-span-7 bg-white px-4 text-left md:px-10 dark:bg-black">
                             <h2 className="text-xl leading-tight font-semibold tracking-tight">
                                 Ready to deploy? Start building with a free

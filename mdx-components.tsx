@@ -156,7 +156,7 @@ const components = {
         return (
             <>
                 <pre
-                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap dark:border-neutral-800 dark:!bg-zinc-900 ${className}`}
+                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap dark:border-neutral-800 dark:!bg-neutral-950 ${className}`}
                     {...props}
                 />
                 {__rawString__ && <CopyButton value={__rawString__} />}

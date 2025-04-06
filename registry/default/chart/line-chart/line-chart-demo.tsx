@@ -35,7 +35,7 @@ const chartConfig = {
 
 export default function Component() {
     return (
-        <Card>
+        <Card className=" border-none shadow-none dark:bg-black">
             <CardHeader>
                 <CardTitle>Line Chart</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>

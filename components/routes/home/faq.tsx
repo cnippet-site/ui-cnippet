@@ -63,7 +63,7 @@ const Faq = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-800 dark:border-neutral-800">
+                    <div className="grid h-full w-full divide-x-0 divide-y border border-t-0 md:grid-cols-12 md:divide-x md:divide-y-0 dark:divide-neutral-900 dark:border-neutral-900">
                         <div className="col-span-4 w-full bg-white px-4 py-8 text-left md:px-10 md:py-16 dark:bg-black">
                             <div className="sticky top-20">
                                 <h2 className="text-4xl leading-tight font-semibold tracking-tight">
@@ -72,14 +72,14 @@ const Faq = () => {
                             </div>
                         </div>
                         <div className="col-span-8">
-                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-b dark:divide-neutral-800 dark:border-neutral-800">
+                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-b dark:divide-neutral-900 dark:border-neutral-900">
                                 <div />
                                 <div />
                             </div>
                             <div>
                                 <Accordion
                                     iconVariant="plus-minus"
-                                    className="flex w-full max-w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700"
+                                    className="flex w-full max-w-full flex-col divide-y divide-zinc-200 dark:divide-neutral-900"
                                     transition={{
                                         duration: 0.2,
                                         ease: "easeInOut",
@@ -105,7 +105,7 @@ const Faq = () => {
                                     ))}
                                 </Accordion>
                             </div>
-                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-t dark:divide-neutral-800 dark:border-neutral-800">
+                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-t dark:divide-neutral-900 dark:border-neutral-900">
                                 <div />
                                 <div />
                             </div>
