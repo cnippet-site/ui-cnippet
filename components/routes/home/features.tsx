@@ -147,7 +147,7 @@ const Features = () => {
                                 <p className="text-gray-500">
                                     Enjoy the same high-quality components
                                     whether you prefer TypeScript or JavaScript.
-                                    Tailored for every developer's choice.
+                                    Tailored for every developer&apos;s choice.
                                 </p>
                                 <Button className="rounded-full">
                                     Start Building

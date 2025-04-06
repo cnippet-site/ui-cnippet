@@ -8,9 +8,6 @@ import {
     RiTiktokFill,
     RiTwitterFill,
 } from "@remixicon/react";
-import { TextShimmer } from "@/components/motion/text-shimmer";
-import { TextShimmerWave } from "@/components/motion/text-shimmer-wave";
-import { TextRoll } from "@/components/motion/text-roll";
 import { MorphingDialogBasicTwo } from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import Image from "next/image";
