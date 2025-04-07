@@ -55,10 +55,19 @@ export const motions: Registry = generateComponents([
         name: "infinite-slider",
     },
     {
+        name: "morphing-dialog",
+    },
+    {
         name: "progressive-blur",
     },
     {
         name: "scroll-progress",
+    },
+    {
+        name: "shuffle-text",
+    },
+    {
+        name: "shuffle",
     },
     {
         name: "sliding-number",

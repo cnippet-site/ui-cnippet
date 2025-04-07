@@ -22,21 +22,19 @@ pnpm add @radix-ui/react-toast
 
 <Step>Copy and paste the following code into your project.</Step>
 
-`toast.tsx`
+`components/ui/toast.tsx`
 
 <CollapsibleSource name="toast" />
 
-`toaster.tsx`
+`components/ui/toaster.tsx`
 
 <CollapsibleSource name="toaster" />
 
-{/* add hooks to registry */}
-{/* `use-toast.tsx`
-<CollapsibleSource name="use-toast" /> */}
-
 <Step>
-    Adjust the import paths in both files according to your project's structure.
+Create a new file `hooks/use-toast.tsx` file in your project.
 </Step>
+
+<CollapsibleSource name="use-toast" />
 
 <Step>Add the Toaster component to your project.</Step>
 
@@ -57,5 +55,9 @@ export default function RootLayout({ children }) {
     );
 }
 ```
+
+<Step>
+    Adjust the import paths in both files according to your project's structure.
+</Step>
 
 </Steps>

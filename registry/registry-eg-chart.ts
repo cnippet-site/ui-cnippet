@@ -24,11 +24,16 @@ const generateExamples = (
 };
 
 export const chartExamples: Registry = generateExamples([
-    { name: "area-chart-demo", number: "4" },
-    { name: "line-chart-demo", number: "4" },
-    { name: "bar-chart-demo", number: "4" },
-    { name: "pie-chart-demo", number: "4" },
-    { name: "radar-chart-demo", number: "4" },
-    { name: "radial-chart-demo", number: "4" },
-    { name: "scatter-chart-demo", number: "4" },
+    { name: "area-chart-demo", number: "5" },
+    { name: "area-chart-gradient" },
+    { name: "area-chart-linear" },
+    { name: "area-chart-stacked" },
+    { name: "area-chart-step" },
+
+    { name: "line-chart-demo", number: "1" },
+    { name: "bar-chart-demo", number: "1" },
+    { name: "pie-chart-demo", number: "1" },
+    { name: "radar-chart-demo", number: "1" },
+    { name: "radial-chart-demo", number: "1" },
+    { name: "scatter-chart-demo", number: "1" },
 ]);

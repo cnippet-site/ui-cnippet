@@ -24,82 +24,46 @@ const generateExamples = (
 };
 
 export const motionExamples: Registry = generateExamples([
-    {
-        name: "accordion-demo",
-        number: "4",
-    },
+    { name: "accordion-demo", number: "3" },
     { name: "accordion-icon" },
+    { name: "accordion-sign" },
 
-    {
-        name: "board-demo",
-        number: "4",
-    },
-    {
-        name: "grid-demo",
-        number: "4",
-    },
-    {
-        name: "horizontal-scroll-demo",
-        number: "4",
-    },
-    {
-        name: "infinite-slider-demo",
-        number: "4",
-    },
-    {
-        name: "infinite-slider-hover",
-    },
-    {
-        name: "infinite-slider-vertical",
-    },
-    {
-        name: "carousel-demo",
-        number: "4",
-    },
-    {
-        name: "collapsible-demo",
-        number: "4",
-    },
-    {
-        name: "cursor-demo",
-        number: "4",
-    },
-    {
-        name: "dialog-demo",
-        number: "4",
-    },
+    { name: "animated-group-demo", number: "1" },
+    { name: "animated-number-demo", number: "1" },
 
-    {
-        name: "text-effect-demo",
-        number: "4",
-    },
-    {
-        name: "text-loop-demo",
-        number: "4",
-    },
-    {
-        name: "text-morph-demo",
-        number: "4",
-    },
-    {
-        name: "text-roll-demo",
-        number: "4",
-    },
-    {
-        name: "text-scramble-demo",
-        number: "4",
-    },
-    {
-        name: "text-shimmer-demo",
-        number: "4",
-    },
-    {
-        name: "text-wave-demo",
-        number: "4",
-    },
+    { name: "board-demo", number: "1" },
 
-    { name: "transition-panel-demo", number: "4" },
+    { name: "carousel-demo", number: "1" },
 
-    { name: "animated-group-demo", number: "4" },
-    { name: "animated-number-demo", number: "4" },
+    { name: "collapsible-demo", number: "1" },
+
+    { name: "cursor-demo", number: "1" },
+
+    { name: "dialog-demo", number: "1" },
+
+    { name: "grid-demo", number: "1" },
+
+    { name: "horizontal-scroll-demo", number: "1" },
+
+    { name: "infinite-slider-demo", number: "3" },
+    { name: "infinite-slider-hover" },
+    { name: "infinite-slider-vertical" },
+
+    { name: "morphing-dialog-demo", number: "1" },
+
+    { name: "text-effect-demo", number: "1" },
+
+    { name: "text-loop-demo", number: "1" },
+
+    { name: "text-morph-demo", number: "1" },
+
+    { name: "text-roll-demo", number: "1" },
+
+    { name: "text-scramble-demo", number: "1" },
+
+    { name: "text-shimmer-demo", number: "1" },
+
+    { name: "text-wave-demo", number: "1" },
+
+    { name: "transition-panel-demo", number: "1" },
 ]);

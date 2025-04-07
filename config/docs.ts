@@ -459,11 +459,8 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Badge",
-                href: "#",
-            },
-            {
-                name: "Loader",
-                href: "#",
+                href: "/component/badge",
+                isNew: true,
             },
             {
                 name: "Skeleton",
@@ -476,23 +473,13 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Card",
-                href: "#",
-            },
-            {
-                name: "Description list",
-                href: "#",
-            },
-            {
-                name: "Grid",
-                href: "#",
-            },
-            {
-                name: "Heading",
-                href: "#",
+                href: "/component/card",
+                isNew: true,
             },
             {
                 name: "Separator",
-                href: "#",
+                href: "/component/separator",
+                isNew: true,
             },
         ],
     },

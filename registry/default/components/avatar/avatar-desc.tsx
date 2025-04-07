@@ -1,41 +1,41 @@
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Component() {
     return (
-        <div className="flex items-center rounded-full border bg-background p-1 shadow-sm">
-            <div className="flex -space-x-1.5">
-                <Image
-                    className="rounded-full ring-1 ring-background"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                    width={20}
-                    height={20}
-                    alt="Avatar 01"
-                />
-                <Image
-                    className="rounded-full ring-1 ring-background"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                    width={20}
-                    height={20}
-                    alt="Avatar 02"
-                />
-                <Image
-                    className="rounded-full ring-1 ring-background"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                    width={20}
-                    height={20}
-                    alt="Avatar 03"
-                />
-                <Image
-                    className="rounded-full ring-1 ring-background"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                    width={20}
-                    height={20}
-                    alt="Avatar 04"
-                />
+        <div className="bg-background flex items-center rounded-full border p-1 shadow-sm">
+            <div className="flex -space-x-2">
+                <Avatar>
+                    <AvatarImage
+                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
+                        alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage
+                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a2.jpg"
+                        alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage
+                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a3.jpg"
+                        alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage
+                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a4.jpg"
+                        alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
             </div>
-            <p className="px-2 text-xs text-muted-foreground">
+            <p className="text-muted-foreground px-2 text-xs">
                 Trusted by{" "}
-                <strong className="font-medium text-foreground">60K+</strong>{" "}
+                <strong className="text-foreground font-medium">60K+</strong>{" "}
                 developers.
             </p>
         </div>

@@ -13,6 +13,7 @@ const generateComponents = (componentsConfig: { name: string }[]): Registry => {
 
 export const components: Registry = generateComponents([
     { name: "avatar" },
+    { name: "badge" },
     { name: "breadcrumb" },
     { name: "button" },
     { name: "calendar" },
@@ -25,6 +26,7 @@ export const components: Registry = generateComponents([
     { name: "datefield" },
     { name: "dialog-cn" },
     { name: "drawer" },
+    { name: "drop-zone" },
     { name: "form" },
     { name: "input" },
     { name: "label" },
@@ -34,6 +36,7 @@ export const components: Registry = generateComponents([
     { name: "radio-group" },
     { name: "scroll-area" },
     { name: "select" },
+    { name: "separator" },
     { name: "sheet" },
     { name: "skeleton" },
     { name: "slider" },

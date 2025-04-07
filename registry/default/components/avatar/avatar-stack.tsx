@@ -1,40 +1,34 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Component() {
     return (
         <div className="flex -space-x-3">
-            <Image
-                className="rounded-full ring-1 ring-background"
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                width={20}
-                height={20}
-                alt="Avatar 01"
-            />
-            <Image
-                className="rounded-full ring-1 ring-background"
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                width={20}
-                height={20}
-                alt="Avatar 02"
-            />
-            <Image
-                className="rounded-full ring-1 ring-background"
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                width={20}
-                height={20}
-                alt="Avatar 03"
-            />
-            <Image
-                className="rounded-full ring-1 ring-background"
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
-                width={20}
-                height={20}
-                alt="Avatar 04"
-            />
+            <Avatar className="size-10">
+                <AvatarImage
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
+                    alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <Avatar className="size-10">
+                <AvatarImage
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a2.jpg"
+                    alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <Avatar className="size-10">
+                <AvatarImage
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a3.jpg"
+                    alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+
             <Button
                 variant="secondary"
-                className="flex size-10 items-center justify-center rounded-full bg-secondary text-xs text-muted-foreground ring-2 ring-background hover:bg-secondary hover:text-foreground"
+                className="bg-secondary text-muted-foreground ring-background hover:bg-secondary hover:text-foreground flex size-10 items-center justify-center rounded-full text-xs ring-2"
                 size="icon"
             >
                 +3

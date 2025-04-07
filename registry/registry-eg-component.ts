@@ -24,21 +24,27 @@ const generateExamples = (
 };
 
 export const componentExamples: Registry = generateExamples([
-    { name: "avatar-demo", number: "4" },
+    { name: "avatar-demo", number: "3" },
     { name: "avatar-desc" },
     { name: "avatar-stack" },
+
+    { name: "badge-demo", number: "2" },
+    { name: "badge-status" },
 
     { name: "breadcrumb-demo", number: "4" },
     { name: "breadcrumb-folder" },
     { name: "breadcrumb-icon" },
     { name: "breadcrumb-select" },
 
-    { name: "button-demo", number: "4" },
+    { name: "button-demo", number: "2" },
     { name: "button-icons" },
     { name: "button-login" },
 
-    { name: "calendar-demo", number: "4" },
+    { name: "calendar-demo", number: "2" },
     { name: "calendar-range" },
+
+    { name: "card-demo", number: "2" },
+    { name: "card-notification" },
 
     { name: "checkbox-demo", number: "4" },
     { name: "checkbox-box" },
@@ -47,32 +53,37 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "collapsible-accordion" },
 
-    { name: "combobox-demo", number: "4" },
-    { name: "command-menu-demo", number: "4" },
-    { name: "context-menu-demo", number: "4" },
+    { name: "combobox-demo", number: "1" },
 
-    { name: "date-picker-demo", number: "4" },
+    { name: "command-menu-demo", number: "1" },
+
+    { name: "context-menu-demo", number: "1" },
+
+    { name: "date-picker-demo", number: "2" },
     { name: "date-picker-range" },
 
-    { name: "drawer-demo", number: "4" },
-    { name: "drop-zone-demo", number: "4" },
-    { name: "file-trigger-demo", number: "4" },
+    { name: "drawer-demo", number: "1" },
 
-    { name: "form-demo", number: "4" },
+    { name: "drop-zone-demo", number: "2" },
+    { name: "drop-zone-message" },
 
-    { name: "input-demo", number: "4" },
+    { name: "file-trigger-demo", number: "1" },
+
+    { name: "form-demo", number: "1" },
+
+    { name: "input-demo", number: "9" },
     { name: "input-addon" },
+    { name: "input-double" },
     { name: "input-helper" },
     { name: "input-icon" },
     { name: "input-labelfloat" },
     { name: "input-otp" },
-    { name: "input-double" },
-    { name: "input-spaced" },
     { name: "input-phone" },
+    { name: "input-spaced" },
 
-    { name: "label-demo", number: "4" },
+    { name: "label-demo", number: "1" },
 
-    { name: "multiselect-demo", number: "4" },
+    { name: "multiselect-demo", number: "2" },
     { name: "multiselect-clear" },
 
     { name: "pagination-demo", number: "4" },
@@ -80,58 +91,63 @@ export const componentExamples: Registry = generateExamples([
     { name: "pagination-page" },
     { name: "pagination-select" },
 
-    { name: "popover-demo", number: "4" },
+    { name: "popover-demo", number: "1" },
 
     { name: "radio-group-demo", number: "4" },
     { name: "radio-group-desc" },
     { name: "radio-group-review" },
+    { name: "radio-group-theme" },
 
-    { name: "select-demo", number: "4" },
-    { name: "select-placeholder" },
+    { name: "select-demo", number: "2" },
     { name: "select-icon" },
+    { name: "select-placeholder" },
 
-    { name: "sheet-demo", number: "4" },
-    { name: "sidebar-demo", number: "4" },
+    { name: "separator-demo", number: "1" },
+
+    { name: "sheet-demo", number: "1" },
+
+    { name: "sidebar-demo", number: "1" },
+
     { name: "skeleton-demo", number: "1" },
 
-    { name: "slider-demo", number: "4" },
+    { name: "slider-demo", number: "6" },
     { name: "slider-feedback" },
     { name: "slider-minmax" },
     { name: "slider-output" },
     { name: "slider-square" },
     { name: "slider-thumb" },
 
-    { name: "sonner-demo", number: "4" },
+    { name: "sonner-demo", number: "3" },
     { name: "sonner-direction" },
     { name: "sonner-custom" },
 
-    { name: "stepper-demo", number: "4" },
+    { name: "stepper-demo", number: "3" },
     { name: "stepper-step" },
     { name: "stepper-vertical" },
 
-    { name: "switch-demo", number: "4" },
+    { name: "switch-demo", number: "6" },
     { name: "switch-icon" },
     { name: "switch-label" },
     { name: "switch-sliding" },
     { name: "switch-square" },
     { name: "switch-text" },
 
-    { name: "tabs-demo", number: "4" },
+    { name: "tabs-demo", number: "1" },
 
-    { name: "tag-field-demo", number: "4" },
+    { name: "tag-field-demo", number: "2" },
     { name: "tag-field-tags" },
 
-    { name: "textarea-demo", number: "4" },
+    { name: "textarea-demo", number: "5" },
     { name: "textarea-autogrow" },
     { name: "textarea-label" },
     { name: "textarea-limit" },
     { name: "textarea-text" },
 
-    { name: "toast-demo", number: "4" },
-    { name: "toast-direction" },
+    { name: "toast-demo", number: "3" },
     { name: "toast-custom" },
+    { name: "toast-direction" },
 
-    { name: "tooltip-demo", number: "4" },
+    { name: "tooltip-demo", number: "5" },
     { name: "tooltip-arrow" },
     { name: "tooltip-dark" },
     { name: "tooltip-direction" },
