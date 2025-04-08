@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Component() {
     return (
-        <div className="bg-background flex items-center rounded-full border p-1 shadow-sm">
+        <div className="bg-background flex items-center rounded-full dark:border-neutral-700 border p-1 shadow-sm">
             <div className="flex -space-x-2">
                 <Avatar>
                     <AvatarImage

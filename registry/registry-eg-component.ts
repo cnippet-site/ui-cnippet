@@ -134,8 +134,7 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "tabs-demo", number: "1" },
 
-    { name: "tag-field-demo", number: "2" },
-    { name: "tag-field-tags" },
+    { name: "tag-field-demo", number: "1" },
 
     { name: "textarea-demo", number: "5" },
     { name: "textarea-autogrow" },

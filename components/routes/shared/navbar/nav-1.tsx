@@ -24,24 +24,17 @@ const Nav1 = () => {
                             className="mr-4 flex items-center gap-0 lg:mr-6"
                             href="/"
                         >
-                            {theme === "dark" ? (
-                                <Image
-                                    src="/images/logo-dark.png"
-                                    alt=""
-                                    className="size-9 rounded-full"
-                                    width={1080}
-                                    height={1080}
-                                />
-                            ) : (
-                                <Image
-                                    src="/images/logo-light.png"
-                                    alt=""
-                                    className="size-8"
-                                    width={1320}
-                                    height={1320}
-                                />
-                            )}
-
+                            <Image
+                                src={
+                                    theme === "dark"
+                                        ? "/images/logo-dark.png"
+                                        : "/images/logo-light.png"
+                                }
+                                alt=""
+                                className="size-9 rounded-full"
+                                width={1080}
+                                height={1080}
+                            />
                             <span className="hidden font-mono font-medium lg:inline-block">
                                 cnippet/ui
                             </span>

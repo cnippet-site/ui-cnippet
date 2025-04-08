@@ -64,17 +64,17 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                     >
                                                         <span>{item.name}</span>
                                                         {item.href === "#" && (
-                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800">
                                                                 Coming soon
                                                             </span>
                                                         )}
                                                         {item?.isNew && (
-                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
+                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800 ">
                                                                 New
                                                             </span>
                                                         )}
                                                         {item?.isUpdated && (
-                                                            <span className="ml-2 rounded-lg bg-amber-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
+                                                            <span className="ml-2 rounded-lg bg-amber-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-amber-800">
                                                                 Updated
                                                             </span>
                                                         )}

@@ -2,11 +2,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-type InputProps = React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->;
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
     ({ className, type, ...props }, ref) => {
         return (
             <input
