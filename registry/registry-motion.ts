@@ -22,6 +22,9 @@ export const motions: Registry = generateComponents([
         name: "animated-number",
     },
     {
+        name: "block",
+    },
+    {
         name: "carousel",
     },
     {
@@ -37,6 +40,9 @@ export const motions: Registry = generateComponents([
         name: "dock",
     },
     {
+        name: "drag-items",
+    },
+    {
         name: "drawer-rc",
     },
     {
@@ -47,6 +53,9 @@ export const motions: Registry = generateComponents([
     },
     {
         name: "image-comparison",
+    },
+    {
+        name: "image-mousetrail",
     },
     {
         name: "in-view",

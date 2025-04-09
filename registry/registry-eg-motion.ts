@@ -31,6 +31,8 @@ export const motionExamples: Registry = generateExamples([
     { name: "animated-group-demo", number: "1" },
     { name: "animated-number-demo", number: "1" },
 
+    { name: "block-demo", number: "1" },
+
     { name: "board-demo", number: "1" },
 
     { name: "carousel-demo", number: "1" },
@@ -41,16 +43,22 @@ export const motionExamples: Registry = generateExamples([
 
     { name: "dialog-demo", number: "1" },
 
+    { name: "drag-items-demo", number: "1" },
+    
+    { name: "drawer-rc-demo", number: "1" },
+
     { name: "grid-demo", number: "1" },
 
     { name: "horizontal-scroll-demo", number: "1" },
+
+    { name: "image-mousetrail-demo", number: "1" },
 
     { name: "infinite-slider-demo", number: "3" },
     { name: "infinite-slider-hover" },
     { name: "infinite-slider-vertical" },
 
     { name: "morphing-dialog-demo", number: "1" },
-
+    { name: "morphing-dialog-card" },
     { name: "text-effect-demo", number: "1" },
 
     { name: "text-loop-demo", number: "1" },

@@ -6,10 +6,10 @@ export const motions: ComponentGroup[] = [
     {
         name: "Getting Started",
         items: [
-            {
-                name: "Introduction",
-                href: "#",
-            },
+            // {
+            //     name: "Introduction",
+            //     href: "#",
+            // },
             {
                 name: "Installation",
                 href: "/motion/installation",
@@ -40,19 +40,20 @@ export const motions: ComponentGroup[] = [
                 name: "Cursor",
                 href: "/motion/cursor",
             },
-            {
-                name: "Dialog",
-                href: "/motion/dialog",
-            },
+
             {
                 name: "Collapsible",
                 href: "/motion/collapsible",
                 isNew: true,
             },
             {
-                name: "In View",
-                href: "#",
+                name: "Drag Items",
+                href: "/motion/drag-items",
             },
+            // {
+            //     name: "In View",
+            //     href: "#",
+            // },
             {
                 name: "Infinite Slider",
                 href: "/motion/infinite-slider",
@@ -65,9 +66,52 @@ export const motions: ComponentGroup[] = [
                 name: "Board",
                 href: "/motion/board",
             },
+        ],
+    },
+    {
+        name: "Creative Effects",
+        items: [
             {
-                name: "Grid",
-                href: "/motion/grid",
+                name: "Image mousetrail",
+                href: "/motion/image-mousetrail",
+            },
+            {
+                name: "Image Reveal",
+                href: "/motion/image-reveal",
+            },
+            {
+                name: "Blocks",
+                href: "/motion/blocks",
+            },
+        ],
+    },
+    {
+        name: "Dialog/Drawer",
+        items: [
+            {
+                name: "Dialog",
+                href: "/motion/dialog",
+            },
+            {
+                name: "Morphing Dialog",
+                href: "/motion/morphing-dialog",
+            },
+            {
+                name: "Drawer",
+                href: "/motion/drawer",
+            },
+        ],
+    },
+    {
+        name: "Clip Path",
+        items: [
+            {
+                name: "Clip Path",
+                href: "/motion/clip-path",
+            },
+            {
+                name: "Masking",
+                href: "/motion/masking",
             },
         ],
     },
@@ -102,14 +146,9 @@ export const motions: ComponentGroup[] = [
                 name: "Text Wave",
                 href: "/motion/text-wave",
             },
-        ],
-    },
-    {
-        name: "Scroll Effects",
-        items: [
             {
-                name: "Horizontal Scroll",
-                href: "/motion/horizontal-scroll",
+                name: "Text Marquee ",
+                href: "/motion/text-marquee",
             },
         ],
     },
@@ -127,51 +166,116 @@ export const motions: ComponentGroup[] = [
         ],
     },
     {
-        name: "Interactive Elements",
+        name: "Scroll Effects",
         items: [
             {
-                name: "Dock",
-                href: "#",
-            },
-            {
-                name: "Glow Effect",
-                href: "#",
-            },
-            {
-                name: "Image Comparison",
-                href: "#",
+                name: "Horizontal Scroll",
+                href: "/motion/horizontal-scroll",
             },
             {
                 name: "Scroll Progress",
-                href: "#",
+                href: "/motion/scroll-progress",
             },
             {
-                name: "Spotlight",
-                href: "#",
+                name: "Stacking Cards",
+                href: "/motion/stacking-cards",
             },
             {
-                name: "Spinning Text",
-                href: "#",
+                name: "Smooth Scroll",
+                href: "/motion/smooth-scroll",
             },
             {
-                name: "Tilt",
-                href: "#",
+                name: "Sticky Scroll",
+                href: "/motion/sticky-scroll",
             },
         ],
     },
     {
-        name: "Toolbars",
+        name: "Tabs",
         items: [
             {
-                name: "Toolbar Dynamic",
-                href: "#",
+                name: "Tabs",
+                href: "/motion/tabs",
             },
             {
-                name: "Toolbar Expandable",
-                href: "#",
+                name: "Image Tabs",
+                href: "/motion/image-tabs",
             },
         ],
     },
+    {
+        name: "Carousel",
+        items: [
+            {
+                name: "Carousel (embla carousel)",
+                href: "/motion/carousel",
+            },
+            {
+                name: "Framer Carousel",
+                href: "/motion/framer-carousel",
+            },
+            {
+                name: "Progressive Carousel",
+                href: "/motion/progressive-carousel",
+            },
+        ],
+    },
+
+    {
+        name: "Grid",
+        items: [
+            {
+                name: "Grid",
+                href: "/motion/grid",
+            },
+            {
+                name: "Masonary",
+                href: "/motion/masonary",
+            },
+        ],
+    },
+    {
+        name: "Interactive Elements",
+        items: [
+            {
+                name: "Dock",
+                href: "/motion/dock",
+            },
+            // {
+            //     name: "Glow Effect",
+            //     href: "#",
+            // },
+            {
+                name: "Image Comparison",
+                href: "/motion/image-comparison",
+            },
+            {
+                name: "Spotlight",
+                href: "/motion/spotlight",
+            },
+            {
+                name: "Spotlight Card",
+                href: "/motion/spotlight-card",
+            },
+            {
+                name: "Tilt",
+                href: "/motion/tilt",
+            },
+        ],
+    },
+    // {
+    //     name: "Toolbars",
+    //     items: [
+    //         {
+    //             name: "Toolbar Dynamic",
+    //             href: "#",
+    //         },
+    //         {
+    //             name: "Toolbar Expandable",
+    //             href: "#",
+    //         },
+    //     ],
+    // },
     {
         name: "Advanced Effects",
         items: [
