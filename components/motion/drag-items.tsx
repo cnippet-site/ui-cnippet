@@ -61,7 +61,7 @@ export const Item = ({
             className="w-full"
         >
             <Card className="overflow-hidden border transition-all duration-300">
-                <div className="flex items-center p-3">
+                <div className="flex items-center justify-center">
                     <div className="flex-1">{children}</div>
                     <ReorderIcon dragControls={dragControls} />
                 </div>
@@ -78,9 +78,9 @@ const ReorderIcon = ({ dragControls }: { dragControls: DragControls }) => {
                 e.preventDefault();
                 dragControls.start(e);
             }}
-            className="ml-2 cursor-grab active:cursor-grabbing"
+            className="mr-3 cursor-grab active:cursor-grabbing"
         >
-            <Grip size={30} />
+            <Grip size={20} />
         </motion.div>
     );
 };

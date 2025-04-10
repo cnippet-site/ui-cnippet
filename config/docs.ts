@@ -27,25 +27,25 @@ export const motions: ComponentGroup[] = [
                 name: "Animated Group",
                 href: "/motion/animated-group",
             },
+            // {
+            //     name: "Border Trail",
+            //     href: "#",
+            // },
+            // {
+            //     name: "Carousel",
+            //     href: "/motion/carousel",
+            //     isUpdated: true,
+            // },
             {
-                name: "Border Trail",
-                href: "#",
-            },
-            {
-                name: "Carousel",
-                href: "/motion/carousel",
-                isUpdated: true,
+                name: "Collapsible",
+                href: "/motion/collapsible",
+                isNew: true,
             },
             {
                 name: "Cursor",
                 href: "/motion/cursor",
             },
 
-            {
-                name: "Collapsible",
-                href: "/motion/collapsible",
-                isNew: true,
-            },
             {
                 name: "Drag Items",
                 href: "/motion/drag-items",

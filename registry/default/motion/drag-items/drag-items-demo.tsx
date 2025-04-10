@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { DragItems, Item } from "@/components/motion/drag-items";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function ParentComponent() {
     const [items, setItems] = useState([
@@ -34,29 +35,27 @@ export default function ParentComponent() {
     ]);
 
     return (
-        <div className="mx-auto px-4 py-12">
-            <div className="mb-8 text-center">
-                <h1 className="mb-2 text-3xl font-bold">Drag & Drop Items</h1>
-                <p className="text-muted-foreground">
-                    Rearrange the items by dragging them
-                </p>
+        <div className="mx-auto max-w-lg py-6">
+            <div className="mb-4 text-center">
+                <h1 className="text-lg font-medium">Drag & Drop Items</h1>
+                <p className="text-muted-foreground text-sm">Drag to reorder</p>
             </div>
 
             <DragItems items={items} onReorder={setItems}>
                 {items.map((item) => (
                     <Item key={item.id} item={item}>
-                        <div className="flex items-center">
-                            <div className="flex-1">
-                                <div className="flex items-center gap-2">
-                                    <h2 className="text-lg font-semibold">
+                        <Card className="w-full border-none shadow-none">
+                            <CardContent className="p-3">
+                                <div className="space-y-0.5">
+                                    <h3 className="text-base font-medium">
                                         {item.title}
-                                    </h2>
+                                    </h3>
+                                    <p className="text-muted-foreground text-xs">
+                                        {item.subtitle}
+                                    </p>
                                 </div>
-                                <p className="text-muted-foreground text-sm">
-                                    {item.subtitle}
-                                </p>
-                            </div>
-                        </div>
+                            </CardContent>
+                        </Card>
                     </Item>
                 ))}
             </DragItems>

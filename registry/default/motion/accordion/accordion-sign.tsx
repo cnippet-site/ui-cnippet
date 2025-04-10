@@ -4,7 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/motion/accordion";
-import { ChevronUp } from "lucide-react";
+// import { ChevronUp } from "lucide-react";
 import React from "react";
 
 const items = [
@@ -31,7 +31,7 @@ const items = [
 const AccordionIcon = () => {
     return (
         <Accordion
-            iconVariant="plus-minus"
+            iconVariant="normal"
             className="flex w-full max-w-lg flex-col divide-y divide-zinc-200 dark:divide-zinc-700"
             transition={{ duration: 0.2, ease: "easeInOut" }}
         >

@@ -1,6 +1,7 @@
 import { toc } from "mdast-util-toc";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
+import { cache } from 'react';
 
 const textTypes = ["text", "emphasis", "strong", "inlineCode"];
 
@@ -68,11 +69,10 @@ const getToc = () => (node: any, file: any) => {
 
 export type TableOfContents = Items;
 
-export async function getTableOfContents(
-    content: string | undefined,
-): Promise<TableOfContents> {
-    const result = await remark().use(getToc).process(content);
-
-    return result.data as TableOfContents;
-}
+export const getTableOfContents = cache(
+    async (content: string | undefined): Promise<TableOfContents> => {
+        const result = await remark().use(getToc).process(content);
+        return result.data as TableOfContents;
+    }
+);
 /*eslint-enable @typescript-eslint/no-explicit-any*/

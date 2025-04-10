@@ -1,5 +1,5 @@
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -17,7 +17,7 @@ export default function InfiniteSliderVertical() {
         <div className="flex h-[350px] space-x-4">
             <InfiniteSlider direction="vertical" speed={50}>
                 {images.map((image, i) => (
-                    <Image
+                    <CldImage
                         key={i}
                         src={image}
                         alt="Apple Music logo"
@@ -29,7 +29,7 @@ export default function InfiniteSliderVertical() {
             </InfiniteSlider>
             <InfiniteSlider direction="vertical" reverse speed={50}>
                 {images.map((image, i) => (
-                    <Image
+                    <CldImage
                         key={i}
                         src={image}
                         alt="Apple Music logo"

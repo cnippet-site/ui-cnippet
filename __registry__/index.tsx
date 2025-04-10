@@ -1853,15 +1853,15 @@
         subcategory: "undefined",
         chunks: []
       },
-      "block": {
-        name: "block",
+      "blocks": {
+        name: "blocks",
         type: "registry:motion",
-        slug: "/components/block",
+        slug: "/components/blocks",
         thumbnail: "undefined",
         number: "undefined",
         registryDependencies: undefined,
-        files: ["components/motion/block.tsx"],
-        component: React.lazy(() => import("@/components/motion/block.tsx")),
+        files: ["components/motion/blocks.tsx"],
+        component: React.lazy(() => import("@/components/motion/blocks.tsx")),
         source: "",
         category: "undefined",
         subcategory: "undefined",
@@ -2357,15 +2357,15 @@
         subcategory: "undefined",
         chunks: []
       },
-      "block-demo": {
-        name: "block-demo",
+      "blocks-demo": {
+        name: "blocks-demo",
         type: "registry:motions",
-        slug: "/motion/block",
+        slug: "/motion/blocks",
         thumbnail: "undefined",
         number: "1",
         registryDependencies: undefined,
-        files: ["registry/default/motion/block/block-demo.tsx"],
-        component: React.lazy(() => import("@/registry/default/motion/block/block-demo.tsx")),
+        files: ["registry/default/motion/blocks/blocks-demo.tsx"],
+        component: React.lazy(() => import("@/registry/default/motion/blocks/blocks-demo.tsx")),
         source: "",
         category: "undefined",
         subcategory: "undefined",
@@ -2567,15 +2567,15 @@
         subcategory: "undefined",
         chunks: []
       },
-      "morphing-dialog-card": {
-        name: "morphing-dialog-card",
+      "morphing-dialog-cards": {
+        name: "morphing-dialog-cards",
         type: "registry:motions",
         slug: "/motion/morphing-dialog",
         thumbnail: "undefined",
         number: "undefined",
         registryDependencies: undefined,
-        files: ["registry/default/motion/morphing-dialog/morphing-dialog-card.tsx"],
-        component: React.lazy(() => import("@/registry/default/motion/morphing-dialog/morphing-dialog-card.tsx")),
+        files: ["registry/default/motion/morphing-dialog/morphing-dialog-cards.tsx"],
+        component: React.lazy(() => import("@/registry/default/motion/morphing-dialog/morphing-dialog-cards.tsx")),
         source: "",
         category: "undefined",
         subcategory: "undefined",

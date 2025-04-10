@@ -22,7 +22,7 @@ export const motions: Registry = generateComponents([
         name: "animated-number",
     },
     {
-        name: "block",
+        name: "blocks",
     },
     {
         name: "carousel",

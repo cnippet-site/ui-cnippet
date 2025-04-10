@@ -31,7 +31,7 @@ export const motionExamples: Registry = generateExamples([
     { name: "animated-group-demo", number: "1" },
     { name: "animated-number-demo", number: "1" },
 
-    { name: "block-demo", number: "1" },
+    { name: "blocks-demo", number: "1" },
 
     { name: "board-demo", number: "1" },
 
@@ -58,7 +58,8 @@ export const motionExamples: Registry = generateExamples([
     { name: "infinite-slider-vertical" },
 
     { name: "morphing-dialog-demo", number: "1" },
-    { name: "morphing-dialog-card" },
+    { name: "morphing-dialog-cards" },
+    
     { name: "text-effect-demo", number: "1" },
 
     { name: "text-loop-demo", number: "1" },

@@ -1,5 +1,5 @@
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -16,7 +16,7 @@ export default function InfiniteSliderHoverSpeed() {
     return (
         <InfiniteSlider speedOnHover={20} gap={24}>
             {images.map((image, i) => (
-                <Image
+                <CldImage
                     key={i}
                     src={image}
                     alt="Apple Music logo"

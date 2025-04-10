@@ -6,13 +6,25 @@ import { BASE_URL } from "@/config/docs";
 import { getTableOfContents } from "@/lib/toc";
 import { TableOfContents } from "@/components/mdx/toc";
 
-type Params = Promise<{ slug: string }>;
+export const revalidate = 60;
+
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+    return allMotions.map((motion) => ({
+        slug: motion.slugAsParams,
+    }));
+}
 
 function getComponentDoc({ slug }: { slug: string }) {
     return allMotions.find((doc) => doc.slugAsParams === slug) || null;
 }
 
-export default async function ComponentPage({ params }: { params: Params }) {
+export default async function MotionPage({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const slug = await params;
     const doc = getComponentDoc(slug);
 
@@ -30,13 +42,13 @@ export default async function ComponentPage({ params }: { params: Params }) {
 
     return (
         <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_240px]">
-            <div className="mx-auto w-full min-w-0 max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
                 <div className="space-y-2 pb-6">
-                    <h1 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+                    <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
                     </h1>
                     {doc.description && (
-                        <p className="text-sm text-muted-foreground md:text-base">
+                        <p className="text-muted-foreground text-sm md:text-base">
                             {doc.description}
                         </p>
                     )}
@@ -52,7 +64,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
             {doc?.toc && (
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
-                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pb-6 pl-4 pr-2">
+                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
                             <TableOfContents toc={toc} />
                         </div>
                     </div>
@@ -65,7 +77,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
 export async function generateMetadata({
     params,
 }: {
-    params: Params;
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const slug = await params;
     const doc = getComponentDoc(slug);
