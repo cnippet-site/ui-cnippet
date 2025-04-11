@@ -8,7 +8,7 @@ import {
     RiTiktokFill,
     RiTwitterFill,
 } from "@remixicon/react";
-import { MorphingDialogBasicTwo } from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
+import MorphingDialogBasicTwo from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
@@ -71,7 +71,7 @@ const Components = () => {
                                 className="flex flex-col items-center justify-center md:col-span-8"
                             >
                                 <Grid>
-                                    <Block className="col-span-12 row-span-2 md:col-span-6 dark:bg-neutral-950 dark:border-neutral-900">
+                                    <Block className="col-span-12 row-span-2 md:col-span-6 dark:border-neutral-900 dark:bg-neutral-950">
                                         <Image
                                             src="/images/avatar.svg"
                                             alt="avatar"
@@ -95,7 +95,7 @@ const Components = () => {
                                     ].map((Icon, idx) => (
                                         <Block
                                             key={idx}
-                                            className="col-span-6 bg-black dark:border-neutral-800 md:col-span-3"
+                                            className="col-span-6 bg-black md:col-span-3 dark:border-neutral-800"
                                             whileHover={{
                                                 rotate:
                                                     idx % 2
@@ -104,9 +104,7 @@ const Components = () => {
                                                 scale: 1.1,
                                             }}
                                         >
-                                            <div
-                                                className="grid h-full place-content-center text-3xl text-white"
-                                            >
+                                            <div className="grid h-full place-content-center text-3xl text-white">
                                                 <Icon className="size-10" />
                                             </div>
                                         </Block>

@@ -10,8 +10,8 @@ function BlockOne() {
             ref={containerRef}
         >
             <Blocks
-                activeDivsClass="dark:bg-[#131212]  bg-[#9ba1a131]  "
-                divClass="dark:border-[#131212] border-[#9ba1a131] "
+                activeDivsClass="dark:bg-[#131212] bg-[#9ba1a131]"
+                divClass="dark:border-[#131212] border-[#9ba1a131]"
                 classname="w-full"
                 containerRef={containerRef}
                 activeDivs={{

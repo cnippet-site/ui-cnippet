@@ -4,8 +4,9 @@ export default function ImageRevealGallery() {
     return (
         <>
             <ClipPaths />
-            <section className="grid grid-cols-3 gap-8 rounded-lg border bg-white p-5 dark:bg-black">
+            <section className="mx-auto grid h-auto max-w-7xl grid-cols-3 gap-8 rounded-lg border bg-white p-5 dark:bg-black">
                 <ClippedFigure
+                    aspectRatio="1/1"
                     variant="squiggle"
                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
                     alt="Squiggle shaped image"
@@ -13,9 +14,8 @@ export default function ImageRevealGallery() {
 
                 <ClippedFigure
                     variant="rectangle"
-                    src="https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4"
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
                     alt="Rectangle shaped video"
-                    type="video"
                 />
 
                 <ClippedFigure
@@ -25,7 +25,7 @@ export default function ImageRevealGallery() {
                     className="custom-class"
                     hoverScale={false}
                 />
-                <ClippedFigure
+                {/* <ClippedFigure
                     variant="variant1"
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop"
                     alt="Variant 1 image"
@@ -42,7 +42,7 @@ export default function ImageRevealGallery() {
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop"
                     alt="Variant 1 image"
                     aspectRatio="4/5"
-                />
+                /> */}
             </section>
         </>
     );

@@ -8,9 +8,9 @@ import {
     MorphingDialogClose,
     MorphingDialogContainer,
 } from "@/components/motion/morphing-dialog";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-export function MorphingDialogBasicTwo() {
+export default function MorphingDialogBasicTwo() {
     return (
         <MorphingDialog
             transition={{
