@@ -23,12 +23,10 @@ export default function index() {
                 distance={25}
                 imgClass="sm:w-40 w-28 sm:h-48 h-36"
             >
-                <article className="relative z-50">
-                    <h1 className="text-center text-xl font-semibold text-black md:text-3xl lg:text-4xl">
-                        Experience Interactive Designs with <br />
-                        Dynamic Mouse Trails
-                    </h1>
-                </article>
+                <h1 className="text-center text-xl font-semibold text-black mix-blend-difference md:text-3xl lg:text-4xl">
+                    Experience Interactive Designs with <br />
+                    Dynamic Mouse Trails
+                </h1>
             </ImageMouseTrail>
         </section>
     );

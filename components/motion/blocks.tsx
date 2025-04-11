@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from "react";
 
 function Blocks({
     activeDivs,
@@ -12,9 +12,9 @@ function Blocks({
     activeDivs?: any;
     divClass?: string;
     classname?: string;
-    containerRef: React.RefObject<HTMLDivElement>;
+    containerRef: React.RefObject<HTMLDivElement | null>;
 }) {
-    const [blocks, setBlocks] = useState<React.ReactNode[]>([]);
+    const [blocks, setBlocks] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
         const updateBlocks = () => {
@@ -30,7 +30,7 @@ function Blocks({
                 const newBlocks = Array.from(
                     { length: columns },
                     (_, columnIndex) => (
-                        <div key={columnIndex} className="h-full w-[6vw]">
+                        <div key={columnIndex} className="h-full w-[6.5vw]">
                             {Array.from({ length: rows }, (_, rowIndex) => (
                                 <div
                                     key={rowIndex}

@@ -84,7 +84,7 @@ export default function ImageMouseTrail({
             onTouchMove={(e) => handleOnMove(e.touches[0])}
             ref={containerRef}
             className={cn(
-                "relative grid h-[600px] w-full place-content-center overflow-hidden rounded-lg bg-[#e0dfdf]",
+                "relative grid h-[600px] w-full place-content-center overflow-hidden rounded-lg bg-white",
                 className,
             )}
         >
@@ -102,9 +102,7 @@ export default function ImageMouseTrail({
                     ref={refs.current[index]}
                 />
             ))}
-            <article className="relative z-50 mix-blend-difference">
-                {children}
-            </article>
+            <article className="relative z-50">{children}</article>
         </section>
     );
 }
