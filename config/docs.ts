@@ -127,6 +127,10 @@ export const motions: ComponentGroup[] = [
                 href: "/motion/text-loop",
             },
             {
+                name: "Text Marquee ",
+                href: "/motion/text-marquee",
+            },
+            {
                 name: "Text Morph",
                 href: "/motion/text-morph",
             },
@@ -145,10 +149,6 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Text Wave",
                 href: "/motion/text-wave",
-            },
-            {
-                name: "Text Marquee ",
-                href: "/motion/text-marquee",
             },
         ],
     },
@@ -177,13 +177,14 @@ export const motions: ComponentGroup[] = [
                 href: "/motion/scroll-progress",
             },
             {
-                name: "Stacking Cards",
-                href: "/motion/stacking-cards",
-            },
-            {
                 name: "Smooth Scroll",
                 href: "/motion/smooth-scroll",
             },
+            {
+                name: "Stacking Card",
+                href: "/motion/stacking-card",
+            },
+
             {
                 name: "Sticky Scroll",
                 href: "/motion/sticky-scroll",
