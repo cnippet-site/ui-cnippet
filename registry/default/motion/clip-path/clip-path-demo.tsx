@@ -1,4 +1,4 @@
-import { ClipPaths, ClippedFigure } from "@/components/motion/clippath";
+import { ClipPaths, ClippedFigure } from "@/components/motion/clip-path";
 
 export default function ImageRevealGallery() {
     return (

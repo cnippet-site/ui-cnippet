@@ -28,6 +28,9 @@ export const motions: Registry = generateComponents([
         name: "carousel",
     },
     {
+        name: "clip-path",
+    },
+    {
         name: "collapsible",
     },
     {
@@ -46,6 +49,9 @@ export const motions: Registry = generateComponents([
         name: "drawer-rc",
     },
     {
+        name: "framer-carousel",
+    },
+    {
         name: "grid",
     },
     {
@@ -58,16 +64,28 @@ export const motions: Registry = generateComponents([
         name: "image-mousetrail",
     },
     {
+        name: "image-reveal",
+    },
+    {
+        name: "image-tabs",
+    },
+    {
         name: "in-view",
     },
     {
         name: "infinite-slider",
     },
     {
+        name: "masonary-grid",
+    },
+    {
         name: "morphing-dialog",
     },
     {
         name: "progressive-blur",
+    },
+    {
+        name: "progressive-carousel",
     },
     {
         name: "scroll-progress",
@@ -88,10 +106,19 @@ export const motions: Registry = generateComponents([
         name: "spotlight",
     },
     {
+        name: "spotlight-card",
+    },
+    {
+        name: "tabs-rc",
+    },
+    {
         name: "text-effect",
     },
     {
         name: "text-loop",
+    },
+    {
+        name: "text-marquee",
     },
     {
         name: "text-morph",
