@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -11,6 +10,8 @@ import React, {
     useState,
     isValidElement,
 } from "react";
+
+/*eslint-disable @typescript-eslint/no-explicit-any*/
 interface TabContextType {
     activeTab: string;
     setActiveTab: (value: string) => void;
@@ -49,11 +50,10 @@ export const TabsProvider = ({
     const [tabsOrder, setTabsOrder] = useState<string[]>([]);
     useEffect(() => {
         const order: string[] = [];
-        children?.map((child) => {
-            if (isValidElement(child)) {
-                if (child.type === TabsContent) {
-                    order.push(child.props.value);
-                }
+        React.Children.toArray(children).forEach((child) => {
+            if (isValidElement(child) && child.type === TabsContent) {
+                const typedChild = child as React.ReactElement<{ value: string }>;
+                order.push(typedChild.props.value);
             }
         });
         setTabsOrder(order);
@@ -102,9 +102,11 @@ export const TabsBtn = ({ children, className, value }: any) => {
                         className,
                     )}
                     onFocus={() => {
+                        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                         hover && handleClick();
                     }}
                     onMouseEnter={() => {
+                        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                         hover && handleClick();
                     }}
                     onClick={handleClick}
@@ -203,3 +205,5 @@ export const TabsContent = ({ children, className, value, yValue }: any) => {
         </>
     );
 };
+
+/*eslint-enable @typescript-eslint/no-explicit-any*/

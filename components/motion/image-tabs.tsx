@@ -4,12 +4,12 @@ import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-interface Tab {
-    id: string;
-    title: string;
-    description: string;
-    imageUrl: string;
-}
+// interface Tab {
+//     id: string;
+//     title: string;
+//     description: string;
+//     imageUrl: string;
+// }
 
 interface TabsContextType {
     activeTab: string;
@@ -58,11 +58,11 @@ export function TabList({
 export function TabItem({
     children,
     value,
-    index,
+    // index,
 }: {
     children: ReactNode;
     value: string;
-    index: number;
+    // index: number;
 }) {
     const { activeTab, setActiveTab } = useTabs();
 
@@ -148,11 +148,11 @@ export function TabImageContainer({
 export function TabImage({
     children,
     value,
-    index,
+    // index,
 }: {
     children: ReactNode;
     value: string;
-    index: number;
+    // index: number;
 }) {
     const { activeTab, isDesktop } = useTabs();
 

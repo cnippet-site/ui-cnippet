@@ -9,7 +9,7 @@ import React, {
     useRef,
     useState,
 } from "react";
-import { motion, AnimatePresence, Variant } from "motion/react";
+import { motion, AnimatePresence} from "motion/react";
 import Autoplay from "embla-carousel-autoplay";
 import {
     EmblaCarouselType,
@@ -25,6 +25,7 @@ type UseDotButtonType = {
     onDotButtonClick: (index: number) => void;
 };
 
+/*eslint-disable @typescript-eslint/no-explicit-any*/
 interface CarouselProps {
     children: React.ReactNode;
     options: EmblaOptionsType;
@@ -101,6 +102,7 @@ const Carousel: React.FC<CarouselProps> = ({
         );
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [selectedThumbIndex, setSelectedThumbIndex] = useState(0);
     const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
         containScroll: "keepSnaps",
@@ -612,3 +614,5 @@ export const ThumsSlider: React.FC = () => {
     );
 };
 export default Carousel;
+
+/*eslint-enable @typescript-eslint/no-explicit-any*/

@@ -24,6 +24,8 @@ export const MasonryGrid = React.forwardRef<HTMLDivElement, MasonryGridProps>(
     ),
 );
 
+MasonryGrid.displayName = "MasonryGrid";
+
 interface MasonryItemProps {
     item: Item;
     index: number;
@@ -34,7 +36,7 @@ interface MasonryItemProps {
 
 export const MasonryItem = ({
     item,
-    index,
+    // index,
     setSelected,
     children,
     className = "",

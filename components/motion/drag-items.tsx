@@ -11,15 +11,10 @@ import {
 } from "motion/react";
 import {
     Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Grip } from "lucide-react";
 
+/*eslint-disable @typescript-eslint/no-explicit-any*/
 export const DragItems = ({
     items,
     onReorder,
@@ -110,3 +105,5 @@ const useRaisedShadow = (value: MotionValue<number>) => {
 
     return boxShadow;
 };
+
+/*eslint-enable @typescript-eslint/no-explicit-any*/

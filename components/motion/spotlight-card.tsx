@@ -1,17 +1,18 @@
-// @ts-nocheck
 'use client'
 import { cn } from '@/lib/utils'
 import React, {
   useRef,
   useState,
-  MouseEvent,
+  // MouseEvent,
   useContext,
   createContext,
 } from 'react'
-interface MousePosition {
-  x: number
-  y: number
-}
+// interface MousePosition {
+//   x: number
+//   y: number
+// }
+
+/*eslint-disable @typescript-eslint/no-explicit-any*/
 
 interface SpotlightProps {
   children: React.ReactNode
@@ -82,8 +83,9 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
   }, [])
 
   const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 })
-  const handleMouemove = ({ currentTarget, clientX, clientY }): MouseEvent => {
-    let { left, top } = currentTarget.getBoundingClientRect()
+  const handleMouemove = (e: React.MouseEvent<HTMLDivElement>): void => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top } = currentTarget.getBoundingClientRect()
 
     const x = clientX - left
     const y = clientY - top
@@ -155,3 +157,5 @@ export function SpotlightCard({
     </div>
   )
 }
+
+/*eslint-enable @typescript-eslint/no-explicit-any*/

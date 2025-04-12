@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { JSX, useEffect, useState } from "react";
 
+/*eslint-disable @typescript-eslint/no-explicit-any*/
 function Blocks({
     activeDivs,
     divClass,
@@ -36,7 +37,6 @@ function Blocks({
                                     key={rowIndex}
                                     className={cn(
                                         `h-[6vh] w-full border-[1px] border-[#5dcece09] ${
-                                            // @ts-ignore
                                             activeDivs[columnIndex]?.has(
                                                 rowIndex,
                                             )
@@ -75,3 +75,5 @@ function Blocks({
 }
 
 export default Blocks;
+
+/*eslint-enable @typescript-eslint/no-explicit-any*/

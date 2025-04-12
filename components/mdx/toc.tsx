@@ -53,7 +53,7 @@ export function TableOfContents({ toc }: TocProps) {
 
     return (
         <div className="space-y-2">
-            <p className="text-sm font-medium">On This Page</p>
+            <p className="text-sm font-medium uppercase font-mono">On This Page</p>
             <Tree tree={refinedToc} activeItem={activeHeading} />
         </div>
     );
@@ -106,7 +106,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
         <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
             {tree.items.map((item, index) => {
                 return (
-                    <li key={index} className={cn("mt-0 pt-2")}>
+                    <li key={index} className={cn("mt-0 pt-1")}>
                         <Link
                             href={item.url}
                             className={cn(

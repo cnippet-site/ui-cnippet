@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 // Clip path variants configuration
@@ -121,7 +122,7 @@ export const ClippedFigure = ({
                     <source src={src} type="video/mp4" />
                 </video>
             ) : (
-                <img
+                <Image
                     src={src}
                     alt={alt}
                     className={`min-h-full object-cover align-bottom transition-all duration-300 ${

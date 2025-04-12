@@ -1,7 +1,7 @@
 "use client";
 import React, {
     createContext,
-    useContext,
+    // useContext,
     useState,
     useEffect,
     ReactNode,
@@ -17,13 +17,13 @@ interface DrawerContextProps {
 
 const DrawerContext = createContext<DrawerContextProps | undefined>(undefined);
 
-const useSidebarDrawer = () => {
-    const context = useContext(DrawerContext);
-    if (!context) {
-        throw new Error("useDrawer must be used within a DrawerProvider");
-    }
-    return context;
-};
+// const useSidebarDrawer = () => {
+//     const context = useContext(DrawerContext);
+//     if (!context) {
+//         throw new Error("useDrawer must be used within a DrawerProvider");
+//     }
+//     return context;
+// };
 
 interface DrawerSidebarProps {
     children: ReactNode;
@@ -43,7 +43,7 @@ export function SidebarDrawer({
     direction = "left",
     outsideClose = true,
     className,
-    triggerClassName,
+    // triggerClassName,
     DefaultTrigger, // Now a function prop
 }: DrawerSidebarProps) {
     const [internalOpen, setInternalOpen] = useState(false);
