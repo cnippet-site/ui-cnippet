@@ -9,10 +9,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { styles } from "@/registry/registry-styles";
-import { getUserSession } from "@/lib/actions/auth.actions";
 import { useSession } from "next-auth/react";
-import AuthDialog from "@/components/routes/shared/auth/dialog";
-import Link from "next/link";
 import AuthD from "@/components/auth-dialog";
 
 interface AuthPreviewProps extends React.HTMLAttributes<HTMLDivElement> {

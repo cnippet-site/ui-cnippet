@@ -153,7 +153,7 @@ const Nav1 = () => {
                                 <span className="sr-only">Toggle theme</span>
                             </div>
                         </nav>
-                        {/* <NavUser />  */}
+                        <NavUser /> 
                     </div>
                 </div>
             </div>

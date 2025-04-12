@@ -24,27 +24,27 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-
-import GoogleLogo from "@/public/images/svg/google-logo.svg";
-import Github from "@/public/images/svg/github.svg";
+import { CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { RiErrorWarningFill } from "@remixicon/react";
+import { RiErrorWarningFill, RiGithubFill, RiEyeLine, RiEyeOffLine } from "@remixicon/react";
 import { signUpWithCredentials } from "@/lib/actions/auth.actions";
 
 const AuthDialog = () => {
-    const [loading, setLoading] = useState(false);
-    const [loading1, setLoading1] = useState(false);
+    // const [loading, setLoading] = useState(false);
+    // const [loading1, setLoading1] = useState(false);
     const [loading2, setLoading2] = useState(false);
     const [loading3, setLoading3] = useState(false);
     const [error, setError] = useState("");
     const [activeTab, setActiveTab] = useState("signin");
+    const [showPassword, setShowPassword] = useState(false);
+    const [showSignUpPassword, setShowSignUpPassword] = useState(false);
 
     const router = useRouter();
     const pathname = usePathname();
 
     const loginWithGoogle = async () => {
-        setLoading(true);
+        // setLoading(true);
         await signIn("google", {
             callbackUrl: "/",
             redirect: true,
@@ -52,7 +52,7 @@ const AuthDialog = () => {
     };
 
     const loginWithGit = async () => {
-        setLoading1(true);
+        // setLoading1(true);
         await signIn("github", {
             callbackUrl: "/",
             redirect: true,
@@ -139,7 +139,7 @@ const AuthDialog = () => {
     }
 
     return (
-        <DialogContent className="py-10 sm:max-w-sm">
+        <DialogContent className="py-10 sm:max-w-md">
             <div className="mb-2 flex flex-col items-center gap-2">
                 <div
                     className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
@@ -156,26 +156,87 @@ const AuthDialog = () => {
                 </div>
                 <DialogHeader>
                     <DialogTitle className="text-2xl sm:text-center">
-                        {activeTab === "signin" ? "Log in to your account" : "Create an account"}
+                        {activeTab === "signin"
+                            ? "Welcome back"
+                            : "Create an account"}
                     </DialogTitle>
                     <DialogDescription className="sm:text-center">
-                        {activeTab === "signin" 
-                            ? "Welcome back! Please enter your details."
-                            : "Join us! Please enter your details to create an account."}
+                        {activeTab === "signin"
+                            ? "Sign in to your account"
+                            : "Enter your information to get started"}
                     </DialogDescription>
                 </DialogHeader>
             </div>
 
-            <Tabs defaultValue="signin" onValueChange={setActiveTab} className="w-full">
+            <Tabs
+                defaultValue="signin"
+                onValueChange={setActiveTab}
+                className="w-full"
+            >
                 <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="signin">Sign In</TabsTrigger>
-                    <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                    <TabsTrigger value="signin" className="cursor-pointer">
+                        Sign In
+                    </TabsTrigger>
+                    <TabsTrigger value="signup" className="cursor-pointer">
+                        Sign Up
+                    </TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="signin" className="space-y-4">
-                    <Form {...signInForm}>
-                        <form onSubmit={signInForm.handleSubmit(onSignIn)} className="w-full">
-                            <div className="space-y-2">
+                    <CardContent className="space-y-4 p-2">
+                        <div className="space-y-3">
+                            <Button
+                                variant="outline"
+                                className="w-full"
+                                onClick={loginWithGoogle}
+                            >
+                                <svg
+                                    className="mr-2 h-4 w-4"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4"
+                                    />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853"
+                                    />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                        fill="#FBBC05"
+                                    />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335"
+                                    />
+                                </svg>
+                                Continue with Google
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="w-full"
+                                onClick={loginWithGit}
+                            >
+                                <RiGithubFill className="mr-2 h-5 w-5" />
+                                Continue with GitHub
+                            </Button>
+                        </div>
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <span className="w-full border-t" />
+                            </div>
+                            <div className="relative flex justify-center text-xs uppercase">
+                                <span className="bg-background text-muted-foreground px-2">
+                                    or
+                                </span>
+                            </div>
+                        </div>
+                        <Form {...signInForm}>
+                            <form
+                                onSubmit={signInForm.handleSubmit(onSignIn)}
+                                className="space-y-4"
+                            >
                                 <FormField
                                     control={signInForm.control}
                                     name="email"
@@ -184,7 +245,7 @@ const AuthDialog = () => {
                                             <FormLabel>Email</FormLabel>
                                             <FormControl>
                                                 <Input
-                                                    placeholder="mail@example.com"
+                                                    placeholder="you@example.com"
                                                     {...field}
                                                 />
                                             </FormControl>
@@ -197,36 +258,114 @@ const AuthDialog = () => {
                                     name="password"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Password</FormLabel>
+                                            <div className="flex items-center justify-between">
+                                                <FormLabel>Password</FormLabel>
+                                                <Link
+                                                    href="/forgot-password"
+                                                    className="text-primary text-sm hover:underline"
+                                                >
+                                                    Forgot Password?
+                                                </Link>
+                                            </div>
                                             <FormControl>
-                                                <Input
-                                                    type="password"
-                                                    placeholder="your password"
-                                                    {...field}
-                                                />
+                                                <div className="relative">
+                                                    <Input
+                                                        type={showPassword ? "text" : "password"}
+                                                        {...field}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                                                        onClick={() => setShowPassword(!showPassword)}
+                                                    >
+                                                        {showPassword ? (
+                                                            <RiEyeOffLine className="h-4 w-4" />
+                                                        ) : (
+                                                            <RiEyeLine className="h-4 w-4" />
+                                                        )}
+                                                    </button>
+                                                </div>
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
-                            </div>
+                                <Button type="submit" className="w-full">
+                                    {loading2 && (
+                                        <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-white" />
+                                    )}
+                                    Sign In
+                                </Button>
+                            </form>
+                        </Form>
+                        <div className="text-center text-sm">
+                            {"Don't have an account? "}
                             <Button
-                                className="mt-6 flex w-full items-center"
-                                type="submit"
+                                variant="link"
+                                className="h-auto p-0 font-semibold"
+                                onClick={() => setActiveTab("signup")}
                             >
-                                {loading2 && (
-                                    <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-white" />
-                                )}
-                                Sign In
+                                Sign Up Now
                             </Button>
-                        </form>
-                    </Form>
+                        </div>
+                    </CardContent>
                 </TabsContent>
 
                 <TabsContent value="signup" className="space-y-4">
-                    <Form {...signUpForm}>
-                        <form onSubmit={signUpForm.handleSubmit(onSignUp)} className="w-full">
-                            <div className="space-y-2">
+                    <CardContent className="space-y-4 p-2">
+                        <div className="space-y-3">
+                            <Button
+                                variant="outline"
+                                className="w-full"
+                                onClick={loginWithGoogle}
+                            >
+                                <svg
+                                    className="mr-2 h-4 w-4"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4"
+                                    />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853"
+                                    />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                        fill="#FBBC05"
+                                    />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335"
+                                    />
+                                </svg>
+                                Sign up with Google
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="w-full"
+                                onClick={loginWithGit}
+                            >
+                                <RiGithubFill className="mr-2 h-5 w-5" />
+                                Sign up with GitHub
+                            </Button>
+                        </div>
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <span className="w-full border-t" />
+                            </div>
+                            <div className="relative flex justify-center text-xs uppercase">
+                                <span className="bg-background text-muted-foreground px-2">
+                                    or
+                                </span>
+                            </div>
+                        </div>
+                        <Form {...signUpForm}>
+                            <form
+                                onSubmit={signUpForm.handleSubmit(onSignUp)}
+                                className="space-y-4"
+                            >
                                 <FormField
                                     control={signUpForm.control}
                                     name="name"
@@ -251,7 +390,7 @@ const AuthDialog = () => {
                                             <FormLabel>Email</FormLabel>
                                             <FormControl>
                                                 <Input
-                                                    placeholder="mail@example.com"
+                                                    placeholder="you@example.com"
                                                     {...field}
                                                 />
                                             </FormControl>
@@ -266,28 +405,48 @@ const AuthDialog = () => {
                                         <FormItem>
                                             <FormLabel>Password</FormLabel>
                                             <FormControl>
-                                                <Input
-                                                    type="password"
-                                                    placeholder="your password"
-                                                    {...field}
-                                                />
+                                                <div className="relative">
+                                                    <Input
+                                                        type={showSignUpPassword ? "text" : "password"}
+                                                        placeholder="Create a password"
+                                                        {...field}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                                                        onClick={() => setShowSignUpPassword(!showSignUpPassword)}
+                                                    >
+                                                        {showSignUpPassword ? (
+                                                            <RiEyeOffLine className="h-4 w-4" />
+                                                        ) : (
+                                                            <RiEyeLine className="h-4 w-4" />
+                                                        )}
+                                                    </button>
+                                                </div>
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
-                            </div>
+                                <Button type="submit" className="w-full">
+                                    {loading3 && (
+                                        <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-white" />
+                                    )}
+                                    Create Account
+                                </Button>
+                            </form>
+                        </Form>
+                        <div className="text-center text-sm">
+                            {"Already have an account? "}
                             <Button
-                                className="mt-6 flex w-full items-center"
-                                type="submit"
+                                variant="link"
+                                className="h-auto p-0 font-semibold"
+                                onClick={() => setActiveTab("signin")}
                             >
-                                {loading3 && (
-                                    <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-white" />
-                                )}
-                                Sign Up
+                                Sign In
                             </Button>
-                        </form>
-                    </Form>
+                        </div>
+                    </CardContent>
                 </TabsContent>
             </Tabs>
 
@@ -297,45 +456,6 @@ const AuthDialog = () => {
                     {error}
                 </div>
             )}
-
-            <div className="space-y-4">
-                <button
-                    onClick={loginWithGoogle}
-                    className="flex w-full cursor-pointer items-center justify-center space-x-2 rounded-md border border-gray-300 py-1.5 transition-colors hover:bg-gray-50"
-                >
-                    {loading && (
-                        <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-black" />
-                    )}
-                    <Image
-                        src={GoogleLogo}
-                        alt="google-logo"
-                        width={22}
-                        height={22}
-                        className="mx-3"
-                    />
-                    <span className="text-sm text-gray-700">
-                        {activeTab === "signin" ? "Log in with Google" : "Sign up with Google"}
-                    </span>
-                </button>
-                <button
-                    onClick={loginWithGit}
-                    className="flex w-full cursor-pointer items-center justify-center space-x-2 rounded-md border border-gray-300 py-1.5 transition-colors hover:bg-gray-50"
-                >
-                    {loading1 && (
-                        <LoadingIcon className="mr-3 -ml-1 h-5 w-5 animate-spin text-black" />
-                    )}
-                    <Image
-                        src={Github}
-                        alt="github-logo"
-                        width={22}
-                        height={22}
-                        className="mx-3"
-                    />
-                    <span className="text-sm text-gray-700">
-                        {activeTab === "signin" ? "Log in with Github" : "Sign up with Github"}
-                    </span>
-                </button>
-            </div>
         </DialogContent>
     );
 };
