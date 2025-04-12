@@ -10,9 +10,11 @@ const Feedback = dynamic(() => import("@/components/routes/home/feedback"));
 const Cta = dynamic(() => import("@/components/routes/home/cta"));
 const Nav1 = dynamic(() => import("@/components/routes/shared/navbar/nav-1"));
 
+
 export default function Home() {
     return (
         <>
+            {/* <ResetPasswordEmail /> */}
             <Nav1 />
             <main className="font-sans">
                 <Hero />
@@ -26,4 +28,3 @@ export default function Home() {
         </>
     );
 }
-

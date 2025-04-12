@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
 import { ChevronsUpDown } from "lucide-react";
 import { Sparkles, BadgeCheck, CreditCard, Bell, LogOut } from "lucide-react";
@@ -16,7 +15,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog-cn";
 import { Button } from "@/components/ui/button";
 import AuthDialog from "../auth/dialog";

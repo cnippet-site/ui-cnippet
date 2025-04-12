@@ -7,6 +7,8 @@ import { getServerSession } from "next-auth/next";
 import { Account, Profile } from "next-auth";
 import { Resend } from "resend";
 import { generateResetToken } from "@/lib/utils/tokens";
+import { ResetPasswordEmail } from "@/components/routes/resend/reset-password";
+import { render } from "@react-email/components";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -85,7 +87,7 @@ export async function signInWithCredentials({
     }
 }
 
-export async function oauthSignIn({
+export async function signInWithOauth({
     account,
     profile,
 }: {
@@ -137,6 +139,11 @@ export async function resetPassword({
 
         if (!resetToken) return { error: "Invalid or expired token" };
 
+        const isSamePassword = await bcrypt.compare(newPassword, resetToken.user.password || '');
+        if (isSamePassword) {
+            return { error: "New password cannot be the same as current password" };
+        }
+
         const hashedPassword = await bcrypt.hash(newPassword, 10);
 
         await prisma.$transaction([
@@ -166,18 +173,19 @@ export async function sendResetEmail(email: string) {
         const resetLink = `${process.env.NEXT_PUBLIC_URL}/reset-password?token=${resetToken}`;
 
         try {
+            const emailHtml = await render(
+                ResetPasswordEmail({
+                    userEmail: user.email!,
+                    resetLink,
+                }),
+            );
+
             await resend.emails.send({
-                from: "Cnippet <contact@ui.cnippet.site>",
+                from: "Cnippet <auth@ui.cnippet.site>",
                 to: email,
                 subject: "Password Reset Request",
-                html: `
-                    <p>Hello,</p>
-                    <p>You requested a password reset for your account.</p>
-                    <p>This link expires in 1 hour.</p>
-                    <p>Click here to reset: <a href="${resetLink}">Reset Password</a></p>
-                `,
+                html: emailHtml,
             });
-
             return { success: true, data: { email: user.email } };
         } catch (error) {
             console.error("Email sending error:", error);

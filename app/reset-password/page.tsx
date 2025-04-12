@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,21 +8,41 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { RiErrorWarningFill, RiEyeLine, RiEyeOffLine } from "@remixicon/react";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { resetPassword } from "@/lib/actions/auth.actions";
 
-const schema = z.object({
-    password: z.string().min(6, "Password must be at least 6 characters"),
-    confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-});
+const schema = z
+    .object({
+        password: z.string().min(6, "Password must be at least 6 characters"),
+        confirmPassword: z.string(),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        message: "Passwords don't match",
+        path: ["confirmPassword"],
+    });
 
 export default function ResetPasswordPage() {
+    <Suspense>
+        <ResetPassword />
+    </Suspense>;
+}
+
+function ResetPassword() {
+    const form = useForm<z.infer<typeof schema>>({
+        resolver: zodResolver(schema),
+        defaultValues: { password: "", confirmPassword: "" },
+    });
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -36,21 +56,21 @@ export default function ResetPasswordPage() {
         return null;
     }
 
-    const form = useForm<z.infer<typeof schema>>({
-        resolver: zodResolver(schema),
-        defaultValues: { password: "", confirmPassword: "" },
-    });
-
     async function onSubmit(values: z.infer<typeof schema>) {
         setLoading(true);
         setError("");
 
         try {
-            const result = await resetPassword({ token: token!, newPassword: values.password });
+            const result = await resetPassword({
+                token: token!,
+                newPassword: values.password,
+            });
             if (result.error) throw new Error(result.error);
             router.push("/");
         } catch (error) {
-            setError(error instanceof Error ? error.message : "Something went wrong");
+            setError(
+                error instanceof Error ? error.message : "Something went wrong",
+            );
         } finally {
             setLoading(false);
         }
@@ -64,7 +84,10 @@ export default function ResetPasswordPage() {
                 </CardHeader>
                 <CardContent>
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            className="space-y-4"
+                        >
                             <FormField
                                 control={form.control}
                                 name="password"
@@ -74,15 +97,27 @@ export default function ResetPasswordPage() {
                                         <FormControl>
                                             <div className="relative">
                                                 <Input
-                                                    type={showPassword ? "text" : "password"}
+                                                    type={
+                                                        showPassword
+                                                            ? "text"
+                                                            : "password"
+                                                    }
                                                     {...field}
                                                 />
                                                 <button
                                                     type="button"
-                                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                                                    onClick={() => setShowPassword(!showPassword)}
+                                                    className="text-muted-foreground hover:text-foreground absolute top-1/2 right-3 -translate-y-1/2"
+                                                    onClick={() =>
+                                                        setShowPassword(
+                                                            !showPassword,
+                                                        )
+                                                    }
                                                 >
-                                                    {showPassword ? <RiEyeOffLine className="h-4 w-4" /> : <RiEyeLine className="h-4 w-4" />}
+                                                    {showPassword ? (
+                                                        <RiEyeOffLine className="h-4 w-4" />
+                                                    ) : (
+                                                        <RiEyeLine className="h-4 w-4" />
+                                                    )}
                                                 </button>
                                             </div>
                                         </FormControl>
@@ -95,19 +130,33 @@ export default function ResetPasswordPage() {
                                 name="confirmPassword"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Confirm New Password</FormLabel>
+                                        <FormLabel>
+                                            Confirm New Password
+                                        </FormLabel>
                                         <FormControl>
                                             <div className="relative">
                                                 <Input
-                                                    type={showConfirmPassword ? "text" : "password"}
+                                                    type={
+                                                        showConfirmPassword
+                                                            ? "text"
+                                                            : "password"
+                                                    }
                                                     {...field}
                                                 />
                                                 <button
                                                     type="button"
-                                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                                    className="text-muted-foreground hover:text-foreground absolute top-1/2 right-3 -translate-y-1/2"
+                                                    onClick={() =>
+                                                        setShowConfirmPassword(
+                                                            !showConfirmPassword,
+                                                        )
+                                                    }
                                                 >
-                                                    {showConfirmPassword ? <RiEyeOffLine className="h-4 w-4" /> : <RiEyeLine className="h-4 w-4" />}
+                                                    {showConfirmPassword ? (
+                                                        <RiEyeOffLine className="h-4 w-4" />
+                                                    ) : (
+                                                        <RiEyeLine className="h-4 w-4" />
+                                                    )}
                                                 </button>
                                             </div>
                                         </FormControl>
@@ -115,7 +164,11 @@ export default function ResetPasswordPage() {
                                     </FormItem>
                                 )}
                             />
-                            <Button type="submit" className="w-full" disabled={loading}>
+                            <Button
+                                type="submit"
+                                className="w-full"
+                                disabled={loading}
+                            >
                                 {loading ? "Resetting..." : "Reset Password"}
                             </Button>
                         </form>
@@ -127,7 +180,10 @@ export default function ResetPasswordPage() {
                         </div>
                     )}
                     <div className="mt-4 text-center text-sm">
-                        <Link href="/signin" className="text-primary hover:underline">
+                        <Link
+                            href="/signin"
+                            className="text-primary hover:underline"
+                        >
                             Back to Sign In
                         </Link>
                     </div>
@@ -135,4 +191,4 @@ export default function ResetPasswordPage() {
             </Card>
         </div>
     );
-} 
+}

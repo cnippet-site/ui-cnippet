@@ -73,7 +73,7 @@ export const nextauthOptions: NextAuthOptions = {
             }
 
             if (token.email) {
-                const user = await getUserByEmail({ email: token.email });
+                const user = await getUserByEmail(token.email);
                 if (user) {
                     token.id = user._id;
                     token.name = user.name;
