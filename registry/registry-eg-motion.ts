@@ -91,9 +91,13 @@ export const motionExamples: Registry = generateExamples([
 
     // { name: "sliding-number-demo", number: "1" },
 
-    // { name: "spotlight-demo", number: "1" },
+    { name: "spotlight-demo", number: "1" },
 
     { name: "spotlight-card-demo", number: "1" },
+
+    { name: "stacking-card-demo", number: "1" },
+
+    { name: "sticky-scroll-demo", number: "1" },
 
     // { name: "tabs-demo", number: "1" },
     { name: "tabs-rc-demo", number: "1" },
@@ -113,6 +117,8 @@ export const motionExamples: Registry = generateExamples([
     { name: "text-shimmer-demo", number: "1" },
 
     { name: "text-wave-demo", number: "1" },
+
+    { name: "tilt-demo", number: "1" },
 
     { name: "transition-panel-demo", number: "1" },
 ]);

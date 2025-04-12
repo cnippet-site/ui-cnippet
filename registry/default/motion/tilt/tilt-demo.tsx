@@ -1,6 +1,6 @@
 import { Tilt } from "@/components/motion/tilt";
 
-export function TiltCard1() {
+export default function TiltCard1() {
     return (
         <Tilt rotationFactor={8} isRevese>
             <div

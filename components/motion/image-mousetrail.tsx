@@ -91,6 +91,8 @@ export default function ImageMouseTrail({
                         "opacity:0 data-[status='active']:ease-out-expo absolute -translate-x-[50%] -translate-y-[50%] scale-0 object-cover transition-transform duration-300 data-[status='active']:scale-100 data-[status='active']:opacity-100 data-[status='active']:duration-500",
                         imgClass,
                     )}
+                    width={1920}
+                    height={1080}
                     data-index={index}
                     data-status="inactive"
                     src={item}

@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import NavUser from "./nav-user";
 
 const Nav1 = () => {
     const { theme, setTheme } = useTheme();
@@ -152,6 +153,7 @@ const Nav1 = () => {
                                 <span className="sr-only">Toggle theme</span>
                             </div>
                         </nav>
+                        {/* <NavUser />  */}
                     </div>
                 </div>
             </div>

@@ -1,7 +1,27 @@
 import React from "react";
+import ScrollBaseAnimation from "@/components/motion/text-marquee";
 
-const Demo = () => {
-    return <div>Demo</div>;
-};
+function index() {
+    return (
+        <>
+            <div className="grid h-[500px] place-content-center">
+                <ScrollBaseAnimation
+                    delay={500}
+                    baseVelocity={-3}
+                    clasname="font-bold tracking-[-0.07em] leading-[90%]"
+                >
+                    Star the repo if you like it
+                </ScrollBaseAnimation>
+                <ScrollBaseAnimation
+                    delay={500}
+                    baseVelocity={3}
+                    clasname="font-bold tracking-[-0.07em] leading-[90%]"
+                >
+                    Share it if you like it
+                </ScrollBaseAnimation>
+            </div>
+        </>
+    );
+}
 
-export default Demo;
+export default index;
