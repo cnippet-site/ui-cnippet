@@ -2,7 +2,8 @@ import React from "react";
 import { redirect } from "next/navigation";
 
 import { getUserSession } from "@/lib/actions/auth.actions";
-import Nav1 from "@/components/routes/shared/navbar/nav-1";
+import Footer from "@/components/routes/shared/footer";
+
 const layout = async ({ children }: { children: React.ReactNode }) => {
     const session = await getUserSession();
     if (!session) {
@@ -10,8 +11,9 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
     }
     return (
         <>
-            <Nav1 />
+            {/* <Nav1 /> */}
             {children}
+            <Footer />
         </>
     );
 };

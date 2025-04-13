@@ -98,4 +98,28 @@ export async function updateProfile({
     }
 }
 
+export async function getUserProfile(userId: string) {
+    try {
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                image: true,
+                createdAt: true,
+                updatedAt: true,
+            },
+        });
+
+        if (!user) {
+            throw new Error("User not found");
+        }
+
+        return { success: true, user };
+    } catch (error: any) {
+        return { success: false, error: error.message };
+    }
+}
+
 /*eslint-enable @typescript-eslint/no-explicit-any*/

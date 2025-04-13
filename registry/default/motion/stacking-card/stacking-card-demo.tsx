@@ -10,7 +10,7 @@ const projects = [
         description:
             "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
         src: "rock.jpg",
-        link: "https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop",
+        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg",
         color: "#5196fd",
     },
     {
@@ -18,7 +18,7 @@ const projects = [
         description:
             "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément.",
         src: "tree.jpg",
-        link: "https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60",
+        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
         color: "#8f89ff",
     },
     {
@@ -26,7 +26,7 @@ const projects = [
         description:
             "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal.",
         src: "water.jpg",
-        link: "https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop",
+        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
         color: "#13006c",
     },
     {
@@ -34,7 +34,7 @@ const projects = [
         description:
             "The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.",
         src: "house.jpg",
-        link: "https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60",
+        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg",
         color: "#ed649e",
     },
     {
@@ -42,7 +42,7 @@ const projects = [
         description:
             "Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.",
         src: "cactus.jpg",
-        link: "https://images.unsplash.com/photo-1506792006437-256b665541e2?w=500&auto=format&fit=crop",
+        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg",
         color: "#fd521a",
     },
 ];
@@ -54,9 +54,12 @@ export default function index(): JSX.Element {
     });
     return (
         <ReactLenis root>
-            <main className="bg-black" ref={container}>
-                <>
-                    <section className="grid h-[70vh] w-full place-content-center bg-slate-950 text-white">
+            <main
+                className="bg-black"
+                ref={container}
+            >
+                {/* <>
+                    <section className="grid h-[70vh] place-content-center bg-slate-950 text-white">
                         <div className="absolute top-0 right-0 bottom-0 left-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
                         <h1 className="px-8 text-center text-5xl leading-[120%] font-semibold tracking-tight 2xl:text-7xl">
@@ -64,9 +67,9 @@ export default function index(): JSX.Element {
                             down! 👇
                         </h1>
                     </section>
-                </>
+                </> */}
 
-                <section className="w-full bg-slate-950 text-white">
+                <section className="w-full bg-black text-white">
                     {projects.map((project, i) => {
                         const targetScale = 1 - (projects.length - i) * 0.05;
                         return (
@@ -86,12 +89,12 @@ export default function index(): JSX.Element {
                     })}
                 </section>
 
-                <footer className="group bg-slate-950">
+                {/* <footer className="group bg-slate-950">
                     <h1 className="translate-y-20 bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-center text-[16vw] leading-[100%] font-semibold text-transparent uppercase transition-all ease-linear">
                         ui-layout
                     </h1>
                     <div className="relative z-10 grid h-40 place-content-center rounded-tl-full rounded-tr-full bg-black text-2xl"></div>
-                </footer>
+                </footer> */}
             </main>
         </ReactLenis>
     );
@@ -130,15 +133,15 @@ export const Card: React.FC<CardProps> = ({
     return (
         <div
             ref={container}
-            className="sticky top-0 flex h-screen items-center justify-center"
+            className="sticky top-0 flex h-screen w-full items-center justify-center p-10"
         >
             <motion.div
                 style={{
-                    backgroundColor: color,
+                    // backgroundColor: color,
                     scale,
                     top: `calc(-5vh + ${i * 25}px)`,
                 }}
-                className={`relative -top-[25%] flex h-[450px] w-[70%] origin-top flex-col rounded-md p-10`}
+                className={`relative -top-[25%] bg-neutral-950 flex h-[450px] w-full origin-top flex-col rounded-md p-5`}
             >
                 <h2 className="text-center text-2xl font-semibold">{title}</h2>
                 <div className={`mt-5 flex h-full gap-10`}>

@@ -67,7 +67,7 @@ export default async function MotionPage({
                         <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
                             <TableOfContents toc={toc} />
 
-                            <div className="relative mt-8 origin-center -translate-x-3 rotate-3 p-6 duration-500 group-hover:rotate-0 hover:rotate-0">
+                            <div className="relative mt-8 origin-center -translate-x-3 p-6 duration-500">
                                 <div className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
                                 <div className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
 

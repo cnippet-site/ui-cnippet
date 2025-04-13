@@ -125,6 +125,8 @@ export const ClippedFigure = ({
                 <Image
                     src={src}
                     alt={alt}
+                    width={1920}
+                    height={1080}
                     className={`min-h-full object-cover align-bottom transition-all duration-300 ${
                         hoverScale ? "hover:scale-105" : ""
                     } w-full ${className}`}

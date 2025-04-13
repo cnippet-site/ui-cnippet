@@ -106,11 +106,46 @@ const components = {
         <strong className={cn("font-ins font-medium", className)} {...props} />
     ),
 
-    figure: ({ children, raw, ...props }: ExtendedPreProps) => (
-        <figure {...props} className="relative mb-4 rounded-lg">
-            {children}
-        </figure>
-    ),
+    figure: ({
+        className,
+        __rawString__,
+        __npmCommand__,
+        __pnpmCommand__,
+        __yarnCommand__,
+        __bunCommand__,
+        children,
+        ...props
+    }: React.HTMLAttributes<HTMLPreElement> & {
+        __rawString__?: string;
+        __npmCommand__?: string;
+        __pnpmCommand__?: string;
+        __yarnCommand__?: string;
+        __bunCommand__?: string;
+        children?: React.ReactNode;
+    }) => {
+        const isNpmCommand =
+            __npmCommand__ &&
+            __yarnCommand__ &&
+            __pnpmCommand__ &&
+            __bunCommand__;
+
+        if (isNpmCommand) {
+            return (
+                <CodeBlockCommand
+                    __npmCommand__={__npmCommand__}
+                    __yarnCommand__={__yarnCommand__}
+                    __pnpmCommand__={__pnpmCommand__}
+                    __bunCommand__={__bunCommand__}
+                />
+            );
+        }
+        return (
+            <figure {...props} className="relative mb-4 rounded-lg">
+                {children}
+                {__rawString__ && <CopyButton value={__rawString__} />}
+            </figure>
+        );
+    },
 
     pre: ({
         className,
@@ -119,23 +154,13 @@ const components = {
         __pnpmCommand__,
         __yarnCommand__,
         __bunCommand__,
-        __withMeta__,
-        __src__,
-        // __event__,
-        // __style__,
-        __name__,
         ...props
     }: React.HTMLAttributes<HTMLPreElement> & {
-        // __style__?: Style["name"]
         __rawString__?: string;
         __npmCommand__?: string;
         __pnpmCommand__?: string;
         __yarnCommand__?: string;
         __bunCommand__?: string;
-        __withMeta__?: boolean;
-        __src__?: string;
-        // __event__?: Event["name"];
-        __name__?: string;
     }) => {
         const isNpmCommand =
             __npmCommand__ &&
@@ -155,13 +180,13 @@ const components = {
         }
 
         return (
-            <>
+            <div className="relative">
                 <pre
                     className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap dark:border-neutral-800 dark:!bg-neutral-950 ${className}`}
                     {...props}
                 />
                 {__rawString__ && <CopyButton value={__rawString__} />}
-            </>
+            </div>
         );
     },
 
@@ -244,5 +269,5 @@ export function Mdx({ code, className }: MDXProps) {
 }
 
 interface ExtendedPreProps extends HTMLAttributes<HTMLPreElement> {
-    raw?: string;
+    __rawString__?: string;
 }
