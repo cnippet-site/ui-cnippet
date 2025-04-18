@@ -9,8 +9,8 @@ const Feedback = () => {
                     <div className="grid h-full w-full grid-cols-12 divide-x divide-y border border-t-0 dark:divide-neutral-900 dark:border-neutral-900">
                         <div className="col-span-12 border-r-0 bg-white px-10 py-8 text-center md:py-16 dark:bg-black">
                             <p className="text-3xl font-medium">
-                                “CNIPPET's components cut our UI development
-                                time by 40% - the best React library we've
+                                “CNIPPET&apos;s components cut our UI development
+                                time by 40% - the best React library we&apos;ve
                                 used.”
                             </p>
                             <div className="mt-5 flex items-center justify-center gap-2">
@@ -38,7 +38,7 @@ const Feedback = () => {
                         <div className="col-span-12 border-b-0 bg-white px-10 py-8 text-left md:col-span-6 md:py-16 dark:bg-black">
                             <p className="text-xl font-medium">
                                 “From startup MVPs to enterprise dashboards -
-                                CNIPPET's customizable components scale
+                                CNIPPET&apos;s customizable components scale
                                 beautifully with our needs.”
                             </p>
                             <div className="mt-5 flex items-center justify-start gap-2">

@@ -1,5 +1,5 @@
 import React from "react";
-import { components, motions } from "@/config/docs";
+import { components } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Cta from "@/components/routes/home/cta";

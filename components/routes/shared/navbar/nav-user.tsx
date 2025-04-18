@@ -15,13 +15,6 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
-
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog-cn";
 import { Button } from "@/components/ui/button";
@@ -177,18 +170,13 @@ const NavUser = () => {
                     ) : (
                         <Dialog>
                             <DialogTrigger asChild>
-                                <TooltipProvider delayDuration={0}>
-                                    <Tooltip>
-                                        <TooltipTrigger asChild>
-                                            <Button size="sm">
-                                                <RiUser3Fill/>
-                                            </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent className="dark px-2 py-1 text-xs">
-                                            Login
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TooltipProvider>
+                                <Button
+                                    size="sm"
+                                    className="cursor-pointer px-2 rounded-full"
+                                >
+                                    <RiUser3Fill />
+                                </Button>
+
                                 {/* <Button
                                     variant={"outline"}
                                     size="sm"
