@@ -137,10 +137,13 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">More...</h3>
                         <ul className="space-y-3">
-                            <FooterLink href="/motion/accordion">
+                            <FooterLink href="/components">
+                                Core Components
+                            </FooterLink>
+                            <FooterLink href="/motions">
                                 Motion Components
                             </FooterLink>
-                            <FooterLink href="/chart/area-chart">
+                            <FooterLink href="/charts">
                                 Chart Components
                             </FooterLink>
                             <FooterLink href="#">Sections</FooterLink>

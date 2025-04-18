@@ -315,7 +315,7 @@ export const charts: ComponentGroup[] = [
         ],
     },
     {
-        name: "Core Components",
+        name: "Charts",
         items: [
             {
                 name: "Area Chart",

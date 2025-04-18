@@ -136,6 +136,9 @@ export const motions: Registry = generateComponents([
         name: "text-shimmer",
     },
     {
+        name: "text-wave",
+    },
+    {
         name: "tilt",
     },
     {

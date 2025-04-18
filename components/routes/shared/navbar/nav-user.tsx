@@ -15,11 +15,19 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog-cn";
 import { Button } from "@/components/ui/button";
 import AuthDialog from "../auth/dialog";
 import Link from "next/link";
+import { RiUser3Fill } from "@remixicon/react";
 
 const NavUser = () => {
     const { status, data: session } = useSession();
@@ -169,7 +177,19 @@ const NavUser = () => {
                     ) : (
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button
+                                <TooltipProvider delayDuration={0}>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                            <Button size="sm">
+                                                <RiUser3Fill/>
+                                            </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent className="dark px-2 py-1 text-xs">
+                                            Login
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                                {/* <Button
                                     variant={"outline"}
                                     size="sm"
                                     className="cursor-pointer px-3 shadow-none"
@@ -182,7 +202,7 @@ const NavUser = () => {
                                         <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13Z"></path>
                                     </svg>
                                     <span className={``}>login</span>
-                                </Button>
+                                </Button> */}
                             </DialogTrigger>
                             <AuthDialog />
                         </Dialog>

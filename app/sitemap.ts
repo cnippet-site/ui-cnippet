@@ -10,11 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const home = {
         url: BASE_URL,
     };
-    // const allRoutes = ["/chart", "/component", "/motion"];
+    const allRoutes = ["/charts", "/components", "/motions"];
 
-    // const routes: MetadataRoute.Sitemap = allRoutes.map((route) => ({
-    //     url: `${BASE_URL}${route}`,
-    // }));
+    const routes: MetadataRoute.Sitemap = allRoutes.map((route) => ({
+        url: `${BASE_URL}${route}`,
+    }));
 
     const motionPages = allMotions.map(({ slugAsParams }) => ({
         url: `${BASE_URL}/motion/${slugAsParams}`,
@@ -28,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${BASE_URL}/component/${slugAsParams}`,
     }));
 
-    return [home, ...motionPages, ...chartPages, ...componentPages];
+    return [home, ...routes, ...motionPages, ...chartPages, ...componentPages];
 }
