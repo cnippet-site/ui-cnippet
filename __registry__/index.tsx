@@ -2385,6 +2385,20 @@
         subcategory: "undefined",
         chunks: []
       },
+      "text-wave": {
+        name: "text-wave",
+        type: "registry:motion",
+        slug: "/components/text-wave",
+        thumbnail: "undefined",
+        number: "undefined",
+        registryDependencies: undefined,
+        files: ["components/motion/text-wave.tsx"],
+        component: React.lazy(() => import("@/components/motion/text-wave.tsx")),
+        source: "",
+        category: "undefined",
+        subcategory: "undefined",
+        chunks: []
+      },
       "tilt": {
         name: "tilt",
         type: "registry:motion",

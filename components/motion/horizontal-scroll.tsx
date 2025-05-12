@@ -2,6 +2,7 @@
 import { motion, useTransform, useScroll } from "motion/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import CldImageComponent from "../cld-image";
 
 interface HorizontalScrollProps {
     cards: {
@@ -50,14 +51,14 @@ export const HorizontalScroll = ({
 const Card = ({ card }: CardProps) => {
     return (
         <div className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200">
-            <div
-                style={{
-                    backgroundImage: `url(${card.url})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-                className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+            <CldImageComponent
+                src={card.url}
+                alt={card.title}
+                width={1920}
+                height={1080}
+                className="absolute inset-0 z-0 h-full w-full transition-transform duration-300 group-hover:scale-110 object-cover"
             />
+
             <div className="absolute inset-0 z-10 grid place-content-center">
                 <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
                     {card.title}

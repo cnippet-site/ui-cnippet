@@ -2,6 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 import { TabsBtn, TabsContent, TabsProvider } from "@/components/motion/tabs-rc";
+import { CldImage } from "next-cloudinary";
 
 function Tab() {
     return (
@@ -34,7 +35,7 @@ function Tab() {
 
                 <TabsContent value="design">
                     <div className="w-full">
-                        <Image
+                        <CldImage
                             src={
                                 "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg"
                             }
@@ -47,9 +48,9 @@ function Tab() {
                 </TabsContent>
                 <TabsContent value="collaborate">
                     <div className="w-full">
-                        <Image
+                        <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h10.jpg"
+                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg"
                             }
                             width={1000}
                             height={1000}
@@ -60,9 +61,9 @@ function Tab() {
                 </TabsContent>
                 <TabsContent value="share">
                     <div className="w-full">
-                        <Image
+                        <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h9.jpg"
+                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg"
                             }
                             width={1000}
                             height={1000}
@@ -73,9 +74,9 @@ function Tab() {
                 </TabsContent>
                 <TabsContent value="publish">
                     <div className="w-full">
-                        <Image
+                        <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg"
+                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
                             }
                             width={1000}
                             height={1000}

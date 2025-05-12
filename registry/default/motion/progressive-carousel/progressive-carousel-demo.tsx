@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
     SliderBtnGroup,
     ProgressSlider,
@@ -7,6 +6,7 @@ import {
     SliderContent,
     SliderWrapper,
 } from "@/components/motion/progressive-carousel";
+import CldImageComponent from "@/components/cld-image";
 
 const items = [
     {
@@ -41,7 +41,7 @@ export default function index() {
                 <SliderContent>
                     {items.map((item, index) => (
                         <SliderWrapper key={index} value={item?.sliderName}>
-                            <Image
+                            <CldImageComponent
                                 className="h-[350px] rounded-xl object-cover 2xl:h-[500px]"
                                 src={item.img}
                                 width={1900}

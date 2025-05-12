@@ -1,5 +1,6 @@
 "use client";
 import { ReactLenis } from "lenis/react";
+import { CldImage } from "next-cloudinary";
 import { JSX } from "react";
 
 export default function index(): JSX.Element {
@@ -42,30 +43,38 @@ export default function index(): JSX.Element {
                         </div>
                         <div className="grid gap-2">
                             <figure className="grid -skew-x-12 place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-80 object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="grid skew-x-12 place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-80 object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="grid -skew-x-12 place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-80 object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="grid skew-x-12 place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h5.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-80 object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
@@ -76,30 +85,38 @@ export default function index(): JSX.Element {
                     <div className="grid grid-cols-2 px-8">
                         <div className="grid gap-2">
                             <figure className="sticky top-0 grid h-screen place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h6.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-96 rounded-md object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h7.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-96 rounded-md object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h8.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-96 rounded-md object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
-                                <img
+                                <CldImage
                                     src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h9.jpg"
                                     alt=""
+                                    width={1000}
+                                    height={1000}
                                     className="h-96 w-96 rounded-md object-cover align-bottom transition-all duration-300"
                                 />
                             </figure>

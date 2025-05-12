@@ -1,17 +1,20 @@
 import { Tilt } from "@/components/motion/tilt";
+import Image from "next/image";
 
 export default function TiltCard1() {
     return (
-        <Tilt rotationFactor={8} isRevese>
+        <Tilt rotationFactor={16} isRevese>
             <div
                 style={{
                     borderRadius: "12px",
                 }}
                 className="flex max-w-[270px] flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
             >
-                <img
-                    src="https://images.beta.cosmos.so/f7fcb95d-981b-4cb3-897f-e35f6c20e830?format=jpeg"
+                <Image
+                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg"
                     alt="Ghost in the shell - Kôkaku kidôtai"
+                    width={1920}
+                    height={1080}
                     className="h-48 w-full object-cover"
                 />
                 <div className="p-2">

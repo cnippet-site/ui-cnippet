@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { ReactNode, useRef } from "react";
+import CldImageComponent from "../cld-image";
 
 /*eslint-disable @typescript-eslint/no-explicit-any*/
 interface ImageMouseTrailProps {
@@ -61,12 +61,15 @@ export default function ImageMouseTrail({
     };
 
     const handleOnMove = (e: MouseEvent | globalThis.TouchEvent) => {
-        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-        const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-        
+        const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+        const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
+
         if (distanceFromLast(clientX, clientY) > window.innerWidth / distance) {
             const lead = refs.current[globalIndex % refs.current.length];
-            const tail = refs.current[(globalIndex - maxNumberOfImages) % refs.current.length];
+            const tail =
+                refs.current[
+                    (globalIndex - maxNumberOfImages) % refs.current.length
+                ];
 
             if (lead) activate(lead, clientX, clientY);
             if (tail) deactivate(tail);
@@ -85,7 +88,7 @@ export default function ImageMouseTrail({
             )}
         >
             {items.map((item, index) => (
-                <Image
+                <CldImageComponent
                     key={index}
                     className={cn(
                         "opacity:0 data-[status='active']:ease-out-expo absolute -translate-x-[50%] -translate-y-[50%] scale-0 object-cover transition-transform duration-300 data-[status='active']:scale-100 data-[status='active']:opacity-100 data-[status='active']:duration-500",
@@ -97,7 +100,7 @@ export default function ImageMouseTrail({
                     data-status="inactive"
                     src={item}
                     alt={`image-${index}`}
-                    ref={(node) => {
+                    ref={(node: HTMLImageElement | null) => {
                         refs.current[index] = node;
                     }}
                 />

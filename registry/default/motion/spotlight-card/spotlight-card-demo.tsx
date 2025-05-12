@@ -1,52 +1,45 @@
 import React from "react";
 
 import Image from "next/image";
-import {
-    SpotLightItem,
-    Spotlight,
-} from "@/components/motion/spotlight-card";
-
+import { SpotLightItem, Spotlight } from "@/components/motion/spotlight-card";
+import { RiGlobalLine } from "@remixicon/react";
 export default function index() {
     const boxes = [
         {
             id: "12",
-
-            // chart: "/chart_motl5z.webp",
+            title: "Goal Tracking",
+            icon: <RiGlobalLine />,
             className: "grid xl:col-span-1 col-start-1 col-end-3",
         },
         {
             id: "52",
-
-            // chart: "/chart4_s7wsku.webp",
+            title: "Analytics Dashboard",
+            icon: <RiGlobalLine />,
             className: "grid xl:col-span-1 col-start-3 col-end-6",
         },
-
         {
             id: "42",
-
-            // chart: "/chart3_i9wdgb.webp",
+            title: "Task Management",
+            icon: <RiGlobalLine />,
             className: "grid xl:col-span-1 col-start-1 col-end-3",
         },
-
         {
             id: "22",
-
-            // chart: "/star_tb9ivg.webp",
+            title: "Team Collaboration",
+            icon: <RiGlobalLine />,
             className: "grid xl:col-span-1 col-start-3 col-end-6",
         },
         {
             id: "32",
-            title: "Track Goals",
-
-            // chart: "/chart1_rll0mx.webp",
-            des: "Keeping track of your goals helps you stay organized, motivated, and focused. Regularly monitoring your progress ensures you stay on course.",
+            title: "Performance Metrics",
+            des: "Monitor individual and team performance with detailed metrics and KPIs. Identify areas for improvement and recognize outstanding achievements.",
             className:
                 "xl:col-span-2 xl:row-span-2 row-start-2 row-end-3  col-start-1 col-end-6",
         },
     ];
     return (
         <>
-            <div className="relative rounded-md bg-black p-4 sm:p-8">
+            <div className="relative rounded-md bg-black p-4 text-white sm:p-8">
                 <Spotlight className="grid grid-flow-col grid-cols-4 gap-2">
                     {boxes?.map((box, index) => {
                         return (
@@ -59,18 +52,12 @@ export default function index() {
                                         <div
                                             className={`absolute top-0 left-0 -z-10 h-full w-full rounded-lg bg-cover bg-center`}
                                         />
+                                        {box?.icon}
 
-                                        {/* <Image
-                                            src={box?.chart}
-                                            alt="grid"
-                                            width={600}
-                                            className="mx-auto w-fit"
-                                            height={600}
-                                        /> */}
-                                        <h1 className="text-center text-2xl font-semibold lg:text-xl xl:text-2xl">
+                                        <h1 className="text-left text-base font-semibold lg:text-xl xl:text-lg">
                                             {box?.title}
                                         </h1>
-                                        <p className="text-center text-xs lg:text-base">
+                                        <p className="text-left text-xs lg:text-sm">
                                             {box?.des}
                                         </p>
                                     </div>

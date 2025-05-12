@@ -9,6 +9,7 @@ import React, {
     createContext,
     useContext,
 } from "react";
+import CldImageComponent from "../cld-image";
 
 interface ImageItem {
     img: string;
@@ -75,7 +76,29 @@ export const ImageReveal = ({
             >
                 {children}
 
-                <motion.img
+                <motion.div
+                    className="pointer-events-none absolute top-0 left-0 h-[220px] w-[300px] rounded-lg object-cover"
+                    style={{
+                        x: imagePosition.x,
+                        y: imagePosition.y,
+                        opacity,
+                        transition: "opacity 0.2s ease-in-out",
+                    }}
+                >
+                    {currentImage && (
+                        <CldImageComponent
+                            src={currentImage.img}
+                            alt={currentImage.label}
+                            ref={imageRef as React.RefObject<HTMLImageElement>}
+                            width={1920}
+                            height={1080}
+                            className="h-[220px] w-[300px] rounded-lg object-cover"
+                        />
+                    )}
+                </motion.div>
+
+                {/* <motion.img */}
+                {/* <motion.img
                     ref={imageRef}
                     src={currentImage?.img || "null"}
                     alt={currentImage?.label || "null"}
@@ -86,7 +109,7 @@ export const ImageReveal = ({
                         opacity,
                         transition: "opacity 0.2s ease-in-out",
                     }}
-                />
+                /> */}
             </section>
         </ImageRevealContext.Provider>
     );

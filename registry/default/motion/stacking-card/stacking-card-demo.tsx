@@ -3,7 +3,8 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll, MotionValue } from "motion/react";
 import { JSX, useRef } from "react";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+
 const projects = [
     {
         title: "Matthias Leidinger",
@@ -24,7 +25,7 @@ const projects = [
     {
         title: "Zissou",
         description:
-            "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal.",
+            "Though he views photography as a medium for storytelling, Zissou's images don't insist on a narrative. Both crisp and ethereal.",
         src: "water.jpg",
         link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
         color: "#13006c",
@@ -40,7 +41,7 @@ const projects = [
     {
         title: "Mark Rammers",
         description:
-            "Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.",
+            "Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, 'all over again'—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.",
         src: "cactus.jpg",
         link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg",
         color: "#fd521a",
@@ -177,7 +178,7 @@ export const Card: React.FC<CardProps> = ({
                             className={`h-full w-full`}
                             style={{ scale: imageScale }}
                         >
-                            <Image
+                            <CldImage
                                 fill
                                 src={url}
                                 alt="image"
