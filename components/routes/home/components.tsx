@@ -31,7 +31,7 @@ const Components = () => {
             <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
                 <div className="grid h-full w-full grid-cols-12 border border-t-0 py-0 dark:border-neutral-900">
                     <div className="col-span-12 bg-white text-center dark:bg-black">
-                        <h2 className="mt-16 mb-2 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
+                        <h2 className="mt-16 mb-2 text-2xl text-neutral-100 leading-tight font-medium tracking-tight md:text-5xl">
                             Interactive Components Gallery.
                         </h2>
                         <p className="mb-8 px-5 text-sm text-gray-500 md:mb-16 md:text-base">
