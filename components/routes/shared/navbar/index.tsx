@@ -105,7 +105,7 @@ export default function Navbar() {
                                     </div> */}
 
                                     <Link
-                                        href="/component/button"
+                                        href="/components/button"
                                         className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Components

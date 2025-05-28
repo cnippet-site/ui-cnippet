@@ -17,15 +17,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     const motionPages = allMotions.map(({ slugAsParams }) => ({
-        url: `${BASE_URL}/motion/${slugAsParams}`,
+        url: `${BASE_URL}/motions/${slugAsParams}`,
     }));
 
     const chartPages = allCharts.map(({ slugAsParams }) => ({
-        url: `${BASE_URL}/chart/${slugAsParams}`,
+        url: `${BASE_URL}/charts/${slugAsParams}`,
     }));
 
     const componentPages = allComponents.map(({ slugAsParams }) => ({
-        url: `${BASE_URL}/component/${slugAsParams}`,
+        url: `${BASE_URL}/components/${slugAsParams}`,
     }));
 
     return [home, ...routes, ...motionPages, ...chartPages, ...componentPages];

@@ -1,26 +1,35 @@
 import React from "react";
 import { Metadata } from "next";
+
 import { Mdx } from "@/mdx-components";
-import { allMotions } from "@/.content-collections/generated";
+import { allComponents } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
 import { getTableOfContents } from "@/lib/toc";
 import { TableOfContents } from "@/components/mdx/toc";
 
+// Next.js will invalidate the cache when a
+// request comes in, at most once every 60 seconds.
 export const revalidate = 60;
 
+// We'll prerender only the params from `generateStaticParams` at build time.
+// If a request comes in for a path that hasn't been generated,
+// Next.js will server-render the page on-demand.
 export const dynamicParams = true;
 
+// Generate static params for all components at build time
 export async function generateStaticParams() {
-    return allMotions.map((motion) => ({
-        slug: motion.slugAsParams,
+    return allComponents.map((component) => ({
+        slug: component.slugAsParams,
     }));
 }
 
+// type Params = Promise<{ slug: string }>;
+
 function getComponentDoc({ slug }: { slug: string }) {
-    return allMotions.find((doc) => doc.slugAsParams === slug) || null;
+    return allComponents?.find((doc) => doc.slugAsParams === slug) || null;
 }
 
-export default async function MotionPage({
+export default async function ComponentPage({
     params,
 }: {
     params: Promise<{ slug: string }>;
@@ -41,8 +50,8 @@ export default async function MotionPage({
     const toc = await getTableOfContents(doc.body.raw);
 
     return (
-        <main className="relative lg:gap-4 xl:grid xl:grid-cols-[1fr_280px]">
-            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-6">
+        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_280px]">
+            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
                 <div className="space-y-2 pb-6">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
@@ -60,7 +69,6 @@ export default async function MotionPage({
                     </article>
                 </div>
             </div>
-
             {doc?.toc && (
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
@@ -130,7 +138,7 @@ export async function generateMetadata({
             type: "article",
             title: doc.title,
             description: doc.description,
-            url: `${BASE_URL}/motion/${doc.slugAsParams}`,
+            url: `${BASE_URL}/components/${doc.slugAsParams}`,
             images: [
                 {
                     url: `${BASE_URL}/images/site.png`,

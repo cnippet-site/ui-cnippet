@@ -1,7 +1,9 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import Footer from "@/components/routes/shared/footer";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
+const Footer = dynamic(() => import("@/components/routes/shared/footer"));
 
 const Page = () => {
     return (

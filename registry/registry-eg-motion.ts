@@ -13,10 +13,10 @@ const generateExamples = (
 
         return {
             name: example.name,
-            slug: `/motion/${extractedParts.join("-")}`,
+            slug: `/motions/${extractedParts.join("-")}`,
             type: "registry:motions",
             files: [
-                `${BASE_PATH}motion/${extractedParts.join("-")}/${example.name}.tsx`,
+                `${BASE_PATH}motions/${extractedParts.join("-")}/${example.name}.tsx`,
             ],
             number: example.number,
         };

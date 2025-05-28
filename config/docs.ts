@@ -12,7 +12,7 @@ export const motions: ComponentGroup[] = [
             // },
             {
                 name: "Installation",
-                href: "/motion/installation",
+                href: "/motions/installation",
             },
         ],
     },
@@ -21,11 +21,11 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Accordion",
-                href: "/motion/accordion",
+                href: "/motions/accordion",
             },
             {
                 name: "Animated Group",
-                href: "/motion/animated-group",
+                href: "/motions/animated-group",
             },
             // {
             //     name: "Border Trail",
@@ -33,22 +33,22 @@ export const motions: ComponentGroup[] = [
             // },
             // {
             //     name: "Carousel",
-            //     href: "/motion/carousel",
+            //     href: "/motions/carousel",
             //     isUpdated: true,
             // },
             {
                 name: "Collapsible",
-                href: "/motion/collapsible",
+                href: "/motions/collapsible",
                 isNew: true,
             },
             {
                 name: "Cursor",
-                href: "/motion/cursor",
+                href: "/motions/cursor",
             },
 
             {
                 name: "Drag Items",
-                href: "/motion/drag-items",
+                href: "/motions/drag-items",
             },
             // {
             //     name: "In View",
@@ -56,15 +56,15 @@ export const motions: ComponentGroup[] = [
             // },
             {
                 name: "Infinite Slider",
-                href: "/motion/infinite-slider",
+                href: "/motions/infinite-slider",
             },
             {
                 name: "Transition Panel",
-                href: "/motion/transition-panel",
+                href: "/motions/transition-panel",
             },
             {
                 name: "Board",
-                href: "/motion/board",
+                href: "/motions/board",
             },
         ],
     },
@@ -73,15 +73,15 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Image mousetrail",
-                href: "/motion/image-mousetrail",
+                href: "/motions/image-mousetrail",
             },
             {
                 name: "Image Reveal",
-                href: "/motion/image-reveal",
+                href: "/motions/image-reveal",
             },
             {
                 name: "Blocks",
-                href: "/motion/blocks",
+                href: "/motions/blocks",
             },
         ],
     },
@@ -90,15 +90,15 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Dialog",
-                href: "/motion/dialog",
+                href: "/motions/dialog",
             },
             {
                 name: "Morphing Dialog",
-                href: "/motion/morphing-dialog",
+                href: "/motions/morphing-dialog",
             },
             {
                 name: "Drawer",
-                href: "/motion/drawer",
+                href: "/motions/drawer",
             },
         ],
     },
@@ -107,7 +107,7 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Clip Path",
-                href: "/motion/clip-path",
+                href: "/motions/clip-path",
             },
             {
                 name: "Masking",
@@ -120,35 +120,35 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Text Effect",
-                href: "/motion/text-effect",
+                href: "/motions/text-effect",
             },
             {
                 name: "Text Loop",
-                href: "/motion/text-loop",
+                href: "/motions/text-loop",
             },
             {
                 name: "Text Marquee ",
-                href: "/motion/text-marquee",
+                href: "/motions/text-marquee",
             },
             {
                 name: "Text Morph",
-                href: "/motion/text-morph",
+                href: "/motions/text-morph",
             },
             {
                 name: "Text Roll",
-                href: "/motion/text-roll",
+                href: "/motions/text-roll",
             },
             {
                 name: "Text Scramble",
-                href: "/motion/text-scramble",
+                href: "/motions/text-scramble",
             },
             {
                 name: "Text Shimmer",
-                href: "/motion/text-shimmer",
+                href: "/motions/text-shimmer",
             },
             {
                 name: "Text Wave",
-                href: "/motion/text-wave",
+                href: "/motions/text-wave",
             },
         ],
     },
@@ -157,7 +157,7 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Animated Number",
-                href: "/motion/animated-number",
+                href: "/motions/animated-number",
             },
             {
                 name: "Sliding Number",
@@ -170,24 +170,24 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Horizontal Scroll",
-                href: "/motion/horizontal-scroll",
+                href: "/motions/horizontal-scroll",
             },
             {
                 name: "Scroll Progress",
-                href: "/motion/scroll-progress",
+                href: "/motions/scroll-progress",
             },
             {
                 name: "Smooth Scroll",
-                href: "/motion/smooth-scroll",
+                href: "/motions/smooth-scroll",
             },
             {
                 name: "Stacking Card",
-                href: "/motion/stacking-card",
+                href: "/motions/stacking-card",
             },
 
             {
                 name: "Sticky Scroll",
-                href: "/motion/sticky-scroll",
+                href: "/motions/sticky-scroll",
             },
         ],
     },
@@ -196,11 +196,11 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Tabs",
-                href: "/motion/tabs",
+                href: "/motions/tabs",
             },
             {
                 name: "Image Tabs",
-                href: "/motion/image-tabs",
+                href: "/motions/image-tabs",
             },
         ],
     },
@@ -209,15 +209,15 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Carousel (embla carousel)",
-                href: "/motion/carousel",
+                href: "/motions/carousel",
             },
             {
                 name: "Framer Carousel",
-                href: "/motion/framer-carousel",
+                href: "/motions/framer-carousel",
             },
             {
                 name: "Progressive Carousel",
-                href: "/motion/progressive-carousel",
+                href: "/motions/progressive-carousel",
             },
         ],
     },
@@ -227,11 +227,11 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Grid",
-                href: "/motion/grid",
+                href: "/motions/grid",
             },
             {
                 name: "Masonary",
-                href: "/motion/masonary",
+                href: "/motions/masonary",
             },
         ],
     },
@@ -240,7 +240,7 @@ export const motions: ComponentGroup[] = [
         items: [
             {
                 name: "Dock",
-                href: "/motion/dock",
+                href: "/motions/dock",
             },
             // {
             //     name: "Glow Effect",
@@ -248,19 +248,19 @@ export const motions: ComponentGroup[] = [
             // },
             {
                 name: "Image Comparison",
-                href: "/motion/image-comparison",
+                href: "/motions/image-comparison",
             },
             {
                 name: "Spotlight",
-                href: "/motion/spotlight",
+                href: "/motions/spotlight",
             },
             {
                 name: "Spotlight Card",
-                href: "/motion/spotlight-card",
+                href: "/motions/spotlight-card",
             },
             {
                 name: "Tilt",
-                href: "/motion/tilt",
+                href: "/motions/tilt",
             },
         ],
     },
@@ -310,7 +310,7 @@ export const charts: ComponentGroup[] = [
             },
             {
                 name: "Installation",
-                href: "/motion/installation",
+                href: "/motions/installation",
             },
         ],
     },
@@ -319,31 +319,31 @@ export const charts: ComponentGroup[] = [
         items: [
             {
                 name: "Area Chart",
-                href: "/chart/area-chart",
+                href: "/charts/area-chart",
             },
             {
                 name: "Line Chart",
-                href: "/chart/line-chart",
+                href: "/charts/line-chart",
             },
             {
                 name: "Bar Chart",
-                href: "/chart/bar-chart",
+                href: "/charts/bar-chart",
             },
             {
                 name: "Pie Chart",
-                href: "/chart/pie-chart",
+                href: "/charts/pie-chart",
             },
             {
                 name: "Radar Chart",
-                href: "/chart/radar-chart",
+                href: "/charts/radar-chart",
             },
             {
                 name: "Radial Chart",
-                href: "/chart/radial-chart",
+                href: "/charts/radial-chart",
             },
             {
                 name: "Scatter Chart",
-                href: "/chart/scatter-chart",
+                href: "/charts/scatter-chart",
             },
         ],
     },
@@ -355,7 +355,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Installation",
-                href: "/component/installation",
+                href: "/components/installation",
             },
         ],
     },
@@ -364,11 +364,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Button",
-                href: "/component/button",
+                href: "/components/button",
             },
             {
                 name: "File Trigger",
-                href: "/component/file-trigger",
+                href: "/components/file-trigger",
             },
         ],
     },
@@ -377,19 +377,19 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Command Menu",
-                href: "/component/command-menu",
+                href: "/components/command-menu",
             },
             {
                 name: "Context Menu",
-                href: "/component/context-menu",
+                href: "/components/context-menu",
             },
             {
                 name: "Slider",
-                href: "/component/slider",
+                href: "/components/slider",
             },
             {
                 name: "Switch",
-                href: "/component/switch",
+                href: "/components/switch",
             },
         ],
     },
@@ -398,11 +398,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Calendar",
-                href: "/component/calendar",
+                href: "/components/calendar",
             },
             {
                 name: "Date Field",
-                href: "/component/date-picker",
+                href: "/components/date-picker",
             },
         ],
     },
@@ -411,7 +411,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Drop Zone",
-                href: "/component/drop-zone",
+                href: "/components/drop-zone",
             },
         ],
     },
@@ -420,31 +420,31 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Checkbox",
-                href: "/component/checkbox",
+                href: "/components/checkbox",
             },
             {
                 name: "Form",
-                href: "/component/form",
+                href: "/components/form",
             },
             {
                 name: "Input",
-                href: "/component/input",
+                href: "/components/input",
             },
             {
                 name: "Label",
-                href: "/component/label",
+                href: "/components/label",
             },
             {
                 name: "Radio Group",
-                href: "/component/radio-group",
+                href: "/components/radio-group",
             },
             {
                 name: "Tag Field",
-                href: "/component/tag-field",
+                href: "/components/tag-field",
             },
             {
                 name: "Textarea",
-                href: "/component/textarea",
+                href: "/components/textarea",
             },
         ],
     },
@@ -462,11 +462,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Avatar",
-                href: "/component/avatar",
+                href: "/components/avatar",
             },
             {
                 name: "Carousel",
-                href: "/component/carousel",
+                href: "/components/carousel",
             },
         ],
     },
@@ -475,23 +475,23 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Breadcrumb",
-                href: "/component/breadcrumb",
+                href: "/components/breadcrumb",
             },
             {
                 name: "Collapsible",
-                href: "/component/collapsible",
+                href: "/components/collapsible",
             },
             {
                 name: "Accordion",
-                href: "/component/accordion",
+                href: "/components/accordion",
             },
             {
                 name: "Pagination",
-                href: "/component/pagination",
+                href: "/components/pagination",
             },
             {
                 name: "Tabs",
-                href: "/component/tabs",
+                href: "/components/tabs",
             },
         ],
     },
@@ -500,23 +500,23 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Dialog",
-                href: "/component/dialog",
+                href: "/components/dialog",
             },
             {
                 name: "Drawer",
-                href: "/component/drawer",
+                href: "/components/drawer",
             },
             {
                 name: "Popover",
-                href: "/component/popover",
+                href: "/components/popover",
             },
             {
                 name: "Sheet",
-                href: "/component/sheet",
+                href: "/components/sheet",
             },
             {
                 name: "Tooltip",
-                href: "/component/tooltip",
+                href: "/components/tooltip",
             },
         ],
     },
@@ -525,21 +525,21 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Combobox",
-                href: "/component/combobox",
+                href: "/components/combobox",
             },
             {
                 name: "Multiselect",
-                href: "/component/multiselect",
+                href: "/components/multiselect",
                 isNew: true,
             },
             {
                 name: "Select",
-                href: "/component/select",
+                href: "/components/select",
                 isNew: true,
             },
             {
                 name: "Stepper",
-                href: "/component/stepper",
+                href: "/components/stepper",
                 isNew: true,
             },
         ],
@@ -549,12 +549,12 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Sonner",
-                href: "/component/sonner",
+                href: "/components/sonner",
                 isUpdated: true,
             },
             {
                 name: "Toast",
-                href: "/component/toast",
+                href: "/components/toast",
                 isUpdated: true,
             },
         ],
@@ -564,12 +564,12 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Badge",
-                href: "/component/badge",
+                href: "/components/badge",
                 isNew: true,
             },
             {
                 name: "Skeleton",
-                href: "/component/skeleton",
+                href: "/components/skeleton",
             },
         ],
     },
@@ -578,12 +578,12 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Card",
-                href: "/component/card",
+                href: "/components/card",
                 isNew: true,
             },
             {
                 name: "Separator",
-                href: "/component/separator",
+                href: "/components/separator",
                 isNew: true,
             },
         ],
@@ -596,11 +596,11 @@ export const searchDocs: ComponentGroup[] = [
         items: [
             {
                 name: "Accordion",
-                href: "/motion/accordion",
+                href: "/motions/accordion",
             },
             {
                 name: "Animated Group",
-                href: "/motion/animated-group",
+                href: "/motions/animated-group",
             },
             {
                 name: "Border Trail",
@@ -608,20 +608,20 @@ export const searchDocs: ComponentGroup[] = [
             },
             {
                 name: "Carousel",
-                href: "/motion/carousel",
+                href: "/motions/carousel",
                 isUpdated: true,
             },
             {
                 name: "Cursor",
-                href: "/motion/cursor",
+                href: "/motions/cursor",
             },
             {
                 name: "Dialog",
-                href: "/motion/dialog",
+                href: "/motions/dialog",
             },
             {
                 name: "Collapsible",
-                href: "/motion/collapsible",
+                href: "/motions/collapsible",
                 isNew: true,
             },
             {
@@ -630,55 +630,55 @@ export const searchDocs: ComponentGroup[] = [
             },
             {
                 name: "Infinite Slider",
-                href: "/motion/infinite-slider",
+                href: "/motions/infinite-slider",
             },
             {
                 name: "Transition Panel",
-                href: "/motion/transition-panel",
+                href: "/motions/transition-panel",
             },
             {
                 name: "Board",
-                href: "/motion/board",
+                href: "/motions/board",
             },
             {
                 name: "Grid",
-                href: "/motion/grid",
+                href: "/motions/grid",
             },
             {
                 name: "Text Effect",
-                href: "/motion/text-effect",
+                href: "/motions/text-effect",
             },
             {
                 name: "Text Loop",
-                href: "/motion/text-loop",
+                href: "/motions/text-loop",
             },
             {
                 name: "Text Morph",
-                href: "/motion/text-morph",
+                href: "/motions/text-morph",
             },
             {
                 name: "Text Roll",
-                href: "/motion/text-roll",
+                href: "/motions/text-roll",
             },
             {
                 name: "Text Scramble",
-                href: "/motion/text-scramble",
+                href: "/motions/text-scramble",
             },
             {
                 name: "Text Shimmer",
-                href: "/motion/text-shimmer",
+                href: "/motions/text-shimmer",
             },
             {
                 name: "Text Wave",
-                href: "/motion/text-wave",
+                href: "/motions/text-wave",
             },
             {
                 name: "Horizontal Scroll",
-                href: "/motion/horizontal-scroll",
+                href: "/motions/horizontal-scroll",
             },
             {
                 name: "Animated Number",
-                href: "/motion/animated-number",
+                href: "/motions/animated-number",
             },
             {
                 name: "Sliding Number",
@@ -746,66 +746,66 @@ export const searchDocs: ComponentGroup[] = [
         items: [
             {
                 name: "Button",
-                href: "/component/button",
+                href: "/components/button",
             },
             {
                 name: "File Trigger",
-                href: "/component/file-trigger",
+                href: "/components/file-trigger",
             },
             {
                 name: "Command Menu",
-                href: "/component/command-menu",
+                href: "/components/command-menu",
             },
             {
                 name: "Context Menu",
-                href: "/component/context-menu",
+                href: "/components/context-menu",
             },
             {
                 name: "Slider",
-                href: "/component/slider",
+                href: "/components/slider",
             },
             {
                 name: "Switch",
-                href: "/component/switch",
+                href: "/components/switch",
             },
 
             {
                 name: "Calendar",
-                href: "/component/calendar",
+                href: "/components/calendar",
             },
             {
                 name: "Date Field",
-                href: "/component/date-picker",
+                href: "/components/date-picker",
             },
 
             {
                 name: "Drop Zone",
-                href: "/component/drop-zone",
+                href: "/components/drop-zone",
             },
 
             {
                 name: "Checkbox",
-                href: "/component/checkbox",
+                href: "/components/checkbox",
             },
             {
                 name: "Input",
-                href: "/component/input",
+                href: "/components/input",
             },
             {
                 name: "Label",
-                href: "/component/label",
+                href: "/components/label",
             },
             {
                 name: "Radio Group",
-                href: "/component/radio-group",
+                href: "/components/radio-group",
             },
             {
                 name: "Tag Field",
-                href: "/component/tag-field",
+                href: "/components/tag-field",
             },
             {
                 name: "Textarea",
-                href: "/component/textarea",
+                href: "/components/textarea",
             },
 
             {
@@ -814,64 +814,64 @@ export const searchDocs: ComponentGroup[] = [
             },
             {
                 name: "Avatar",
-                href: "/component/avatar",
+                href: "/components/avatar",
             },
             {
                 name: "Carousel",
-                href: "/component/carousel",
+                href: "/components/carousel",
             },
             {
                 name: "Breadcrumb",
-                href: "/component/breadcrumb",
+                href: "/components/breadcrumb",
             },
             {
                 name: "Collapsible",
-                href: "/component/collapsible",
+                href: "/components/collapsible",
             },
             {
                 name: "Accordion",
-                href: "/component/accordion",
+                href: "/components/accordion",
             },
             {
                 name: "Pagination",
-                href: "/component/pagination",
+                href: "/components/pagination",
             },
             {
                 name: "Tabs",
-                href: "/component/tabs",
+                href: "/components/tabs",
             },
             {
                 name: "Dialog",
-                href: "/component/dialog",
+                href: "/components/dialog",
             },
             {
                 name: "Drawer",
-                href: "/component/drawer",
+                href: "/components/drawer",
             },
             {
                 name: "Modal",
-                href: "/component/modal",
+                href: "/components/modal",
             },
             {
                 name: "Popover",
-                href: "/component/popover",
+                href: "/components/popover",
             },
             {
                 name: "Sheet",
-                href: "/component/sheet",
+                href: "/components/sheet",
             },
             {
                 name: "Tooltip",
-                href: "/component/tooltip",
+                href: "/components/tooltip",
             },
 
             {
                 name: "Combobox",
-                href: "/component/combobox",
+                href: "/components/combobox",
             },
             {
                 name: "Select",
-                href: "/component/select",
+                href: "/components/select",
             },
 
             {

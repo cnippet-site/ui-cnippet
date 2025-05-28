@@ -86,7 +86,7 @@ export async function generateMetadata({
             type: "article",
             title: doc.title,
             description: doc.description,
-            url: `${BASE_URL}/chart/${doc.slugAsParams}`,
+            url: `${BASE_URL}/charts/${doc.slugAsParams}`,
             images: [
                 {
                     url: `${BASE_URL}/images/site.png`,

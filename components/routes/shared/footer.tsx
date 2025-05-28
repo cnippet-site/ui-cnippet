@@ -86,28 +86,28 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">Motion</h3>
                         <ul className="space-y-2">
-                            <FooterLink href="/motion/installation">
+                            <FooterLink href="/motions/installation">
                                 Installation
                             </FooterLink>
-                            <FooterLink href="/motion/cursor">
+                            <FooterLink href="/motions/cursor">
                                 Cursor
                             </FooterLink>
-                            <FooterLink href="/motion/dialog">
+                            <FooterLink href="/motions/dialog">
                                 Dialog
                             </FooterLink>
-                            <FooterLink href="/motion/text-effect">
+                            <FooterLink href="/motions/text-effect">
                                 Text Effect
                             </FooterLink>
-                            <FooterLink href="/motion/text-loop">
+                            <FooterLink href="/motions/text-loop">
                                 Text Loop
                             </FooterLink>
-                            <FooterLink href="/motion/text-roll">
+                            <FooterLink href="/motions/text-roll">
                                 Text Roll
                             </FooterLink>
-                            <FooterLink href="/motion/text-shimmer">
+                            <FooterLink href="/motions/text-shimmer">
                                 Text Shimmer
                             </FooterLink>
-                            <FooterLink href="/motion/text-wave">
+                            <FooterLink href="/motions/text-wave">
                                 Text Wave
                             </FooterLink>
                         </ul>
@@ -116,19 +116,19 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <h3 className="mb-4 font-medium">Chart</h3>
                         <ul className="space-y-3">
-                            <FooterLink href="/chart/area-chart">
+                            <FooterLink href="/charts/area-chart">
                                 Area Chart
                             </FooterLink>
-                            <FooterLink href="/chart/line-chart">
+                            <FooterLink href="/charts/line-chart">
                                 Line Chart
                             </FooterLink>
-                            <FooterLink href="/chart/bar-chart">
+                            <FooterLink href="/charts/bar-chart">
                                 Bar Chart
                             </FooterLink>
-                            <FooterLink href="/chart/pie-chart">
+                            <FooterLink href="/charts/pie-chart">
                                 Pie Chart
                             </FooterLink>
-                            <FooterLink href="/chart/radial-chart">
+                            <FooterLink href="/charts/radial-chart">
                                 Radial Chart
                             </FooterLink>
                         </ul>

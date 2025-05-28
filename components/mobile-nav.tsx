@@ -133,7 +133,7 @@ export function MobileNav() {
                     <ul className="mt-5 space-y-2">
                         <li>
                             <MobileLink
-                                href="/component/button"
+                                href="/components/button"
                                 onOpenChange={setOpen}
                                 className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-zinc-950 dark:text-white"
                             >
@@ -142,7 +142,7 @@ export function MobileNav() {
                         </li>
                         <li>
                             <MobileLink
-                                href="/motion/accordion"
+                                href="/motions/accordion"
                                 onOpenChange={setOpen}
                                 className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-zinc-950 dark:text-white"
                             >
@@ -151,7 +151,7 @@ export function MobileNav() {
                         </li>
                         <li>
                             <MobileLink
-                                href="/chart/line-chart"
+                                href="/charts/line-chart"
                                 onOpenChange={setOpen}
                                 className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-zinc-950 dark:text-white"
                             >

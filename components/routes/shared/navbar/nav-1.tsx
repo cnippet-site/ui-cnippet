@@ -42,7 +42,7 @@ const Nav1 = () => {
                         </Link>
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
                             <Link
-                                href="/component/button"
+                                href="/components/button"
                                 className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Components
@@ -54,7 +54,7 @@ const Nav1 = () => {
                                 Motion
                             </Link>
                             <Link
-                                href="/chart/area-chart"
+                                href="/charts/area-chart"
                                 className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Charts

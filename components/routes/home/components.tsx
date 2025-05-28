@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Cursor1 from "@/registry/default/motion/cursor/cursor-demo";
+import Cursor1 from "@/registry/default/motions/cursor/cursor-demo";
 import { Grid, Block } from "@/components/motion/grid";
 import {
     RiFacebookBoxFill,
@@ -8,13 +8,13 @@ import {
     RiTiktokFill,
     RiTwitterFill,
 } from "@remixicon/react";
-import MorphingDialogBasicTwo from "@/registry/default/motion/morphing-dialog/morphing-dialog-demo";
+import MorphingDialogBasicTwo from "@/registry/default/motions/morphing-dialog/morphing-dialog-demo";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
-import Chart1 from "@/registry/default/chart/bar-chart/bar-chart-demo";
-import Chart2 from "@/registry/default/chart/line-chart/line-chart-demo";
-import Chart3 from "@/registry/default/chart/pie-chart/pie-chart-demo";
+import Chart1 from "@/registry/default/charts/bar-chart/bar-chart-demo";
+import Chart2 from "@/registry/default/charts/line-chart/line-chart-demo";
+import Chart3 from "@/registry/default/charts/pie-chart/pie-chart-demo";
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -40,7 +40,7 @@ const Components = () => {
                         </p>
                         <div className="grid grid-cols-1 divide-y border-t md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900">
                             <Link
-                                href="/motion/infinite-slider"
+                                href="/motions/infinite-slider"
                                 className="overflow-hidden border-r px-5 py-10 md:col-span-8"
                             >
                                 <InfiniteSlider gap={24}>
@@ -61,13 +61,13 @@ const Components = () => {
                                 <MorphingDialogBasicTwo />
                             </div>
                             <Link
-                                href="/motion/cursor"
+                                href="/motions/cursor"
                                 className="p-0 md:col-span-4 md:p-5"
                             >
                                 <Cursor1 />
                             </Link>
                             <Link
-                                href="/motion/grid"
+                                href="/motions/grid"
                                 className="flex flex-col items-center justify-center md:col-span-8"
                             >
                                 <Grid>
@@ -112,7 +112,7 @@ const Components = () => {
                                 </Grid>
                             </Link>
                             <Link
-                                href="/chart/bar-chart"
+                                href="/charts/bar-chart"
                                 className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10"
                             >
                                 {/* <TextShimmer
@@ -124,7 +124,7 @@ const Components = () => {
                                 <Chart1 />
                             </Link>
                             <Link
-                                href="/chart/line-chart"
+                                href="/charts/line-chart"
                                 className="flex items-center justify-center border-r px-5 py-5 md:col-span-4 md:py-10"
                             >
                                 {/* <TextShimmerWave
@@ -136,7 +136,7 @@ const Components = () => {
                                 <Chart2 />
                             </Link>
                             <Link
-                                href="/chart/pie-chart"
+                                href="/charts/pie-chart"
                                 className="border-b px-5 py-5 md:col-span-4 md:py-10 dark:border-neutral-900"
                             >
                                 {/* <TextRoll className="text-4xl text-black md:text-6xl dark:text-white">

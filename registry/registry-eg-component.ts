@@ -13,7 +13,7 @@ const generateExamples = (
 
         return {
             name: example.name,
-            slug: `/component/${extractedParts.join("-")}`,
+            slug: `/components/${extractedParts.join("-")}`,
             type: "registry:components",
             files: [
                 `${BASE_PATH}components/${extractedParts.join("-")}/${example.name}.tsx`,
