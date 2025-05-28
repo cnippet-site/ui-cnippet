@@ -10,45 +10,45 @@ import {
 const items = [
     {
         id: "1",
-        title: "Do I need React experience to use CNIPPET?",
+        title: "What makes Cnippet different from other UI libraries?",
         icon: AtSignIcon,
         content:
-            "Basic React/Next.js knowledge is recommended for customization, but our copy-paste components make implementation effortless! 🚀 Start simple and scale as you learn.",
+            "Cnippet delivers precision-tuned React components specifically designed for SaaS, e-commerce, and data-heavy dashboards. Unlike generic UI blocks, our components are production-ready and optimized for real-world applications. 🚀",
     },
     {
         id: "2",
-        title: "How customizable are the components?",
+        title: "How quickly can I integrate Cnippet into my project?",
         icon: CommandIcon,
         content:
-            "Fully tweakable! Every component is built with Tailwind CSS - override styles, modify animations with Framer Motion, or restructure as needed. Your design system, your rules. 🎨",
+            "Extremely fast! Our components are copy-paste ready with built-in Tailwind styling. No complex setup or configuration needed - just copy, paste, and launch in seconds. Perfect for rapid prototyping and production builds. ⚡",
     },
     {
         id: "3",
         icon: EclipseIcon,
-        title: "Can I use this in commercial projects?",
+        title: "Is Cnippet suitable for enterprise applications?",
         content:
-            "Absolutely! CNIPPET is MIT-licensed - build client sites, SaaS products, or internal tools. No attribution required, though we appreciate shoutouts! 💼",
+            "Absolutely! From startup MVPs to enterprise dashboards, Cnippet's components scale beautifully. We've helped companies like DashLabs and HealthFirst build robust applications while cutting development time by up to 40%. 💼",
     },
     {
         id: "4",
         icon: EclipseIcon,
         title: "How accessible are the components?",
         content:
-            "We bake in accessibility: ARIA labels, keyboard nav, and WCAG contrast ratios out of the box. Tested with screen readers like JAWS/NVDA. ♿️",
+            "Accessibility is built into every component. We've helped teams achieve WCAG compliance effortlessly with proper ARIA labels, keyboard navigation, and screen reader support. Tested with JAWS/NVDA for maximum compatibility. ♿️",
     },
     {
         id: "5",
         icon: EclipseIcon,
-        title: "What if I need help?",
+        title: "Do you support both TypeScript and JavaScript?",
         content:
-            "We've got your back! Join our Discord community for real-time support. For critical bugs, expect patches within 24 hours. 💬",
+            "Yes! Cnippet is designed for both TypeScript and JavaScript developers. Enjoy the same high-quality components regardless of your preference, with full type safety and documentation for TypeScript users. 🛠️",
     },
     {
         id: "6",
         icon: EclipseIcon,
-        title: "Can I use this in commercial projects?",
+        title: "What kind of support do you offer?",
         content:
-            "Absolutely! CNIPPET is MIT-licensed - build client sites, SaaS products, or internal tools. No attribution required, though we appreciate shoutouts! 💼",
+            "We provide comprehensive support through our Discord community for real-time assistance. For critical issues, we offer 24-hour response times. Plus, our extensive documentation and examples make implementation smooth. 💬",
     },
 ];
 
