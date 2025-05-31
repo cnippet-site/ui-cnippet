@@ -111,7 +111,7 @@ export default function Navbar() {
                                         Components
                                     </Link>
                                     <Link
-                                        href="/motion/accordion"
+                                        href="/motions/accordion"
                                         className="text-gray-700 transition hover:text-gray-900 dark:text-white dark:hover:text-neutral-400"
                                     >
                                         Motions

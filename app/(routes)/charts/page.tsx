@@ -1,5 +1,7 @@
 import React from "react";
-import { charts } from "@/config/docs";
+import type { Metadata } from "next";
+
+import { BASE_URL, charts } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Cta from "@/components/routes/home/cta";
@@ -8,10 +10,10 @@ const page = () => {
     return (
         <>
             <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
-                    <div className="relative grid h-full w-full grid-cols-12 border-b py-0">
+                <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
+                    <div className="relative grid h-full w-full grid-cols-12 border-b py-0 dark:border-neutral-900">
                         <div className="col-span-12 bg-white text-center dark:bg-black">
-                            <div className="relative border border-t-0">
+                            <div className="relative border border-t-0 dark:border-neutral-900">
                                 <h2 className="mb-2 pt-16 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
                                     Charts
                                 </h2>
@@ -28,13 +30,13 @@ const page = () => {
                                 </div>
                             </div>
 
-                            <div className="border-r border-l">
+                            <div className="border-r border-l dark:border-neutral-900">
                                 <ul role="list" className="grid grid-cols-4">
                                     {charts.map((nav, index) => {
                                         return (
                                             <li
                                                 key={`${nav.name}-${index}`}
-                                                className={`border-b px-6 py-4 ${
+                                                className={`border-b px-6 py-4 dark:border-neutral-900 ${
                                                     index === 3 ||
                                                     index === 7 ||
                                                     index === 11
@@ -115,3 +117,38 @@ const page = () => {
 };
 
 export default page;
+
+export const metadata: Metadata = {
+    metadataBase: new URL(BASE_URL),
+
+    title: "Charts",
+    description:
+        "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
+
+    openGraph: {
+        type: "article",
+        title: "Charts",
+        description:
+            "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
+        url: `${BASE_URL}/components`,
+        images: [
+            {
+                url: `${BASE_URL}/images/site.png`,
+                width: 1200,
+                height: 630,
+                alt: "Cnippet UI Component Library",
+            },
+        ],
+        siteName: "Cnippet UI",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Charts",
+        description:
+            "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
+        images: [`${BASE_URL}/images/site.png`],
+        site: "@cnippet_ui",
+        creator: "@cnippet_ui",
+    },
+};
