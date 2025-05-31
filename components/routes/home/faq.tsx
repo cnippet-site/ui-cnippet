@@ -55,7 +55,7 @@ const items = [
 const Faq = () => {
     return (
         <section className="dark:bg-black">
-            <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
+            <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
                 <div className="relative w-full">
                     <div className="absolute -bottom-2.5 -left-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
                         <div className=" " />

@@ -25,17 +25,24 @@ const Nav1 = () => {
                             className="mr-4 flex items-center gap-0 lg:mr-6"
                             href="/"
                         >
-                            <Image
-                                src={
-                                    theme === "dark"
-                                        ? "/images/logo-dark.png"
-                                        : "/images/logo-light.png"
-                                }
-                                alt=""
-                                className="size-9 rounded-full"
-                                width={1080}
-                                height={1080}
-                            />
+                            {theme === "dark" ? (
+                                <Image
+                                    src="/images/logo-dark.png"
+                                    alt=""
+                                    className="size-9 rounded-full"
+                                    width={1080}
+                                    height={1080}
+                                />
+                            ) : (
+                                <Image
+                                    src="/images/logo-light.png"
+                                    alt=""
+                                    className="size-9 rounded-full"
+                                    width={1080}
+                                    height={1080}
+                                />
+                            )}
+
                             <span className="hidden font-mono font-medium lg:inline-block">
                                 cnippet/ui
                             </span>
@@ -48,7 +55,7 @@ const Nav1 = () => {
                                 Components
                             </Link>
                             <Link
-                                href="/motion/accordion"
+                                href="/motions/accordion"
                                 className="text-foreground/80 hover:text-foreground/80 transition-colors"
                             >
                                 Motion
@@ -153,7 +160,7 @@ const Nav1 = () => {
                                 <span className="sr-only">Toggle theme</span>
                             </div>
                         </nav>
-                        <NavUser /> 
+                        <NavUser />
                     </div>
                 </div>
             </div>

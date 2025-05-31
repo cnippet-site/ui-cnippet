@@ -107,7 +107,7 @@ const Hero = () => {
                                         We skip the boilerplate to deliver
                                         developer-first components.
                                     </h1> */}
-                                    <h1 className="mb-4 text-left text-3xl font-semibold text-white md:text-5xl">
+                                    <h1 className="mb-4 text-left text-3xl font-semibold md:text-5xl">
                                         Build{" "}
                                         <span className="text-purple-500">
                                             faster
