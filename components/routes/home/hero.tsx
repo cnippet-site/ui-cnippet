@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
-// import { Button } from "@/components/ui/button";
-import { TextScramble } from "@/components/motion/text-scramble";
 import Link from "next/link";
+
+import { TextScramble } from "@/components/motion/text-scramble";
+import { GridsVertical, GridWithCircles } from "@/components/grid-layout";
 
 const Hero = () => {
     return (
@@ -16,79 +16,14 @@ const Hero = () => {
                             <div className="border-b-0" />
                             <div className=" " />
                         </div>
-                        <div className="relative grid h-[6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-[11.6666rem] md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900">
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
-                            <div className="col-span-1" />
 
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                            <div className="col-span-1 hidden md:block" />
-                        </div>
-
-                        <div className="absolute inset-0 grid h-[6rem] w-full grid-cols-8 md:h-[11.6666rem] md:grid-cols-12">
-                            <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-900" />
-
-                            <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-900" />
-                            <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-900" />
-                            <div className="col-span-2 flex h-full w-full items-center justify-center rounded-full border border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
-                                <Image
-                                    src="/images/logo-dark.png"
-                                    alt=""
-                                    className="size-12 rounded-full md:size-24"
-                                    width={1920}
-                                    height={1080}
-                                />
-                            </div>
-                            <div className="col-span-2 h-full w-full rounded-full border border-gray-200 dark:border-neutral-900" />
-                            <div className="col-span-2 hidden h-full w-full rounded-full border border-gray-200 md:block dark:border-neutral-900" />
-
-                            <div className="col-span-1 h-full w-full rounded-l-full border border-gray-200 dark:border-neutral-900" />
-                        </div>
+                        <GridWithCircles />
 
                         <div className="relative w-full">
-                            <div className="grid w-full grid-cols-8 grid-rows-3 md:grid-cols-12 dark:border-neutral-900">
-                                {/* <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800 dark:border-neutral-800">
-                                    <div className="h-[5.83333rem]"></div>
-                                    <div className="h-[5.83333rem]"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] border-r border-b md:block dark:border-neutral-800"></div>
-                                </div> */}
-                                <div className="relative col-span-12 row-span-3 flex w-full flex-col items-center justify-start border-r border-b border-l bg-white px-4 py-5 text-center md:col-span-12 md:py-10 dark:border-neutral-900 dark:bg-black">
+                            <div className="grid w-full grid-cols-8 md:grid-cols-12 dark:border-neutral-900">
+                                <GridsVertical columns={4} />
+                                <div className="relative col-span-8 flex w-full flex-col items-center justify-start border-r border-b border-l bg-white px-4 py-5 text-center md:col-span-10 md:py-10 dark:border-neutral-900 dark:bg-black">
                                     <div className="flex items-start justify-start">
-                                        {/* Tired of{" "} */}
-                                        {/* <TextScramble
-                                            className="font-mono text-sm"
-                                            duration={1.2}
-                                            characterSet=". "
-                                        >
-                                            Tired of the same boilerplate
-                                        </TextScramble> */}
                                         <TextScramble
                                             characterSet=". "
                                             className="w-full font-mono text-sm uppercase md:text-base"
@@ -96,17 +31,7 @@ const Hero = () => {
                                             Tired of the same boilerplate |
                                             design
                                         </TextScramble>
-                                        {/* <TextLoop className="">
-                                            <span>Fixing AI-Generated UI</span>
-                                            <span>Same Boilerplate</span>
-                                            <span>Same Components</span>
-                                            <span>Same Design</span>
-                                        </TextLoop> */}
                                     </div>
-                                    {/* <h1 className="mt-4 text-2xl leading-tight font-semibold tracking-tight md:mt-0 md:text-5xl dark:text-neutral-50">
-                                        We skip the boilerplate to deliver
-                                        developer-first components.
-                                    </h1> */}
                                     <h1 className="mb-4 text-left text-3xl font-semibold md:text-5xl">
                                         Build{" "}
                                         <span className="text-purple-500">
@@ -131,7 +56,7 @@ const Hero = () => {
                                             dashboards.
                                         </span>
                                     </p>
-                                    <ul className="mb-4 flex flex-col items-start justify-start gap-5 space-y-3 md:flex-row">
+                                    <ul className="mb-4 flex flex-col items-start justify-start gap-5 space-y-3 md:flex-col">
                                         <li className="flex items-center gap-2">
                                             <span className="inline-block size-2 rotate-45 bg-purple-400" />
                                             <span>
@@ -154,48 +79,8 @@ const Hero = () => {
                                             </span>
                                         </li>
                                     </ul>
-                                    {/* <div className="absolute bottom-0 grid w-full grid-cols-8 divide-x dark:divide-neutral-800">
-                                        <div className="h-[5.83333rem] w-full border-t"></div>
-                                        <div className="h-[5.83333rem] w-full border-t"></div>
-                                        <div className="h-[5.83333rem] w-full border-t"></div>
-                                        <div className="h-[5.83333rem] w-full border-t"></div>
-
-                                        <div className="col-span-2 flex h-[5.83333rem] w-full border-t dark:border-neutral-800">
-                                            <Link
-                                                href="/"
-                                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-purple-700 to-blue-600"
-                                            >
-                                                <div className="absolute inset-0 w-full -translate-y-[100%] bg-gradient-to-br from-purple-800 to-blue-700 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                                                <h3 className="relative z-10 text-2xl text-slate-950 duration-300 group-hover:text-white dark:text-black dark:group-hover:text-black">
-                                                    Explore More
-                                                </h3>
-                                            </Link>
-                                        </div>
-                                        <div className="col-span-2 flex h-[5.83333rem] w-full border-t dark:border-neutral-800">
-                                            <Link
-                                                href="/"
-                                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-tr from-blue-700 to-purple-600"
-                                            >
-                                                <div className="absolute inset-0 w-full -translate-y-[100%] bg-orange-500/90 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                                                <h3 className="relative z-10 text-2xl text-slate-950 duration-300 group-hover:text-white dark:text-black dark:group-hover:text-black">
-                                                    Explore More
-                                                </h3>
-                                            </Link>
-                                        </div>
-                                    </div> */}
                                 </div>
-                                {/* <div className="col-span-1 row-span-3 grid grid-cols-1 grid-rows-2 divide-x divide-y border-l-0 md:col-span-2 md:grid-cols-2 md:grid-rows-4 dark:divide-neutral-800 dark:border-neutral-800">
-                                    <div className="h-[5.83333rem]"></div>
-                                    <div className="h-[5.83333rem]"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] md:block"></div>
-                                    <div className="hidden h-[5.83333rem] border-r border-b md:block dark:border-neutral-800"></div>
-                                    <div className="hidden h-[5.83333rem] border-r border-b md:block dark:border-neutral-800"></div>
-                                </div> */}
+                                <GridsVertical columns={4} />
                             </div>
                         </div>
                         <div className="grid w-full grid-cols-12 divide-x border-b dark:divide-neutral-900 dark:border-neutral-900">

@@ -1,52 +1,56 @@
 "use client";
-import { CommandMenu } from "@/components/command-menu";
-import { MobileNav } from "@/components/mobile-nav";
-import { Button } from "@/components/ui/button";
-import { RiMoonFill, RiSunLine } from "@remixicon/react";
-import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+import { useTheme } from "next-themes";
+import { RiMoonFill, RiSunLine } from "@remixicon/react";
+
+import { CommandMenu } from "@/components/command-menu";
+import { MobileNav } from "@/components/mobile-nav";
 import NavUser from "./nav-user";
 
 const Nav1 = () => {
     const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur dark:border-neutral-900 dark:bg-black/70">
             <div className="mx-auto max-w-full px-0 md:px-10">
                 <div className="container flex h-16 items-center px-4">
                     <div className="mr-4 hidden md:flex">
-                        <Link
-                            className="mr-4 flex items-center gap-0 lg:mr-6"
-                            href="/"
-                        >
-                            {theme === "dark" ? (
-                                <Image
-                                    src="/images/logo-dark.png"
-                                    alt=""
-                                    className="size-9 rounded-full"
-                                    width={1080}
-                                    height={1080}
-                                />
-                            ) : (
-                                <Image
-                                    src="/images/logo-light.png"
-                                    alt=""
-                                    className="size-9 rounded-full"
-                                    width={1080}
-                                    height={1080}
-                                />
-                            )}
+                        {mounted && (
+                            <Link
+                                className="mr-4 flex items-center gap-0 lg:mr-6"
+                                href="/"
+                            >
+                                {theme === "dark" ? (
+                                    <Image
+                                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1746006954/logo-dark.png"
+                                        alt=""
+                                        className="size-9 rounded-full"
+                                        width={1080}
+                                        height={1080}
+                                    />
+                                ) : (
+                                    <Image
+                                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1746006954/logo-light.png"
+                                        alt=""
+                                        className="size-9 rounded-full"
+                                        width={1080}
+                                        height={1080}
+                                    />
+                                )}
 
-                            <span className="hidden font-mono font-medium lg:inline-block">
-                                cnippet/ui
-                            </span>
-                        </Link>
+                                <span className="hidden font-mono font-medium lg:inline-block">
+                                    cnippet/ui
+                                </span>
+                            </Link>
+                        )}
                         <nav className="flex items-center gap-4 text-sm xl:gap-6">
                             <Link
                                 href="/components/button"
@@ -108,44 +112,9 @@ const Nav1 = () => {
                                 </svg>
                                 <span className="sr-only">GitHub</span>
                             </Link>
-                            <div className="group/toggle hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0">
-                                {/* <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="lucide lucide-sun [html.dark_&amp;]:block hidden"
-                                >
-                                    <circle cx="12" cy="12" r="4"></circle>
-                                    <path d="M12 2v2"></path>
-                                    <path d="M12 20v2"></path>
-                                    <path d="m4.93 4.93 1.41 1.41"></path>
-                                    <path d="m17.66 17.66 1.41 1.41"></path>
-                                    <path d="M2 12h2"></path>
-                                    <path d="M20 12h2"></path>
-                                    <path d="m6.34 17.66-1.41 1.41"></path>
-                                    <path d="m19.07 4.93-1.41 1.41"></path>
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="lucide lucide-moon [html.light_&amp;]:block hidden"
-                                >
-                                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                                </svg> */}
-                                <Button
+                            {mounted && (
+                                <div className="group/toggle hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0">
+                                    {/* <Button
                                     variant="ghost"
                                     onClick={() => toggleTheme()}
                                     className="hover:bg-dusk-500 flex items-center justify-center gap-2 rounded-lg p-2 text-black dark:text-white hover:dark:bg-neutral-700"
@@ -155,10 +124,33 @@ const Nav1 = () => {
                                     ) : (
                                         <RiMoonFill className="size-5" />
                                     )}
-                                    {/* <span>Toogle theme</span> */}
-                                </Button>
-                                <span className="sr-only">Toggle theme</span>
-                            </div>
+                                </Button> */}
+                                    {theme === "dark" ? (
+                                        <button
+                                            onClick={() => setTheme("light")}
+                                            className={`rounded-full p-1.5`}
+                                            aria-label="Light mode"
+                                        >
+                                            <RiSunLine className="size-4" />
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={() => setTheme("dark")}
+                                            className={`rounded-full p-1.5`}
+                                            aria-label="Dark mode"
+                                        >
+                                            <RiMoonFill className="size-4" />
+                                        </button>
+                                    )}
+
+                                    {/* {mounted && (
+                                    <div className="flex gap-1 rounded-full border p-1 dark:border-neutral-800"></div>
+                                )} */}
+                                    <span className="sr-only">
+                                        Toggle theme
+                                    </span>
+                                </div>
+                            )}
                         </nav>
                         <NavUser />
                     </div>

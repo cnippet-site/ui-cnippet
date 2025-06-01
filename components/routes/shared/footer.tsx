@@ -1,17 +1,16 @@
 "use client";
-
-import type React from "react";
-
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Sun, Moon, Loader2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-import { Newsletter } from "@/lib/actions/newsletter.actions";
-import { toast } from "sonner";
+import { Sun, Moon, Loader2 } from "lucide-react";
 import { RiGithubLine } from "@remixicon/react";
+import { toast } from "sonner";
+
+import { Newsletter } from "@/lib/actions/newsletter.actions";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
     const { theme, setTheme } = useTheme();

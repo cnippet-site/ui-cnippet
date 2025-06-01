@@ -1,20 +1,22 @@
 import React from "react";
 import Link from "next/link";
-import Cursor1 from "@/registry/default/motions/cursor/cursor-demo";
-import { Grid, Block } from "@/components/motion/grid";
+import Image from "next/image";
+
+import { CldImage } from "next-cloudinary";
 import {
     RiFacebookBoxFill,
     RiGithubFill,
     RiTiktokFill,
     RiTwitterFill,
 } from "@remixicon/react";
+
 import MorphingDialogBasicTwo from "@/registry/default/motions/morphing-dialog/morphing-dialog-demo";
-import { InfiniteSlider } from "@/components/motion/infinite-slider";
-import Image from "next/image";
-import { CldImage } from "next-cloudinary";
 import Chart1 from "@/registry/default/charts/bar-chart/bar-chart-demo";
 import Chart2 from "@/registry/default/charts/line-chart/line-chart-demo";
 import Chart3 from "@/registry/default/charts/pie-chart/pie-chart-demo";
+import Cursor1 from "@/registry/default/motions/cursor/cursor-demo";
+import { InfiniteSlider } from "@/components/motion/infinite-slider";
+import { Grid, Block } from "@/components/motion/grid";
 
 const images = [
     "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
@@ -31,7 +33,7 @@ const Components = () => {
             <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
                 <div className="grid h-full w-full grid-cols-12 border border-t-0 py-0 dark:border-neutral-900">
                     <div className="col-span-12 bg-white text-center dark:bg-black">
-                        <h2 className="mt-16 mb-2 text-2xl leading-tight font-medium tracking-tight dark:text-neutral-100 md:text-5xl">
+                        <h2 className="mt-16 mb-2 text-2xl leading-tight font-medium tracking-tight md:text-5xl dark:text-neutral-100">
                             Interactive Components Gallery.
                         </h2>
                         <p className="mb-8 px-5 text-sm text-gray-500 md:mb-16 md:text-base">
@@ -62,7 +64,7 @@ const Components = () => {
                             </div>
                             <Link
                                 href="/motions/cursor"
-                                className="p-0 md:col-span-4 md:p-5"
+                                className="border-r p-0 md:col-span-4 md:p-5"
                             >
                                 <Cursor1 />
                             </Link>
