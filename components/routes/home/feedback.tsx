@@ -17,13 +17,11 @@ const Feedback = () => {
                     <div className="grid h-full w-full grid-cols-12 divide-x divide-y border border-t-0 dark:divide-neutral-900 dark:border-neutral-900">
                         <div className="col-span-12 border-r-0 bg-white px-10 py-8 text-center md:py-16 dark:bg-black">
                             <p className="text-3xl font-medium">
-                                &quot;Cnippet&apos;s components cut our UI
-                                development time by 40% - the best React library
-                                we&apos;ve used.&quot;
+                                &quot;Cnippet&apos;s production components reduced our development time by 40% and improved our application performance by 35%. The best React component library for modern web applications.&quot;
                             </p>
                             <div className="mt-5 flex items-center justify-center gap-2">
                                 <p className="text-gray-500">
-                                    Sarah Lin, Frontend Lead at DashLabs
+                                    Sarah Lin, Frontend Engineering Lead at TechFlow Analytics
                                 </p>
                                 <Link
                                     href="/"
@@ -36,14 +34,11 @@ const Feedback = () => {
                         </div>
                         <div className="col-span-12 border-b bg-white px-10 py-8 text-left md:col-span-6 md:border-b-0 md:py-16 dark:bg-black">
                             <p className="text-2xl font-medium">
-                                &quot;The accessibility-focused components
-                                helped us achieve WCAG compliance
-                                effortlessly.&quot;
+                                &quot;Implementing Cnippet&apos;s accessible components helped us achieve WCAG 2.1 Level AA compliance in just 2 weeks, significantly improving our user experience for all customers.&quot;
                             </p>
                             <div className="mt-5 flex items-center justify-start gap-2">
                                 <p className="text-gray-500">
-                                    Michael Chen, Senior Developer at
-                                    HealthFirst
+                                    Michael Chen, Senior Developer at HealthTech Solutions
                                 </p>
                                 <Link
                                     href="/"
@@ -56,13 +51,11 @@ const Feedback = () => {
                         </div>
                         <div className="col-span-12 border-b-0 bg-white px-10 py-8 text-left md:col-span-6 md:py-16 dark:bg-black">
                             <p className="text-xl font-medium">
-                                &quot;From startup MVPs to enterprise dashboards
-                                - Cnippet&apos;s customizable components scale
-                                beautifully with our needs.&quot;
+                                &quot;From our startup MVP to our current platform serving 1M+ users, Cnippet&apos;s scalable components have been crucial to our growth. The performance optimization is outstanding.&quot;
                             </p>
                             <div className="mt-5 flex items-center justify-start gap-2">
                                 <p className="text-gray-500">
-                                    Emma Johnson, CTO at FlowForge
+                                    Emma Johnson, CTO at CloudForge Technologies
                                 </p>
                                 <Link
                                     href="/"

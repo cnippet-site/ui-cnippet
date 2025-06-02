@@ -16,23 +16,20 @@ const Features = () => {
                         <div className="col-span-4 w-full bg-white px-4 py-8 text-left md:px-10 md:py-16 dark:bg-black">
                             <div className="sticky top-20">
                                 <h2 className="text-2xl leading-tight font-semibold tracking-tight">
-                                    Why Choose Cnippet?
+                                    Production-Ready Features
                                 </h2>
                                 <p className="mt-2 text-gray-500">
-                                    Providing the developer experience and
-                                    infrastructure to build, scale, and secure a
-                                    faster, more personalized web.
+                                    Accelerate your development with battle-tested components designed for scalability, performance, and modern web applications.
                                 </p>
                             </div>
                         </div>
                         <div className="col-span-8 bg-white px-4 py-8 md:px-10 md:py-16 dark:bg-black">
                             <div className="flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Build Smarter, Not Harder
+                                    Accelerate Development with Ready-to-Use Components
                                 </h3>
                                 <p className="text-gray-500">
-                                    Access fully designed components and
-                                    templates to build your next project faster.
+                                    Reduce development time by 60% with our comprehensive library of pre-built, customizable components. Each component is optimized for performance and follows industry best practices.
                                 </p>
                                 <Link
                                     href="/"
@@ -46,12 +43,10 @@ const Features = () => {
                             </div>
                             <div className="mt-20 flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Designed for TypeScript & JavaScript
+                                    TypeScript-First Development Experience
                                 </h3>
                                 <p className="text-gray-500">
-                                    Enjoy the same high-quality components
-                                    whether you prefer TypeScript or JavaScript.
-                                    Tailored for every developer&apos;s choice.
+                                    Enjoy full type safety and enhanced developer experience with our TypeScript-first approach. Comprehensive type definitions and documentation ensure reliable development.
                                 </p>
                                 <Link
                                     href="/"
@@ -65,11 +60,10 @@ const Features = () => {
                             </div>
                             <div className="mt-24 flex flex-col items-start justify-start gap-2">
                                 <h3 className="text-2xl font-semibold tracking-tight">
-                                    Build Once, Use Everywhere
+                                    Scale Your Applications with Confidence
                                 </h3>
                                 <p className="text-gray-500">
-                                    Build once and use everywhere with our
-                                    powerful build system.
+                                    Build scalable applications with components that handle complex data flows, state management, and real-time updates. Perfect for modern web applications and high-traffic websites.
                                 </p>
                                 <Link
                                     href="/"
