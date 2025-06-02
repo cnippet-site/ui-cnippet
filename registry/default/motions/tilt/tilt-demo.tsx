@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TiltCard1() {
     return (
-        <Tilt rotationFactor={16} isRevese>
+        <Tilt rotationFactor={26} isRevese>
             <div
                 style={{
                     borderRadius: "12px",

@@ -12,7 +12,7 @@ export const Grid = ({ children, className }: GridProps) => {
     return (
         <div
             className={twMerge(
-                "dark:bg-black bg-zinc-950 px-4 py-12 text-neutral-50",
+                "dark:bg-black bg-white px-4 py-12 text-neutral-50",
                 className,
             )}
         >

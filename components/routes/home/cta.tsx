@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React from "react";
 
-import { Button } from "@/components/ui/button";
-
 const Cta = () => {
     return (
         <section className="dark:bg-black">
@@ -14,44 +12,66 @@ const Cta = () => {
                         <div className="border-b-0" />
                         <div className=" " />
                     </div>
-                    <div className="grid h-full w-full border border-t-0 py-16 md:grid-cols-12 dark:border-neutral-900">
-                        <div className="col-span-7 bg-white px-4 text-left md:px-10 dark:bg-black">
+                    <div className="grid h-full w-full divide-x border border-t-0 md:grid-cols-12 dark:border-neutral-900">
+                        <div className="col-span-8 bg-white px-4 py-10 text-left md:px-10 dark:bg-black">
                             <h2 className="text-xl leading-tight font-semibold tracking-tight">
-                                Ship stunning interfaces faster. Get started
-                                with our open-source components. Need
-                                enterprise-grade solutions? Talk to our experts.
+                                Ready to Transform Your Development Workflow?
+                                Get started with our production-grade components
+                                today. Need custom solutions? Our team is ready
+                                to help.
                             </h2>
-                            <div className="mt-5 flex gap-4">
-                                <Button className="rounded-full">
-                                    <Link href="/motion/infinite-slider">
-                                        Start Building
-                                    </Link>
-                                </Button>
-                                <Button
-                                    variant="outline"
-                                    className="rounded-full"
-                                >
-                                    <Link href="/components">
-                                        Browse Components
-                                    </Link>
-                                </Button>
-                            </div>
                         </div>
-                        <div className="col-span-5 mt-4 bg-white px-4 md:mt-0 md:px-10 dark:bg-black">
+                        <div className="col-span-4 flex flex-col items-start justify-start gap-5 bg-white px-5 py-10 dark:bg-black">
                             <div className="flex flex-col items-start justify-start gap-5">
                                 <p className="text-gray-500">
-                                    Looking for complete sections or templates?
+                                    Looking for complete production solutions?
                                     Explore our Blocks ecosystem for ready-made
-                                    page layouts and integrations.
+                                    page layouts, advanced integrations, and
+                                    custom component development services.
                                 </p>
-                                <Button
-                                    variant="outline"
-                                    className="rounded-full"
-                                >
-                                    Explore Blocks
-                                </Button>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="grid h-[3.5rem] w-full grid-cols-12 border-r border-b border-l dark:border-neutral-900">
+                        <div className="col-span-2 border-r dark:border-neutral-900">
+                            <Link
+                                href="/"
+                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-white dark:bg-black"
+                            >
+                                <div className="absolute inset-0 w-full -translate-x-[110%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                <h3 className="relative z-10 text-lg text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                    Start Free Trial
+                                </h3>
+                            </Link>
+                        </div>
+                        <div className="col-span-3 border-r dark:border-neutral-900">
+                            <Link
+                                href="/"
+                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-white dark:bg-black"
+                            >
+                                <div className="absolute inset-0 w-full -translate-x-[110%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                <h3 className="relative z-10 text-lg text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                    View Production Solutions
+                                </h3>
+                            </Link>
+                        </div>
+                        <div className="col-span-1 border-r dark:border-neutral-900" />
+                        <div className="col-span-1 border-r dark:border-neutral-900" />
+                        <div className="col-span-1 border-r dark:border-neutral-900" />
+                        <div className="col-span-3 border-r dark:border-neutral-900">
+                            <Link
+                                href="/"
+                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-white dark:bg-black"
+                            >
+                                <div className="absolute inset-0 w-full -translate-x-[110%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                <h3 className="relative z-10 text-lg text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                    Schedule Platform Demo
+                                </h3>
+                            </Link>
+                        </div>
+
+                        <div className="col-span-1" />
                     </div>
                 </div>
             </div>
