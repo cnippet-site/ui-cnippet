@@ -1,36 +1,15 @@
 import Image from "next/image";
 
+interface GridProps {
+    className?: string;
+    columns?: number;
+}
+
 export function GridWithCircles() {
     return (
         <>
-            <div className="relative grid h-[6rem] w-full grid-cols-8 grid-rows-2 divide-x divide-y border-t first:border-l md:h-[11.6666rem] md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900">
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-                <div className="col-span-1" />
-
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-                <div className="col-span-1 hidden md:block" />
-            </div>
+            <GridsHorizontal />
+            <GridsHorizontal className="border-b" />
             <div className="absolute inset-0 grid h-[6rem] w-full grid-cols-8 md:h-[11.6666rem] md:grid-cols-12">
                 <div className="col-span-1 h-full w-full rounded-r-full border border-gray-200 dark:border-neutral-900" />
 
@@ -73,17 +52,30 @@ export function Grids() {
     );
 }
 
-interface GridsVerticalProps {
-    columns?: number;
+export function GridsHorizontal({ className }: GridProps) {
+    return (
+        <div>
+            <div
+                className={`relative grid h-[5.83333rem] w-full grid-cols-8 border-t border-r border-l md:grid-cols-12 dark:border-neutral-900 ${className}`}
+            >
+                {Array.from({ length: 12 }).map((_, index) => (
+                    <div
+                        key={index}
+                        className={`col-span-1 dark:border-neutral-900 ${index === 11 ? "border-r-0" : "border-r"}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
 
-export function GridsVertical({ columns = 12 }: GridsVerticalProps) {
+export function GridsVertical({ columns = 12, className }: GridProps) {
     return (
         <div
-            className={`grid w-full grid-rows-${columns} col-span-1 divide-y border-b border-l dark:divide-neutral-900 dark:border-neutral-900`}
+            className={`grid w-full grid-rows-${columns} col-span-1 divide-y dark:divide-neutral-900 dark:border-neutral-900 ${className}`}
         >
             {Array.from({ length: columns }).map((_, index) => (
-                <div key={index} className="col-span-1 h-[5rem] w-full" />
+                <div key={index} className="col-span-1 h-[5.83333rem] w-full" />
             ))}
         </div>
     );
