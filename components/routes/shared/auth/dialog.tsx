@@ -698,7 +698,7 @@ const AuthDialog = () => {
 
     const loginWithGoogle = async () => {
         const result = await signIn("google", {
-            callbackUrl: "/about-you",
+            callbackUrl: "/about_you",
             redirect: false,
         });
 
@@ -711,7 +711,7 @@ const AuthDialog = () => {
 
     const loginWithGit = async () => {
         const result = await signIn("github", {
-            callbackUrl: "/complete-signup",
+            callbackUrl: "/about_you",
             redirect: false,
         });
 
