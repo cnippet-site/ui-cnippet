@@ -40,7 +40,7 @@ const page = () => {
                                         return (
                                             <li
                                                 key={`${nav.name}-${index}`}
-                                                className={`px-6 py-4 dark:border-neutral-900 ${
+                                                className={`px-5 py-4 dark:border-neutral-900 ${
                                                     index === 3 ||
                                                     index === 7 ||
                                                     index === 11

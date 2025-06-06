@@ -8,6 +8,31 @@ import {
     signInWithOauth,
 } from "./actions/auth.actions";
 
+// Extend the built-in session types
+declare module "next-auth" {
+    interface Session {
+        user: {
+            id: string;
+            name?: string | null;
+            email?: string | null;
+            image?: string | null;
+            provider?: string | null;
+            username?: string | null;
+        }
+    }
+}
+
+declare module "next-auth/jwt" {
+    interface JWT {
+        id: string;
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+        provider?: string | null;
+        username?: string | null;
+    }
+}
+
 export const nextauthOptions: NextAuthOptions = {
     secret: process.env.NEXTAUTH_SECRET!,
     pages: {
@@ -55,6 +80,7 @@ export const nextauthOptions: NextAuthOptions = {
             },
         }),
     ],
+    
     callbacks: {
         async signIn({ account, profile }) {
             if (account?.type === "oauth" && profile) {
@@ -80,6 +106,7 @@ export const nextauthOptions: NextAuthOptions = {
                     token.email = user.email;
                     token.provider = user.provider;
                     token.image = user.image;
+                    token.username = user.username;
                 }
             }
             
@@ -92,6 +119,7 @@ export const nextauthOptions: NextAuthOptions = {
                 session.user.email = token.email as string;
                 session.user.provider = token.provider as string;
                 session.user.image = token.image as string;
+                session.user.username = token.username as string | null;
             }
             return session;
         },
