@@ -263,7 +263,7 @@ function ResetPassword() {
             });
             if (result.error) throw new Error(result.error);
             toast.success("Password reset successfully!");
-            router.push("/sign-in");
+            router.push("/sign_in");
         } catch (error) {
             toast.error(
                 error instanceof Error ? error.message : "Something went wrong",

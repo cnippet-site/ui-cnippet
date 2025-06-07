@@ -160,7 +160,7 @@ const ForgotPassword = () => {
                         Remember your password?{" "}
                     </span>
                     <Link
-                        href="/sign-in"
+                        href="/sign_in"
                         className="font-medium text-indigo-600 transition-colors hover:text-indigo-500"
                     >
                         Sign in
