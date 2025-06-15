@@ -17,6 +17,7 @@ type User = {
     name: string | null;
     email: string | null;
     password?: string;
+    username?: string | null;
     createdAt: Date;
     updatedAt: Date;
 };
@@ -32,10 +33,12 @@ export async function getUserSession() {
 }
 
 export async function signUpWithCredentials({
+    username,
     name,
     email,
     password,
 }: {
+    username: string;
     name: string;
     email: string;
     password: string;
@@ -47,6 +50,7 @@ export async function signUpWithCredentials({
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = await prisma.user.create({
             data: {
+                username,
                 name,
                 email,
                 password: hashedPassword,
@@ -139,9 +143,14 @@ export async function resetPassword({
 
         if (!resetToken) return { error: "Invalid or expired token" };
 
-        const isSamePassword = await bcrypt.compare(newPassword, resetToken.user.password || '');
+        const isSamePassword = await bcrypt.compare(
+            newPassword,
+            resetToken.user.password || "",
+        );
         if (isSamePassword) {
-            return { error: "New password cannot be the same as current password" };
+            return {
+                error: "New password cannot be the same as current password",
+            };
         }
 
         const hashedPassword = await bcrypt.hash(newPassword, 10);
@@ -170,7 +179,7 @@ export async function sendResetEmail(email: string) {
         if (!user) return { error: "No user found" };
 
         const resetToken = await generateResetToken(user.id);
-        const resetLink = `${process.env.NEXT_PUBLIC_URL}/reset-password?token=${resetToken}`;
+        const resetLink = `${process.env.NEXT_PUBLIC_URL}/reset_password?token=${resetToken}`;
 
         try {
             const emailHtml = await render(
@@ -194,5 +203,109 @@ export async function sendResetEmail(email: string) {
     } catch (error) {
         console.error("Reset email error:", error);
         return { error: "Reset email failed" };
+    }
+}
+
+export async function checkUsernameAvailability(
+    username: string,
+): Promise<{ available: boolean; error?: string }> {
+    try {
+        if (!username || username.length < 3) {
+            return {
+                available: false,
+                error: "Username must be at least 3 characters long",
+            };
+        }
+
+        // Check if username matches allowed pattern (alphanumeric and underscores only)
+        if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+            return {
+                available: false,
+                error: "Username can only contain letters, numbers, and underscores",
+            };
+        }
+
+        const existingUser = await prisma.user.findUnique({
+            where: { username },
+        });
+
+        return { available: !existingUser };
+    } catch (error) {
+        console.error("Username check error:", error);
+        return {
+            available: false,
+            error: "Failed to check username availability",
+        };
+    }
+}
+
+export async function completeSocialSignup({
+    userId,
+    username,
+    termsAccepted,
+}: {
+    userId: string;
+    username: string;
+    termsAccepted: boolean;
+}): Promise<AuthResult> {
+    try {
+        if (!termsAccepted) {
+            return { error: "You must accept the terms and conditions" };
+        }
+
+        const usernameCheck = await checkUsernameAvailability(username);
+        if (!usernameCheck.available) {
+            return {
+                error: usernameCheck.error || "Username is not available",
+            };
+        }
+
+        const user = await prisma.user.update({
+            where: { id: userId },
+            data: {
+                username,
+                termsAccepted,
+            },
+        });
+
+        return {
+            success: true,
+            data: { id: user.id, username: user.username },
+        };
+    } catch (error) {
+        console.error("Complete social signup error:", error);
+        return { error: "Failed to complete signup" };
+    }
+}
+
+export async function checkUsername(username: string) {
+    try {
+        const existingUser = await prisma.user.findFirst({
+            where: { username },
+        });
+        return {
+            exists: !!existingUser,
+        };
+    } catch (error) {
+        console.error("Error checking username:", error);
+        return {
+            exists: false,
+            error: "Error checking username",
+        };
+    }
+}
+
+export async function checkEmail(email: string) {
+    try {
+        const existingUser = await prisma.user.findFirst({ where: { email } });
+        return {
+            exists: !!existingUser,
+        };
+    } catch (error) {
+        console.error("Error checking email:", error);
+        return {
+            exists: false,
+            error: "Error checking email",
+        };
     }
 }

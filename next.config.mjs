@@ -18,6 +18,8 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // output: 'standalone',
+    // distDir: '.next',
     experimental: {
         optimizePackageImports: ['@content-collections/next', '@content-collections/cli', '@content-collections/core', '@content-collections/mdx'],
     },

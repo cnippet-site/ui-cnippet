@@ -6,10 +6,6 @@ export const motions: ComponentGroup[] = [
     {
         name: "Getting Started",
         items: [
-            // {
-            //     name: "Introduction",
-            //     href: "#",
-            // },
             {
                 name: "Installation",
                 href: "/motions/installation",
@@ -46,10 +42,6 @@ export const motions: ComponentGroup[] = [
                 href: "/motions/cursor",
             },
 
-            {
-                name: "Drag Items",
-                href: "/motions/drag-items",
-            },
             // {
             //     name: "In View",
             //     href: "#",
@@ -99,6 +91,36 @@ export const motions: ComponentGroup[] = [
             {
                 name: "Drawer",
                 href: "/motions/drawer",
+            },
+        ],
+    },
+    {
+        name: "Drag Items",
+        items: [
+            {
+                name: "Drag Items",
+                href: "/motions/drag-items",
+            },
+            {
+                name: "Swapy Drag",
+                href: "#",
+            },
+        ],
+    },
+    {
+        name: "ThreeJS",
+        items: [
+            {
+                name: "Image Ripple effect",
+                href: "#",
+            },
+            {
+                name: "R3F Blob",
+                href: "#",
+            },
+            {
+                name: "Mesh Gradients",
+                href: "#",
             },
         ],
     },
