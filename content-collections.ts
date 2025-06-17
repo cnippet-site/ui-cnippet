@@ -1,5 +1,6 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
+import { z } from "zod";
 
 import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
@@ -15,7 +16,7 @@ const prettyCodeOptions: Options = {
     theme: "catppuccin-mocha",
 };
 
-const sharedSchema = (z: any) => ({
+const sharedSchema = z.object({
     title: z.string(),
     description: z.string(),
     thumbnail: z.object({
