@@ -7,12 +7,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { checkUsernameAvailability, completeSocialSignup } from "@/lib/actions/auth.actions";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { RiErrorWarningFill } from "@remixicon/react";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const usernameSchema = z.object({
     username: z.string()
@@ -24,10 +24,8 @@ const usernameSchema = z.object({
 
 export default function CompleteSignupPage() {
     const router = useRouter();
-    // const searchParams = useSearchParams();
     const { data: session, status } = useSession();
     const [isChecking, setIsChecking] = useState(false);
-    const [error, setError] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<z.infer<typeof usernameSchema>>({
@@ -51,7 +49,6 @@ export default function CompleteSignupPage() {
         if (username.length < 3) return;
         
         setIsChecking(true);
-        setError("");
         
         try {
             const result = await checkUsernameAvailability(username);
@@ -59,7 +56,7 @@ export default function CompleteSignupPage() {
                 form.setError("username", { message: result.error || "Username is not available" });
             }
         } catch (error) {
-            setError("Failed to check username availability"+ error);
+            toast.error("Failed to check username availability: " + error);
         } finally {
             setIsChecking(false);
         }
@@ -67,12 +64,11 @@ export default function CompleteSignupPage() {
 
     const onSubmit = async (values: z.infer<typeof usernameSchema>) => {
         if (!session?.user?.id) {
-            setError("Session expired. Please sign in again.");
+            toast.error("Session expired. Please sign in again.");
             return;
         }
 
         setIsSubmitting(true);
-        setError("");
 
         try {
             const result = await completeSocialSignup({
@@ -82,12 +78,12 @@ export default function CompleteSignupPage() {
             });
 
             if (result.error) {
-                setError(result.error);
+                toast.error(result.error);
             } else {
                 router.push("/");
             }
         } catch (error) {
-            setError("Failed to complete signup"+ error);
+            toast.error("Failed to complete signup: " + error);
         } finally {
             setIsSubmitting(false);
         }
@@ -96,94 +92,102 @@ export default function CompleteSignupPage() {
     if (status === "loading") {
         return (
             <div className="flex min-h-screen items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+                <Loader2 className="h-8 w-8 animate-spin text-gray-900" />
             </div>
         );
     }
 
     return (
-        <div className="container flex min-h-screen items-center justify-center py-12">
-            <Card className="w-full max-w-md">
-                <CardHeader>
-                    <CardTitle>Complete Your Profile</CardTitle>
-                    <CardDescription>
-                        Choose a username and accept our terms to get started
-                    </CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                            <FormField
-                                control={form.control}
-                                name="username"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Username</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="Choose a username"
-                                                {...field}
-                                                onChange={(e) => {
-                                                    field.onChange(e);
-                                                    checkUsername(e.target.value);
-                                                }}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
+        <section className="relative h-screen w-full overflow-hidden dark:bg-black">
+            <div className="mx-auto w-full max-w-6xl px-4 pt-16 md:px-8">
+                <div className="relative w-full">
+                    <div className="col-span-10 flex w-full flex-col items-center justify-center bg-white p-8 text-center md:p-16 dark:bg-black">
+                        <div className="w-full max-w-md">
+                            <div className="mb-12 text-center">
+                                <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
+                                    Complete Your Profile
+                                </h1>
+                                <p className="text-gray-500">
+                                    Choose a username and accept our terms to get started
+                                </p>
+                            </div>
 
-                            <FormField
-                                control={form.control}
-                                name="termsAccepted"
-                                render={({ field }) => (
-                                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                                        <FormControl>
-                                            <Checkbox
-                                                checked={field.value}
-                                                onCheckedChange={field.onChange}
-                                            />
-                                        </FormControl>
-                                        <div className="space-y-1 leading-none">
-                                            <FormLabel>
-                                                I accept the{" "}
-                                                <a
-                                                    href="/terms"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-primary hover:underline"
-                                                >
-                                                    Terms and Conditions
-                                                </a>
-                                            </FormLabel>
-                                            <FormMessage />
-                                        </div>
-                                    </FormItem>
-                                )}
-                            />
+                            <Form {...form}>
+                                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 text-left">
+                                    <FormField
+                                        control={form.control}
+                                        name="username"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel className="font-medium text-black dark:text-white">
+                                                    Username
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <Input
+                                                        placeholder="Choose a username"
+                                                        className="mt-1 w-full rounded-none border-t-0 border-r-0 border-b border-l-0 border-neutral-300 bg-transparent px-0 py-2 font-light shadow-none placeholder:text-base placeholder:text-neutral-500 focus:border-purple-500 focus:outline-none focus-visible:ring-0 dark:border-neutral-700"
+                                                        {...field}
+                                                        onChange={(e) => {
+                                                            field.onChange(e);
+                                                            checkUsername(e.target.value);
+                                                        }}
+                                                    />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
 
-                            {error && (
-                                <div className="flex items-center gap-1 text-sm text-red-500">
-                                    <RiErrorWarningFill className="size-4" />
-                                    {error}
-                                </div>
-                            )}
+                                    <FormField
+                                        control={form.control}
+                                        name="termsAccepted"
+                                        render={({ field }) => (
+                                            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                                                <FormControl>
+                                                    <Checkbox
+                                                        checked={field.value}
+                                                        onCheckedChange={field.onChange}
+                                                        className="rounded-none border-neutral-300 data-[state=checked]:border-purple-500 data-[state=checked]:bg-purple-500"
+                                                    />
+                                                </FormControl>
+                                                <div className="space-y-1 leading-none">
+                                                    <FormLabel className="text-sm text-gray-500">
+                                                        I accept the{" "}
+                                                        <a
+                                                            href="/terms"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-purple-500 hover:underline"
+                                                        >
+                                                            Terms and Conditions
+                                                        </a>
+                                                    </FormLabel>
+                                                    <FormMessage />
+                                                </div>
+                                            </FormItem>
+                                        )}
+                                    />
 
-                            <Button
-                                type="submit"
-                                className="w-full"
-                                disabled={isSubmitting || isChecking}
-                            >
-                                {isSubmitting ? (
-                                    <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                                ) : null}
-                                Complete Signup
-                            </Button>
-                        </form>
-                    </Form>
-                </CardContent>
-            </Card>
-        </div>
+                                    <Button
+                                        type="submit"
+                                        className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-none bg-blue-700 text-white shadow-none hover:bg-blue-800"
+                                        disabled={isSubmitting || isChecking}
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                Completing...
+                                            </>
+                                        ) : (
+                                            "Complete Signup"
+                                        )}
+                                    </Button>
+                                </form>
+                            </Form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 } 

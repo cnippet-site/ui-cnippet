@@ -23,7 +23,7 @@ export const motions: ComponentGroup[] = [
                 name: "Animated Group",
                 href: "/motions/animated-group",
             },
-            // {
+            // {z
             //     name: "Border Trail",
             //     href: "#",
             // },
