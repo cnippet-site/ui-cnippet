@@ -681,7 +681,6 @@ const AuthDialog = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [loading1, setLoading1] = useState(false);
     const [loading2, setLoading2] = useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 

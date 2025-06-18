@@ -1,15 +1,14 @@
 import React from "react";
 import Link from "next/link";
-
 import { RiArrowRightLine } from "@remixicon/react";
 
 const Feedback = () => {
     return (
         <>
-            <section className="mx-auto w-full max-w-full border-t-0 border-b px-4 md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-800">
+            <section className="mx-auto w-full max-w-full border-t-0 border-b px-4 md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-800 dark:bg-black">
                 <div className="border border-t-0 border-b-0 dark:border-neutral-800">
                     <div className="grid grid-cols-6 divide-x divide-y dark:divide-neutral-800 dark:border-neutral-800">
-                        <div className="col-span-6 border-r-0 bg-white px-10 py-8 text-center md:py-16 dark:bg-black">
+                        <div className="dark:bg-muted/50 col-span-6 border-r-0 bg-white px-10 py-8 text-center md:py-16">
                             <p className="text-3xl font-medium">
                                 &quot;Cnippet&apos;s production components
                                 reduced our development time by 40% and improved
@@ -53,7 +52,7 @@ const Feedback = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="col-span-6 border-b-0 bg-white px-10 py-8 text-left md:col-span-3 md:py-16 dark:bg-black">
+                        <div className="dark:bg-muted/50 col-span-6 border-b-0 bg-white px-10 py-8 text-left md:col-span-3 md:py-16">
                             <p className="text-xl font-medium">
                                 &quot;From our startup MVP to our current
                                 platform serving 1M+ users, Cnippet&apos;s

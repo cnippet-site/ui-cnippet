@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { useTheme } from "next-themes";
 import { RiMoonFill, RiSunLine } from "@remixicon/react";
 
 import { CommandMenu } from "@/components/command-menu";
-// import { MobileNav } from "@/components/mobile-nav";
+import { MobileNav } from "@/components/mobile-nav";
 import NavUser from "./nav-user";
 
 const Nav1 = () => {
@@ -20,10 +19,10 @@ const Nav1 = () => {
 
     return (
         <>
-            <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 mx-auto w-full max-w-full border-t-0 border-b px-20 backdrop-blur 2xl:px-30 dark:border-neutral-900 dark:bg-black/70">
-                <div className="w-full border border-t-0 border-b-0 dark:border-neutral-800">
-                    <div className="grid grid-cols-6 divide-x dark:divide-neutral-800">
-                        <div className="col-span-1 px-4 py-3">
+            <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 mx-auto w-full max-w-full border-t-0 border-b px-4 backdrop-blur md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-900 dark:bg-black/70">
+                <div className="w-full border border-t-0 border-b-0 border-r-0 dark:border-neutral-800">
+                    <div className="grid grid-cols-2 divide-x-0 md:grid-cols-6 md:divide-x dark:divide-neutral-800">
+                        <div className="col-span-1 px-4 py-3 md:col-span-1">
                             {mounted && (
                                 <Link
                                     className="mr-4 flex items-center gap-0 lg:mr-6"
@@ -53,7 +52,8 @@ const Nav1 = () => {
                                 </Link>
                             )}
                         </div>
-                        <div className="col-span-3 flex items-center px-4">
+
+                        <div className="col-span-3 hidden items-center px-4 md:flex">
                             <nav className="flex items-center gap-4 text-sm xl:gap-6">
                                 <Link
                                     href="/components/button"
@@ -81,11 +81,12 @@ const Nav1 = () => {
                                 </Link>
                             </nav>
                         </div>
-                        <div className="col-span-1">
+
+                        <div className="col-span-1 hidden md:block">
                             <CommandMenu />
                         </div>
 
-                        <div className="col-span-1 flex items-center justify-center">
+                        <div className="col-span-1 hidden items-center justify-center md:flex">
                             <nav className="flex items-center justify-center gap-0.5">
                                 <Link
                                     target="_blank"
@@ -107,17 +108,6 @@ const Nav1 = () => {
 
                                 {mounted && (
                                     <div className="group/toggle focus-visible:ring-ring [&amp;_svg]:pointer-events-none [&amp;_svg]:size-5 [&amp;_svg]:shrink-0 inline-flex h-8 w-8 items-center justify-center gap-2 rounded-md px-0 py-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-none focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
-                                        {/* <Button
-                                    variant="ghost"
-                                    onClick={() => toggleTheme()}
-                                    className="hover:bg-dusk-500 flex items-center justify-center gap-2 rounded-lg p-2 text-black dark:text-white hover:dark:bg-neutral-700"
-                                >
-                                    {theme === "dark" ? (
-                                        <RiSunLine className="size-5" />
-                                    ) : (
-                                        <RiMoonFill className="size-5" />
-                                    )}
-                                </Button> */}
                                         {theme === "dark" ? (
                                             <button
                                                 onClick={() =>
@@ -138,9 +128,6 @@ const Nav1 = () => {
                                             </button>
                                         )}
 
-                                        {/* {mounted && (
-                                    <div className="flex gap-1 rounded-full border p-1 dark:border-neutral-800"></div>
-                                )} */}
                                         <span className="sr-only">
                                             Toggle theme
                                         </span>
@@ -150,9 +137,12 @@ const Nav1 = () => {
                                 <NavUser />
                             </nav>
                         </div>
+
+                        <div className="col-span-1 ml-auto flex items-center justify-end md:col-span-0 md:hidden">
+                            <MobileNav />
+                        </div>
                     </div>
                 </div>
-                <div className="absolute top-0 right-6 py-3"></div>
             </header>
         </>
     );

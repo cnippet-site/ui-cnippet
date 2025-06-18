@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
 import { CldImage } from "next-cloudinary";
 import {
     RiFacebookBoxFill,
@@ -33,7 +32,7 @@ const images = [
 const Components = () => {
     return (
         <>
-            <section className="mx-auto mt-20 w-full max-w-full border-t border-b px-4 md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-800">
+            <section className="mx-auto w-full max-w-full border-t-0 border-b px-4 md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-800 dark:bg-black">
                 <div className="border border-t-0 border-b-0 dark:border-neutral-800">
                     <div className="max-w-2xl px-4 py-20">
                         <h2 className="text-2xl leading-tight font-medium tracking-tight md:text-5xl">
@@ -180,7 +179,7 @@ const Components = () => {
                         </Link>
                     </div>
 
-                    <div className="grid h-12 grid-cols-6 divide-x border-t-0 dark:border-neutral-800 dark:divide-neutral-800">
+                    <div className="grid h-12 grid-cols-6 divide-x border-t-0 dark:divide-neutral-800 dark:border-neutral-800">
                         <div className="col-span-1 hidden md:block"></div>
                         <div className="col-span-1 hidden md:block"></div>
                         <div className="col-span-1 hidden md:block"></div>
@@ -189,10 +188,10 @@ const Components = () => {
                         <div className="col-span-3 h-full w-full md:col-span-2">
                             <Link
                                 href="https://ui.cnippet.site"
-                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-blue-700 dark:bg-black"
+                                className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-blue-700"
                             >
-                                <div className="absolute inset-0 w-full -translate-x-[100%] bg-blue-800 transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                <span className="relative z-10 flex w-full items-center justify-between gap-2 px-4 text-lg text-white duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                <div className="absolute inset-0 w-full -translate-x-[100%] bg-blue-800 transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-blue-600" />
+                                <span className="relative z-10 flex w-full items-center justify-between gap-2 px-4 text-lg text-white duration-300 group-hover:text-white">
                                     Explore More
                                     <RiArrowRightLine
                                         className="text-white"
@@ -213,35 +212,6 @@ const Components = () => {
                     </div>
                 </div>
             </section>
-
-            {/* <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
-                    <div className="grid h-full w-full grid-cols-12 border border-t-0 py-0 dark:border-neutral-900">
-                        <div className="col-span-12 bg-white text-center dark:bg-black">
-                            <h2 className="mt-16 mb-2 text-2xl leading-tight font-medium tracking-tight md:text-5xl dark:text-neutral-100">
-                                Production React Components Library
-                            </h2>
-                            <p className="mx-auto mb-8 max-w-xl px-5 text-sm text-gray-500 md:mb-16 md:text-base">
-                                Discover our collection of tested React
-                                components, featuring advanced animations, data
-                                visualization, and interactive UI elements.
-                            </p>
-                            <div className="grid grid-cols-1 divide-y border-t md:grid-cols-12 dark:divide-neutral-900 dark:border-neutral-900"></div>
-                            <div className="flex flex-col items-center justify-center">
-                                <Link
-                                    href="/"
-                                    className="relative w-full overflow-hidden bg-white p-5 dark:bg-black"
-                                >
-                                    <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                    <h3 className="relative z-10 text-2xl text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                                        Explore More
-                                    </h3>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </>
     );
 };

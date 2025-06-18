@@ -23,8 +23,6 @@ export async function generateStaticParams() {
     }));
 }
 
-// type Params = Promise<{ slug: string }>;
-
 function getComponentDoc({ slug }: { slug: string }) {
     return allComponents?.find((doc) => doc.slugAsParams === slug) || null;
 }

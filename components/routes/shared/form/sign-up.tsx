@@ -59,7 +59,7 @@ export function SignUpForm() {
         if (otpValue && otpValue.length === 6 && currentStep === 3) {
             form.handleSubmit(onSubmit)();
         }
-    }, [form.getValues("otp"), currentStep]);
+    }, [form, onSubmit, currentStep, form.watch("otp")]);
 
     const handleNext = async () => {
         let isValid = false;

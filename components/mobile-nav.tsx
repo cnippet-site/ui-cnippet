@@ -49,7 +49,7 @@ export function MobileNav() {
             <DrawerTrigger asChild>
                 <Button
                     variant="ghost"
-                    className="h-8 w-fit gap-4 pl-0 pr-4 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+                    className="h-8 w-full gap-4 pl-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -104,17 +104,17 @@ export function MobileNav() {
                                                     >
                                                         <span>{item.name}</span>
                                                         {item.href === "#" && (
-                                                            <span className="ml-auto mr-4 whitespace-nowrap rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
                                                                 Coming soon
                                                             </span>
                                                         )}
                                                         {item?.isNew && (
-                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-blue-100 px-2 text-[10px] font-semibold text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
+                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 text-[10px] font-semibold whitespace-nowrap text-blue-800 dark:bg-blue-950 dark:text-emerald-50">
                                                                 New
                                                             </span>
                                                         )}
                                                         {item?.isUpdated && (
-                                                            <span className="ml-2 whitespace-nowrap rounded-lg bg-amber-100 px-2 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-50">
+                                                            <span className="ml-2 rounded-lg bg-amber-100 px-2 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
                                                                 Updated
                                                             </span>
                                                         )}
@@ -168,55 +168,6 @@ export function MobileNav() {
                             </MobileLink>
                         </li>
                     </ul>
-
-                    {/* <div className="flex flex-col space-y-3">
-                        {docsConfig.mainNav?.map(
-                            (item) =>
-                                item.href && (
-                                    <MobileLink
-                                        key={item.href}
-                                        href={item.href}
-                                        onOpenChange={setOpen}
-                                    >
-                                        {item.title}
-                                    </MobileLink>
-                                ),
-                        )}
-                    </div> */}
-                    {/* <div className="flex flex-col space-y-2">
-                        {docsConfig.sidebarNav.map((item, index) => (
-                            <div
-                                key={index}
-                                className="flex flex-col gap-4 pt-6"
-                            >
-                                <h4 className="text-xl font-medium">
-                                    {item.title}
-                                </h4>
-                                {item?.items?.length &&
-                                    item.items.map((item) => (
-                                        <React.Fragment key={item.href}>
-                                            {!item.disabled &&
-                                                (item.href ? (
-                                                    <MobileLink
-                                                        href={item.href}
-                                                        onOpenChange={setOpen}
-                                                        className="opacity-80"
-                                                    >
-                                                        {item.title}
-                                                        {item.label && (
-                                                            <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
-                                                                {item.label}
-                                                            </span>
-                                                        )}
-                                                    </MobileLink>
-                                                ) : (
-                                                    item.title
-                                                ))}
-                                        </React.Fragment>
-                                    ))}
-                            </div>
-                        ))}
-                    </div> */}
                 </div>
             </DrawerContent>
         </Drawer>
