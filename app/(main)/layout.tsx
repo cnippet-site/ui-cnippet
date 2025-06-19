@@ -93,43 +93,6 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     );
 }
 
-// function NavigationMobile({ navigation }: { navigation: typeof components }) {
-//     const router = useRouter();
-//     const pathname = usePathname();
-//     const [selectedHref, setSelectedHref] = React.useState(pathname);
-
-//     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-//         const href = e.target.value;
-//         setSelectedHref(href);
-//         router.push(href);
-//     };
-
-//     return (
-//         <div className="block w-full pt-8 md:hidden">
-//             <select
-//                 className="block w-full appearance-none rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white"
-//                 value={selectedHref}
-//                 onChange={handleChange}
-//             >
-//                 {navigation.map((nav) => {
-//                     return (
-//                         <optgroup label={nav.name} key={nav.name}>
-//                             {nav.items.map((item) => (
-//                                 <option
-//                                     key={`${item.href}-${item.name}`}
-//                                     value={item.href}
-//                                 >
-//                                     {item.name}
-//                                 </option>
-//                             ))}
-//                         </optgroup>
-//                     );
-//                 })}
-//             </select>
-//         </div>
-//     );
-// }
-
 export default function ComponentLayout({
     children,
 }: {
@@ -157,7 +120,7 @@ export default function ComponentLayout({
             <div className="bg-background relative flex min-h-svh flex-col">
                 <div className="border-grid flex flex-1 flex-col">
                     <Nav1 />
-                    <main className="flex flex-1 flex-col dark:bg-black">
+                    <main className="flex flex-1 flex-col dark:bg-black px-4 md:px-10 xl:px-20 2xl:px-30">
                         <div className="container-wrapper">
                             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-6">
                                 <NavigationDesktop

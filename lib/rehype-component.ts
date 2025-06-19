@@ -31,7 +31,8 @@ export function rehypeComponent() {
                         if (srcPath) {
                             src = srcPath as string;
                         } else {
-                            const component = Index[style.name][name];
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            const component = (Index[style.name] as any)[name];
                             src = fileName
                                 ? component.files.find((file: string) => {
                                       return (
@@ -111,7 +112,8 @@ export function rehypeComponent() {
 
                 try {
                     for (const style of styles) {
-                        const component = Index[style.name][name];
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        const component = (Index[style.name] as any)[name];
                         const src = component.files[0];
 
                         // Read the source file.

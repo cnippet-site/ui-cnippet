@@ -37,7 +37,8 @@ export function AuthPreview({
     const Code = Codes[index];
 
     const Preview = React.useMemo(() => {
-        const Component = Index[config.style][name]?.component;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const Component = (Index[config.style] as any)[name]?.component;
 
         if (!Component) {
             console.error(
