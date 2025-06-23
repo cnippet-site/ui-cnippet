@@ -18,6 +18,7 @@ type User = {
     email: string | null;
     password?: string;
     username?: string | null;
+    termsAccepted?: boolean;
     createdAt: Date;
     updatedAt: Date;
 };
@@ -37,11 +38,13 @@ export async function signUpWithCredentials({
     name,
     email,
     password,
+    termsAccepted,
 }: {
     username: string;
     name: string;
     email: string;
     password: string;
+    termsAccepted: boolean;
 }): Promise<AuthResult> {
     try {
         const existingUser = await prisma.user.findUnique({ where: { email } });
@@ -54,6 +57,8 @@ export async function signUpWithCredentials({
                 name,
                 email,
                 password: hashedPassword,
+                emailVerified:  new Date(),
+                termsAccepted,
                 provider: "credentials",
             },
         });
