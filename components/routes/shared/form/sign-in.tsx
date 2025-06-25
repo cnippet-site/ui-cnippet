@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Loader2, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { RiGithubFill, RiGoogleFill } from "@remixicon/react";
 
 const formSchema = z.object({
@@ -35,8 +35,13 @@ type FormData = z.infer<typeof formSchema>;
 export default function SignInForm() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
+    //eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState<string | null>(null);
     const [showPassword, setShowPassword] = useState(false);
+    const [oauthLoading, setOauthLoading] = useState<
+        "google" | "github" | null
+    >(null);
+    const { data: session, status } = useSession();
 
     const form = useForm<FormData>({
         resolver: zodResolver(formSchema),
@@ -45,6 +50,16 @@ export default function SignInForm() {
             password: "",
         },
     });
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            if (session?.needsCompletion) {
+                router.push("/about_you");
+            } else {
+                router.push("/");
+            }
+        }
+    }, [status, session, router]);
 
     async function onSubmit(values: FormData) {
         setIsLoading(true);
@@ -70,31 +85,16 @@ export default function SignInForm() {
             setIsLoading(false);
         }
     }
-
     const loginWithGoogle = async () => {
-        const result = await signIn("google", {
-            callbackUrl: "/about_you",
-            redirect: false,
-        });
-
-        if (result?.error) {
-            setError(result.error);
-        } else if (result?.url) {
-            router.push(result.url);
-        }
+        setOauthLoading("google");
+        await signIn("google", { redirect: false });
+        setOauthLoading(null);
     };
 
     const loginWithGit = async () => {
-        const result = await signIn("github", {
-            callbackUrl: "/about_you",
-            redirect: false,
-        });
-
-        if (result?.error) {
-            setError(result.error);
-        } else if (result?.url) {
-            router.push(result.url);
-        }
+        setOauthLoading("github");
+        await signIn("github", { redirect: false });
+        setOauthLoading(null);
     };
 
     return (
@@ -162,7 +162,9 @@ export default function SignInForm() {
                                                         type="button"
                                                         className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 transition-colors hover:text-gray-700"
                                                         onClick={() =>
-                                                            setShowPassword(!showPassword)
+                                                            setShowPassword(
+                                                                !showPassword,
+                                                            )
                                                         }
                                                     >
                                                         {showPassword ? (
@@ -201,48 +203,6 @@ export default function SignInForm() {
                                         )}
                                     </Button>
 
-                                    <div className="my-8 flex items-center">
-                                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                                        <span className="px-4 text-sm text-gray-500">
-                                            OR CONTINUE WITH
-                                        </span>
-                                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                                    </div>
-
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <Button
-                                            onClick={loginWithGit}
-                                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                                        >
-                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                                                GitHub
-                                            </span>
-                                        </Button>
-
-                                        <Button
-                                            onClick={loginWithGoogle}
-                                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                                        >
-                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                                                Google
-                                            </span>
-                                        </Button>
-                                    </div>
-
-                                    <p className="mt-12 text-gray-500">
-                                        Don&apos;t have an account?{" "}
-                                        <Link
-                                            href="/sign_up"
-                                            className="underline hover:text-purple-500"
-                                        >
-                                            Sign up
-                                        </Link>
-                                    </p>
-
                                     {error && (
                                         <div className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-500">
                                             <div className="flex">
@@ -264,6 +224,62 @@ export default function SignInForm() {
                                     )}
                                 </form>
                             </Form>
+
+                            <div className="my-8 flex items-center">
+                                <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                                <span className="px-4 text-sm text-gray-500">
+                                    OR CONTINUE WITH
+                                </span>
+                                <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <Button
+                                    onClick={loginWithGit}
+                                    className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                                    disabled={oauthLoading === "github"}
+                                >
+                                    {oauthLoading === "github" ? (
+                                        <Loader2 className="h-5 w-5 animate-spin" />
+                                    ) : (
+                                        <>
+                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                                GitHub
+                                            </span>
+                                        </>
+                                    )}
+                                </Button>
+
+                                <Button
+                                    onClick={loginWithGoogle}
+                                    className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                                    disabled={oauthLoading === "google"}
+                                >
+                                    {oauthLoading === "google" ? (
+                                        <Loader2 className="h-5 w-5 animate-spin" />
+                                    ) : (
+                                        <>
+                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                                Google
+                                            </span>
+                                        </>
+                                    )}
+                                </Button>
+                            </div>
+
+                            <p className="mt-12 text-gray-500">
+                                Don&apos;t have an account?{" "}
+                                <Link
+                                    href="/sign_up"
+                                    className="underline hover:text-purple-500"
+                                >
+                                    Sign up
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </div>

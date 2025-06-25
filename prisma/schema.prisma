@@ -12,11 +12,11 @@ model User {
     name          String?
     username      String?      @unique
     email         String?      @unique
-    emailVerified DateTime?
     image         String?
     password      String?
     provider      String?
     termsAccepted Boolean      @default(false)
+    emailVerified DateTime?
     createdAt     DateTime     @default(now())
     updatedAt     DateTime     @updatedAt
     resetTokens   ResetToken[]

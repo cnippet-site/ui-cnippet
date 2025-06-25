@@ -18,7 +18,7 @@ declare module "next-auth" {
             image?: string | null;
             provider?: string | null;
             username?: string | null;
-        }
+        };
     }
 }
 
@@ -34,10 +34,10 @@ declare module "next-auth/jwt" {
 }
 
 export const nextauthOptions: NextAuthOptions = {
-    secret: process.env.NEXTAUTH_SECRET!,
+    secret: process.env.NEXTAUTH_SECRET,
     pages: {
-        signIn: "/signin",
-        // error: "/error",
+        signIn: "/sign_in",
+        // error: "/sign_in",
     },
     providers: [
         GoogleProvider({
@@ -60,7 +60,7 @@ export const nextauthOptions: NextAuthOptions = {
             },
             async authorize(credentials) {
                 if (!credentials?.email || !credentials?.password) {
-                    throw new Error("Email and password are required");
+                    return null;
                 }
 
                 const result = await signInWithCredentials({
@@ -69,7 +69,8 @@ export const nextauthOptions: NextAuthOptions = {
                 });
 
                 if (!result.success || !result.data?.id) {
-                    throw new Error(result.error || "Invalid credentials");
+                    // Return null instead of throwing error to prevent redirect
+                    return null;
                 }
 
                 return {
@@ -80,19 +81,31 @@ export const nextauthOptions: NextAuthOptions = {
             },
         }),
     ],
-    
+
     callbacks: {
-        async signIn({ account, profile }) {
+        async signIn({ user, account, profile }) {
+            // Handle credentials login
+            if (account?.provider === "credentials") {
+                if (!user) {
+                    // Credentials failed - stay on sign-in page
+                    return false;
+                }
+                return true;
+            }
+
+            // Handle OAuth login
             if (account?.type === "oauth" && profile) {
                 const result = await signInWithOauth({ account, profile });
-                if (!result.success) {
-                    // Redirect to sign-in page with error message
-                    return `/signin?error=${encodeURIComponent(result.error || "OAuth authentication failed")}`;
-                }
+                return !!result.success; // Always return boolean
             }
             return true;
         },
-        async jwt({ token, trigger, session }) {
+        async jwt({ token, trigger, session, account }) {
+            // Add provider information to token
+            if (account?.provider) {
+                token.provider = account.provider;
+            }
+
             if (trigger === "update" && session) {
                 // Handle updates from the session
                 return { ...token, ...session };
@@ -104,12 +117,12 @@ export const nextauthOptions: NextAuthOptions = {
                     token.id = user._id;
                     token.name = user.name;
                     token.email = user.email;
-                    token.provider = user.provider;
+                    token.provider = token.provider || user.provider;
                     token.image = user.image;
                     token.username = user.username;
                 }
             }
-            
+
             return token;
         },
         async session({ token, session }) {
@@ -120,6 +133,7 @@ export const nextauthOptions: NextAuthOptions = {
                 session.user.provider = token.provider as string;
                 session.user.image = token.image as string;
                 session.user.username = token.username as string | null;
+                session.needsCompletion = token.needsCompletion as boolean | undefined;
             }
             return session;
         },

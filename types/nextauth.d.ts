@@ -9,6 +9,7 @@ declare module "next-auth" {
             image?: string | null;
             provider?: string | null;
         };
+        needsCompletion?: boolean | undefined;
     }
 
     interface User {
