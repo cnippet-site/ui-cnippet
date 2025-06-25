@@ -87,7 +87,7 @@ export function SignUpForm() {
                         form.setError("username", {
                             message: "Username already taken",
                         });
-                        return;
+                        isValid = false;
                     }
 
                     const emailCheck = await checkEmail(values.email);
@@ -95,10 +95,8 @@ export function SignUpForm() {
                         form.setError("email", {
                             message: "Email already registered",
                         });
-                        return;
+                        isValid = false;
                     }
-
-                    isValid = true;
                 }
             } else if (currentStep === 2) {
                 isValid = await form.trigger(["password"]);
@@ -349,44 +347,6 @@ export function SignUpForm() {
                     )}
                 </span>
             </Button>
-            <div className="my-8 flex items-center">
-                <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                <span className="px-4 text-sm text-gray-500">
-                    OR CONTINUE WITH
-                </span>
-                <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-                <Button
-                    onClick={loginWithGit}
-                    className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                >
-                    <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                    <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                    <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                        GitHub
-                    </span>
-                </Button>
-                <Button
-                    onClick={loginWithGoogle}
-                    className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                >
-                    <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                    <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                    <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                        Google
-                    </span>
-                </Button>
-            </div>
-            <p className="mt-12 text-gray-500">
-                Already have an account?{" "}
-                <Link
-                    href="/sign_in"
-                    className="underline hover:text-purple-500"
-                >
-                    Sign in
-                </Link>
-            </p>
         </div>
     );
 
@@ -583,7 +543,6 @@ export function SignUpForm() {
                                     {renderStep1()}
                                     {renderStep2()}
                                     {renderStep3()}
-
                                     {error && (
                                         <div className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-500">
                                             <div className="flex">
@@ -605,6 +564,49 @@ export function SignUpForm() {
                                     )}
                                 </form>
                             </Form>
+
+                            {currentStep === 1 && (
+                                <>
+                                    <div className="my-8 flex items-center">
+                                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                                        <span className="px-4 text-sm text-gray-500">
+                                            OR CONTINUE WITH
+                                        </span>
+                                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <Button
+                                            onClick={loginWithGit}
+                                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                                        >
+                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                                GitHub
+                                            </span>
+                                        </Button>
+                                        <Button
+                                            onClick={loginWithGoogle}
+                                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                                        >
+                                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                                Google
+                                            </span>
+                                        </Button>
+                                    </div>
+                                    <p className="relative z-[100] mt-6 text-gray-500">
+                                        Already have an account?{" "}
+                                        <Link
+                                            href="/sign_in"
+                                            className="underline hover:text-purple-500"
+                                        >
+                                            Sign in
+                                        </Link>
+                                    </p>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

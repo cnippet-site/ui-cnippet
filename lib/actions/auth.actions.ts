@@ -103,24 +103,39 @@ export async function signInWithOauth({
     account: Account;
     profile: Profile & { picture?: string };
 }) {
-    const user = await prisma.user.findUnique({
-        where: { email: profile.email },
-    });
-    if (user)
-        return { success: true, data: { name: user.name, email: user.email } };
-
     try {
+        const user = await prisma.user.findUnique({
+            where: { email: profile.email },
+        });
+        
+        if (user) {
+            return { 
+                success: true, 
+                data: { 
+                    id: user.id, 
+                    name: user.name, 
+                    email: user.email,
+                    username: user.username 
+                } 
+            };
+        }
+
         const newUser = await prisma.user.create({
             data: {
-                name: profile.name,
-                email: profile.email,
+                name: profile.name || "",
+                email: profile.email || "",
                 image: profile.picture,
                 provider: account.provider,
             },
         });
+        
         return {
             success: true,
-            data: { name: newUser.name, email: newUser.email },
+            data: { 
+                id: newUser.id, 
+                name: newUser.name, 
+                email: newUser.email 
+            },
         };
     } catch (error) {
         return { success: false, error: `OAuth signin failed ${error}` };
