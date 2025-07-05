@@ -2,7 +2,7 @@
 import prisma from "@/lib/prisma";
 import { Resend } from "resend";
 import { render } from "@react-email/render";
-import ContactEmail from "@/components/routes/resend/contact-email";
+import ContactEmail from "@/components/emails/contact-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

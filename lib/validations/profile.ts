@@ -1,48 +1,43 @@
+// lib/validations/profile.ts
 import { z } from "zod";
 
-export const profileFormSchema = z
+export const updateGeneralInfoSchema = z.object({
+    name: z.string().min(2, "Name is required").optional(),
+    username: z
+        .string()
+        .min(3, "Username must be at least 3 characters long")
+        .max(20, "Username must be at most 20 characters long")
+        .regex(
+            /^[a-zA-Z0-9_]+$/,
+            "Username can only contain letters, numbers, and underscores",
+        )
+        .optional(),
+});
+
+export const changePasswordSchema = z
     .object({
-        name: z.string().min(1, "Name is required"),
-        email: z.string().email("Invalid email address"),
-        imageUrl: z.string().optional(),
-        currentPassword: z.string().optional(),
+        currentPassword: z.string().min(1, "Current password is required."),
         newPassword: z
             .string()
-            .min(8, "Password must be at least 8 characters")
-            .optional(),
-        confirmPassword: z.string().optional(),
+            .min(8, "New password must be at least 8 characters long."),
+        confirmNewPassword: z.string(),
     })
-    .refine(
-        (data) => {
-            // If any password field is filled, all must be filled
-            if (
-                data.currentPassword ||
-                data.newPassword ||
-                data.confirmPassword
-            ) {
-                return (
-                    data.currentPassword &&
-                    data.newPassword &&
-                    data.confirmPassword
-                );
-            }
-            return true;
-        },
-        {
-            message: "All password fields are required when changing password",
-            path: ["currentPassword"],
-        },
-    )
-    .refine(
-        (data) => {
-            // If new password is provided, it must match confirm password
-            if (data.newPassword && data.confirmPassword) {
-                return data.newPassword === data.confirmPassword;
-            }
-            return true;
-        },
-        {
-            message: "Passwords do not match",
-            path: ["confirmPassword"],
-        },
-    );
+    .refine((data) => data.newPassword === data.confirmNewPassword, {
+        message: "New passwords do not match.",
+        path: ["confirmNewPassword"],
+    });
+
+export const updateUserSettingsSchema = z.object({
+    theme: z
+        .enum(["light", "dark", "system"], {
+            errorMap: () => ({ message: "Invalid theme selected." }),
+        })
+        .optional(),
+    emailNotifications: z.boolean().optional(),
+    inAppNotifications: z.boolean().optional(),
+    language: z
+        .string()
+        .min(2, "Language must be at least 2 characters.")
+        .optional(), // e.g., 'en', 'es', 'fr'
+    timezone: z.string().min(3, "Timezone is required.").optional(), // e.g., 'UTC', 'EST', 'IST'
+});

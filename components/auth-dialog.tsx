@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog-cn";
-import AuthDialog from "./routes/shared/auth/dialog";
+import AuthDialog from "./shared/auth/dialog";
 import { Button } from "@/components/ui/button";
 
 const AuthD = () => {

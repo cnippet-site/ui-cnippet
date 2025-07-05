@@ -6,8 +6,8 @@ import { nextauthOptions } from "../nextauth-options";
 import { getServerSession } from "next-auth/next";
 import { Account, Profile } from "next-auth";
 import { Resend } from "resend";
-import { generateResetToken } from "@/lib/utils/tokens";
-import { ResetPasswordEmail } from "@/components/routes/resend/reset-password";
+import { generateResetToken } from "@/lib/utils";
+import { ResetPasswordEmail } from "@/components/emails/reset-password";
 import { render } from "@react-email/components";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -57,7 +57,7 @@ export async function signUpWithCredentials({
                 name,
                 email,
                 password: hashedPassword,
-                emailVerified:  new Date(),
+                emailVerified: new Date(),
                 termsAccepted,
                 provider: "credentials",
             },
@@ -107,34 +107,36 @@ export async function signInWithOauth({
         const user = await prisma.user.findUnique({
             where: { email: profile.email },
         });
-        
+
         if (user) {
-            return { 
-                success: true, 
-                data: { 
-                    id: user.id, 
-                    name: user.name, 
+            return {
+                success: true,
+                data: {
+                    id: user.id,
+                    name: user.name,
                     email: user.email,
-                    username: user.username 
-                } 
+                    username: user.username,
+                },
             };
         }
 
         const newUser = await prisma.user.create({
             data: {
                 name: profile.name || "",
+                username: "",
                 email: profile.email || "",
                 image: profile.picture,
                 provider: account.provider,
+                emailVerified: new Date(),
             },
         });
-        
+
         return {
             success: true,
-            data: { 
-                id: newUser.id, 
-                name: newUser.name, 
-                email: newUser.email 
+            data: {
+                id: newUser.id,
+                name: newUser.name,
+                email: newUser.email,
             },
         };
     } catch (error) {

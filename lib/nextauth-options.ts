@@ -18,6 +18,11 @@ declare module "next-auth" {
             image?: string | null;
             provider?: string | null;
             username?: string | null;
+            preferredTheme?: string | null;
+            emailNotifications?: boolean | null;
+            inAppNotifications?: boolean | null;
+            preferredLanguage?: string | null;
+            preferredTimezone?: string | null;
         };
     }
 }
@@ -30,6 +35,11 @@ declare module "next-auth/jwt" {
         image?: string | null;
         provider?: string | null;
         username?: string | null;
+        preferredTheme?: string | null;
+        emailNotifications?: boolean | null;
+        inAppNotifications?: boolean | null;
+        preferredLanguage?: string | null;
+        preferredTimezone?: string | null;
     }
 }
 
@@ -96,11 +106,17 @@ export const nextauthOptions: NextAuthOptions = {
             // Handle OAuth login
             if (account?.type === "oauth" && profile) {
                 const result = await signInWithOauth({ account, profile });
+                // If user exists but has no username, mark as needs completion
+                if (result.success && result.data) {
+                    // Attach needsCompletion to user for jwt callback
+                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (user as any).needsCompletion = !result.data.username;
+                }
                 return !!result.success; // Always return boolean
             }
             return true;
         },
-        async jwt({ token, trigger, session, account }) {
+        async jwt({ token, trigger, session, account, user }) {
             // Add provider information to token
             if (account?.provider) {
                 token.provider = account.provider;
@@ -112,17 +128,27 @@ export const nextauthOptions: NextAuthOptions = {
             }
 
             if (token.email) {
-                const user = await getUserByEmail(token.email);
-                if (user) {
-                    token.id = user._id;
-                    token.name = user.name;
-                    token.email = user.email;
-                    token.provider = token.provider || user.provider;
-                    token.image = user.image;
-                    token.username = user.username;
+                const userData = await getUserByEmail(token.email);
+                if (userData) {
+                    token.id = userData._id;
+                    token.name = userData.name;
+                    token.email = userData.email;
+                    token.provider = token.provider || userData.provider;
+                    token.image = userData.image;
+                    token.username = userData.username;
+                    token.preferredTheme = userData.preferredTheme;
+                    token.emailNotifications = userData.emailNotifications;
+                    token.inAppNotifications = userData.inAppNotifications;
+                    token.preferredLanguage = userData.preferredLanguage;
+                    token.preferredTimezone = userData.preferredTimezone;
+                    token.needsCompletion = !userData.username;
                 }
             }
-
+            //eslint-disable-next-line @typescript-eslint/no-explicit-any
+            if (user && (user as any).needsCompletion !== undefined) {
+                //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                token.needsCompletion = (user as any).needsCompletion;
+            }
             return token;
         },
         async session({ token, session }) {
@@ -133,7 +159,24 @@ export const nextauthOptions: NextAuthOptions = {
                 session.user.provider = token.provider as string;
                 session.user.image = token.image as string;
                 session.user.username = token.username as string | null;
-                session.needsCompletion = token.needsCompletion as boolean | undefined;
+                session.user.preferredTheme = token.preferredTheme as
+                    | string
+                    | null;
+                session.user.emailNotifications = token.emailNotifications as
+                    | boolean
+                    | null;
+                session.user.inAppNotifications = token.inAppNotifications as
+                    | boolean
+                    | null;
+                session.user.preferredLanguage = token.preferredLanguage as
+                    | string
+                    | null;
+                session.user.preferredTimezone = token.preferredTimezone as
+                    | string
+                    | null;
+                session.needsCompletion = token.needsCompletion as
+                    | boolean
+                    | undefined;
             }
             return session;
         },

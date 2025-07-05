@@ -1,7 +1,7 @@
 "use server";
 import prisma from "@/lib/prisma";
 import { render } from "@react-email/render";
-import { OTPEmail } from "@/emails/otp-email";
+import { OTPEmail } from "@/components/emails/otp-email";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);

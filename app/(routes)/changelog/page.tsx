@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-const Footer = dynamic(() => import("@/components/routes/shared/footer"));
+const Footer = dynamic(() => import("@/components/shared/footer"));
 
 const Page = () => {
     return (
