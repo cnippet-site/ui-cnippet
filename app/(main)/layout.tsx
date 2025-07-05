@@ -6,7 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { charts, components, motions } from "@/config/docs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Nav1 from "@/components/routes/shared/navbar/nav-1";
+import Nav1 from "@/components/shared/navbar/nav-1";
 
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();

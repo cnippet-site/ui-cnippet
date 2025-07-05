@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev -p 3000",
         "collection": "content-collections build",
-        "build:registry": "tsx ./scripts/create-registry.ts",
+        "build:registry": "tsx ./scripts/build-registry.ts",
         "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
         "format:check": "prettier --check \"./components/**/*.{ts,tsx,mdx}\" --cache",
         "analyze": "cross-env ANALYZE=true next build",

@@ -1,12 +1,10 @@
 import {
     Body,
-    Button,
     Container,
     Head,
     Heading,
     Html,
     Img,
-    Link,
     Preview,
     Section,
     Text,
@@ -26,7 +24,6 @@ const baseUrl = process.env.VERCEL_URL
     : "https://ui.cnippet.site";
 
 export const OTPEmail = ({
-    userEmail,
     otp,
 }: OTPEmailProps) => {
     return (
@@ -78,7 +75,7 @@ export const OTPEmail = ({
                                 © {new Date().getFullYear()} Cnippet LLC · All rights reserved
                             </Text>
                             <Text className="my-1 text-[12px] text-[#5f6368]">
-                                If you didn't request this OTP, please ignore this email.
+                                If you didn&apos;t request this OTP, please ignore this email.
                             </Text>
                         </Section>
                     </Container>

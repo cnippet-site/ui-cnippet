@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { RiMoonFill, RiSunLine } from "@remixicon/react";
 
-import { CommandMenu } from "@/components/command-menu";
-import { MobileNav } from "@/components/mobile-nav";
+import { CommandMenu } from "@/components/ui/command-menu";
+import { MobileNav } from "@/components/shared/navbar/mobile-nav";
 import NavUser from "./nav-user";
 
 const Nav1 = () => {

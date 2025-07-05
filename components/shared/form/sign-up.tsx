@@ -33,9 +33,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 type FormData = z.infer<typeof SignUpSchema>;
 
-export function SignUpForm() {
+export default function SignUpForm() {
     const router = useRouter();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState<
+        "signup" | "google" | "github" | null
+    >(null);
     const [error, setError] = useState<string | null>(null);
     const [showPassword, setShowPassword] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
@@ -164,7 +166,7 @@ export function SignUpForm() {
 
     const onSubmit = useCallback(
         async (values: FormData) => {
-            setIsLoading(true);
+            setIsLoading("signup");
             setError(null);
 
             try {
@@ -207,26 +209,30 @@ export function SignUpForm() {
                     `Unexpected error: ${error instanceof Error ? error.message : error}`,
                 );
             } finally {
-                setIsLoading(false);
+                setIsLoading(null);
             }
         },
         [router, otpAttempts, form],
     );
 
     const loginWithGoogle = async () => {
+        setIsLoading("google");
         const result = await signIn("google", {
             callbackUrl: "/about_you",
             redirect: false,
         });
         handleAuthResult(result);
+        setIsLoading(null);
     };
 
     const loginWithGit = async () => {
+        setIsLoading("github");
         const result = await signIn("github", {
             callbackUrl: "/about_you",
             redirect: false,
         });
         handleAuthResult(result);
+        setIsLoading(null);
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -316,7 +322,7 @@ export function SignUpForm() {
                             <FormLabel className="text-sm text-gray-500">
                                 I accept the{" "}
                                 <a
-                                    href="/terms"
+                                    href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-600 hover:underline"
@@ -494,7 +500,7 @@ export function SignUpForm() {
                 <Button
                     type="submit"
                     className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-none bg-blue-700 text-lg text-white shadow-none hover:bg-blue-800"
-                    disabled={isLoading}
+                    disabled={isLoading === "signup"}
                 >
                     {isLoading ? (
                         <>
@@ -509,7 +515,7 @@ export function SignUpForm() {
                     type="button"
                     onClick={handleBack}
                     className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-none border border-neutral-800 bg-white shadow-none dark:bg-black"
-                    disabled={isLoading}
+                    disabled={isLoading === "signup"}
                 >
                     <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
                     <span className="relative z-10 flex items-center justify-center text-lg text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
@@ -580,7 +586,11 @@ export function SignUpForm() {
                                             className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
                                         >
                                             <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            {isLoading === "github" ? (
+                                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            ) : (
+                                                <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            )}
                                             <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
                                                 GitHub
                                             </span>
@@ -590,7 +600,11 @@ export function SignUpForm() {
                                             className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
                                         >
                                             <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            {isLoading === "google" ? (
+                                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            ) : (
+                                                <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                                            )}
                                             <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
                                                 Google
                                             </span>

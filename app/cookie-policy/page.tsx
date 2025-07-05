@@ -1,4 +1,4 @@
-import Footer from "@/components/routes/shared/footer";
+import Footer from "@/components/shared/footer";
 import React from "react";
 
 const page = () => {

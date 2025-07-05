@@ -3,7 +3,7 @@
 import { Resend } from "resend";
 import { render } from "@react-email/render";
 import prisma from "@/lib/prisma";
-import NewsletterWelcomeEmail from "@/components/routes/resend/newsletter-welcome";
+import NewsletterWelcomeEmail from "@/components/emails/newsletter-welcome";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
